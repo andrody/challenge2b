@@ -30,7 +30,6 @@ class WorldLayer: SKNode {
     let camera = SKNode()
     
     //Platformer layer
-    let platformerLayer = SKNode()
 
     //Actions
 //    let moveTrees: SKAction
@@ -46,7 +45,7 @@ class WorldLayer: SKNode {
         
         super.init()
         
-        self.addChild(platformerLayer)
+        //self.addChild(platformerLayer)
         self.addChild(camera)
  
     }
@@ -64,7 +63,7 @@ class WorldLayer: SKNode {
         var posicaoX: CGFloat = 0.0
         var posicaoY: CGFloat = 0.0
         
-        for(var i = 0 ; i < 100 ; i++){
+        for(var i = 0 ; i < 2 ; i++){
             
             self.backgroundsTree.append( self.generateBackgroundTree(stageName, atPosition: CGPoint(x: posicaoX, y: posicaoY) ) )
                 
@@ -72,6 +71,9 @@ class WorldLayer: SKNode {
             
             self.backgroundsCloud.append( self.generateBackgroundCloud(stageName, atPosition: CGPoint(x: posicaoX, y: posicaoY) ) )
             
+            self.platform.append(self.generatePlatform(stageName))
+            
+            self.addChild(self.platform[i])
             self.addChild( self.backgroundsTree[i])
             self.addChild( self.backgroundsMountain[i])
             self.addChild( self.backgroundsCloud[i])
@@ -245,8 +247,6 @@ class WorldLayer: SKNode {
         var positionX = CGFloat(500)
         var positionY: CGFloat
         
-        
-        
         for node in walls{
             
             let wallNode = SKNode()
@@ -279,7 +279,6 @@ class WorldLayer: SKNode {
                 
                 positionY = blockNode.size.height * CGFloat(i)
                 
-                
                 blockNode.position = CGPoint(x: positionX, y: positionY )
                 
                 wallNode.addChild(blockNode)
@@ -306,7 +305,7 @@ class WorldLayer: SKNode {
 
             
             
-            self.platformerLayer.addChild(wallNode)
+            platformerLayer.addChild(wallNode)
             
         }
         
