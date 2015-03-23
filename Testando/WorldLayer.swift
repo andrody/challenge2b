@@ -14,7 +14,6 @@ import SpriteKit
 
 class WorldLayer: SKNode {
     
-
     //Arrays of backgrounds
     var backgroundsTree = [SKNode]()
     var backgroundsMountain = [SKNode]()
@@ -29,16 +28,15 @@ class WorldLayer: SKNode {
     //Camera
     let camera = SKNode()
     
-    //Platformer layer
-
-    //Actions
-//    let moveTrees: SKAction
-//    let moveMountins: SKAction
-//    let moverClouds: SKAction
-    
+    //The size of the scene
     let sizeOfScene: CGSize
-
     
+    //Positions
+    var lastBackgoundPostionX: CGFloat = 0.0
+    var lastPlatformePositionX: CGFloat = 500.0
+    
+    
+    //INIT
     init(sceneSize: CGSize){
         
         self.sizeOfScene = sceneSize
@@ -54,36 +52,38 @@ class WorldLayer: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    //FUCS
     func startNewWorld(#stageName: String){
         
         self.floor = self.generateFloor(stageName)
         self.addChild(self.floor)
+        var platformeTupla: (sknode: SKNode , lastPosition: CGFloat)
+        platformeTupla.lastPosition = 0.0
+        
         
         //Gerar 3 backgrounds de cada onde a posicao do proximo comeca no fim da anterior
-        var posicaoX: CGFloat = 0.0
-        var posicaoY: CGFloat = 0.0
         
         for(var i = 0 ; i < 2 ; i++){
             
-            self.backgroundsTree.append( self.generateBackgroundTree(stageName, atPosition: CGPoint(x: posicaoX, y: posicaoY) ) )
+            self.backgroundsTree.append( self.generateBackgroundTree(stageName, atPosition: CGPoint(x: self.lastBackgoundPostionX, y: 0) ) )
                 
-            self.backgroundsMountain.append( self.generateBackgroundMountain(stageName, atPosition: CGPoint(x: posicaoX, y: posicaoY) ) )
+            self.backgroundsMountain.append( self.generateBackgroundMountain(stageName, atPosition: CGPoint(x: lastBackgoundPostionX, y: 0) ) )
             
-            self.backgroundsCloud.append( self.generateBackgroundCloud(stageName, atPosition: CGPoint(x: posicaoX, y: posicaoY) ) )
+            self.backgroundsCloud.append( self.generateBackgroundCloud(stageName, atPosition: CGPoint(x: lastBackgoundPostionX, y: 0) ) )
             
-            self.platform.append(self.generatePlatform(stageName))
+            platformeTupla = self.generatePlatform(stageName , lastPostion: lastPlatformePositionX)
+            self.platform.append( platformeTupla.sknode)
             
             self.addChild(self.platform[i])
             self.addChild( self.backgroundsTree[i])
             self.addChild( self.backgroundsMountain[i])
             self.addChild( self.backgroundsCloud[i])
             
-            posicaoX = posicaoX + self.sizeOfScene.width
+            lastBackgoundPostionX = lastBackgoundPostionX + self.sizeOfScene.width
+            lastPlatformePositionX = platformeTupla.lastPosition
 
         }
-        
-        self.generatePlatform(stageName)
-
     }
     
     func deleteWorld(){
@@ -239,12 +239,12 @@ class WorldLayer: SKNode {
         
     }
     
-    func generatePlatform(stageName: String) -> SKNode{
+    func generatePlatform(stageName: String , lastPostion: CGFloat) -> (SKNode , CGFloat){
         
         let platformerLayer = SKNode()
         let scale = CGFloat(0.3)
         let walls = RandomGenerator.getWalls(quantity: 10)
-        var positionX = CGFloat(500)
+        var positionX = lastPostion
         var positionY: CGFloat
         
         for node in walls{
@@ -310,7 +310,7 @@ class WorldLayer: SKNode {
         }
         
         
-        return platformerLayer
+        return (platformerLayer , positionX)
         
     }
     

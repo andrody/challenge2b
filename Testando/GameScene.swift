@@ -22,7 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDelegate
 
          self.world = WorldLayer(sceneSize: self.size)
         world!.startNewWorld(stageName: "stageOne")
-        self.world!.setScale(0.7)
+        self.world!.setScale(0.3)
 
         self.addChild(world!)
         self.addChild(poring)
