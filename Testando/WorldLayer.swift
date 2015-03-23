@@ -240,35 +240,71 @@ class WorldLayer: SKNode {
     func generatePlatform(stageName: String) -> SKNode{
         
         let platformerLayer = SKNode()
+        let scale = CGFloat(0.3)
         let walls = RandomGenerator.getWalls(quantity: 10)
         var positionX = CGFloat(500)
         var positionY: CGFloat
         
         
+        
         for node in walls{
             
-            let wallNode = SKSpriteNode(texture: SKTexture(imageNamed: "\(stageName)Floor"))
-            wallNode.anchorPoint = CGPoint(x: 0, y: 0.5)
-            wallNode.setScale(0.2)
+            let wallNode = SKNode()
+            wallNode.setScale(scale)
             
-           // println("\(node.distance)")
+            for (var i = 0; i <= node.height ; i++ ) {
+            
+                let blockNode = SKSpriteNode(texture: SKTexture(imageNamed: "textura"))
+                blockNode.anchorPoint = CGPoint(x: 0.5, y: 0)
+                
+                blockNode.physicsBody = SKPhysicsBody(rectangleOfSize: blockNode.size, center: CGPoint(x:0, y: blockNode.size.height/2))
+                blockNode.physicsBody?.dynamic = false
+                blockNode.physicsBody?.affectedByGravity = false
+                
+                // println("\(node.distance)")
+                
+                //if(node.direction == 1){
+                    
+                    //blockNode.zRotation = degreesToRadians(90)
+                  //  positionY = self.sizeOfScene.height - blockNode.size.height * CGFloat(i)
+                    
+                    
+                //}
+                //else{
+                    
+                    //blockNode.zRotation = degreesToRadians(-90)
+                    
+                    
+                //}
+                
+                positionY = blockNode.size.height * CGFloat(i)
+                
+                
+                blockNode.position = CGPoint(x: positionX, y: positionY )
+                
+                wallNode.addChild(blockNode)
+            }
+            
+            var wallPositionY : CGFloat
             
             if(node.direction == 1){
                 
-                wallNode.zRotation = degreesToRadians(90)
-                positionY = 600
+                positionY = self.sizeOfScene.height - CGFloat(node.height) * CGFloat(233) * scale
+                
                 
             }
             else{
                 
-                wallNode.zRotation = degreesToRadians(-90)
-                positionY = 300
+                positionY = 0
                 
             }
             
             wallNode.position = CGPoint(x: positionX, y: positionY )
+
             
             positionX = positionX + CGFloat(node.distance)
+
+            
             
             self.platformerLayer.addChild(wallNode)
             

@@ -14,8 +14,8 @@ let MAX_BLOCKS_WALL :UInt32 = 10
 struct Wall {
     var height: Int = 0
     var direction: Int = 0
-    var distance: Int = 0
-    var safe_areas: [[Int]]
+    var distance: CGFloat = 0
+    var safe_areas: [(Int, Int)]
 }
 
 class RandomGenerator {
@@ -24,9 +24,9 @@ class RandomGenerator {
         
         let height = Int(arc4random_uniform(MAX_BLOCKS_WALL))
         let direction = Int(arc4random_uniform(2))
-        let distance = Int(arc4random_uniform(MAX_BLOCKS_WALL/2))
+        let distance = CGFloat(arc4random_uniform(MAX_BLOCKS_WALL/3)) * CGFloat(233.0) * CGFloat(0.3)
         let safe_areas = [
-            [  Int(arc4random_uniform(height + 1)), Int(arc4random_uniform(3))  ]
+            (  Int(arc4random_uniform(height + 1)), Int(arc4random_uniform(3))  )
         ]
         
         let w = Wall(height: height, direction: direction, distance: distance, safe_areas: safe_areas)
