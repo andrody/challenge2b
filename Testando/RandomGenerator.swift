@@ -10,6 +10,9 @@ import Foundation
 import SpriteKit
 
 let MAX_BLOCKS_WALL :UInt32 = 10
+let MIN_BLOCKS_DIS : CGFloat = CGFloat(3) * CGFloat(233) * CGFloat(0.3)
+
+
 
 struct Wall {
     var height: Int = 0
@@ -24,7 +27,7 @@ class RandomGenerator {
         
         let height = Int(arc4random_uniform(MAX_BLOCKS_WALL))
         let direction = Int(arc4random_uniform(2))
-        let distance = CGFloat(arc4random_uniform(MAX_BLOCKS_WALL/3)) * CGFloat(233.0) * CGFloat(0.3)
+        let distance = CGFloat(arc4random_uniform(MAX_BLOCKS_WALL/2)) * CGFloat(233.0) * CGFloat(0.3) + MIN_BLOCKS_DIS
         let safe_areas = [
             (  Int(arc4random_uniform(height + 1)), Int(arc4random_uniform(3))  )
         ]

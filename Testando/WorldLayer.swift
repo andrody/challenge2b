@@ -256,6 +256,7 @@ class WorldLayer: SKNode {
             
             let wallNode = SKNode()
             wallNode.setScale(scale)
+
             
             for (var i = 0; i <= node.height ; i++ ) {
             
