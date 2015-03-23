@@ -35,15 +35,20 @@ class WorldLayer: SKNode {
     var lastBackgoundPostionX: CGFloat = 0.0
     var lastPlatformePositionX: CGFloat = 500.0
     
+    //PORING
+    let poring = Poring(atPosition: CGPoint(x: 200, y: 300), texture: SKTexture(imageNamed: "poring"))
+    let poringLayer = SKNode()
     
     //INIT
     init(sceneSize: CGSize){
         
         self.sizeOfScene = sceneSize
+
         
         super.init()
         
-        //self.addChild(platformerLayer)
+        self.poringLayer.addChild(poring)
+        self.addChild(poringLayer)
         self.addChild(camera)
  
     }
@@ -335,40 +340,34 @@ class WorldLayer: SKNode {
         return floor
 
     }
-    
-    //TEST
-    func move(#amountToMoveX: CGFloat , amountToMoveY: CGFloat , withPoring: Bool){
         
-        
-        
-        
-    }
-    
-    
     func moveWorld(#amountTomove: CGFloat , withPoring: Bool){
-        
-        let moveTrees = SKAction.moveBy(CGVector(dx: amountTomove, dy: 0), duration: 1)
-        let moveMountains = SKAction.moveBy(CGVector(dx: amountTomove + 30, dy: 0), duration: 1)
-        let moveClounds = SKAction.moveBy(CGVector(dx: amountTomove , dy: 0), duration: 1)
-        let movePoringLayer = SKAction.moveBy(CGVector(dx: amountTomove * -1 , dy: 0), duration: 1)
         
         for node in self.backgroundsTree{
             
-            node.removeAllActions()
-            node.runAction(moveTrees, withKey: "moveTree")
+            node.position.x = node.position.x + amountTomove + 4
+            
         }
         
         for node in self.backgroundsMountain{
             
-            node.removeAllActions()
-            node.runAction(moveMountains)
+            node.position.x = node.position.x + amountTomove + 8
+            
         }
         
         for node in self.backgroundsCloud{
             
-            node.removeAllActions()
-            node.runAction(moveClounds)
+            node.position.x = node.position.x + amountTomove + 10
+            
         }
+        
+        for node in self.platform{
+            
+            node.position.x = node.position.x + amountTomove
+            
+        }
+        
+        self.poringLayer.position.x = self.poringLayer.position.x + amountTomove
         
         
        // self.platformerLayer.runAction(moveTrees)

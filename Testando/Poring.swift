@@ -31,6 +31,7 @@ class Poring: SKSpriteNode {
         let colisyonCategories = CollisionCategory()
         
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.size)
+        self.physicsBody?.allowsRotation = false
         self.physicsBody?.dynamic = true
         self.physicsBody?.affectedByGravity = true
         self.physicsBody?.friction = 1.0

@@ -11,7 +11,6 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDelegate {
     
     var world: WorldLayer?
-    let poring = Poring(atPosition: CGPoint(x: 200, y: 300), texture: SKTexture(imageNamed: "poring"))
 
     var initialTapPosition = CGPoint()
     var finalTapPosition = CGPoint()
@@ -22,10 +21,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDelegate
 
          self.world = WorldLayer(sceneSize: self.size)
         world!.startNewWorld(stageName: "stageOne")
-        self.world!.setScale(0.3)
+        //self.world!.setScale(0.3)
 
         self.addChild(world!)
-        self.addChild(poring)
     
         
         
@@ -74,7 +72,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDelegate
             }
             
             
-            self.poring.movePoring(amountToMoveX: speedX * 2, amountToMoveY: speedY * 2)
+            self.world!.poring.movePoring(amountToMoveX: speedX * 2, amountToMoveY: speedY * 2)
         }
     }
     
@@ -83,6 +81,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDelegate
     override func update(currentTime: CFTimeInterval) {
         
 
+        self.world!.poring.antPosition = self.world!.poring.currentPosition
+        self.world!.poring.currentPosition = self.world!.poring.position
+        
+        if(self.world!.poring.position.x >= self.size.width / 2){
+            
+            let a = self.world!.poring.currentPosition.x - self.world!.poring.antPosition.x
+            
+            self.world!.moveWorld(amountTomove: -a, withPoring: true)
+            
+            
+        }
         
 
 
