@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Testando/SceneTesteUm.swift"
-            timestampString = "449439536.283239"
+            timestampString = "449440187.332586"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "446"
-            endingLineNumber = "446"
+            startingLineNumber = "448"
+            endingLineNumber = "448"
             landmarkName = "didBeginContact(_:)"
             landmarkType = "5">
          </BreakpointContent>

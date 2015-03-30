@@ -420,6 +420,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     
     func didBeginContact(contact: SKPhysicsContact) {
         
+        self.batiman.lookTo(self.batiman.eyes)
+        
         let bodyOne = contact.bodyA.node 
         let bodyTwo = contact.bodyB.node
         
@@ -447,6 +449,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                     }
                     else if(dirColision.dx < 0.0){
                         self.batiman.nail_right()
+                        self.batiman.lookTo(self.batiman.eyes, angle: -120)
                     }
                     else {
                         self.batiman.nail_down()

@@ -25,7 +25,7 @@ class WorldLayer: SKNode {
     var lastPlatformePositionX: CGFloat = 500.0
     
     //PORING
-    let batiman = Batiman(atPosition: CGPoint(x: 200, y: 300), texture: SKTexture(imageNamed: "poring"))
+    //let batiman = Batiman(atPosition: CGPoint(x: 200, y: 300), texture: SKTexture(imageNamed: "poring"))
     let batimanLayer = SKNode()
     
 
