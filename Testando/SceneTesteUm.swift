@@ -197,7 +197,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                 self.HUD?.moveButtonsInScreem()
             }
             
-            if(self.gameStarted){
+            if(self.gameStarted && !self.batiman.isDead){
                 
                 self.initialTapPosition = location
                 self.isDraging = true
@@ -223,7 +223,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         
-        if(self.isDraging == true && self.gameStarted == true){
+        if(self.isDraging == true && self.gameStarted == true && !self.batiman.isDead){
             
             let touch: AnyObject = touches.anyObject()!
             self.actualTouchLocation = touch.locationInNode(self)
@@ -261,7 +261,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
 
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         
-        if(self.isDraging == true && self.gameStarted == true && self.batiman.isMoving == false){
+        if(self.isDraging == true && self.gameStarted == true && self.batiman.isMoving == false && !self.batiman.isDead){
             
             self.isDraging = false
             self.batiman.isMoving = true
@@ -383,12 +383,22 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
             if(bodyOne?.physicsBody!.categoryBitMask == self.contactCatagories.batimanCategoryBitMask){
                 
             
-
-                //self.batiman.physicsBody?.applyImpulse(CGVectorMake(0, 9.8 * self.batiman.physicsBody!.mass))
+                
+                self.batiman.physicsBody?.applyImpulse(CGVectorMake(0, 9.8 * self.batiman.physicsBody!.mass))
                 
             }
             else{
                 if(self.batiman.isDead == false){
+                    
+                    if(self.batiman.movimentDirctionX == -1) {
+                        self.batiman.nail_right()
+                    }
+                    else if(self.batiman.movimentDirctionX == 1) {
+                        self.batiman.nail_left()
+                    }
+                    else if(self.batiman.movimentDirctionX == 0) {
+                        self.batiman.nail_down()
+                    }
                     
                     self.batiman.isMoving = false
                     self.batiman.IdleAnimation()

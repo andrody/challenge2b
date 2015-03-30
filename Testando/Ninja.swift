@@ -18,6 +18,10 @@ class Ninja: SKNode {
     var eyes : SKSpriteNode
     var spinning: SKSpriteNode
     
+    var body_text: SKTexture
+    var body_left_text: SKTexture
+    var body_right_text: SKTexture
+
     
     
     let dScale = CGFloat(0.1)
@@ -40,6 +44,10 @@ class Ninja: SKNode {
         self.back_eyes = SKSpriteNode(texture: SKTexture(imageNamed: back_eyes))
         self.eyes = SKSpriteNode(texture: SKTexture(imageNamed: eyes))
         self.spinning = SKSpriteNode(texture: SKTexture(imageNamed: spinning))
+        self.body_text = self.body.texture!
+        self.body_left_text = SKTexture(imageNamed: "nail_left")
+        self.body_right_text = SKTexture(imageNamed: "nail_right")
+
         
         super.init()
         
@@ -91,19 +99,19 @@ class Ninja: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func nail_right(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
+    func nail_right(){
         
-        self.body.texture = SKTexture(imageNamed: "nail_right")
+        self.body.texture = self.body_right_text
     }
     
-    func nail_left(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
+    func nail_left(){
         
-        self.body.texture = SKTexture(imageNamed: "nail_left")
+        self.body.texture = self.body_left_text
     }
     
-    func nail_down(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
+    func nail_down(){
         
-        self.body.texture = SKTexture(imageNamed: "nail_down")
+        self.body.texture = self.body_text
     }
     
     
