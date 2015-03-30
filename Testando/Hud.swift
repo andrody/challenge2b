@@ -21,11 +21,7 @@ class Hud: SKNode {
     
     let sceneSize: CGSize?
     
-    //TEMP
-    let setaEsquerda: SKSpriteNode?
-    let setaDireita: SKSpriteNode?
-    let bola: SKSpriteNode?
-    
+
     //POSITION
     var playButtonInScreemPosition: CGPoint?
     var playButtonOffScreemPosition: CGPoint?
@@ -43,24 +39,6 @@ class Hud: SKNode {
         super.init()
         
         self.sceneSize = sceneSize
-        
-        //TEMP
-        self.setaEsquerda = SKSpriteNode(imageNamed: "seta")
-        self.setaEsquerda!.zPosition = 99
-        self.setaEsquerda!.setScale(0.8)
-        self.setaEsquerda!.position = CGPointMake(-900, -400)
-        
-        self.setaDireita = SKSpriteNode(imageNamed: "seta2")
-        self.setaDireita!.zPosition = 99
-        self.setaDireita!.setScale(0.8)
-        self.setaDireita!.position = CGPointMake(-500, -400)
-        
-        self.bola = SKSpriteNode(imageNamed: "bola")
-        self.bola!.zPosition = 99
-        self.bola!.setScale(0.8)
-        self.bola!.position = CGPointMake(800, -400)
-        
-        /////////////////////
         
         self.playButton = SKSpriteNode(texture: SKTexture(imageNamed: "play"))
         self.playButton?.name = "playButton"

@@ -100,12 +100,6 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         self.addChild(HUD!.stageButton!)
         self.addChild(HUD!.pauseButton!)
         
-        //TEMP
-        self.addChild(self.HUD!.setaEsquerda!)
-        self.addChild(self.HUD!.setaDireita!)
-        self.addChild(self.HUD!.bola!)
-
-        
         self.HUD?.moveButtonsInScreem()
         
         //Animate batiman when him is still
