@@ -437,14 +437,18 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
             }
             else{
                 if(self.batiman.isDead == false){
-                    
-                    if(self.batiman.movimentDirctionX == -1) {
-                        self.batiman.nail_right()
-                    }
-                    else if(self.batiman.movimentDirctionX == 1) {
+                    let dirColision = contact.contactNormal
+
+                    println("dx : \(dirColision.dx)")
+                    println("dy : \(dirColision.dy)")
+
+                    if(dirColision.dx > 0.0){
                         self.batiman.nail_left()
                     }
-                    else if(self.batiman.movimentDirctionX == 0) {
+                    else if(dirColision.dx < 0.0){
+                        self.batiman.nail_right()
+                    }
+                    else {
                         self.batiman.nail_down()
                     }
                     
@@ -453,7 +457,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                     
                     self.batiman.physicsBody?.dynamic = false
                     
-                }
+                    }
 
 //                let a = SKPhysicsJointFixed.jointWithBodyA(bodyTwo.physicsBody, bodyB: bodyOne.physicsBody, anchor: u)
 //                
