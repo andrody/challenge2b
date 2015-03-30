@@ -12,7 +12,6 @@
 		39311E3D1ABE649100A9E1B5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39311E3C1ABE649100A9E1B5 /* Property List.plist */; };
 		3953C0841AC3720D00FE455D /* Batiman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953C0831AC3720D00FE455D /* Batiman.swift */; };
 		395709291AC3122C00AD530A /* SceneTesteUm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395709281AC3122C00AD530A /* SceneTesteUm.swift */; };
-		39A0386F1AC9C42C0021A943 /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A0386E1AC9C42C0021A943 /* CollisionCategory.swift */; };
 		39B6502A1ABCAAC100D159B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B650291ABCAAC100D159B7 /* AppDelegate.swift */; };
 		39B6502C1ABCAAC100D159B7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 39B6502B1ABCAAC100D159B7 /* GameScene.sks */; };
 		39B6502E1ABCAAC100D159B7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B6502D1ABCAAC100D159B7 /* GameScene.swift */; };
@@ -24,6 +23,7 @@
 		39E433A81ABDC25E00E01D10 /* WorldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E433A71ABDC25E00E01D10 /* WorldLayer.swift */; };
 		39F92C4B1AC5EB1C0085A83B /* Ninja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F92C4A1AC5EB1C0085A83B /* Ninja.swift */; };
 		39FB764C1AC63B9E00E2FAF8 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB764B1AC63B9E00E2FAF8 /* Hud.swift */; };
+		C50522F81AC9C6C4008D835B /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50522F71AC9C6C4008D835B /* CollisionCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		39311E3C1ABE649100A9E1B5 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		3953C0831AC3720D00FE455D /* Batiman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Batiman.swift; sourceTree = "<group>"; };
 		395709281AC3122C00AD530A /* SceneTesteUm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTesteUm.swift; sourceTree = "<group>"; };
-		39A0386E1AC9C42C0021A943 /* CollisionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollisionCategory.swift; path = "../../../../../Desktop/Estudo Sprite Kit/MeuJogoTesteUm/MeuJogoTesteUm/CollisionCategory.swift"; sourceTree = "<group>"; };
 		39B650241ABCAAC100D159B7 /* Testando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B650281ABCAAC100D159B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B650291ABCAAC100D159B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		39E433A71ABDC25E00E01D10 /* WorldLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldLayer.swift; sourceTree = "<group>"; };
 		39F92C4A1AC5EB1C0085A83B /* Ninja.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ninja.swift; sourceTree = "<group>"; };
 		39FB764B1AC63B9E00E2FAF8 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
+		C50522F71AC9C6C4008D835B /* CollisionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +93,8 @@
 				3953C0831AC3720D00FE455D /* Batiman.swift */,
 				39F92C4A1AC5EB1C0085A83B /* Ninja.swift */,
 				39FB764B1AC63B9E00E2FAF8 /* Hud.swift */,
+				C50522F71AC9C6C4008D835B /* CollisionCategory.swift */,
 				39311E3A1ABE46B900A9E1B5 /* RandomGenerator.swift */,
-				39A0386E1AC9C42C0021A943 /* CollisionCategory.swift */,
 				39B650311ABCAAC100D159B7 /* Main.storyboard */,
 				39B650341ABCAAC100D159B7 /* Images.xcassets */,
 				39B650361ABCAAC100D159B7 /* LaunchScreen.xib */,
@@ -159,7 +159,7 @@
 				TargetAttributes = {
 					39B650231ABCAAC100D159B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = V772LK5U25;
+						DevelopmentTeam = CC953577YZ;
 					};
 				};
 			};
@@ -204,7 +204,7 @@
 			files = (
 				39D383CD1AC8552A0081C40A /* InitialScene.swift in Sources */,
 				39311E3B1ABE46B900A9E1B5 /* RandomGenerator.swift in Sources */,
-				39A0386F1AC9C42C0021A943 /* CollisionCategory.swift in Sources */,
+				C50522F81AC9C6C4008D835B /* CollisionCategory.swift in Sources */,
 				3953C0841AC3720D00FE455D /* Batiman.swift in Sources */,
 				39B6502E1ABCAAC100D159B7 /* GameScene.swift in Sources */,
 				39F92C4B1AC5EB1C0085A83B /* Ninja.swift in Sources */,

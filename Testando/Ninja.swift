@@ -11,9 +11,8 @@ import SpriteKit
 
 
 class Ninja: SKNode {
-   
+    
     var body: SKSpriteNode
-    //var head : SKSpriteNode
     var mask : SKSpriteNode
     var back_eyes : SKSpriteNode
     var eyes : SKSpriteNode
@@ -22,13 +21,13 @@ class Ninja: SKNode {
     
     
     let dScale = CGFloat(0.1)
-
+    
     var currentPosition = CGPointZero
     var antPosition = CGPointZero
     
     var isJumping = false
     var isMoving =  false
-    var isDead = false
+    var isDead =  false
     var movimentDirctionX: Int8 = 0
     var movimentDirectionY: Int8 = 0
     
@@ -62,7 +61,7 @@ class Ninja: SKNode {
         
         //Phy
         let colisyonCategories = CollisionCategory()
-
+        
         self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.body.size.width * 0.45, self.body.size.height * 0.45))
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.dynamic = true
@@ -83,12 +82,34 @@ class Ninja: SKNode {
         self.addChild(self.eyes)
         self.addChild(self.spinning)
         
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func nail_right(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
+        
+        self.body.texture = SKTexture(imageNamed: "nail_right")
+    }
+    
+    func nail_left(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
+        
+        self.body.texture = SKTexture(imageNamed: "nail_left")
+    }
+    
+    func nail_down(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
+        
+        self.body.texture = SKTexture(imageNamed: "nail_down")
+    }
+    
+    
+    
+    
+    
     
     func moveChar(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
         
@@ -128,19 +149,19 @@ class Ninja: SKNode {
     
     
     func stretch(scale : CGFloat = 1.0, time : CGFloat = 0.1) {
-       
+        
         animationAngleDefault()
         
         let stretchCharY = SKAction.scaleYTo(dScale - scale, duration: NSTimeInterval(time))
         let stretchCharX = SKAction.scaleXTo(dScale + scale, duration: NSTimeInterval(time))
-
+        
         self.runAction(stretchCharX)
         self.runAction(stretchCharY)
-
+        
     }
     
     func stretchYRepeat(node : SKNode, scale : CGFloat, defaultScale: CGFloat ,time : CGFloat = 0.1 ){
-
+        
         let stretchGo = SKAction.scaleYTo(scale, duration: NSTimeInterval(time))
         
         let stretchDefault = SKAction.scaleYTo(defaultScale, duration: NSTimeInterval(time))
@@ -151,7 +172,7 @@ class Ninja: SKNode {
     }
     
     func stretchXRepeat(node : SKNode, scale : CGFloat, defaultScale: CGFloat ,time : CGFloat = 0.1 ){
-
+        
         let stretchGo = SKAction.scaleXTo(scale, duration: NSTimeInterval(time))
         
         let stretchDefault = SKAction.scaleXTo(defaultScale, duration: NSTimeInterval(time))
@@ -173,7 +194,7 @@ class Ninja: SKNode {
     }
     
     func animationAngleDefault () {
-    
+        
         self.body.hidden = false
         self.mask.hidden = false
         self.eyes.hidden = false
@@ -199,7 +220,7 @@ class Ninja: SKNode {
     func movePoring(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
         
         println("\(self.physicsBody?.mass)")
-
+        
         self.physicsBody?.applyImpulse(CGVectorMake(amountToMoveX * 100 , amountToMoveY * 100))
         self.isMoving = true
     }

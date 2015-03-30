@@ -274,17 +274,17 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
             var speedY = self.initialTapPosition.y - self.finalTapPosition.y
             
             if(speedX >= 300){
-                speedX = 1300
+                speedX = 400
             }
             else if(speedX <= -300){
-                speedX = -1300
+                speedX = -400
             }
             
             if(speedY >= 300){
-                speedY = 300
+                speedY = 400
             }
             else if(speedY <= -300){
-                speedY = -300
+                speedY = -400
             }
             
             self.batiman.physicsBody?.dynamic = true
