@@ -273,24 +273,72 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
             var speedX = self.initialTapPosition.x - self.finalTapPosition.x
             var speedY = self.initialTapPosition.y - self.finalTapPosition.y
             
-            if(speedX >= 300){
-                speedX = 400
-            }
-            else if(speedX <= -300){
-                speedX = -400
-            }
             
-            if(speedY >= 300){
-                speedY = 400
-            }
-            else if(speedY <= -300){
-                speedY = -400
-            }
+            
+            let speed = minMaxSpeed(speedX, sY: speedY)
+            
             
             self.batiman.physicsBody?.dynamic = true
-            self.batiman.moveChar(amountToMoveX: speedX * 1 , amountToMoveY: speedY * 1 )
+            self.batiman.moveChar(amountToMoveX: speed.0, amountToMoveY: speed.1)
 
         }
+    }
+    
+    func minMaxSpeed(sX : CGFloat, sY : CGFloat) -> (CGFloat,CGFloat) {
+        var minD :CGFloat = 150.0
+        var maxD : CGFloat = 400.0
+        var fSX : CGFloat = sX
+        var fSY : CGFloat = sY
+        
+        //For X
+        if(sX > 0){
+            
+            if(sX < minD){
+                fSX = minD
+            }
+            else if(sX > maxD) {
+                fSX = maxD
+            }
+            
+        }
+            
+        else if(sX < 0){
+            
+            if(sX > -minD){
+                fSX = -minD
+            }
+            else if(sX < -maxD) {
+                fSX = -maxD
+            }
+            
+        }
+        
+        //For Y
+        if(sY > 0){
+            
+            if(sY < minD){
+                fSY = minD
+            }
+            else if(sY > maxD) {
+                fSY = maxD
+            }
+            
+        }
+            
+        else if(sY < 0){
+            
+            if(sY > -minD){
+                fSY = -minD
+            }
+            else if(sY < -maxD) {
+                fSY = -maxD
+            }
+            
+        }
+        
+        return (fSX, fSY)
+        
+        
     }
     
     override func update(currentTime: CFTimeInterval) {
