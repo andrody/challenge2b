@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39B650231ABCAAC100D159B7"
-               BuildableName = "Testando.app"
-               BlueprintName = "Testando"
-               ReferencedContainer = "container:Testando.xcodeproj">
+               BuildableName = "ningoo.temp_caseinsensitive_rename.app"
+               BlueprintName = "Ninja Goo"
+               ReferencedContainer = "container:Ninja Goo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "39B6503C1ABCAAC100D159B7"
                BuildableName = "TestandoTests.xctest"
                BlueprintName = "TestandoTests"
-               ReferencedContainer = "container:Testando.xcodeproj">
+               ReferencedContainer = "container:Ninja Goo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "39B6503C1ABCAAC100D159B7"
                BuildableName = "TestandoTests.xctest"
                BlueprintName = "TestandoTests"
-               ReferencedContainer = "container:Testando.xcodeproj">
+               ReferencedContainer = "container:Ninja Goo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39B650231ABCAAC100D159B7"
-            BuildableName = "Testando.app"
-            BlueprintName = "Testando"
-            ReferencedContainer = "container:Testando.xcodeproj">
+            BuildableName = "ningoo.temp_caseinsensitive_rename.app"
+            BlueprintName = "Ninja Goo"
+            ReferencedContainer = "container:Ninja Goo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,13 +72,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39B650231ABCAAC100D159B7"
-            BuildableName = "Testando.app"
-            BlueprintName = "Testando"
-            ReferencedContainer = "container:Testando.xcodeproj">
+            BuildableName = "ningoo.temp_caseinsensitive_rename.app"
+            BlueprintName = "Ninja Goo"
+            ReferencedContainer = "container:Ninja Goo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -90,13 +91,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39B650231ABCAAC100D159B7"
-            BuildableName = "Testando.app"
-            BlueprintName = "Testando"
-            ReferencedContainer = "container:Testando.xcodeproj">
+            BuildableName = "ningoo.temp_caseinsensitive_rename.app"
+            BlueprintName = "Ninja Goo"
+            ReferencedContainer = "container:Ninja Goo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

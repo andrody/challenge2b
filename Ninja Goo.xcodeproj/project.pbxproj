@@ -30,7 +30,7 @@
 		39311E3A1ABE46B900A9E1B5 /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
 		39311E3C1ABE649100A9E1B5 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		395709281AC3122C00AD530A /* SceneTesteUm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTesteUm.swift; sourceTree = "<group>"; };
-		39B650241ABCAAC100D159B7 /* Testando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testando.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B650241ABCAAC100D159B7 /* Ninja Goo.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B650281ABCAAC100D159B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B650291ABCAAC100D159B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B6502B1ABCAAC100D159B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		39B650251ABCAAC100D159B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39B650241ABCAAC100D159B7 /* Testando.app */,
+				39B650241ABCAAC100D159B7 /* Ninja Goo.temp_caseinsensitive_rename.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39B650231ABCAAC100D159B7 /* Testando */ = {
+		39B650231ABCAAC100D159B7 /* Ninja Goo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39B650471ABCAAC100D159B7 /* Build configuration list for PBXNativeTarget "Testando" */;
+			buildConfigurationList = 39B650471ABCAAC100D159B7 /* Build configuration list for PBXNativeTarget "Ninja Goo" */;
 			buildPhases = (
 				39B650201ABCAAC100D159B7 /* Sources */,
 				39B650211ABCAAC100D159B7 /* Frameworks */,
@@ -140,9 +140,9 @@
 			);
 			dependencies = (
 			);
-			name = Testando;
+			name = "Ninja Goo";
 			productName = Testando;
-			productReference = 39B650241ABCAAC100D159B7 /* Testando.app */;
+			productReference = 39B650241ABCAAC100D159B7 /* Ninja Goo.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +152,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0620;
-				ORGANIZATIONNAME = "Jose Mauricio Barroso Monteiro Junior";
+				ORGANIZATIONNAME = "Koruja Studios";
 				TargetAttributes = {
 					39B650231ABCAAC100D159B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -160,7 +160,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 39B6501F1ABCAAC100D159B7 /* Build configuration list for PBXProject "Testando" */;
+			buildConfigurationList = 39B6501F1ABCAAC100D159B7 /* Build configuration list for PBXProject "Ninja Goo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -173,7 +173,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39B650231ABCAAC100D159B7 /* Testando */,
+				39B650231ABCAAC100D159B7 /* Ninja Goo */,
 			);
 		};
 /* End PBXProject section */
@@ -322,7 +322,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Testando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ninja Goo";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -337,7 +337,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Testando/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ninja Goo";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -345,7 +345,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39B6501F1ABCAAC100D159B7 /* Build configuration list for PBXProject "Testando" */ = {
+		39B6501F1ABCAAC100D159B7 /* Build configuration list for PBXProject "Ninja Goo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39B650451ABCAAC100D159B7 /* Debug */,
@@ -354,7 +354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39B650471ABCAAC100D159B7 /* Build configuration list for PBXNativeTarget "Testando" */ = {
+		39B650471ABCAAC100D159B7 /* Build configuration list for PBXNativeTarget "Ninja Goo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39B650481ABCAAC100D159B7 /* Debug */,
