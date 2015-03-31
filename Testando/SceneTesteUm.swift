@@ -18,7 +18,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     //Batiman
     //let batiman = Batiman(atPosition: CGPoint(x: -850, y: 400), texture: SKTexture(imageNamed: "BONECO"))
     
-    let batiman = Ninja(atPosition: CGPoint(x: -850, y: 900) , body: "body", mask: "mask", back_eyes: "back_eyes", eyes: "eyes", spinning: "spinning")
+    let batiman = Ninja(atPosition: CGPoint(x: -850, y: 900) , body: "body", mask: "mask_blue", back_eyes: "back_eyes", eyes: "eyes", spinning: "spinning")
     let batimanLayer = SKNode()
     
     //Mountais
@@ -96,7 +96,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         self.HUD?.zPosition = 90
         self.addChild(HUD!.playButton!)
         self.addChild(HUD!.logo!)
-        self.addChild(HUD!.pointsBoard!)
+        //self.addChild(HUD!.pointsBoard!)
         self.addChild(HUD!.stageButton!)
         self.addChild(HUD!.pauseButton!)
         
@@ -132,7 +132,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         self.batimanCurrentPositionScene = self.worldLayer.convertPoint(self.batiman.position, fromNode: self)
         self.batimanAntPositionScene = self.batimanCurrentPositionScene
         
-        
+        self.batiman.moveChar(amountToMoveX: 0, amountToMoveY: -100)
+
 
     }
     

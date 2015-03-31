@@ -45,10 +45,11 @@ class Hud: SKNode {
         self.playButton?.anchorPoint = CGPointMake(0.5, 0.5)
         self.playButton?.zPosition = 90
         
-        self.logo = SKSpriteNode(texture: SKTexture(imageNamed: "nome"))
+        self.logo = SKSpriteNode(texture: SKTexture(imageNamed: "ninja_goo"))
         self.logo?.name = "logo"
         self.logo?.anchorPoint = CGPointMake(0.5, 0)
         self.logo?.zPosition = 90
+        self.logo?.setScale(0.4)
         
         let a = UIFont(name: "Chalkduster", size: 14)
         
@@ -65,10 +66,12 @@ class Hud: SKNode {
         self.stageButton?.anchorPoint = CGPointMake(0 , 0)
         self.stageButton?.zPosition = 90
         
-        self.pauseButton = SKSpriteNode(texture: SKTexture(imageNamed: "fases"))
+        self.pauseButton = SKSpriteNode(texture: SKTexture(imageNamed: "pause"))
         self.pauseButton?.name = "pauseButton"
         self.pauseButton?.anchorPoint = CGPointMake(0 , 0)
         self.pauseButton?.zPosition = 90
+        self.pauseButton?.setScale(0.6)
+        self.pauseButton?.alpha = 0.7
 
         
 //        self.optionsButton = SKSpriteNode(texture: SKTexture(imageNamed: "play"))
@@ -80,10 +83,10 @@ class Hud: SKNode {
 //        self.gamecenterButton?.anchorPoint = CGPointMake(0.5, 0.5)
 
         //Init positions
-        playButtonInScreemPosition = self.convertPointToIpadUp(CGPointMake(0, 90))
-        playButtonOffScreemPosition = self.convertPointToIpadUp(CGPointMake(self.sceneSize!.width/2 + 300, 90))
+        playButtonInScreemPosition = self.convertPointToIpadUp(CGPointMake(0, -80))
+        playButtonOffScreemPosition = self.convertPointToIpadUp(CGPointMake(self.sceneSize!.width/2 + 300, 0))
         
-        logoButtonInScreemPosition = self.convertPointToIpadUp(CGPointMake(0, sceneSize.height/2 - self.logo!.size.height))
+        logoButtonInScreemPosition = self.convertPointToIpadUp(CGPointMake(0, sceneSize.height/2 - self.logo!.size.height*1.8))
         logoButtonOffScreemPosition = self.convertPointToIpadUp(CGPointMake(0, self.sceneSize!.height))
         
         stageButtonInScreemPosition = self.convertPointToIpadDown(CGPointMake(sceneSize.width/2 - self.stageButton!.size.width - 200, -sceneSize.height/2 + self.stageButton!.size.height + 10))
