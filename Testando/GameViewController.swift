@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import GameKit
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
@@ -45,8 +46,20 @@ class GameViewController: UIViewController {
             scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
+            
         }
+        
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     override func shouldAutorotate() -> Bool {
         return true

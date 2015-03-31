@@ -8,8 +8,12 @@
 
 import UIKit
 import SpriteKit
+import GameKit
 
-class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDelegate {
+class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDelegate, GKGameCenterControllerDelegate {
+    
+    var score:Int = 0
+
     
     //Positions
     var lastBackgoundPostionX: CGFloat = 0.0
@@ -64,6 +68,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     var gameStarted = false
     
     var HUD: Hud?
+    
+    
 
     
     
@@ -71,6 +77,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     
     override func didMoveToView(view: SKView) {
         
+        
+        authenticateLocalPlayer()
         //Scene propetis
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVectorMake(0, -40)
@@ -88,6 +96,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         self.worldLayer.addChild(self.batiman)
         self.worldLayer.addChild(self.camera)
         self.addChild(self.worldLayer)
+        
+        
         
         //MUSIC
         //var music = SKAction.playSoundFileNamed("music2.mp3", waitForCompletion: true)
@@ -135,9 +145,69 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         self.batimanAntPositionScene = self.batimanCurrentPositionScene
         
         self.batiman.moveChar(amountToMoveX: 0, amountToMoveY: -100)
-
+        
+       // var viewCtrl =
+        
 
     }
+    
+    //initiate gamecenter
+    func authenticateLocalPlayer(){
+        
+        var localPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+            
+            if (viewController != nil) {
+                self.view!.window!.rootViewController!.presentViewController(viewController, animated: true, completion: nil)
+            }
+                
+            else {
+                println((GKLocalPlayer.localPlayer().authenticated))
+            }
+        }
+        
+    }
+    
+    //send high score to leaderboard
+    func saveHighscore(score:Int) {
+        
+        //check if user is signed in
+        if GKLocalPlayer.localPlayer().authenticated {
+            
+            var scoreReporter = GKScore(leaderboardIdentifier: "ningooleaderboard") //leaderboard id here
+            
+            scoreReporter.value = Int64(score) //score variable here (same as above)
+            
+            var scoreArray: [GKScore] = [scoreReporter]
+            
+            GKScore.reportScores(scoreArray, {(error : NSError!) -> Void in
+                if error != nil {
+                    println("error")
+                }
+            })
+            
+        }
+        
+    }
+    
+    
+    //shows leaderboard screen
+    func showLeader() {
+        var vc = self.view?.window?.rootViewController
+        var gc = GKGameCenterViewController()
+        gc.gameCenterDelegate = self
+        vc?.presentViewController(gc, animated: true, completion: nil)
+    }
+    
+    
+    //hides leaderboard screen
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!)
+    {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+
     
 //    - (CGPoint)convertPoint:(CGPoint)point
 //    {
@@ -164,11 +234,14 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     func pauseGame(){
         
         
+
         
     }
     
     func restart(){
 
+        self.saveHighscore(self.score)
+        self.score = 0
         self.batiman.getRandomMask()
         self.batiman.isMoving = true
         self.batiman.physicsBody?.collisionBitMask = 0
@@ -204,6 +277,11 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                 
                 self.gameStarted = false
                 self.HUD?.moveButtonsInScreem()
+            }
+            
+            if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
+                
+                self.showLeader()
             }
             
             if(self.gameStarted && !self.batiman.isDead){
@@ -289,6 +367,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
             
             self.batiman.physicsBody?.dynamic = true
             self.batiman.moveChar(amountToMoveX: speed.0, amountToMoveY: speed.1)
+            
+            self.score += 1
 
         }
     }
@@ -520,9 +600,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     }
     
     
-    func teste(){
-        
-        
-    }
+    
+    
 }
 
