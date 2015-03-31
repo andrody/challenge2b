@@ -174,7 +174,7 @@ class Ninja: SKNode {
         spin()
         
         self.physicsBody?.applyImpulse(CGVectorMake(amountToMoveX , amountToMoveY))
-        let testesound = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true)
+        let testesound = SKAction.playSoundFileNamed("2.wav", waitForCompletion: true)
         
         self.runAction(testesound)
     }
