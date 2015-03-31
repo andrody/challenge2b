@@ -240,6 +240,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     
     func restart(){
 
+        println("restart")
+
         self.saveHighscore(self.score)
         self.score = 0
         self.batiman.getRandomMask()
@@ -247,23 +249,34 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         self.batiman.physicsBody?.collisionBitMask = 0
         self.batiman.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         let moveBatiman = SKAction.moveTo(CGPoint(x: -850, y: 600), duration: 0.5)
+
         let block = SKAction.runBlock({ self.changeBatimanCollisionCategory() })
         
-        self.batiman.runAction( SKAction.sequence([moveBatiman , block]))
+        //self.batiman.spin()
+        
+
+        
+        self.batiman.runAction( SKAction.sequence([moveBatiman, block]))
         let testesound = SKAction.playSoundFileNamed("mola.wav", waitForCompletion: true)
         
         self.runAction(testesound)
         
         
-        //self.batimanLayer.runAction( SKAction.sequence([moveBatiman , block]))
     }
     
     func changeBatimanCollisionCategory(){
         
+        println("chegou no bloco")
         self.batiman.physicsBody?.collisionBitMask = 2 | 4
         self.batiman.isMoving = false
         self.batiman.isDead = false
-        
+        self.batiman.physicsBody?.applyImpulse(CGVectorMake(0 , -9.8 * self.batiman.physicsBody!.mass))
+        let moveBatiman = SKAction.moveTo(CGPoint(x: -850, y: -200), duration: 0.3)
+
+        //let moveBatiman = SKAction.moveTo(CGPoint(x: -850, y: 600), duration: 0.5)
+
+        self.batiman.runAction(moveBatiman)
+
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -519,19 +532,20 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         
         if( (bodyOne?.physicsBody?.categoryBitMask == self.contactCatagories.batimanCategoryBitMask && bodyTwo?.physicsBody?.categoryBitMask == self.contactCatagories.platformCategoryBitMask) || (bodyOne?.physicsBody?.categoryBitMask == self.contactCatagories.platformCategoryBitMask && bodyTwo?.physicsBody?.categoryBitMask == self.contactCatagories.batimanCategoryBitMask)  ){
         
-            //if(bodyOne?.physicsBody!.categoryBitMask == self.contactCatagories.batimanCategoryBitMask){
+            if(bodyOne?.physicsBody!.categoryBitMask == self.contactCatagories.batimanCategoryBitMask){
                 
             
-                
+                println("forca pra baixo")
+
                 //self.batiman.physicsBody?.applyImpulse(CGVectorMake(0, 9.8 * self.batiman.physicsBody!.mass))
                 
-           // }
-            //else{
+           }
+            else{
                 if(self.batiman.isDead == false){
                     let dirColision = contact.contactNormal
 
-                    println("dx : \(dirColision.dx)")
-                    println("dy : \(dirColision.dy)")
+                    //println("dx : \(dirColision.dx)")
+                    //println("dy : \(dirColision.dy)")
 
                     if(dirColision.dx > 0.0){
                         self.batiman.nail_left()
@@ -555,7 +569,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
 //                
 //                self.physicsWorld.addJoint(a)
                 
-           // }
+            }
         }
         else{
             

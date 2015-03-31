@@ -34,8 +34,8 @@ class GameViewController: UIViewController {
         if let scene = SceneTesteUm.unarchiveFromFile("SceneTesteUm") as? SceneTesteUm {
             // Configure the view.
             let skView = self.view as SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+            //skView.showsFPS = true
+            //skView.showsNodeCount = true
             //skView.showsPhysics = true
             //let a = scene.
             
