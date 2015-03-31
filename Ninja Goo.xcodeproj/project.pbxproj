@@ -39,7 +39,7 @@
 		39311E3A1ABE46B900A9E1B5 /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
 		39311E3C1ABE649100A9E1B5 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		395709281AC3122C00AD530A /* SceneTesteUm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTesteUm.swift; sourceTree = "<group>"; };
-		39B650241ABCAAC100D159B7 /* Ninja Goo.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Ninja Goo.temp_caseinsensitive_rename.app"; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B650241ABCAAC100D159B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B650281ABCAAC100D159B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B650291ABCAAC100D159B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B6502B1ABCAAC100D159B7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		39B650251ABCAAC100D159B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39B650241ABCAAC100D159B7 /* Ninja Goo.temp_caseinsensitive_rename.app */,
+				39B650241ABCAAC100D159B7 /* Ninja Goo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 			);
 			name = "Ninja Goo";
 			productName = Testando;
-			productReference = 39B650241ABCAAC100D159B7 /* Ninja Goo.temp_caseinsensitive_rename.app */;
+			productReference = 39B650241ABCAAC100D159B7 /* Ninja Goo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 				TargetAttributes = {
 					39B650231ABCAAC100D159B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 					};
 				};
 			};
