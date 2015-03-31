@@ -89,7 +89,9 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         self.worldLayer.addChild(self.camera)
         self.addChild(self.worldLayer)
         
-
+        //MUSIC
+        var music = SKAction.playSoundFileNamed("music2.mp3", waitForCompletion: true)
+        self.runAction(SKAction.repeatActionForever(music))
         
         //Adding HUD
         self.HUD = Hud(sceneSize: self.size)
@@ -175,6 +177,9 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         let block = SKAction.runBlock({ self.changeBatimanCollisionCategory() })
         
         self.batiman.runAction( SKAction.sequence([moveBatiman , block]))
+        let testesound = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true)
+        
+        self.runAction(testesound)
         
         
         //self.batimanLayer.runAction( SKAction.sequence([moveBatiman , block]))
