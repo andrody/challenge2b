@@ -246,7 +246,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                 }
             }
             
-            self.batiman.stretch(scale: abs(distance) * 0.03 / 300, time: 0)
+            self.batiman.stretch(scale: abs(distance) * 0.23 / 300, time: 0)
             
             var direction = self.batiman.radiansToDegree(-1 * atan(speedX / speedY))
             
@@ -285,8 +285,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     }
     
     func minMaxSpeed(sX : CGFloat, sY : CGFloat) -> (CGFloat,CGFloat) {
-        var minD :CGFloat = 150.0
-        var maxD : CGFloat = 400.0
+        var minD :CGFloat = 100.0
+        var maxD : CGFloat = 350.0
         var fSX : CGFloat = sX
         var fSY : CGFloat = sY
         
@@ -430,14 +430,14 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         
         if( (bodyOne?.physicsBody?.categoryBitMask == self.contactCatagories.batimanCategoryBitMask && bodyTwo?.physicsBody?.categoryBitMask == self.contactCatagories.platformCategoryBitMask) || (bodyOne?.physicsBody?.categoryBitMask == self.contactCatagories.platformCategoryBitMask && bodyTwo?.physicsBody?.categoryBitMask == self.contactCatagories.batimanCategoryBitMask)  ){
         
-            if(bodyOne?.physicsBody!.categoryBitMask == self.contactCatagories.batimanCategoryBitMask){
+            //if(bodyOne?.physicsBody!.categoryBitMask == self.contactCatagories.batimanCategoryBitMask){
                 
             
                 
-                self.batiman.physicsBody?.applyImpulse(CGVectorMake(0, 9.8 * self.batiman.physicsBody!.mass))
+                //self.batiman.physicsBody?.applyImpulse(CGVectorMake(0, 9.8 * self.batiman.physicsBody!.mass))
                 
-            }
-            else{
+           // }
+            //else{
                 if(self.batiman.isDead == false){
                     let dirColision = contact.contactNormal
 
@@ -466,7 +466,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
 //                
 //                self.physicsWorld.addJoint(a)
                 
-            }
+           // }
         }
         else{
             
