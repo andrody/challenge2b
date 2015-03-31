@@ -18,7 +18,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     //Batiman
     //let batiman = Batiman(atPosition: CGPoint(x: -850, y: 400), texture: SKTexture(imageNamed: "BONECO"))
     
-    let batiman = Ninja(atPosition: CGPoint(x: -850, y: 900) , body: "body", mask: "mask_blue", back_eyes: "back_eyes", eyes: "eyes", spinning: "spinning")
+    let batiman = Ninja(atPosition: CGPoint(x: -850, y: 900) , body: "body", mask: "mask", back_eyes: "back_eyes", eyes: "eyes", spinning: "spinning")
     let batimanLayer = SKNode()
     
     //Mountais
@@ -167,6 +167,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
     
     func restart(){
 
+        self.batiman.getRandomMask()
         self.batiman.isMoving = true
         self.batiman.physicsBody?.collisionBitMask = 0
         self.batiman.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
@@ -174,6 +175,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
         let block = SKAction.runBlock({ self.changeBatimanCollisionCategory() })
         
         self.batiman.runAction( SKAction.sequence([moveBatiman , block]))
+        
+        
         //self.batimanLayer.runAction( SKAction.sequence([moveBatiman , block]))
     }
     

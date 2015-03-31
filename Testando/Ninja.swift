@@ -26,6 +26,9 @@ class Ninja: SKNode {
     var body_text: SKTexture
     var body_left_text: SKTexture
     var body_right_text: SKTexture
+    var mask_red: SKTexture
+    var mask_blue: SKTexture
+
 
     
     
@@ -51,12 +54,18 @@ class Ninja: SKNode {
         self.back_eyes = SKSpriteNode(texture: SKTexture(imageNamed: back_eyes))
         self.eyes = SKSpriteNode(texture: SKTexture(imageNamed: eyes))
         self.spinning = SKSpriteNode(texture: SKTexture(imageNamed: spinning))
+        
         self.body_text = self.body.texture!
+        self.mask_red = self.mask.texture!
+        self.mask_blue = SKTexture(imageNamed: "mask_blue")
+
         self.body_left_text = SKTexture(imageNamed: "nail_left")
         self.body_right_text = SKTexture(imageNamed: "nail_right")
 
         
         super.init()
+        
+        getRandomMask()
         
         self.position = atPosition
         self.body.anchorPoint = CGPointMake(0.5, 0.0)
@@ -106,6 +115,17 @@ class Ninja: SKNode {
         
         
         
+    }
+    
+    func getRandomMask(){
+        let diceRoll = Int(arc4random_uniform(2))
+        
+        if(diceRoll == 0) {
+            self.mask.texture = self.mask_blue
+        }
+        else {
+            self.mask.texture = self.mask_red
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
