@@ -297,7 +297,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                 self.showLeader()
             }
             
-            if(self.gameStarted && !self.batiman.isDead){
+            if(self.gameStarted && !self.batiman.isDead && !self.batiman.isMoving){
                 
                 self.initialTapPosition = location
                 self.isDraging = true
@@ -541,6 +541,8 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                 
            }
             else{
+                
+                self.batiman.isMoving = false
                 if(self.batiman.isDead == false){
                     let dirColision = contact.contactNormal
 
@@ -575,8 +577,13 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
             
             if( (bodyOne?.physicsBody!.categoryBitMask == self.contactCatagories.batimanCategoryBitMask && bodyTwo?.physicsBody!.categoryBitMask == self.contactCatagories.spikeCategoryBitMask) || (bodyOne?.physicsBody!.categoryBitMask == self.contactCatagories.spikeCategoryBitMask && bodyTwo?.physicsBody!.categoryBitMask == self.contactCatagories.batimanCategoryBitMask)  ){
                 
-                self.batiman.isDead = true
-                self.restart()
+                if(!self.batiman.isDead){
+                    
+                    self.batiman.isDead = true
+                    self.restart()
+                    
+                }
+
             }
             
             
