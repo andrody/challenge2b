@@ -24,6 +24,10 @@
 		6592B2D01ACA4904000FC67C /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6592B2CD1ACA4904000FC67C /* music.mp3 */; };
 		6592B2D11ACA4904000FC67C /* music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6592B2CE1ACA4904000FC67C /* music2.mp3 */; };
 		C50522F81AC9C6C4008D835B /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50522F71AC9C6C4008D835B /* CollisionCategory.swift */; };
+		C50F33911ACCB40B00E4FB40 /* impact.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33901ACCB40B00E4FB40 /* impact.wav */; };
+		C50F33941ACCB4DF00E4FB40 /* impact2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33921ACCB4DF00E4FB40 /* impact2.wav */; };
+		C50F33951ACCB4DF00E4FB40 /* impact3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33931ACCB4DF00E4FB40 /* impact3.wav */; };
+		C50F33971ACCB6A000E4FB40 /* impact4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33961ACCB6A000E4FB40 /* impact4.wav */; };
 		C5FFF22B1ACA51210068DAC2 /* mola.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22A1ACA51210068DAC2 /* mola.wav */; };
 		C5FFF2311ACA51C80068DAC2 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22C1ACA51C80068DAC2 /* 2.wav */; };
 		C5FFF2321ACA51C80068DAC2 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22D1ACA51C80068DAC2 /* 3.wav */; };
@@ -54,6 +58,10 @@
 		6592B2CD1ACA4904000FC67C /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		6592B2CE1ACA4904000FC67C /* music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music2.mp3; sourceTree = "<group>"; };
 		C50522F71AC9C6C4008D835B /* CollisionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
+		C50F33901ACCB40B00E4FB40 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
+		C50F33921ACCB4DF00E4FB40 /* impact2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact2.wav; sourceTree = "<group>"; };
+		C50F33931ACCB4DF00E4FB40 /* impact3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact3.wav; sourceTree = "<group>"; };
+		C50F33961ACCB6A000E4FB40 /* impact4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact4.wav; sourceTree = "<group>"; };
 		C5FFF22A1ACA51210068DAC2 /* mola.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mola.wav; sourceTree = "<group>"; };
 		C5FFF22C1ACA51C80068DAC2 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
 		C5FFF22D1ACA51C80068DAC2 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 				39FB764B1AC63B9E00E2FAF8 /* Hud.swift */,
 				C50522F71AC9C6C4008D835B /* CollisionCategory.swift */,
 				39311E3A1ABE46B900A9E1B5 /* RandomGenerator.swift */,
+				C50F33901ACCB40B00E4FB40 /* impact.wav */,
+				C50F33921ACCB4DF00E4FB40 /* impact2.wav */,
+				C50F33931ACCB4DF00E4FB40 /* impact3.wav */,
+				C50F33961ACCB6A000E4FB40 /* impact4.wav */,
 				C5FFF22C1ACA51C80068DAC2 /* 2.wav */,
 				C5FFF22D1ACA51C80068DAC2 /* 3.wav */,
 				C5FFF22E1ACA51C80068DAC2 /* 4.wav */,
@@ -177,7 +189,7 @@
 				TargetAttributes = {
 					39B650231ABCAAC100D159B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CT54P8A873;
+						DevelopmentTeam = CC953577YZ;
 					};
 				};
 			};
@@ -204,16 +216,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50F33911ACCB40B00E4FB40 /* impact.wav in Resources */,
 				C5FFF2351ACA51C80068DAC2 /* 6.wav in Resources */,
 				C5FFF2321ACA51C80068DAC2 /* 3.wav in Resources */,
+				C50F33951ACCB4DF00E4FB40 /* impact3.wav in Resources */,
 				C5FFF2311ACA51C80068DAC2 /* 2.wav in Resources */,
 				6592B2D01ACA4904000FC67C /* music.mp3 in Resources */,
 				C5FFF2331ACA51C80068DAC2 /* 4.wav in Resources */,
 				392E35031AC1D9C000C24B32 /* SceneTesteUm.sks in Resources */,
+				C50F33941ACCB4DF00E4FB40 /* impact2.wav in Resources */,
 				39B650381ABCAAC100D159B7 /* LaunchScreen.xib in Resources */,
 				C5FFF2341ACA51C80068DAC2 /* 5.wav in Resources */,
 				39B650351ABCAAC100D159B7 /* Images.xcassets in Resources */,
 				6592B2CF1ACA4904000FC67C /* jump.wav in Resources */,
+				C50F33971ACCB6A000E4FB40 /* impact4.wav in Resources */,
 				C5FFF22B1ACA51210068DAC2 /* mola.wav in Resources */,
 				6592B2D11ACA4904000FC67C /* music2.mp3 in Resources */,
 				39311E3D1ABE649100A9E1B5 /* Property List.plist in Resources */,

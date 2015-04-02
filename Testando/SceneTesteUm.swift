@@ -257,7 +257,7 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
 
         
         self.batiman.runAction( SKAction.sequence([moveBatiman, block]))
-        let testesound = SKAction.playSoundFileNamed("mola.wav", waitForCompletion: true)
+        let testesound = SKAction.playSoundFileNamed("impact.wav", waitForCompletion: true)
         
         self.runAction(testesound)
         
@@ -559,6 +559,10 @@ class SceneTesteUm: SKScene, SKPhysicsContactDelegate , UIGestureRecognizerDeleg
                     else {
                         self.batiman.nail_down()
                     }
+                    
+                    let impact = SKAction.playSoundFileNamed("impact3.wav", waitForCompletion: true)
+                    self.runAction(impact)
+                    
                     
                     self.batiman.isMoving = false
                     self.batiman.IdleAnimation()
