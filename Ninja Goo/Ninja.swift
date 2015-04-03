@@ -118,10 +118,10 @@ class Ninja: SKNode {
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.dynamic = true
         self.physicsBody?.affectedByGravity = true
-        self.physicsBody?.friction = 0.0
-        self.physicsBody?.restitution = 0.1
-        self.physicsBody?.angularDamping = 0.0
-        self.physicsBody?.linearDamping = 0.0
+        self.physicsBody?.friction = 1.0
+        self.physicsBody?.restitution = 0.2
+        self.physicsBody?.angularDamping = 1.0
+        self.physicsBody?.linearDamping = 1.0
         self.physicsBody?.categoryBitMask = ColliderType.Ninja.rawValue
         self.physicsBody?.contactTestBitMask = ColliderType.Platform.rawValue | ColliderType.Spike.rawValue
         self.physicsBody?.collisionBitMask = ColliderType.Platform.rawValue | ColliderType.Spike.rawValue

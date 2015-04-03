@@ -19,8 +19,8 @@ class ConvertUtilities {
     }
     
     class func minMaxSpeed(sX : CGFloat, sY : CGFloat) -> (CGFloat,CGFloat) {
-        var minD :CGFloat = 20.0
-        var maxD : CGFloat = 100.0
+        var minD :CGFloat = W1_Level_1.Constants.minForce
+        var maxD : CGFloat = W1_Level_1.Constants.maxForce
         var fSX : CGFloat = sX
         var fSY : CGFloat = sY
         
@@ -69,6 +69,20 @@ class ConvertUtilities {
             }
             
         }
+        
+        var totalPower : CGFloat
+                
+        do {
+            
+            totalPower = sqrt(pow(fSX, 2) + pow(fSY, 2))
+
+            if fSX < 0 { fSX += 2 }
+            else { fSX -= 2 }
+
+            if fSY < 0 { fSY += 2 }
+            else { fSY -= 2 }
+            
+        }while(totalPower > W1_Level_1.Constants.maxForceGeral)
         
         return (fSX, fSY)
         

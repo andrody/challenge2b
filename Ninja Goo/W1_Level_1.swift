@@ -82,9 +82,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     struct Constants {
         
         static let midAnchor = CGPointMake(0.5, 0.5)
-        static let gravity = CGVectorMake(0, -9.8)
         static let defaultSpawnPoint = CGPoint(x: 0, y: 0)
-        static let defaultScale :CGFloat = 0.33
+        static let defaultScale :CGFloat = 0.31
+        
+        static let gravity = CGVectorMake(0, -20)
+        static let minForce : CGFloat = 30.0
+        static let maxForce : CGFloat = 110.0
+        static let maxForceGeral : CGFloat = maxForce + 20
 
         static let backgroundQueue = dispatch_queue_create("com.koruja.ningoo.backgroundQueue", DISPATCH_QUEUE_SERIAL)
         
@@ -334,27 +338,29 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             case ColliderType.Platform.rawValue | ColliderType.Ninja.rawValue:
                 
-                println("colidiu com plataforma")
-                self.ninja.isMoving = false
-                let dirColision = contact.contactNormal
-                
-                if(dirColision.dx > 0.0){
-                    self.ninja.nail_left()
+                if(self.ninja.isDead == false) {
+                    println("colidiu com plataforma")
+                    self.ninja.isMoving = false
+                    let dirColision = contact.contactNormal
+                    
+                    if(dirColision.dx > 0.0){
+                        self.ninja.nail_left()
+                    }
+                    else if(dirColision.dx < 0.0){
+                        self.ninja.nail_right()
+                        self.ninja.lookTo(self.ninja.eyes, angle: -120)
+                    }
+                    else {
+                        self.ninja.nail_down()
+                    }
+                    
+                    let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
+                    self.runAction(wallSE)
+                    
+                    self.ninja.IdleAnimation()
+                    self.ninja.physicsBody?.dynamic = false
                 }
-                else if(dirColision.dx < 0.0){
-                    self.ninja.nail_right()
-                    self.ninja.lookTo(self.ninja.eyes, angle: -120)
-                }
-                else {
-                    self.ninja.nail_down()
-                }
-                
-                let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
-                self.runAction(wallSE)
-                
-                self.ninja.IdleAnimation()
-                self.ninja.physicsBody?.dynamic = false
-                
+            
             case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
                 println("colidiu com spike")
 
