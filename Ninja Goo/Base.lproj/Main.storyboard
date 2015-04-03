@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="maK-i9-Uhn"/>
+                        <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0DK-Wh-ufY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2O-w5-Wsg" customClass="SKView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mva-P6-DuG">
+                                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.41694085510000001" green="1" blue="0.3936637805" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="mva-P6-DuG" firstAttribute="centerY" secondItem="K2O-w5-Wsg" secondAttribute="centerY" id="9tb-ng-ytd"/>
+                                            <constraint firstItem="mva-P6-DuG" firstAttribute="centerX" secondItem="K2O-w5-Wsg" secondAttribute="centerX" id="Lmv-OD-sLU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="K2O-w5-Wsg" secondAttribute="bottom" id="2Bz-yv-PYl"/>
+                                    <constraint firstAttribute="trailing" secondItem="K2O-w5-Wsg" secondAttribute="trailing" id="Iw0-o2-QDt"/>
+                                    <constraint firstItem="K2O-w5-Wsg" firstAttribute="top" secondItem="0DK-Wh-ufY" secondAttribute="top" id="eL8-uI-HQD"/>
+                                    <constraint firstItem="K2O-w5-Wsg" firstAttribute="leading" secondItem="0DK-Wh-ufY" secondAttribute="leading" id="tam-RZ-Cva"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41694085510000001" green="1" blue="0.3936637805" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0DK-Wh-ufY" secondAttribute="trailing" id="1cE-Tv-yAK"/>
+                            <constraint firstItem="0DK-Wh-ufY" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="3nz-EZ-7Ng"/>
+                            <constraint firstItem="0DK-Wh-ufY" firstAttribute="bottom" secondItem="khH-OB-KpY" secondAttribute="top" id="bla-L9-NYu"/>
+                            <constraint firstItem="0DK-Wh-ufY" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="qh8-2r-eJi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loading" destination="mva-P6-DuG" id="Mc7-a0-jpo"/>
+                        <outlet property="skView" destination="K2O-w5-Wsg" id="WnQ-2z-8VD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

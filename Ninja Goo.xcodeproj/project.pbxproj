@@ -7,71 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		392E35031AC1D9C000C24B32 /* SceneTesteUm.sks in Resources */ = {isa = PBXBuildFile; fileRef = 392E35021AC1D9C000C24B32 /* SceneTesteUm.sks */; };
-		39311E3B1ABE46B900A9E1B5 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39311E3A1ABE46B900A9E1B5 /* RandomGenerator.swift */; };
-		39311E3D1ABE649100A9E1B5 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39311E3C1ABE649100A9E1B5 /* Property List.plist */; };
-		395709291AC3122C00AD530A /* SceneTesteUm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395709281AC3122C00AD530A /* SceneTesteUm.swift */; };
-		39B6502A1ABCAAC100D159B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B650291ABCAAC100D159B7 /* AppDelegate.swift */; };
-		39B650301ABCAAC100D159B7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B6502F1ABCAAC100D159B7 /* GameViewController.swift */; };
-		39B650331ABCAAC100D159B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B650311ABCAAC100D159B7 /* Main.storyboard */; };
-		39B650351ABCAAC100D159B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B650341ABCAAC100D159B7 /* Images.xcassets */; };
-		39B650381ABCAAC100D159B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B650361ABCAAC100D159B7 /* LaunchScreen.xib */; };
-		39D383CD1AC8552A0081C40A /* InitialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D383CC1AC8552A0081C40A /* InitialScene.swift */; };
-		39E433A81ABDC25E00E01D10 /* WorldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E433A71ABDC25E00E01D10 /* WorldLayer.swift */; };
-		39F92C4B1AC5EB1C0085A83B /* Ninja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F92C4A1AC5EB1C0085A83B /* Ninja.swift */; };
-		39FB764C1AC63B9E00E2FAF8 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB764B1AC63B9E00E2FAF8 /* Hud.swift */; };
-		6592B2CF1ACA4904000FC67C /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6592B2CC1ACA4904000FC67C /* jump.wav */; };
-		6592B2D01ACA4904000FC67C /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6592B2CD1ACA4904000FC67C /* music.mp3 */; };
-		6592B2D11ACA4904000FC67C /* music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6592B2CE1ACA4904000FC67C /* music2.mp3 */; };
-		C50522F81AC9C6C4008D835B /* CollisionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50522F71AC9C6C4008D835B /* CollisionCategory.swift */; };
-		C50F33911ACCB40B00E4FB40 /* impact.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33901ACCB40B00E4FB40 /* impact.wav */; };
-		C50F33941ACCB4DF00E4FB40 /* impact2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33921ACCB4DF00E4FB40 /* impact2.wav */; };
-		C50F33951ACCB4DF00E4FB40 /* impact3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33931ACCB4DF00E4FB40 /* impact3.wav */; };
-		C50F33971ACCB6A000E4FB40 /* impact4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C50F33961ACCB6A000E4FB40 /* impact4.wav */; };
-		C5FFF22B1ACA51210068DAC2 /* mola.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22A1ACA51210068DAC2 /* mola.wav */; };
-		C5FFF2311ACA51C80068DAC2 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22C1ACA51C80068DAC2 /* 2.wav */; };
-		C5FFF2321ACA51C80068DAC2 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22D1ACA51C80068DAC2 /* 3.wav */; };
-		C5FFF2331ACA51C80068DAC2 /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22E1ACA51C80068DAC2 /* 4.wav */; };
-		C5FFF2341ACA51C80068DAC2 /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF22F1ACA51C80068DAC2 /* 5.wav */; };
-		C5FFF2351ACA51C80068DAC2 /* 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5FFF2301ACA51C80068DAC2 /* 6.wav */; };
+		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
+		C5CB3F421ACD6AA8001A37B7 /* W1_Level_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F411ACD6AA8001A37B7 /* W1_Level_2.sks */; };
+		C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */; };
+		C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */; };
+		C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */; };
+		C5CB3F5A1ACD6AA8001A37B7 /* Ninja_GooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F591ACD6AA8001A37B7 /* Ninja_GooTests.swift */; };
+		C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F681ACD6C55001A37B7 /* W1_Scenario.xcassets */; };
+		C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F6A1ACD6C9A001A37B7 /* Other.xcassets */; };
+		C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F6C1ACD6D14001A37B7 /* Ninja.xcassets */; };
+		C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F6E1ACD6E0C001A37B7 /* Hud.xcassets */; };
+		C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F721ACD6E90001A37B7 /* impact.wav */; };
+		C5CB3F751ACD6E9D001A37B7 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F741ACD6E9D001A37B7 /* jump.wav */; };
+		C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F761ACD6ECF001A37B7 /* wall.wav */; };
+		C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F791ACD7954001A37B7 /* LaunchScreen.xib */; };
+		C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F7C1ACD79B2001A37B7 /* Ninja.swift */; };
+		C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */; };
+		C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F811ACDEBE4001A37B7 /* WorldLayer.swift */; };
+		C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F831ACDFF18001A37B7 /* Hud.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C5CB3F541ACD6AA8001A37B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5CB3F321ACD6AA8001A37B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5CB3F391ACD6AA8001A37B7;
+			remoteInfo = "Ninja Goo";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		392E35021AC1D9C000C24B32 /* SceneTesteUm.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SceneTesteUm.sks; sourceTree = "<group>"; };
-		39311E3A1ABE46B900A9E1B5 /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
-		39311E3C1ABE649100A9E1B5 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
-		395709281AC3122C00AD530A /* SceneTesteUm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTesteUm.swift; sourceTree = "<group>"; };
-		39B650241ABCAAC100D159B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39B650281ABCAAC100D159B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39B650291ABCAAC100D159B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39B6502F1ABCAAC100D159B7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		39B650321ABCAAC100D159B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		39B650341ABCAAC100D159B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		39B650371ABCAAC100D159B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		39B650421ABCAAC100D159B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39B650431ABCAAC100D159B7 /* TestandoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestandoTests.swift; sourceTree = "<group>"; };
-		39D383CC1AC8552A0081C40A /* InitialScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialScene.swift; sourceTree = "<group>"; };
-		39E433A71ABDC25E00E01D10 /* WorldLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldLayer.swift; sourceTree = "<group>"; };
-		39F92C4A1AC5EB1C0085A83B /* Ninja.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ninja.swift; sourceTree = "<group>"; };
-		39FB764B1AC63B9E00E2FAF8 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
-		6592B2CC1ACA4904000FC67C /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
-		6592B2CD1ACA4904000FC67C /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
-		6592B2CE1ACA4904000FC67C /* music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music2.mp3; sourceTree = "<group>"; };
-		C50522F71AC9C6C4008D835B /* CollisionCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionCategory.swift; sourceTree = "<group>"; };
-		C50F33901ACCB40B00E4FB40 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
-		C50F33921ACCB4DF00E4FB40 /* impact2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact2.wav; sourceTree = "<group>"; };
-		C50F33931ACCB4DF00E4FB40 /* impact3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact3.wav; sourceTree = "<group>"; };
-		C50F33961ACCB6A000E4FB40 /* impact4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact4.wav; sourceTree = "<group>"; };
-		C5FFF22A1ACA51210068DAC2 /* mola.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mola.wav; sourceTree = "<group>"; };
-		C5FFF22C1ACA51C80068DAC2 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
-		C5FFF22D1ACA51C80068DAC2 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		C5FFF22E1ACA51C80068DAC2 /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
-		C5FFF22F1ACA51C80068DAC2 /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
-		C5FFF2301ACA51C80068DAC2 /* 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6.wav; sourceTree = "<group>"; };
+		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5CB3F3E1ACD6AA8001A37B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C5CB3F411ACD6AA8001A37B7 /* W1_Level_2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = W1_Level_2.sks; sourceTree = "<group>"; };
+		C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W1_Level_1.swift; sourceTree = "<group>"; };
+		C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		C5CB3F481ACD6AA8001A37B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C5CB3F531ACD6AA8001A37B7 /* Ninja GooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ninja GooTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5CB3F581ACD6AA8001A37B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5CB3F591ACD6AA8001A37B7 /* Ninja_GooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ninja_GooTests.swift; sourceTree = "<group>"; };
+		C5CB3F681ACD6C55001A37B7 /* W1_Scenario.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = W1_Scenario.xcassets; sourceTree = "<group>"; };
+		C5CB3F6A1ACD6C9A001A37B7 /* Other.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Other.xcassets; sourceTree = "<group>"; };
+		C5CB3F6C1ACD6D14001A37B7 /* Ninja.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Ninja.xcassets; sourceTree = "<group>"; };
+		C5CB3F6E1ACD6E0C001A37B7 /* Hud.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Hud.xcassets; sourceTree = "<group>"; };
+		C5CB3F721ACD6E90001A37B7 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
+		C5CB3F741ACD6E9D001A37B7 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
+		C5CB3F761ACD6ECF001A37B7 /* wall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wall.wav; sourceTree = "<group>"; };
+		C5CB3F791ACD7954001A37B7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		C5CB3F7C1ACD79B2001A37B7 /* Ninja.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ninja.swift; sourceTree = "<group>"; };
+		C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertUtilities.swift; sourceTree = "<group>"; };
+		C5CB3F811ACDEBE4001A37B7 /* WorldLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldLayer.swift; sourceTree = "<group>"; };
+		C5CB3F831ACDFF18001A37B7 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		39B650211ABCAAC100D159B7 /* Frameworks */ = {
+		C5CB3F371ACD6AA8001A37B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5CB3F501ACD6AA8001A37B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,119 +80,188 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39B6501B1ABCAAC100D159B7 = {
+		C5CB3F311ACD6AA8001A37B7 = {
 			isa = PBXGroup;
 			children = (
-				39311E3C1ABE649100A9E1B5 /* Property List.plist */,
-				39B650261ABCAAC100D159B7 /* Testando */,
-				39B650401ABCAAC100D159B7 /* TestandoTests */,
-				39B650251ABCAAC100D159B7 /* Products */,
+				C5CB3F3C1ACD6AA8001A37B7 /* Ninja Goo */,
+				C5CB3F561ACD6AA8001A37B7 /* Ninja GooTests */,
+				C5CB3F3B1ACD6AA8001A37B7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		39B650251ABCAAC100D159B7 /* Products */ = {
+		C5CB3F3B1ACD6AA8001A37B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39B650241ABCAAC100D159B7 /* Ninja Goo.app */,
+				C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */,
+				C5CB3F531ACD6AA8001A37B7 /* Ninja GooTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		39B650261ABCAAC100D159B7 /* Testando */ = {
+		C5CB3F3C1ACD6AA8001A37B7 /* Ninja Goo */ = {
 			isa = PBXGroup;
 			children = (
-				39B650291ABCAAC100D159B7 /* AppDelegate.swift */,
-				39D383CC1AC8552A0081C40A /* InitialScene.swift */,
-				395709281AC3122C00AD530A /* SceneTesteUm.swift */,
-				392E35021AC1D9C000C24B32 /* SceneTesteUm.sks */,
-				39B6502F1ABCAAC100D159B7 /* GameViewController.swift */,
-				39E433A71ABDC25E00E01D10 /* WorldLayer.swift */,
-				39F92C4A1AC5EB1C0085A83B /* Ninja.swift */,
-				39FB764B1AC63B9E00E2FAF8 /* Hud.swift */,
-				C50522F71AC9C6C4008D835B /* CollisionCategory.swift */,
-				39311E3A1ABE46B900A9E1B5 /* RandomGenerator.swift */,
-				C50F33901ACCB40B00E4FB40 /* impact.wav */,
-				C50F33921ACCB4DF00E4FB40 /* impact2.wav */,
-				C50F33931ACCB4DF00E4FB40 /* impact3.wav */,
-				C50F33961ACCB6A000E4FB40 /* impact4.wav */,
-				C5FFF22C1ACA51C80068DAC2 /* 2.wav */,
-				C5FFF22D1ACA51C80068DAC2 /* 3.wav */,
-				C5FFF22E1ACA51C80068DAC2 /* 4.wav */,
-				C5FFF22F1ACA51C80068DAC2 /* 5.wav */,
-				C5FFF2301ACA51C80068DAC2 /* 6.wav */,
-				C5FFF22A1ACA51210068DAC2 /* mola.wav */,
-				6592B2CC1ACA4904000FC67C /* jump.wav */,
-				6592B2CD1ACA4904000FC67C /* music.mp3 */,
-				6592B2CE1ACA4904000FC67C /* music2.mp3 */,
-				39B650311ABCAAC100D159B7 /* Main.storyboard */,
-				39B650341ABCAAC100D159B7 /* Images.xcassets */,
-				39B650361ABCAAC100D159B7 /* LaunchScreen.xib */,
-				39B650271ABCAAC100D159B7 /* Supporting Files */,
+				C5CB3F7E1ACD9EF6001A37B7 /* Utilities */,
+				C5CB3F7B1ACD79A0001A37B7 /* Sprites */,
+				C5CB3F641ACD6BD6001A37B7 /* Assets */,
+				C5CB3F631ACD6B30001A37B7 /* Scene */,
+				C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */,
+				C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */,
+				C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */,
+				C5CB3F791ACD7954001A37B7 /* LaunchScreen.xib */,
+				C5CB3F3D1ACD6AA8001A37B7 /* Supporting Files */,
 			);
-			path = Testando;
+			path = "Ninja Goo";
 			sourceTree = "<group>";
 		};
-		39B650271ABCAAC100D159B7 /* Supporting Files */ = {
+		C5CB3F3D1ACD6AA8001A37B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39B650281ABCAAC100D159B7 /* Info.plist */,
+				C5CB3F3E1ACD6AA8001A37B7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		39B650401ABCAAC100D159B7 /* TestandoTests */ = {
+		C5CB3F561ACD6AA8001A37B7 /* Ninja GooTests */ = {
 			isa = PBXGroup;
 			children = (
-				39B650431ABCAAC100D159B7 /* TestandoTests.swift */,
-				39B650411ABCAAC100D159B7 /* Supporting Files */,
+				C5CB3F591ACD6AA8001A37B7 /* Ninja_GooTests.swift */,
+				C5CB3F571ACD6AA8001A37B7 /* Supporting Files */,
 			);
-			path = TestandoTests;
+			path = "Ninja GooTests";
 			sourceTree = "<group>";
 		};
-		39B650411ABCAAC100D159B7 /* Supporting Files */ = {
+		C5CB3F571ACD6AA8001A37B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39B650421ABCAAC100D159B7 /* Info.plist */,
+				C5CB3F581ACD6AA8001A37B7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5CB3F631ACD6B30001A37B7 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				C5CB3F781ACD77C4001A37B7 /* WorldOne */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		C5CB3F641ACD6BD6001A37B7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C5CB3F711ACD6E59001A37B7 /* Sounds */,
+				C5CB3F701ACD6E4F001A37B7 /* Images */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		C5CB3F701ACD6E4F001A37B7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C5CB3F6C1ACD6D14001A37B7 /* Ninja.xcassets */,
+				C5CB3F6E1ACD6E0C001A37B7 /* Hud.xcassets */,
+				C5CB3F681ACD6C55001A37B7 /* W1_Scenario.xcassets */,
+				C5CB3F6A1ACD6C9A001A37B7 /* Other.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C5CB3F711ACD6E59001A37B7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C5CB3F761ACD6ECF001A37B7 /* wall.wav */,
+				C5CB3F721ACD6E90001A37B7 /* impact.wav */,
+				C5CB3F741ACD6E9D001A37B7 /* jump.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C5CB3F781ACD77C4001A37B7 /* WorldOne */ = {
+			isa = PBXGroup;
+			children = (
+				C5CB3F411ACD6AA8001A37B7 /* W1_Level_2.sks */,
+				C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */,
+			);
+			name = WorldOne;
+			sourceTree = "<group>";
+		};
+		C5CB3F7B1ACD79A0001A37B7 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				C5CB3F7C1ACD79B2001A37B7 /* Ninja.swift */,
+				C5CB3F831ACDFF18001A37B7 /* Hud.swift */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		C5CB3F7E1ACD9EF6001A37B7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C5CB3F811ACDEBE4001A37B7 /* WorldLayer.swift */,
+				C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39B650231ABCAAC100D159B7 /* Ninja Goo */ = {
+		C5CB3F391ACD6AA8001A37B7 /* Ninja Goo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39B650471ABCAAC100D159B7 /* Build configuration list for PBXNativeTarget "Ninja Goo" */;
+			buildConfigurationList = C5CB3F5D1ACD6AA8001A37B7 /* Build configuration list for PBXNativeTarget "Ninja Goo" */;
 			buildPhases = (
-				39B650201ABCAAC100D159B7 /* Sources */,
-				39B650211ABCAAC100D159B7 /* Frameworks */,
-				39B650221ABCAAC100D159B7 /* Resources */,
+				C5CB3F361ACD6AA8001A37B7 /* Sources */,
+				C5CB3F371ACD6AA8001A37B7 /* Frameworks */,
+				C5CB3F381ACD6AA8001A37B7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Ninja Goo";
-			productName = Testando;
-			productReference = 39B650241ABCAAC100D159B7 /* Ninja Goo.app */;
+			productName = "Ninja Goo";
+			productReference = C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C5CB3F521ACD6AA8001A37B7 /* Ninja GooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5CB3F601ACD6AA8001A37B7 /* Build configuration list for PBXNativeTarget "Ninja GooTests" */;
+			buildPhases = (
+				C5CB3F4F1ACD6AA8001A37B7 /* Sources */,
+				C5CB3F501ACD6AA8001A37B7 /* Frameworks */,
+				C5CB3F511ACD6AA8001A37B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5CB3F551ACD6AA8001A37B7 /* PBXTargetDependency */,
+			);
+			name = "Ninja GooTests";
+			productName = "Ninja GooTests";
+			productReference = C5CB3F531ACD6AA8001A37B7 /* Ninja GooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		39B6501C1ABCAAC100D159B7 /* Project object */ = {
+		C5CB3F321ACD6AA8001A37B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0620;
-				ORGANIZATIONNAME = "Koruja Studios";
+				ORGANIZATIONNAME = Koruja;
 				TargetAttributes = {
-					39B650231ABCAAC100D159B7 = {
+					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = CC953577YZ;
 					};
+					C5CB3F521ACD6AA8001A37B7 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = C5CB3F391ACD6AA8001A37B7;
+					};
 				};
 			};
-			buildConfigurationList = 39B6501F1ABCAAC100D159B7 /* Build configuration list for PBXProject "Ninja Goo" */;
+			buildConfigurationList = C5CB3F351ACD6AA8001A37B7 /* Build configuration list for PBXProject "Ninja Goo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -201,84 +269,90 @@
 				en,
 				Base,
 			);
-			mainGroup = 39B6501B1ABCAAC100D159B7;
-			productRefGroup = 39B650251ABCAAC100D159B7 /* Products */;
+			mainGroup = C5CB3F311ACD6AA8001A37B7;
+			productRefGroup = C5CB3F3B1ACD6AA8001A37B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39B650231ABCAAC100D159B7 /* Ninja Goo */,
+				C5CB3F391ACD6AA8001A37B7 /* Ninja Goo */,
+				C5CB3F521ACD6AA8001A37B7 /* Ninja GooTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		39B650221ABCAAC100D159B7 /* Resources */ = {
+		C5CB3F381ACD6AA8001A37B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C50F33911ACCB40B00E4FB40 /* impact.wav in Resources */,
-				C5FFF2351ACA51C80068DAC2 /* 6.wav in Resources */,
-				C5FFF2321ACA51C80068DAC2 /* 3.wav in Resources */,
-				C50F33951ACCB4DF00E4FB40 /* impact3.wav in Resources */,
-				C5FFF2311ACA51C80068DAC2 /* 2.wav in Resources */,
-				6592B2D01ACA4904000FC67C /* music.mp3 in Resources */,
-				C5FFF2331ACA51C80068DAC2 /* 4.wav in Resources */,
-				392E35031AC1D9C000C24B32 /* SceneTesteUm.sks in Resources */,
-				C50F33941ACCB4DF00E4FB40 /* impact2.wav in Resources */,
-				39B650381ABCAAC100D159B7 /* LaunchScreen.xib in Resources */,
-				C5FFF2341ACA51C80068DAC2 /* 5.wav in Resources */,
-				39B650351ABCAAC100D159B7 /* Images.xcassets in Resources */,
-				6592B2CF1ACA4904000FC67C /* jump.wav in Resources */,
-				C50F33971ACCB6A000E4FB40 /* impact4.wav in Resources */,
-				C5FFF22B1ACA51210068DAC2 /* mola.wav in Resources */,
-				6592B2D11ACA4904000FC67C /* music2.mp3 in Resources */,
-				39311E3D1ABE649100A9E1B5 /* Property List.plist in Resources */,
-				39B650331ABCAAC100D159B7 /* Main.storyboard in Resources */,
+				C5CB3F751ACD6E9D001A37B7 /* jump.wav in Resources */,
+				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
+				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
+				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
+				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
+				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
+				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
+				C5CB3F421ACD6AA8001A37B7 /* W1_Level_2.sks in Resources */,
+				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
+				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5CB3F511ACD6AA8001A37B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		39B650201ABCAAC100D159B7 /* Sources */ = {
+		C5CB3F361ACD6AA8001A37B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D383CD1AC8552A0081C40A /* InitialScene.swift in Sources */,
-				39311E3B1ABE46B900A9E1B5 /* RandomGenerator.swift in Sources */,
-				C50522F81AC9C6C4008D835B /* CollisionCategory.swift in Sources */,
-				39F92C4B1AC5EB1C0085A83B /* Ninja.swift in Sources */,
-				395709291AC3122C00AD530A /* SceneTesteUm.swift in Sources */,
-				39FB764C1AC63B9E00E2FAF8 /* Hud.swift in Sources */,
-				39B650301ABCAAC100D159B7 /* GameViewController.swift in Sources */,
-				39B6502A1ABCAAC100D159B7 /* AppDelegate.swift in Sources */,
-				39E433A81ABDC25E00E01D10 /* WorldLayer.swift in Sources */,
+				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
+				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
+				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
+				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
+				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,
+				C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */,
+				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5CB3F4F1ACD6AA8001A37B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5CB3F5A1ACD6AA8001A37B7 /* Ninja_GooTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C5CB3F551ACD6AA8001A37B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5CB3F391ACD6AA8001A37B7 /* Ninja Goo */;
+			targetProxy = C5CB3F541ACD6AA8001A37B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		39B650311ABCAAC100D159B7 /* Main.storyboard */ = {
+		C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				39B650321ABCAAC100D159B7 /* Base */,
+				C5CB3F481ACD6AA8001A37B7 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		39B650361ABCAAC100D159B7 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				39B650371ABCAAC100D159B7 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		39B650451ABCAAC100D159B7 /* Debug */ = {
+		C5CB3F5B1ACD6AA8001A37B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,7 +395,7 @@
 			};
 			name = Debug;
 		};
-		39B650461ABCAAC100D159B7 /* Release */ = {
+		C5CB3F5C1ACD6AA8001A37B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -357,57 +431,93 @@
 			};
 			name = Release;
 		};
-		39B650481ABCAAC100D159B7 /* Debug */ = {
+		C5CB3F5E1ACD6AA8001A37B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Testando/Info.plist;
+				INFOPLIST_FILE = "Ninja Goo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Ninja Goo";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		39B650491ABCAAC100D159B7 /* Release */ = {
+		C5CB3F5F1ACD6AA8001A37B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Testando/Info.plist;
+				INFOPLIST_FILE = "Ninja Goo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Ninja Goo";
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C5CB3F611ACD6AA8001A37B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Ninja GooTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ninja Goo.app/Ninja Goo";
+			};
+			name = Debug;
+		};
+		C5CB3F621ACD6AA8001A37B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Ninja GooTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ninja Goo.app/Ninja Goo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39B6501F1ABCAAC100D159B7 /* Build configuration list for PBXProject "Ninja Goo" */ = {
+		C5CB3F351ACD6AA8001A37B7 /* Build configuration list for PBXProject "Ninja Goo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39B650451ABCAAC100D159B7 /* Debug */,
-				39B650461ABCAAC100D159B7 /* Release */,
+				C5CB3F5B1ACD6AA8001A37B7 /* Debug */,
+				C5CB3F5C1ACD6AA8001A37B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39B650471ABCAAC100D159B7 /* Build configuration list for PBXNativeTarget "Ninja Goo" */ = {
+		C5CB3F5D1ACD6AA8001A37B7 /* Build configuration list for PBXNativeTarget "Ninja Goo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39B650481ABCAAC100D159B7 /* Debug */,
-				39B650491ABCAAC100D159B7 /* Release */,
+				C5CB3F5E1ACD6AA8001A37B7 /* Debug */,
+				C5CB3F5F1ACD6AA8001A37B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5CB3F601ACD6AA8001A37B7 /* Build configuration list for PBXNativeTarget "Ninja GooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5CB3F611ACD6AA8001A37B7 /* Debug */,
+				C5CB3F621ACD6AA8001A37B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 39B6501C1ABCAAC100D159B7 /* Project object */;
+	rootObject = C5CB3F321ACD6AA8001A37B7 /* Project object */;
 }

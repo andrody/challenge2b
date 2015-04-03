@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Testando.xcscheme</key>
+		<key>Ninja Goo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>39B650231ABCAAC100D159B7</key>
+		<key>C5CB3F391ACD6AA8001A37B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39B6503C1ABCAAC100D159B7</key>
+		<key>C5CB3F521ACD6AA8001A37B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
