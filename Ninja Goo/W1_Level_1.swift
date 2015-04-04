@@ -142,7 +142,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         WorldLayer.loadObjectsWithName("backCloudLayer", inNode: fromWorld , intoLayer: self.backCloudLayer)
         WorldLayer.loadObjectsWithName("platformLayer", inNode: fromWorld, intoLayer: self.platformLayer)
         
-
+        
+        //zPositions
+        frontCloudLayer.zPosition = 10
+        
     }
     
    
