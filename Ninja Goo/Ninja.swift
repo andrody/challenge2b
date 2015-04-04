@@ -121,7 +121,7 @@ class Ninja: SKNode {
         self.physicsBody?.friction = 1.0
         self.physicsBody?.restitution = 0
         self.physicsBody?.angularDamping = 0.0
-        self.physicsBody?.linearDamping = 1.0
+        self.physicsBody?.linearDamping = 1.5
         self.physicsBody?.categoryBitMask = ColliderType.Ninja.rawValue
         self.physicsBody?.contactTestBitMask = ColliderType.Platform.rawValue | ColliderType.Spike.rawValue
         self.physicsBody?.collisionBitMask = ColliderType.Platform.rawValue | ColliderType.Spike.rawValue

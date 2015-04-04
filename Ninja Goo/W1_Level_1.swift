@@ -87,8 +87,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         static let gravity = CGVectorMake(0, -20)
         static let minForce : CGFloat = 30.0
-        static let maxForce : CGFloat = 110.0
-        static let maxForceGeral : CGFloat = maxForce + 20
+        static let maxForce : CGFloat = 120.0
+        static let maxForceGeral : CGFloat = maxForce + 100
 
         static let backgroundQueue = dispatch_queue_create("com.koruja.ningoo.backgroundQueue", DISPATCH_QUEUE_SERIAL)
         
