@@ -88,7 +88,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let gravity = CGVectorMake(0, -20)
         static let minForce : CGFloat = 30.0
         static let maxForce : CGFloat = 120.0
-        static let maxForceGeral : CGFloat = maxForce + 100
+        static let maxForceGeral : CGFloat = maxForce + 70
 
         static let backgroundQueue = dispatch_queue_create("com.koruja.ningoo.backgroundQueue", DISPATCH_QUEUE_SERIAL)
         
@@ -217,7 +217,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
 
             
-            self.centerWorldOnPosition(Constants.defaultSpawnPoint)
+            //self.centerWorldOnPosition(Constants.defaultSpawnPoint)
             
             dispatch_async(dispatch_get_main_queue(), self.finishedMovingToView)
             
@@ -273,38 +273,21 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     // MARK: Camera Convenience
     
-    func centerWorldOnPosition(position: CGPoint) {
-        //println("WordLayer -> x: \(worldLayer.position.x) , \(worldLayer.position.y)")
-
-        worldLayer.position = CGPoint(x: -position.x + CGRectGetMidX(frame),
-            y: -position.y + CGRectGetMidY(frame))
-        worldMovedForUpdate = true
-    }
-    
     func centerWorldOnNinja() {
-        //println("Ninja -> x: \(ninja.position.x) , \(ninja.position.y)")
-        //centerWorldOnPosition(ninja.position)
-        
+
         let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
         
-        //println("camera -> x: \(cameraPositionInScene!.x) , \(cameraPositionInScene!.y)")
-        ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y )
+        var y :CGFloat = cameraPositionInScene!.y
+//        if !self.ninja.isMoving && cameraPositionInScene!.y > self.frame.height*0.8 {
+//            y = cameraPositionInScene!.y
+//        }
+        
+        ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y - y)
     }
-    
-    func centerOnNode(node: SKNode){
-        
-        let cameraPositionInScene = node.scene?.convertPoint(node.position, fromNode: node.parent!)
-        
-        node.parent?.position = CGPointMake(node.parent!.position.x - cameraPositionInScene!.x , node.parent!.position.y )
-        
-    }
+  
     
     override func didSimulatePhysics() {
-        //self.camera.position = CGPointMake(self.ninja.position.x, self.ninja.position.y)
-        
-        
-        
-        //self.centerOnNode(camera)
+
         if(gameStarted) {
             centerWorldOnNinja()
 
