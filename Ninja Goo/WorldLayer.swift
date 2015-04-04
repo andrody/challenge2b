@@ -75,6 +75,8 @@ class WorldLayer: SKNode {
                     node_sprite.physicsBody!.categoryBitMask = ColliderType.Platform.rawValue
                     node_sprite.physicsBody!.affectedByGravity = false
                     node_sprite.physicsBody!.dynamic = false
+                    node_sprite.physicsBody!.friction = 1.0
+
 
                 }
                 
