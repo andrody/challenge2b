@@ -10,8 +10,6 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-
-    @IBOutlet weak var loading: UIActivityIndicatorView!
     
     @IBOutlet weak var skView: SKView!
     
@@ -33,17 +31,15 @@ class GameViewController: UIViewController {
             self.scene.scaleMode = .AspectFill
             
   //          #if DEBUG
-                self.skView.showsDrawCount = true
-                self.skView.showsFPS = true
-                self.skView.showsPhysics = true
+             //   self.skView.showsDrawCount = true
+               // self.skView.showsFPS = true
+                //self.skView.showsPhysics = true
 //            #endif
             
             self.skView.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
             loadedScene.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
 
 
-            self.loading.stopAnimating()
-            self.loading.hidden = true
             
             
             self.skView.presentScene(self.scene!)

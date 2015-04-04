@@ -21,16 +21,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2O-w5-Wsg" customClass="SKView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                        <subviews>
-                                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mva-P6-DuG">
-                                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                                            </activityIndicatorView>
-                                        </subviews>
                                         <color key="backgroundColor" red="0.41694085510000001" green="1" blue="0.3936637805" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="mva-P6-DuG" firstAttribute="centerY" secondItem="K2O-w5-Wsg" secondAttribute="centerY" id="9tb-ng-ytd"/>
-                                            <constraint firstItem="mva-P6-DuG" firstAttribute="centerX" secondItem="K2O-w5-Wsg" secondAttribute="centerX" id="Lmv-OD-sLU"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -51,7 +42,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loading" destination="mva-P6-DuG" id="Mc7-a0-jpo"/>
                         <outlet property="skView" destination="K2O-w5-Wsg" id="WnQ-2z-8VD"/>
                     </connections>
                 </viewController>
