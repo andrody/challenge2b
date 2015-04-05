@@ -240,6 +240,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         println("restart")
         
+         ninja.parent!.position = CGPointZero
+        
         //self.saveHighscore(self.score)
         self.score = 0
         self.ninja.getRandomMask()
@@ -322,19 +324,51 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
 
         ninja.parent!.position = pPos
-
-        
-
         
     }
+    
+    func cameraAlwaysMoving()  {
+        
+        let min : CGFloat = 1.0
+        
+        let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
+        var pPos = ninja.parent!.position
+        
+        let yDif = pPos.y - cameraPositionInScene!.y
+        let xDif = pPos.x - cameraPositionInScene!.x
+        let n = !self.ninja.isMoving
+        
+        pPos = CGPointMake(pPos.x - min, pPos.y)
+
+        
+        
+//        if(n && pPos.y > yDif){
+//            
+//            pPos = CGPointMake(pPos.x, pPos.y - min)
+//            
+//        }
+//        
+//        if(n && pPos.y < yDif){
+//            
+//            pPos = CGPointMake(pPos.x, pPos.y + min)
+//            
+//        }
+        
+        ninja.parent!.position = pPos
+        
+        
+        
+        
+    }
+
   
     
     override func didSimulatePhysics() {
 
         if(gameStarted) {
-            centerWorldOnNinjaOnlyWhenNotMoving()
+            //centerWorldOnNinjaOnlyWhenNotMoving()
             //centerWorldOnNinja()
-
+            cameraAlwaysMoving()
         }
         
     }
