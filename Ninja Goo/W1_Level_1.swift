@@ -278,18 +278,62 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
         
         var y :CGFloat = cameraPositionInScene!.y
-//        if !self.ninja.isMoving && cameraPositionInScene!.y > self.frame.height*0.8 {
-//            y = cameraPositionInScene!.y
-//        }
+        //        if !self.ninja.isMoving && cameraPositionInScene!.y > self.frame.height*0.8 {
+        //            y = cameraPositionInScene!.y
+        //        }
         
-        ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y - y)
+        ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y)
+    }
+    
+    func centerWorldOnNinjaOnlyWhenNotMoving()  {
+        
+        let min : CGFloat = 5.0
+        
+        let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
+        var pPos = ninja.parent!.position
+
+        let yDif = pPos.y - cameraPositionInScene!.y
+        let xDif = pPos.x - cameraPositionInScene!.x
+        let n = !self.ninja.isMoving
+        
+        if(n && pPos.x > xDif){
+            
+             pPos = CGPointMake(pPos.x - min, pPos.y)
+            
+        }
+        
+        if(n && pPos.x < xDif){
+            
+            pPos = CGPointMake(pPos.x + min, pPos.y)
+            
+        }
+
+        
+        if(n && pPos.y > yDif){
+            
+            pPos = CGPointMake(pPos.x, pPos.y - min)
+            
+        }
+        
+        if(n && pPos.y < yDif){
+            
+            pPos = CGPointMake(pPos.x, pPos.y + min)
+            
+        }
+
+        ninja.parent!.position = pPos
+
+        
+
+        
     }
   
     
     override func didSimulatePhysics() {
 
         if(gameStarted) {
-            centerWorldOnNinja()
+            centerWorldOnNinjaOnlyWhenNotMoving()
+            //centerWorldOnNinja()
 
         }
         
