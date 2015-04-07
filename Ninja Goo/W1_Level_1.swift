@@ -9,7 +9,7 @@
 import SpriteKit
 
 class W1_Level_1: SKScene, SKPhysicsContactDelegate {
-    
+
     // MARK: Properties
 
     //Scores
@@ -21,7 +21,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     var lastPlatformPositionX: CGFloat = 500.0
 
     //Ninja
-    var ninja : Ninja! = Ninja(atPosition: CGPoint(x: 0, y: 1000))
+    var ninja : Ninja! = Ninja()
     let ninjaLayer = SKNode()
     
     //Mountais
@@ -76,13 +76,21 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     var finishedMovingToView: Void -> Void = {}
     
     var tempPlatform: SKSpriteNode?
+
+    //TileMap Otimization
+    var tileSizeTotal : CGSize?
+    var firstTile : SKSpriteNode?
+    var first : Bool = true
+    var counter : (w : Int, h: Int) = (0,0)
+    var initialPos : Int = 0
+
     
     // MARK: Constants
     
     struct Constants {
         
         static let midAnchor = CGPointMake(0.5, 0.5)
-        static let defaultSpawnPoint = CGPoint(x: 0, y: 0)
+        static var defaultSpawnPoint = CGPoint(x: 0, y: 0)
         static let defaultScale :CGFloat = 0.31
         
         static let gravity = CGVectorMake(0, -20)
@@ -99,10 +107,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     class func loadSceneAssetsWithCompletionHandler(skView : SKView, completionHandler: W1_Level_1 -> Void) {
         dispatch_async(Constants.backgroundQueue) {
             
-            let loadedScene = W1_Level_1(size: skView.bounds.size)//W1_Level_1.unarchiveFromFile("W1_Level_1") as? W1_Level_1
+            let loadedScene = W1_Level_1(size: skView.bounds.size)
             
+            //W1_Level_1.unarchiveFromFile("W1_Level_1") as? W1_Level_1
             
-            
+    
             dispatch_async(dispatch_get_main_queue()) { completionHandler(loadedScene) }
             
         }
@@ -114,15 +123,23 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
          layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.platformLayer]
 
-        let scene = SKScene(fileNamed: "W1_Level_2")
-        let templateWorld = scene.children.first!.copy() as SKNode
+//        let scene = SKScene(fileNamed: "W1_Level_2")
+//        let templateWorld = scene.children.first!.copy() as SKNode
+//
+//        populateLayersFromWorld(templateWorld)
+        
+        var map = JSTileMap(named: "teste.tmx")
+        playerStartPosition(map)
 
-        populateLayersFromWorld(templateWorld)
+        let map_layer = map.layerNamed("Plataforms")
+        createNodesFromLayer(map_layer)
         
         for l in layers {
             self.worldLayer.addChild(l)
         }
         
+        self.worldLayer.addChild(map)
+
         self.worldLayer.name = "worldLayer"
 
         self.worldLayer.addChild(self.ninja)
@@ -133,18 +150,105 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
+    func createNodesFromLayer(layer: TMXLayer) {
+        
+        let map = layer.map
+        for w in 0..<Int(layer.layerInfo.layerGridSize.width) {
+
+            for h in 0..<Int(layer.layerInfo.layerGridSize.height) {
+                
+
+                let coord = CGPoint(x: w, y: h)
+                let tileGid = layer.layerInfo.tileGidAtCoord(coord)
+                
+                if tileGid == 0 {
+                    continue
+                }
+                
+                if let properties = map.propertiesForGid(tileGid) {
+                    
+                    if properties["plataform"] != nil {
+                        let tile = layer.tileAtCoord(coord)
+                        setPhysicBody(tile, pos: (w, h))
+                        
+                        /*tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+                        tile.physicsBody!.categoryBitMask = ColliderType.Platform.rawValue
+                        tile.physicsBody!.dynamic = false
+                        tile.physicsBody!.friction = 0*/
+
+                    }
+                }
+            }
+        }
+    }
+    
+    func setPhysicBody(tile : SKSpriteNode, pos : (w: Int, h: Int)){
+        
+        if(first){
+            
+            firstTile = tile
+            tileSizeTotal = tile.size
+            first = false
+            counter = pos
+        
+        }
+        else {
+            
+            if(counter.h + 1 == pos.h) {
+                counter.h++
+                tileSizeTotal = CGSizeMake(tileSizeTotal!.width, tileSizeTotal!.height + tile.size.height)
+
+                
+            }
+            else {
+                
+                var finalSize = CGSizeMake(tileSizeTotal!.width, tileSizeTotal!.height)
+                
+                if(firstTile?.size.height < finalSize.height){
+                    finalSize.height -= firstTile!.size.height/2
+                }
+                
+                firstTile?.anchorPoint = CGPoint(x: 0.5,y: 1)
+                firstTile!.physicsBody = SKPhysicsBody(rectangleOfSize: finalSize, center:CGPointMake(0,-finalSize.height/2))
+                firstTile!.physicsBody!.categoryBitMask = ColliderType.Platform.rawValue
+                firstTile!.physicsBody!.dynamic = false
+                firstTile!.physicsBody!.friction = 0
+                
+                firstTile = tile
+                tileSizeTotal = tile.size
+                counter = pos
+            }
+            
+        }
+        
+        
+    }
+    
+    func playerStartPosition(tileMap: JSTileMap) {
+        
+        let group = tileMap.groupNamed("Ninja")
+        let playerObject = group.objectNamed("ninja")
+        let x = playerObject["x"] as? NSNumber
+        let y = playerObject["y"] as? NSNumber
+        
+        Constants.defaultSpawnPoint = CGPointMake(CGFloat(x!) , CGFloat(y!))
+    }
+    
     func populateLayersFromWorld(fromWorld: SKNode) {
         
+        
+        
         //Load sks objects
-        WorldLayer.loadObjectsWithName("frontMoutainLayer", inNode: fromWorld , intoLayer: self.frontMoutainLayer)
-        WorldLayer.loadObjectsWithName("backMountainLayer", inNode: fromWorld , intoLayer: self.backMountainLayer)
-        WorldLayer.loadObjectsWithName("frontCloudLayer", inNode: fromWorld , intoLayer: self.frontCloudLayer)
-        WorldLayer.loadObjectsWithName("backCloudLayer", inNode: fromWorld , intoLayer: self.backCloudLayer)
-        WorldLayer.loadObjectsWithName("platformLayer", inNode: fromWorld, intoLayer: self.platformLayer)
-        
-        
-        //zPositions
-        frontCloudLayer.zPosition = 10
+//        WorldLayer.loadObjectsWithName("frontMoutainLayer", inNode: fromWorld , intoLayer: self.frontMoutainLayer)
+//        WorldLayer.loadObjectsWithName("backMountainLayer", inNode: fromWorld , intoLayer: self.backMountainLayer)
+//        WorldLayer.loadObjectsWithName("frontCloudLayer", inNode: fromWorld , intoLayer: self.frontCloudLayer)
+//        WorldLayer.loadObjectsWithName("backCloudLayer", inNode: fromWorld , intoLayer: self.backCloudLayer)
+//        WorldLayer.loadObjectsWithName("platformLayer", inNode: fromWorld, intoLayer: self.platformLayer)
+//        
+//        
+//        //zPositions
+//        frontCloudLayer.zPosition = 10
         
     }
     
@@ -193,6 +297,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func loadNinja(){
         
+        self.ninja.position = Constants.defaultSpawnPoint
         self.ninja.IdleAnimation()
         self.ninja.currentPosition = self.ninja.position
         self.ninja.antPosition = self.ninja.currentPosition
@@ -206,8 +311,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         
+        println("didmoveToView")
+        self.backgroundColor = SKColor.whiteColor()
         
-        dispatch_async(Constants.backgroundQueue) {
+        //dispatch_async(Constants.backgroundQueue) {
             
             self.loadWorld()
             self.loadHud()
@@ -219,9 +326,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             //self.centerWorldOnPosition(Constants.defaultSpawnPoint)
             
-            dispatch_async(dispatch_get_main_queue(), self.finishedMovingToView)
+         //   dispatch_async(dispatch_get_main_queue(), self.finishedMovingToView)
             
-        }
+        //}
       
     }
    
@@ -248,7 +355,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.ninja.physicsBody?.contactTestBitMask = 0
 
         self.ninja.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-        let moveninja = SKAction.moveTo(CGPoint(x: 0, y: 1000), duration: 0.5)
+        let moveninja = SKAction.moveTo(Constants.defaultSpawnPoint, duration: 0.5)
         
         let block = SKAction.runBlock({ self.changeNinjaCollisionCategory() })
     
@@ -278,89 +385,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
         
         var y :CGFloat = cameraPositionInScene!.y
-        //        if !self.ninja.isMoving && cameraPositionInScene!.y > self.frame.height*0.8 {
-        //            y = cameraPositionInScene!.y
-        //        }
-        
         ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y - cameraPositionInScene!.y)
     }
     
-    func centerWorldOnNinjaOnlyWhenNotMoving()  {
-        
-        let min : CGFloat = 5.0
-        
-        let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
-        var pPos = ninja.parent!.position
 
-        let yDif = pPos.y - cameraPositionInScene!.y
-        let xDif = pPos.x - cameraPositionInScene!.x
-        let n = !self.ninja.isMoving
-        
-//        if(n && pPos.x > xDif){
-//            
-//             pPos = CGPointMake(pPos.x - min, pPos.y)
-//            
-//        }
-//        
-//        if(n && pPos.x < xDif){
-//            
-//            pPos = CGPointMake(pPos.x + min, pPos.y)
-//            
-//        }
-
-        
-        if(n && pPos.y > yDif){
-            
-            pPos = CGPointMake(pPos.x, pPos.y - min)
-            
-        }
-        
-        if(n && pPos.y < yDif){
-            
-            pPos = CGPointMake(pPos.x, pPos.y + min)
-            
-        }
-
-        ninja.parent!.position = pPos
-        
-    }
-    
-    func cameraAlwaysMoving()  {
-        
-        let min : CGFloat = 1.0
-        
-        let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
-        var pPos = ninja.parent!.position
-        
-        let yDif = pPos.y - cameraPositionInScene!.y
-        let xDif = pPos.x - cameraPositionInScene!.x
-        let n = !self.ninja.isMoving
-        
-        pPos = CGPointMake(pPos.x - min, pPos.y)
-
-        
-        
-//        if(n && pPos.y > yDif){
-//            
-//            pPos = CGPointMake(pPos.x, pPos.y - min)
-//            
-//        }
-//        
-//        if(n && pPos.y < yDif){
-//            
-//            pPos = CGPointMake(pPos.x, pPos.y + min)
-//            
-//        }
-        
-        ninja.parent!.position = pPos
-        
-        
-        
-        
-    }
-
-  
-    
     override func didSimulatePhysics() {
 
         if(gameStarted) {
@@ -447,28 +475,37 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
+
+        
         for touch: AnyObject in touches{
             
             let location = touch.locationInNode(self)
             let node = self.nodeAtPoint(location)
             
+            println("comecou toque")
+
             if(self.HUD!.pauseButton!.containsPoint(self.HUD!.convertPoint(location, fromNode: self))){
-                
+                println("comecou toque2")
+
                 self.gameStarted = false
                 self.HUD?.moveButtonsInScreen()
             }
             
             if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
-                
+                println("comecou toque3")
+
                 //self.showLeader()
             }
             
             if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
-                
+                println("comecou toque4")
+
                 self.initialTapPosition = location
                 self.isDraging = true
             }
             else{
+                println("comecou toque5")
+
                 
                 if(self.HUD!.playButton!.containsPoint(location) && self.gameStarted == false){
                     
@@ -489,7 +526,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         
-        
+        println("moveu toque")
+
         if(self.isDraging == true && self.gameStarted == true && !self.ninja.isDead){
             
             let touch: AnyObject = touches.anyObject()!
@@ -528,6 +566,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        
+        println("terminou")
+
         
         if(self.isDraging == true && self.gameStarted == true && self.ninja.isMoving == false && !self.ninja.isDead){
             

@@ -50,11 +50,11 @@ class Ninja: SKNode {
     
     
     
-    init(atPosition: CGPoint) {
+    override init() {
         super.init()
         
         loadAsset()
-        loadPositions(atPosition)
+        loadPositions()
         loadPhysics()
 
     }
@@ -86,11 +86,10 @@ class Ninja: SKNode {
         
     }
     
-    func loadPositions(atPosition: CGPoint){
+    func loadPositions(){
         
         getRandomMask()
         
-        self.position = atPosition
         self.body.anchorPoint = CGPointMake(0.5, 0.0)
         self.container.anchorPoint = CGPointMake(0.5, 0.0)
         self.container.position = CGPointZero
@@ -119,7 +118,7 @@ class Ninja: SKNode {
         self.physicsBody?.dynamic = true
         self.physicsBody?.affectedByGravity = true
         self.physicsBody?.friction = 1.0
-        self.physicsBody?.restitution = 0
+        self.physicsBody?.restitution = 0.2
         self.physicsBody?.angularDamping = 0.0
         self.physicsBody?.linearDamping = 1.5
         self.physicsBody?.categoryBitMask = ColliderType.Ninja.rawValue

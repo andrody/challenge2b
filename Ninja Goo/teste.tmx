@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="4">
+ <tileset firstgid="1" name="aq" tilewidth="50" tileheight="50">
+  <image source="plataform.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="plataform" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="2" name="plataforma2" tilewidth="50" tileheight="50">
+  <image source="plataform.png" width="50" height="50"/>
+ </tileset>
+ <objectgroup name="Ninja">
+  <object id="3" name="ninja" x="101.86" y="1111.6"/>
+ </objectgroup>
+ <layer name="Plataforms" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztmOsOgyAMRvX9X3rx1xIjtbQUWjwnMdmUyyeciew4QOJcHQA+Df59g6zznDUXjCXrPHtyncEHPGMZm6zj6fUvCm/bO3uNf/66K9uuDv75665suzr456+7su17P9XWaPz712X/MR/8g5XgXx6++OyU7q91LeuYZM0FbXbyD+qBf/XYaZ3Gv7ns5M4IdvJPk0u6p13/f8ma68LiX1a8/kVRbRxngn/6ulaqjeNM8E9f10q1cZzJzPe/6Hcs/PMz+11xp/2Hhi/uP3rINOeZsoyicvaLaLczzXmmLKOonP3inv+8ffZ6aVkfosC/NUhz/OZfq1xP3yPOjwD/1qB1TLr2VE7zzJrlnyYP/q0hyr/WNanvnvM967Imj/b87D1jVH+Rx1v2+/21vmf3T9OHtmyPf6OxjFFW3sZ6d/9av8MRfUrlPOCfrn4V/7RlLVnwTwb/9GUtWfBPBv/0ZS1Z8E8G//RlLVnwT2Zn/wAAAAAAAAAAYBw/oVQCNg==
+  </data>
+ </layer>
+ <layer name="preenchimento" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt2EEKAyEMQNGh9z90L1ATO01MS98DVwNG4c/G6wIAAKo8mhbs0B+T9Mck/QEAAAAA0MH7M5P0xyT9MUl/MM8/xCT9EenuQn9Eoi4qeln1p8v/sdOY/ujS0d9uM6f60/D3+tX+3mmqsr/Tb2bV8zpXdvbsfne+RXtm9Hd+nv7W56vo79NWM/rTXzRDf/rTn/5enT27351v0Z4Z/Z2fp7/1+aoaAQAAACD2BMWrBl0=
+  </data>
+ </layer>
+</map>

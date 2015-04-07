@@ -30,11 +30,13 @@ class GameViewController: UIViewController {
             self.scene = loadedScene
             self.scene.scaleMode = .AspectFill
             
-  //          #if DEBUG
-             //   self.skView.showsDrawCount = true
-               // self.skView.showsFPS = true
-                //self.skView.showsPhysics = true
-//            #endif
+            //#if DEBUG
+                self.skView.showsDrawCount = true
+                self.skView.showsNodeCount = true
+
+                self.skView.showsFPS = true
+                self.skView.showsPhysics = true
+            //#endif
             
             self.skView.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
             loadedScene.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
