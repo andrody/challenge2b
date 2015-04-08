@@ -16,7 +16,7 @@ enum NailState: Int {
 
 enum ColliderType: UInt32 {
     case Ninja = 1
-    case Platform = 2
+    case Wall = 2
     case Spike = 4
 }
 
@@ -122,8 +122,8 @@ class Ninja: SKNode {
         self.physicsBody?.angularDamping = 0.0
         self.physicsBody?.linearDamping = 1.5
         self.physicsBody?.categoryBitMask = ColliderType.Ninja.rawValue
-        self.physicsBody?.contactTestBitMask = ColliderType.Platform.rawValue | ColliderType.Spike.rawValue
-        self.physicsBody?.collisionBitMask = ColliderType.Platform.rawValue | ColliderType.Spike.rawValue
+        self.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue
+        self.physicsBody?.collisionBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue
         self.physicsBody?.mass = 1.0
 
     }

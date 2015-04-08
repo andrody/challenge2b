@@ -72,7 +72,7 @@ class WorldLayer: SKNode {
 
                 if(node_sprite.name!.hasPrefix("platform_")){
                     node_sprite.physicsBody = SKPhysicsBody(rectangleOfSize: node_sprite.size)
-                    node_sprite.physicsBody!.categoryBitMask = ColliderType.Platform.rawValue
+                    node_sprite.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
                     node_sprite.physicsBody!.affectedByGravity = false
                     node_sprite.physicsBody!.dynamic = false
                     node_sprite.physicsBody!.friction = 1.0

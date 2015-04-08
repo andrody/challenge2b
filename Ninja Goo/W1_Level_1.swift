@@ -84,6 +84,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     var counter : (w : Int, h: Int) = (0,0)
     var initialPos : Int = 0
 
+    //Map
+    var map : JSTileMap!
     
     // MARK: Constants
     
@@ -92,7 +94,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let midAnchor = CGPointMake(0.5, 0.5)
         static var defaultSpawnPoint = CGPoint(x: 0, y: 0)
         static let defaultScale :CGFloat = 0.31
+        static var defaultGroundPoint : CGPoint!
         
+        static var minCamPos : CGFloat!
         static let gravity = CGVectorMake(0, -20)
         static let minForce : CGFloat = 30.0
         static let maxForce : CGFloat = 120.0
@@ -128,10 +132,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //
 //        populateLayersFromWorld(templateWorld)
         
-        var map = JSTileMap(named: "teste.tmx")
-        playerStartPosition(map)
+        self.map = JSTileMap(named: "FaseTeste.tmx")
 
-        let map_layer = map.layerNamed("Plataforms")
+        let map_layer = map.layerNamed("Walls")
         createNodesFromLayer(map_layer)
         
         for l in layers {
@@ -146,6 +149,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.worldLayer.addChild(self.camera)
         self.addChild(self.worldLayer)
         
+        Constants.defaultSpawnPoint = getStartPosition(map, groupName: "Ninja", name: "ninja")
+        Constants.defaultGroundPoint = getStartPosition(map, groupName: "Ground", name: "ground")
+        Constants.minCamPos = Constants.defaultGroundPoint.y + self.scene!.size.height
+
+        
+        centerWorldOnPoint(CGPointMake(Constants.defaultSpawnPoint.x, Constants.defaultGroundPoint.y + self.frame.height))
+
         
         
     }
@@ -168,7 +178,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 if let properties = map.propertiesForGid(tileGid) {
                     
-                    if properties["plataform"] != nil {
+                    if properties["wall"] != nil {
                         let tile = layer.tileAtCoord(coord)
                         setPhysicBody(tile, pos: (w, h))
                         
@@ -211,7 +221,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 firstTile?.anchorPoint = CGPoint(x: 0.5,y: 1)
                 firstTile!.physicsBody = SKPhysicsBody(rectangleOfSize: finalSize, center:CGPointMake(0,-finalSize.height/2))
-                firstTile!.physicsBody!.categoryBitMask = ColliderType.Platform.rawValue
+                firstTile!.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
                 firstTile!.physicsBody!.dynamic = false
                 firstTile!.physicsBody!.friction = 0
                 
@@ -225,14 +235,14 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    func playerStartPosition(tileMap: JSTileMap) {
+    func getStartPosition(tileMap: JSTileMap, groupName : String, name : String) -> CGPoint {
         
-        let group = tileMap.groupNamed("Ninja")
-        let playerObject = group.objectNamed("ninja")
-        let x = playerObject["x"] as? NSNumber
-        let y = playerObject["y"] as? NSNumber
+        let group = tileMap.groupNamed(groupName)
+        let object = group.objectNamed(name)
+        let x = object["x"] as? NSNumber
+        let y = object["y"] as? NSNumber
         
-        Constants.defaultSpawnPoint = CGPointMake(CGFloat(x!) , CGFloat(y!))
+        return CGPointMake(CGFloat(x!), CGFloat(y!))
     }
     
     func populateLayersFromWorld(fromWorld: SKNode) {
@@ -280,18 +290,55 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func loadClouds(){
+        
+        
+        let cloud = SKSpriteNode(texture: SKTexture(imageNamed: "nuvem_escura"))
+        let cloud_clara = SKSpriteNode(texture: SKTexture(imageNamed: "nuvem_clara"))
+
+        let map_width : CGFloat = CGFloat(self.map.mapSize.width * self.map.tileSize.width)
+        
+        let numberOfClouds = Int(map_width / cloud.size.width) * 2
+        
+        for index in 0...numberOfClouds {
+            
+            let c = cloud.copy() as SKSpriteNode
+            c.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
+            self.backCloudLayer.addChild(c)
+            
+            let cc = cloud_clara.copy() as SKSpriteNode
+            cc.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
+            self.frontCloudLayer.addChild(cc)
+        
+        }
+        
+        backCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y)
+        
+        frontCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y - 35)
+
+        frontCloudLayer.zPosition = 100
+
+        
+        self.animateClouds()
+        
+    }
+    
     func animateClouds(){
         
         //Moving the front clounds
         let animateCloudUp = SKAction.moveByX(0, y: 20, duration: 1)
-        let animateCloudDown = SKAction.moveByX(0, y: -20, duration: 1)
-        let seqOne = SKAction.sequence([animateCloudUp , animateCloudDown])
-        let seqTwo = SKAction.sequence([animateCloudDown , animateCloudUp])
-        let repteOne = SKAction.repeatActionForever(seqOne)
-        let repteTwo = SKAction.repeatActionForever(seqTwo)
+        let animateCloudDown = SKAction.moveByX(0, y: -20, duration: 1.0)
+        let seqA = SKAction.sequence([animateCloudUp , animateCloudDown])
+        let repeteA = SKAction.repeatActionForever(seqA)
         
-        self.frontCloudLayer.runAction(repteOne, withKey: "move")
-        self.backCloudLayer.runAction(repteTwo, withKey: "move")
+        let animateCloudUp_B = SKAction.moveByX(0, y: 20, duration: 1.5)
+        let animateCloudDown_B = SKAction.moveByX(0, y: -20, duration: 1.5)
+        let seqB = SKAction.sequence([animateCloudUp_B , animateCloudDown_B])
+        let repeteB = SKAction.repeatActionForever(seqB)
+
+        
+        self.frontCloudLayer.runAction(repeteA, withKey: "move")
+        self.backCloudLayer.runAction(repeteB, withKey: "move")
         
     }
     
@@ -315,13 +362,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.backgroundColor = SKColor.whiteColor()
         
         //dispatch_async(Constants.backgroundQueue) {
-            
             self.loadWorld()
             self.loadHud()
             self.loadPhysics()
             self.loadNinja()
-            self.animateClouds()
-            
+            self.loadClouds()
+        
 
             
             //self.centerWorldOnPosition(Constants.defaultSpawnPoint)
@@ -367,7 +413,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func changeNinjaCollisionCategory(){
         
-        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Platform.rawValue | ColliderType.Spike.rawValue
+        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue
         self.ninja.isMoving = false
         self.ninja.isDead = false
         //self.ninja.physicsBody?.applyImpulse(CGVectorMake(0 , -9.8 * self.ninja.physicsBody!.mass))
@@ -382,10 +428,33 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func centerWorldOnNinja() {
 
-        let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
+//        let cameraPositionInScene = self.ninja.scene?.convertPoint(ninja.position, fromNode: ninja.parent!)
+//        
+//        var y :CGFloat = cameraPositionInScene!.y
+//        ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y - cameraPositionInScene!.y)
+        
+        println("ninja y: \(self.ninja.position.y)")
+        println("ground y: \(Constants.defaultGroundPoint.y)")
+
+        var point : CGPoint!
+        if(self.ninja.position.y > Constants.minCamPos){
+            point = self.ninja.position
+        }
+        else {
+            point = CGPointMake(self.ninja.position.x, Constants.minCamPos)
+
+        }
+        
+        centerWorldOnPoint(point)
+
+    }
+    
+    func centerWorldOnPoint(point : CGPoint) {
+        
+        let cameraPositionInScene = self.worldLayer.scene?.convertPoint(point, fromNode: worldLayer)
         
         var y :CGFloat = cameraPositionInScene!.y
-        ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y - cameraPositionInScene!.y)
+        self.worldLayer.position = CGPointMake(self.worldLayer.position.x - cameraPositionInScene!.x , self.worldLayer.position.y - cameraPositionInScene!.y)
     }
     
 
@@ -404,7 +473,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         
         //Check for gameover
-        if(self.ninja.position.y < -self.size.height ){
+        if(self.ninja.position.y < -Constants.defaultGroundPoint.y/8 ){
             
             self.runAction(SKAction.playSoundFileNamed("impact.wav", waitForCompletion: true))
 
@@ -426,7 +495,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         switch(contactMask){
             
-            case ColliderType.Platform.rawValue | ColliderType.Ninja.rawValue:
+            case ColliderType.Wall.rawValue | ColliderType.Ninja.rawValue:
                 
                 if(self.ninja.isDead == false) {
                     println("colidiu com plataforma")
@@ -434,10 +503,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     let dirColision = contact.contactNormal
                     
                     if(dirColision.dx > 0.0){
-                        self.ninja.nail_left()
+                        self.ninja.nail_right()
                     }
                     else if(dirColision.dx < 0.0){
-                        self.ninja.nail_right()
+                        self.ninja.nail_left()
                         self.ninja.lookTo(self.ninja.eyes, angle: -120)
                     }
                     else {
