@@ -31,6 +31,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     //Clouds
     let frontCloudLayer = SKNode()
     let backCloudLayer = SKNode()
+    let upperCloudLayer = SKNode()
+
     
     //Platform
     let platformLayer = SKNode()
@@ -49,10 +51,6 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     //Ninja positions
     var ninjaAntPositionScene = CGPointZero
     var ninjaCurrentPositionScene = CGPointZero
-    
-    //Used to calculate time after witch update
-    var lastUpdateTime: NSTimeInterval = 0
-    var dt: NSTimeInterval = 0
     
     //Player is draging
     var isDraging = false
@@ -87,6 +85,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     //Map
     var map : JSTileMap!
     
+    
+    //Used to calculate time after witch update
+    var lastUpdate: NSTimeInterval = 0
+    var delta: NSTimeInterval = 0
+    
     // MARK: Constants
     
      struct Constants {
@@ -104,9 +107,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         static let zPosBackgroundBackLayer : CGFloat = 1
         static let zPosBackgroundFrontLayer : CGFloat = 2
-        static let zPosCloudBack : CGFloat = 3
-        static let zPosWall : CGFloat = 4
-        static let zPosCloudFront : CGFloat = 5
+        static let zPosUpperCloud : CGFloat = 3
+        static let zPosCloudBack : CGFloat = 4
+        static let zPosWall : CGFloat = 5
+        static let zPosCloudFront : CGFloat = 6
 
 
 
@@ -132,9 +136,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func loadWorld() {
         
+        //self.worldLayer.setScale(0.1)
+
         self.worldLayer.setScale(Constants.defaultScale)
         
-         layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.platformLayer]
+         layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.platformLayer, self.upperCloudLayer]
 
 //        let scene = SKScene(fileNamed: "W1_Level_2")
 //        let templateWorld = scene.children.first!.copy() as SKNode
@@ -151,6 +157,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
 
         createNodesFromLayer(map_layer)
+        
+        let spikes = map.layerNamed("Spike")
+        spikes.zPosition = Constants.zPosWall
+
+
+        createNodesFromLayer(spikes)
+
         
         for l in layers {
             self.worldLayer.addChild(l)
@@ -202,6 +215,34 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         tile.physicsBody!.dynamic = false
                         tile.physicsBody!.friction = 0*/
 
+                    }
+                    
+                    if properties["spike"] != nil {
+                        let tile = layer.tileAtCoord(coord)
+                        //setPhysicBody(tile, pos: (w, h))
+                        
+                        //tile.anchorPoint = CGPointMake(0.5, 1)
+
+                        let spikeText = SKTexture(imageNamed: "espinho")
+                        tile.physicsBody = SKPhysicsBody(texture: spikeText, alphaThreshold: 0.5, size: tile.size)
+                        tile.texture = spikeText
+                        tile.physicsBody!.dynamic = false
+                        //tile.physicsBody!.
+                        tile.physicsBody!.friction = 0
+                        tile.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
+                        
+                        let spikeProp = properties["spike"] as String!
+                        
+                        if(spikeProp == "0") {
+                            tile.position = CGPointMake(tile.position.x, tile.position.y - tile.size.height/2)
+                        }
+                        
+                        
+                        
+                        if((spikeProp == "2") ) {
+                            //tile.position = CGPointMake(tile.position.x, tile.position.y + tile.size.height/2)
+                            tile.setScale(-1.0)
+                        }
                     }
                 }
             }
@@ -374,6 +415,37 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     }
     
+    func loadUpperClouds(){
+        
+        let cloud = SKSpriteNode(texture: SKTexture(imageNamed: "flat_cloud"))
+        let map_width : CGFloat = CGFloat(self.map.mapSize.width * self.map.tileSize.width)
+        
+        let numberOfClouds = 300//Int(map_width / cloud.size.width)
+
+        for index in 0...numberOfClouds {
+            
+            let c = cloud.copy() as SKSpriteNode
+            
+            let randomPos = CGFloat(arc4random_uniform(80))/100 + 0.1
+            let randomScale = CGFloat(arc4random_uniform(80))/100 + 0.2
+            let randomDis = CGFloat(arc4random_uniform(100))/100 + 0.4
+
+            
+            c.setScale(randomScale)
+            c.alpha = 0.4
+            c.position = CGPointMake(CGFloat(index) * cloud.size.width * randomDis, self.frame.height * randomPos * 3)
+            self.upperCloudLayer.addChild(c)
+
+            
+        }
+        
+        self.upperCloudLayer.position = CGPointMake(0, Constants.defaultGroundPoint.y + 300)
+        
+        self.upperCloudLayer.zPosition = Constants.zPosUpperCloud
+
+
+    }
+    
     func animateClouds(){
         
         //Moving the front clounds
@@ -419,6 +491,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             self.loadNinja()
             self.loadClouds()
             self.loadBackground()
+            self.loadUpperClouds()
         
 
             
@@ -521,6 +594,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.backMountainLayer.position = CGPointMake(posX, posY)
         
         
+
+        
+        
     }
     
 
@@ -537,6 +613,19 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     // MARK: Update
     
     override func update(currentTime: CFTimeInterval) {
+        
+        if(self.lastUpdate > 0){
+            self.delta = currentTime - self.lastUpdate
+        }
+        else{
+            self.delta = 0
+        }
+        self.lastUpdate = currentTime
+        
+        //Move Upper Clouds
+        self.upperCloudLayer.position = CGPointMake(self.upperCloudLayer.position.x - 50 * CGFloat(self.delta), self.upperCloudLayer.position.y)
+        
+        
         
         //Check for gameover
         if(self.ninja.position.y < -Constants.defaultGroundPoint.y/8 ){
