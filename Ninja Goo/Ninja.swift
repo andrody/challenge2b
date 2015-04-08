@@ -105,7 +105,7 @@ class Ninja: SKNode {
         self.mask.zPosition = 1
         self.back_eyes.zPosition = 2
         self.eyes.zPosition = 3
-        self.zPosition = 10
+        self.zPosition = W1_Level_1.Constants.zPosWall
         
         self.setScale(dScale)
 

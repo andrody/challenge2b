@@ -89,7 +89,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     // MARK: Constants
     
-    struct Constants {
+     struct Constants {
         
         static let midAnchor = CGPointMake(0.5, 0.5)
         static var defaultSpawnPoint = CGPoint(x: 0, y: 0)
@@ -101,6 +101,15 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let minForce : CGFloat = 30.0
         static let maxForce : CGFloat = 120.0
         static let maxForceGeral : CGFloat = maxForce + 70
+        
+        static let zPosBackgroundBackLayer : CGFloat = 1
+        static let zPosBackgroundFrontLayer : CGFloat = 2
+        static let zPosCloudBack : CGFloat = 3
+        static let zPosWall : CGFloat = 4
+        static let zPosCloudFront : CGFloat = 5
+
+
+
 
         static let backgroundQueue = dispatch_queue_create("com.koruja.ningoo.backgroundQueue", DISPATCH_QUEUE_SERIAL)
         
@@ -135,6 +144,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.map = JSTileMap(named: "FaseTeste.tmx")
 
         let map_layer = map.layerNamed("Walls")
+        map_layer.zPosition = Constants.zPosWall
+        
+        let preenchimento = map.layerNamed("preenchimento")
+        preenchimento.zPosition = Constants.zPosWall
+
+
         createNodesFromLayer(map_layer)
         
         for l in layers {
@@ -245,24 +260,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         return CGPointMake(CGFloat(x!), CGFloat(y!))
     }
     
-    func populateLayersFromWorld(fromWorld: SKNode) {
-        
-        
-        
-        //Load sks objects
-//        WorldLayer.loadObjectsWithName("frontMoutainLayer", inNode: fromWorld , intoLayer: self.frontMoutainLayer)
-//        WorldLayer.loadObjectsWithName("backMountainLayer", inNode: fromWorld , intoLayer: self.backMountainLayer)
-//        WorldLayer.loadObjectsWithName("frontCloudLayer", inNode: fromWorld , intoLayer: self.frontCloudLayer)
-//        WorldLayer.loadObjectsWithName("backCloudLayer", inNode: fromWorld , intoLayer: self.backCloudLayer)
-//        WorldLayer.loadObjectsWithName("platformLayer", inNode: fromWorld, intoLayer: self.platformLayer)
-//        
-//        
-//        //zPositions
-//        frontCloudLayer.zPosition = 10
-        
-    }
     
-   
     func loadHud(){
 
         //Adding HUD
@@ -316,11 +314,64 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         frontCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y - 35)
 
-        frontCloudLayer.zPosition = 100
+        backCloudLayer.zPosition = Constants.zPosCloudBack
+        frontCloudLayer.zPosition = Constants.zPosCloudFront
 
         
         self.animateClouds()
         
+    }
+    
+    func loadBackground(){
+        
+        
+        let montain = SKSpriteNode(texture: SKTexture(imageNamed: "montanha_escura"))
+        let montain_clara = SKSpriteNode(texture: SKTexture(imageNamed: "montanha_clara"))
+
+        let map_width : CGFloat = CGFloat(self.map.mapSize.width * self.map.tileSize.width)
+
+        let numberOfMontains = Int(map_width / montain.size.width) * 2
+
+        for index in 0...numberOfMontains {
+            
+            //Montanha Escura
+            let m = montain.copy() as SKSpriteNode
+            
+            let randomDis = CGFloat(arc4random_uniform(50))/100 + 0.5
+            let randomScale = CGFloat(arc4random_uniform(100))/100 + 0.3
+
+            
+            m.position = CGPointMake(CGFloat(index) * montain.size.width * randomDis, 0)
+            m.setScale(randomScale)
+            m.anchorPoint = CGPointMake(0.5,0)
+            
+            self.frontMoutainLayer.addChild(m)
+            
+            
+            
+            //Montanha Clara
+            let mC = montain_clara.copy() as SKSpriteNode
+            
+            let randomDis2 = CGFloat(arc4random_uniform(150))/100 + 0.3
+            let randomScale2 = CGFloat(arc4random_uniform(100))/100 + 0.2
+            
+            mC.position = CGPointMake(CGFloat(index) * montain.size.width * randomDis2, 0)
+            mC.setScale(randomScale2)
+            mC.anchorPoint = CGPointMake(0.5,0)
+
+            self.backMountainLayer.addChild(mC)
+            
+
+        }
+        
+        self.backMountainLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfMontains) * montain.size.width/4, Constants.defaultGroundPoint.y - 30)
+        
+        self.frontMoutainLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfMontains) * montain.size.width/4, Constants.defaultGroundPoint.y - 30)
+
+        
+        self.backMountainLayer.zPosition = Constants.zPosBackgroundBackLayer
+        self.frontMoutainLayer.zPosition = Constants.zPosBackgroundFrontLayer
+
     }
     
     func animateClouds(){
@@ -359,7 +410,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
         println("didmoveToView")
-        self.backgroundColor = SKColor.whiteColor()
+        //self.backgroundColor = SKColor.whiteColor()
         
         //dispatch_async(Constants.backgroundQueue) {
             self.loadWorld()
@@ -367,6 +418,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             self.loadPhysics()
             self.loadNinja()
             self.loadClouds()
+            self.loadBackground()
         
 
             
@@ -406,8 +458,6 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let block = SKAction.runBlock({ self.changeNinjaCollisionCategory() })
     
         self.ninja.runAction( SKAction.sequence([moveninja, block]))
-        
-        
         
     }
     
@@ -451,10 +501,26 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func centerWorldOnPoint(point : CGPoint) {
         
-        let cameraPositionInScene = self.worldLayer.scene?.convertPoint(point, fromNode: worldLayer)
+        var cameraPositionInScene = self.worldLayer.scene?.convertPoint(point, fromNode: worldLayer)
         
         var y :CGFloat = cameraPositionInScene!.y
-        self.worldLayer.position = CGPointMake(self.worldLayer.position.x - cameraPositionInScene!.x , self.worldLayer.position.y - cameraPositionInScene!.y)
+        
+        var posX = self.worldLayer.position.x - cameraPositionInScene!.x
+        var posY = self.worldLayer.position.y - cameraPositionInScene!.y
+        
+        self.worldLayer.position = CGPointMake(posX, posY)
+        
+        //Parallax Montain
+        posX = self.frontMoutainLayer.position.x + cameraPositionInScene!.x * 2
+        posY = self.frontMoutainLayer.position.y + cameraPositionInScene!.y * 2
+        self.frontMoutainLayer.position = CGPointMake(posX, posY)
+        
+        //Parallax Montain Back
+        posX = self.backMountainLayer.position.x + cameraPositionInScene!.x * 2.5
+        posY = self.backMountainLayer.position.y + cameraPositionInScene!.y * 2
+        self.backMountainLayer.position = CGPointMake(posX, posY)
+        
+        
     }
     
 

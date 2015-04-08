@@ -38,8 +38,8 @@ class GameViewController: UIViewController {
                 self.skView.showsPhysics = true
             //#endif
             
-            self.skView.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
-            loadedScene.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
+            //self.skView.backgroundColor = SKColor(red: 229, green: 233, blue: 248, alpha: 1)
+            loadedScene.backgroundColor = SKColor(red: 229.0/255.0, green: 233.0/255.0, blue: 248.0/255.0, alpha: 1)
 
 
             
