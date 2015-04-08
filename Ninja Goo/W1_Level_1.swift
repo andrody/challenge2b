@@ -147,21 +147,19 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //
 //        populateLayersFromWorld(templateWorld)
         
-        self.map = JSTileMap(named: "FaseTeste.tmx")
+        self.map = JSTileMap(named: "SegundaFase.tmx")
 
         let map_layer = map.layerNamed("Walls")
         map_layer.zPosition = Constants.zPosWall
         
-        let preenchimento = map.layerNamed("preenchimento")
-        preenchimento.zPosition = Constants.zPosWall
+        //let preenchimento = map.layerNamed("preenchimento")
+        //preenchimento.zPosition = Constants.zPosWall
 
 
         createNodesFromLayer(map_layer)
         
-        let spikes = map.layerNamed("Spike")
+        let spikes = map.layerNamed("Spikes")
         spikes.zPosition = Constants.zPosWall
-
-
         createNodesFromLayer(spikes)
 
         
@@ -192,6 +190,17 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func createNodesFromLayer(layer: TMXLayer) {
         
         let map = layer.map
+        
+
+        let espinho_tile = SKTexture(imageNamed: "espinho_tile")
+        let espinho_tile_direito = SKTexture(imageNamed: "espinho_tile_direito")
+        let espinho_tile_invertido = SKTexture(imageNamed: "espinho_tile_invertido")
+        let espinho_tile_esquerdo = SKTexture(imageNamed: "espinho_tile_esquerdo")
+
+
+        let spikesArray = [espinho_tile, espinho_tile_direito, espinho_tile_invertido, espinho_tile_esquerdo]
+        
+
         for w in 0..<Int(layer.layerInfo.layerGridSize.width) {
 
             for h in 0..<Int(layer.layerInfo.layerGridSize.height) {
@@ -206,47 +215,95 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 if let properties = map.propertiesForGid(tileGid) {
                     
+                    let tile = layer.tileAtCoord(coord)
+
                     if properties["wall"] != nil {
-                        let tile = layer.tileAtCoord(coord)
-                        setPhysicBody(tile, pos: (w, h))
+                        //setPhysicBody(tile, pos: (w, h))
                         
-                        /*tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
-                        tile.physicsBody!.categoryBitMask = ColliderType.Platform.rawValue
+                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
                         tile.physicsBody!.dynamic = false
-                        tile.physicsBody!.friction = 0*/
+                        tile.physicsBody!.friction = 0
 
                     }
                     
                     if properties["spike"] != nil {
-                        let tile = layer.tileAtCoord(coord)
-                        //setPhysicBody(tile, pos: (w, h))
                         
-                        //tile.anchorPoint = CGPointMake(0.5, 1)
+                        let spikeProp = (properties["spike"] as String!).toInt()
 
-                        let spikeText = SKTexture(imageNamed: "espinho")
-                        tile.physicsBody = SKPhysicsBody(texture: spikeText, alphaThreshold: 0.5, size: tile.size)
-                        tile.texture = spikeText
+                        tile.physicsBody = SKPhysicsBody(texture: spikesArray[spikeProp!], alphaThreshold: 0.5, size: tile.size)
+                        tile.texture = spikesArray[spikeProp!]
                         tile.physicsBody!.dynamic = false
-                        //tile.physicsBody!.
                         tile.physicsBody!.friction = 0
                         tile.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
-                        
-                        let spikeProp = properties["spike"] as String!
-                        
-                        if(spikeProp == "0") {
-                            tile.position = CGPointMake(tile.position.x, tile.position.y - tile.size.height/2)
-                        }
-                        
-                        
-                        
-                        if((spikeProp == "2") ) {
-                            //tile.position = CGPointMake(tile.position.x, tile.position.y + tile.size.height/2)
-                            tile.setScale(-1.0)
-                        }
+
                     }
+                    
+                    if properties["isMoveable"] != nil {
+                        
+                        let steps = (properties["isMoveable"] as String!).toInt()
+                        let direction = (properties["direction"] as String!).toInt()
+                        let speed = (properties["speed"] as String!).toInt()
+                        //let wall = (properties["wall"] as String!).toInt()
+
+                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+                        tile.physicsBody!.dynamic = false
+                        tile.physicsBody!.friction = 0
+                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+                        tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
+                        
+                    }
+
                 }
             }
         }
+    }
+    
+    func getMoveAction(steps : Int, direction : Int, speed : Int) -> SKAction {
+        
+        var move : SKAction!
+        var moveBack : SKAction!
+
+        let k : CGFloat! = 50
+        let defaultSpeed : CGFloat = 3.0
+        
+        switch(direction){
+            
+            
+            //Direita
+            case 1:
+                move = SKAction.moveByX(CGFloat(steps) * k, y: 0, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                moveBack = SKAction.moveByX(-CGFloat(steps) * k, y: 0, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                break
+            
+            //Esquerda
+            case 2:
+                move = SKAction.moveByX(-CGFloat(steps) * k, y: 0, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                moveBack = SKAction.moveByX(CGFloat(steps) * k, y: 0, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+            break
+            
+            //Cima
+            case 3:
+                move = SKAction.moveByX(0, y: CGFloat(steps) * k, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                moveBack = SKAction.moveByX(0, y: -CGFloat(steps) * k, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                break
+            
+            //Cima
+            case 4:
+                move = SKAction.moveByX(0, y: -CGFloat(steps) * k, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                moveBack = SKAction.moveByX(0, y: CGFloat(steps) * k, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                break
+
+            default:
+                move = SKAction.moveByX(CGFloat(steps) * k, y: 0, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+                moveBack = SKAction.moveByX(-CGFloat(steps) * k, y: 0, duration: NSTimeInterval(defaultSpeed / CGFloat(speed)))
+            break
+            
+        }
+        
+        return SKAction.repeatActionForever(SKAction.sequence([move, moveBack]))
+
+        
     }
     
     func setPhysicBody(tile : SKSpriteNode, pos : (w: Int, h: Int)){

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="3">
+ <tileset firstgid="1" name="plataforma3" tilewidth="400" tileheight="600">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="10" name="plataforma3" tilewidth="200" tileheight="500">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="28" name="plataforma3" tilewidth="250" tileheight="250">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="63" name="plataforma_movel_horozontal" tilewidth="250" tileheight="100">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="isMoveable" value="7"/>
+    <property name="direction" value="1"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="153" name="plataforma_movel_horizontal" tilewidth="250" tileheight="100">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="isMoveable" value="7"/>
+    <property name="direction" value="2"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="243" name="plataforma_movel_vertical" tilewidth="100" tileheight="250">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="isMoveable" value="7"/>
+    <property name="direction" value="3"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="334" name="plataforma3" tilewidth="100" tileheight="250">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="isMoveable" value="7"/>
+    <property name="direction" value="4"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Walls" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt2zEOgCAMAEBcfYN/4Z3+1tUYiTGoSLlbILB0om1IUwIAAODKUtg/cQYAALCnbwBqzK0DgODk6fiml+/hb7xrAPBf8jQQTc27pt8G/H8QRW4dAHzorP7Lh7VE/QcA3KF2gNjW1gEAAAxKrwUAAEAEvc6Fjzzv3nPsRxsiewKs
+  </data>
+ </layer>
+ <layer name="Spikes" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztziEBADAIADAo+P49KEAA3A2CLcEiAAAAAAAA4F9tBwAAAAAAAAAYXm4PAAAAAAAAAAAAAOCWBr4IAUM=
+  </data>
+ </layer>
+ <objectgroup name="Ground">
+  <object id="1" name="ground" x="23.6267" y="1470.76" width="41.3467" height="35.44"/>
+ </objectgroup>
+ <objectgroup name="Ninja">
+  <object id="2" name="ninja" x="53.1601" y="1222.68"/>
+ </objectgroup>
+</map>

@@ -13,8 +13,13 @@
 		C54747431AD44E0A00C4E23F /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C54747411AD44E0A00C4E23F /* LFCGzipUtility.m */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EAA1AD5A89200A97B1D /* FaseTeste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */; };
-		C5A53EAC1AD5A91A00A97B1D /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EAB1AD5A91A00A97B1D /* espinho_tile.png */; };
-		C5A53EAE1AD5B73D00A97B1D /* espinho.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EAD1AD5B73D00A97B1D /* espinho.png */; };
+		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
+		C5A53EBC1AD5C78A00A97B1D /* ZeroFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */; };
+		C5A53EC11AD5E66B00A97B1D /* espinho_tile_direito.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBD1AD5E66B00A97B1D /* espinho_tile_direito.png */; };
+		C5A53EC21AD5E66B00A97B1D /* espinho_tile_esquerdo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBE1AD5E66B00A97B1D /* espinho_tile_esquerdo.png */; };
+		C5A53EC31AD5E66B00A97B1D /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBF1AD5E66B00A97B1D /* espinho_tile_invertido.png */; };
+		C5A53EC41AD5E66B00A97B1D /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EC01AD5E66B00A97B1D /* espinho_tile.png */; };
+		C5A53EC81AD5EB1C00A97B1D /* SegundaFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EC71AD5EB1C00A97B1D /* SegundaFase.tmx */; };
 		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
 		C5CB3F421ACD6AA8001A37B7 /* W1_Level_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F411ACD6AA8001A37B7 /* W1_Level_2.sks */; };
 		C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */; };
@@ -55,8 +60,13 @@
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FaseTeste.tmx; sourceTree = "<group>"; };
-		C5A53EAB1AD5A91A00A97B1D /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
-		C5A53EAD1AD5B73D00A97B1D /* espinho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho.png; sourceTree = "<group>"; };
+		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
+		C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ZeroFase.tmx; sourceTree = "<group>"; };
+		C5A53EBD1AD5E66B00A97B1D /* espinho_tile_direito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_direito.png; sourceTree = "<group>"; };
+		C5A53EBE1AD5E66B00A97B1D /* espinho_tile_esquerdo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_esquerdo.png; sourceTree = "<group>"; };
+		C5A53EBF1AD5E66B00A97B1D /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
+		C5A53EC01AD5E66B00A97B1D /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
+		C5A53EC71AD5EB1C00A97B1D /* SegundaFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SegundaFase.tmx; sourceTree = "<group>"; };
 		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CB3F3E1ACD6AA8001A37B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,11 +125,10 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				C5A53EAB1AD5A91A00A97B1D /* espinho_tile.png */,
-				C5A53EAD1AD5B73D00A97B1D /* espinho.png */,
+				C5A53EC71AD5EB1C00A97B1D /* SegundaFase.tmx */,
+				C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */,
 				C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
-				C50F9E3B1AD45B92008C4514 /* wall.png */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -205,6 +214,12 @@
 		C5CB3F701ACD6E4F001A37B7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C50F9E3B1AD45B92008C4514 /* wall.png */,
+				C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */,
+				C5A53EBD1AD5E66B00A97B1D /* espinho_tile_direito.png */,
+				C5A53EBE1AD5E66B00A97B1D /* espinho_tile_esquerdo.png */,
+				C5A53EBF1AD5E66B00A97B1D /* espinho_tile_invertido.png */,
+				C5A53EC01AD5E66B00A97B1D /* espinho_tile.png */,
 				C5CB3F6C1ACD6D14001A37B7 /* Ninja.xcassets */,
 				C5CB3F6E1ACD6E0C001A37B7 /* Hud.xcassets */,
 				C5CB3F681ACD6C55001A37B7 /* W1_Scenario.xcassets */,
@@ -335,19 +350,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5CB3F751ACD6E9D001A37B7 /* jump.wav in Resources */,
-				C5A53EAC1AD5A91A00A97B1D /* espinho_tile.png in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C50F9E3C1AD45B92008C4514 /* wall.png in Resources */,
-				C5A53EAE1AD5B73D00A97B1D /* espinho.png in Resources */,
 				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
+				C5A53EC41AD5E66B00A97B1D /* espinho_tile.png in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EAA1AD5A89200A97B1D /* FaseTeste.tmx in Resources */,
+				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
+				C5A53EC81AD5EB1C00A97B1D /* SegundaFase.tmx in Resources */,
+				C5A53EC31AD5E66B00A97B1D /* espinho_tile_invertido.png in Resources */,
+				C5A53EBC1AD5C78A00A97B1D /* ZeroFase.tmx in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* W1_Level_2.sks in Resources */,
+				C5A53EC11AD5E66B00A97B1D /* espinho_tile_direito.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
+				C5A53EC21AD5E66B00A97B1D /* espinho_tile_esquerdo.png in Resources */,
 				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
