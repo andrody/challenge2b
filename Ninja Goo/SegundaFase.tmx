@@ -28,8 +28,8 @@
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="isMoveable" value="7"/>
     <property name="direction" value="1"/>
+    <property name="isMoveable" value="7"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
@@ -39,8 +39,8 @@
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="isMoveable" value="7"/>
     <property name="direction" value="2"/>
+    <property name="isMoveable" value="7"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
@@ -50,8 +50,8 @@
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="isMoveable" value="7"/>
     <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
@@ -61,8 +61,8 @@
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="isMoveable" value="7"/>
     <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
@@ -70,7 +70,7 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2zEOgCAMAEBcfYN/4Z3+1tUYiTGoSLlbILB0om1IUwIAAODKUtg/cQYAALCnbwBqzK0DgODk6fiml+/hb7xrAPBf8jQQTc27pt8G/H8QRW4dAHzorP7Lh7VE/QcA3KF2gNjW1gEAAAxKrwUAAEAEvc6Fjzzv3nPsRxsiewKs
+   eJzt20sKgCAQANDadgbv0jm7bVuJIirLHN9biYLMQkf8DQMAAABn0kG5RB0AAEDOvgF4YqodAAR3duZnHW/f+HI7/E2pvCX/AUB53hzwZ8Yidxg3wBO933/IoXHMtQOAD+3lrqtzIB30AwCQ81YDYltqBwAA0Cl7LQAAACJo9V94z//dW459awVRrwNL
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">

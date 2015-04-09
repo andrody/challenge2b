@@ -710,6 +710,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             case ColliderType.Wall.rawValue | ColliderType.Ninja.rawValue:
                 
                 if(self.ninja.isDead == false) {
+                    
+                    self.ninja.physicsBody?.dynamic = false
+                    
                     println("colidiu com plataforma")
                     self.ninja.isMoving = false
                     let dirColision = contact.contactNormal
@@ -729,7 +732,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     self.runAction(wallSE)
                     
                     self.ninja.IdleAnimation()
-                    self.ninja.physicsBody?.dynamic = false
+                
                 }
             
             case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
@@ -853,6 +856,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         if(self.isDraging == true && self.gameStarted == true && self.ninja.isMoving == false && !self.ninja.isDead){
             
+            self.ninja.physicsBody?.dynamic = true
+            
             self.isDraging = false
             self.ninja.isMoving = true
             
@@ -867,8 +872,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             let speed = ConvertUtilities.minMaxSpeed(speedX, sY: speedY)
             
-            
-            self.ninja.physicsBody?.dynamic = true
+
             self.ninja.jump(amountToMoveX: speed.0, amountToMoveY: speed.1)
             
             self.score += 1

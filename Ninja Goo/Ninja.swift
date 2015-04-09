@@ -125,6 +125,7 @@ class Ninja: SKNode {
         self.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue
         self.physicsBody?.collisionBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue
         self.physicsBody?.mass = 1.0
+        self.physicsBody?.usesPreciseCollisionDetection = true
 
     }
     
