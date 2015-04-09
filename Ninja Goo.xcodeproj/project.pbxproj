@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		652E0E0B1AD6A664008DB720 /* SegundaFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652E0E0A1AD6A664008DB720 /* SegundaFase.tmx */; };
+		652E0E0F1AD6B137008DB720 /* SegundaFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652E0E0E1AD6B137008DB720 /* SegundaFase.tmx */; };
 		657997331AD5FFEB0081EC1E /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 657997301AD5FFEB0081EC1E /* JSTileMap.m */; };
 		657997341AD5FFEB0081EC1E /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 657997321AD5FFEB0081EC1E /* LFCGzipUtility.m */; };
 		C50F9E3C1AD45B92008C4514 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C50F9E3B1AD45B92008C4514 /* wall.png */; };
@@ -51,7 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		652E0E0A1AD6A664008DB720 /* SegundaFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SegundaFase.tmx; sourceTree = "<group>"; };
+		652E0E0E1AD6B137008DB720 /* SegundaFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SegundaFase.tmx; sourceTree = "<group>"; };
 		6579972F1AD5FFEB0081EC1E /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.h"; sourceTree = "<group>"; };
 		657997301AD5FFEB0081EC1E /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.m"; sourceTree = "<group>"; };
 		657997311AD5FFEB0081EC1E /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.h"; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				652E0E0A1AD6A664008DB720 /* SegundaFase.tmx */,
+				652E0E0E1AD6B137008DB720 /* SegundaFase.tmx */,
 				C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */,
 				C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
@@ -361,7 +361,7 @@
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EAA1AD5A89200A97B1D /* FaseTeste.tmx in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
-				652E0E0B1AD6A664008DB720 /* SegundaFase.tmx in Resources */,
+				652E0E0F1AD6B137008DB720 /* SegundaFase.tmx in Resources */,
 				C5A53EC31AD5E66B00A97B1D /* espinho_tile_invertido.png in Resources */,
 				C5A53EBC1AD5C78A00A97B1D /* ZeroFase.tmx in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* W1_Level_2.sks in Resources */,
