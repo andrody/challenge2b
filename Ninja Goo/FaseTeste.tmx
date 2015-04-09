@@ -51,7 +51,7 @@
  <objectgroup name="Ground">
   <object id="4" name="ground" x="6.15152" y="1479.45" width="42.4242" height="45.4545"/>
  </objectgroup>
- <layer name="Spike" width="160" height="40">
+ <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
    eJzt2UEKxCAMAMCCu///ci97rCy2WhOdAaFYkGClCeY4YG/lN4B+yuDBNfuTi28FAPHIzwBk8hk8Wu2eR93LAORxN9etQK7iLmdnH//q2qt3vefeFiEGAABiqtWKakggmuz/pax3tiNjrq3dMj97T7OfS2LQh2clUc7yd3YALKdUnmdqyR89Yn6yRkv/rFf/TX4FAAAAAAAAAIB3nCHzAUc=
   </data>

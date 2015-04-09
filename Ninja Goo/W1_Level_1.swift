@@ -701,7 +701,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     func didBeginContact(contact: SKPhysicsContact) {
         
-        ninja.position.x = 0
+        //ninja.position.x = 0
         
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
@@ -712,6 +712,22 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 if(self.ninja.isDead == false) {
                     
                     self.ninja.physicsBody?.dynamic = false
+                    
+//                    var ninjaNode : SKNode!
+//                    var wallNode : SKNode!
+//
+//                    if(contact.bodyA.node!.isEqual(self.ninja)){
+//                        wallNode = contact.bodyB.node!
+//                    }
+//                    
+//                    else {
+//                        
+//                        wallNode = contact.bodyA.node!
+//                    }
+                    
+//                    ninjaNode.removeFromParent()
+//                    wallNode.addChild(ninjaNode)
+                    
                     
                     println("colidiu com plataforma")
                     self.ninja.isMoving = false
@@ -856,7 +872,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         if(self.isDraging == true && self.gameStarted == true && self.ninja.isMoving == false && !self.ninja.isDead){
             
+//            self.worldLayer.addChild(ninja)
             self.ninja.physicsBody?.dynamic = true
+//            self.ninja.removeFromParent()
             
             self.isDraging = false
             self.ninja.isMoving = true
@@ -867,8 +885,6 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             var speedX = self.initialTapPosition.x - self.finalTapPosition.x
             var speedY = self.initialTapPosition.y - self.finalTapPosition.y
-            
-            
             
             let speed = ConvertUtilities.minMaxSpeed(speedX, sY: speedY)
             
