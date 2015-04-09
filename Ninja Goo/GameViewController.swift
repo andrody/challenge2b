@@ -35,7 +35,7 @@ class GameViewController: UIViewController {
                 self.skView.showsNodeCount = true
 
                 self.skView.showsFPS = true
-                self.skView.showsPhysics = true
+               // self.skView.showsPhysics = true
             //#endif
             
             //self.skView.backgroundColor = SKColor(red: 229, green: 233, blue: 248, alpha: 1)

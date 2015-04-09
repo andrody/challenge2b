@@ -227,17 +227,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
                     }
                     
-                    if properties["spike"] != nil {
-                        
-                        let spikeProp = (properties["spike"] as String!).toInt()
-
-                        tile.physicsBody = SKPhysicsBody(texture: spikesArray[spikeProp!], alphaThreshold: 0.5, size: tile.size)
-                        tile.texture = spikesArray[spikeProp!]
-                        tile.physicsBody!.dynamic = false
-                        tile.physicsBody!.friction = 0
-                        tile.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
-
-                    }
+                    
                     
                     if properties["isMoveable"] != nil {
                         
@@ -251,6 +241,18 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         tile.physicsBody!.friction = 0
                         tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
                         tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
+                        
+                    }
+                    
+                    if properties["spike"] != nil {
+                        
+                        let spikeProp = (properties["spike"] as String!).toInt()
+                        
+                        tile.physicsBody = SKPhysicsBody(texture: spikesArray[spikeProp!], alphaThreshold: 0.5, size: tile.size)
+                        tile.texture = spikesArray[spikeProp!]
+                        tile.physicsBody!.dynamic = false
+                        tile.physicsBody!.friction = 0
+                        tile.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
                         
                     }
 

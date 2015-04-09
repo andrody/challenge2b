@@ -50,7 +50,7 @@
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="direction" value="3"/>
+    <property name="direction" value="4"/>
     <property name="isMoveable" value="7"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
@@ -61,21 +61,141 @@
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="direction" value="4"/>
+    <property name="direction" value="3"/>
     <property name="isMoveable" value="7"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="425" name="espinho_tile" tilewidth="50" tileheight="50">
+  <image source="espinho_tile.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="426" name="espinho_tile_direito" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_direito.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="427" name="espinho_tile_invertido" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_invertido.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="2"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="428" name="espinho_tile_esquerdo" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_esquerdo.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="3"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="429" name="espinho_tile_movel_horizontal" tilewidth="50" tileheight="50">
+  <image source="espinho_tile.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="1"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="430" name="espinho_tile_direito_movel_horizontal" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_direito.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="431" name="espinho_tile_invertido_vertical" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_invertido.png" width="50" height="50"/>
+  <terraintypes>
+   <terrain name="teste" tile="-1"/>
+  </terraintypes>
+  <tile id="0" terrain=",0,,">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="2"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="432" name="espinhos_verticais_decendentes" tilewidth="50" tileheight="50">
+  <tile id="0">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="1"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_direito.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="3"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_esquerdo.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="2"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_invertido.png"/>
+  </tile>
+  <tile id="3">
+   <image width="50" height="50" source="espinho_tile.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="436" name="espinhos_verticais_ascendentes" tilewidth="50" tileheight="50">
+  <tile id="0">
+   <image width="50" height="50" source="espinho_tile_direito.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="3"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_esquerdo.png"/>
+  </tile>
+  <tile id="2">
+   <image width="50" height="50" source="espinho_tile_invertido.png"/>
+  </tile>
+  <tile id="3">
+   <image width="50" height="50" source="espinho_tile.png"/>
+  </tile>
+ </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt20sKgCAQANDadgbv0jm7bVuJIirLHN9biYLMQkf8DQMAAABn0kG5RB0AAEDOvgF4YqodAAR3duZnHW/f+HI7/E2pvCX/AUB53hzwZ8Yidxg3wBO933/IoXHMtQOAD+3lrqtzIB30AwCQ81YDYltqBwAA0Cl7LQAAACJo9V94z//dW459awVRrwNL
+   eJzt2E0OgyAQBlC77Rm8izfo/XpOL9CtIbTgTzoC760QjRkTHP2YJgAAAErmwvjIHAAAQI7cAIzqGV0AVPi195eOadNj53E6lzvfozW6AC5T27dK1+l/QGui88drlJ8GTinlD4hkLXJE9Lrx/QVaFt1Duc4SXQD8Ua537X0H5i/3AQDYsu0DfXtHFwAAMChZCwAAgB6U8u1d8+/Zuu/6XDVarj31AWHzBYY=
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJztziEBADAIADAo+P49KEAA3A2CLcEiAAAAAAAA4F9tBwAAAAAAAAAYXm4PAAAAAAAAAAAAAOCWBr4IAUM=
+   eJzt2osKwiAUgOF8wd6z+wV6sl4gZBsp0dBNd87R/wMhaMTMP1bL3Q6ANkcnfQboGf1BEv3ZcW5wrejPjhb7gx2a+ju579Dsrvz8LNHUnxX0Vw795aO/cugvzSN4n+ivnBb7q/H71/f3Hh/TXzma+ivVTa3+JvRXDv2lob86eu/vmngs/dWhqb9S6M+WnPu9Je4P126+Rn/e0w1jjQPtipPu7xU8n9PfWi1eayxKXYel60V/mEN/kMT1F5LoD5LoD57UPuF/63Bxv2OJlP724zH0V0fKXLX1l3M+c/NLeZ2bG8aW6C/Wc38S6C+mdZ1Shfv1Lezdp7+Y9f6sab0//9/iNHroL5xvOLRqvb9cEv1tsQZaP1f0F6M/SKI/9Ib+IInvQJBEf5BEfwAAAACAXB+LaGbZ
   </data>
  </layer>
  <objectgroup name="Ground">
