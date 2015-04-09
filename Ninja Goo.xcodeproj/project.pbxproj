@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652E0DFF1AD698B2008DB720 /* SegundaFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652E0DFE1AD698B2008DB720 /* SegundaFase.tmx */; };
+		657997331AD5FFEB0081EC1E /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 657997301AD5FFEB0081EC1E /* JSTileMap.m */; };
+		657997341AD5FFEB0081EC1E /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 657997321AD5FFEB0081EC1E /* LFCGzipUtility.m */; };
 		C50F9E3C1AD45B92008C4514 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C50F9E3B1AD45B92008C4514 /* wall.png */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
-		C54747421AD44E0A00C4E23F /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C547473F1AD44E0A00C4E23F /* JSTileMap.m */; };
-		C54747431AD44E0A00C4E23F /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C54747411AD44E0A00C4E23F /* LFCGzipUtility.m */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EAA1AD5A89200A97B1D /* FaseTeste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
@@ -19,7 +20,6 @@
 		C5A53EC21AD5E66B00A97B1D /* espinho_tile_esquerdo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBE1AD5E66B00A97B1D /* espinho_tile_esquerdo.png */; };
 		C5A53EC31AD5E66B00A97B1D /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBF1AD5E66B00A97B1D /* espinho_tile_invertido.png */; };
 		C5A53EC41AD5E66B00A97B1D /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EC01AD5E66B00A97B1D /* espinho_tile.png */; };
-		C5A53ECA1AD5FD5200A97B1D /* SegundaFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EC91AD5FD5200A97B1D /* SegundaFase.tmx */; };
 		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
 		C5CB3F421ACD6AA8001A37B7 /* W1_Level_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F411ACD6AA8001A37B7 /* W1_Level_2.sks */; };
 		C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */; };
@@ -51,12 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		652E0DFE1AD698B2008DB720 /* SegundaFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SegundaFase.tmx; sourceTree = "<group>"; };
+		6579972F1AD5FFEB0081EC1E /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.h"; sourceTree = "<group>"; };
+		657997301AD5FFEB0081EC1E /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.m"; sourceTree = "<group>"; };
+		657997311AD5FFEB0081EC1E /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.h"; sourceTree = "<group>"; };
+		657997321AD5FFEB0081EC1E /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.m"; sourceTree = "<group>"; };
 		C50F9E3B1AD45B92008C4514 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C547473E1AD44E0A00C4E23F /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
-		C547473F1AD44E0A00C4E23F /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
-		C54747401AD44E0A00C4E23F /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
-		C54747411AD44E0A00C4E23F /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FaseTeste.tmx; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		C5A53EBE1AD5E66B00A97B1D /* espinho_tile_esquerdo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_esquerdo.png; sourceTree = "<group>"; };
 		C5A53EBF1AD5E66B00A97B1D /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
 		C5A53EC01AD5E66B00A97B1D /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
-		C5A53EC91AD5FD5200A97B1D /* SegundaFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SegundaFase.tmx; sourceTree = "<group>"; };
 		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CB3F3E1ACD6AA8001A37B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,10 +113,10 @@
 		C547473D1AD44E0A00C4E23F /* JSTileMap */ = {
 			isa = PBXGroup;
 			children = (
-				C547473E1AD44E0A00C4E23F /* JSTileMap.h */,
-				C547473F1AD44E0A00C4E23F /* JSTileMap.m */,
-				C54747401AD44E0A00C4E23F /* LFCGzipUtility.h */,
-				C54747411AD44E0A00C4E23F /* LFCGzipUtility.m */,
+				6579972F1AD5FFEB0081EC1E /* JSTileMap.h */,
+				657997301AD5FFEB0081EC1E /* JSTileMap.m */,
+				657997311AD5FFEB0081EC1E /* LFCGzipUtility.h */,
+				657997321AD5FFEB0081EC1E /* LFCGzipUtility.m */,
 			);
 			name = JSTileMap;
 			path = "../../../../Dropbox/Challenge2/Other Resources/JSTileMap";
@@ -125,7 +125,7 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				C5A53EC91AD5FD5200A97B1D /* SegundaFase.tmx */,
+				652E0DFE1AD698B2008DB720 /* SegundaFase.tmx */,
 				C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */,
 				C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
@@ -316,7 +316,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -361,7 +361,7 @@
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EAA1AD5A89200A97B1D /* FaseTeste.tmx in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
-				C5A53ECA1AD5FD5200A97B1D /* SegundaFase.tmx in Resources */,
+				652E0DFF1AD698B2008DB720 /* SegundaFase.tmx in Resources */,
 				C5A53EC31AD5E66B00A97B1D /* espinho_tile_invertido.png in Resources */,
 				C5A53EBC1AD5C78A00A97B1D /* ZeroFase.tmx in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* W1_Level_2.sks in Resources */,
@@ -387,14 +387,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
+				657997331AD5FFEB0081EC1E /* JSTileMap.m in Sources */,
 				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
 				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
+				657997341AD5FFEB0081EC1E /* LFCGzipUtility.m in Sources */,
 				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,
 				C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */,
 				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,
-				C54747431AD44E0A00C4E23F /* LFCGzipUtility.m in Sources */,
-				C54747421AD44E0A00C4E23F /* JSTileMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
