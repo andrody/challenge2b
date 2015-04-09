@@ -15,6 +15,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     //Scores
     var score:Int = 0
     
+    var teste : SKNode!
+    
     
     //Positions
     var lastBackgroundPositionX: CGFloat = 0.0
@@ -33,6 +35,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     let backCloudLayer = SKNode()
     let upperCloudLayer = SKNode()
 
+    //Levels
+    let levelsLayer = SKNode()
     
     //Platform
     let platformLayer = SKNode()
@@ -96,11 +100,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         static let midAnchor = CGPointMake(0.5, 0.5)
         static var defaultSpawnPoint = CGPoint(x: 0, y: 0)
-        static let defaultScale :CGFloat = 0.31
+        static let defaultScale :CGFloat = 1.0
         static var defaultGroundPoint : CGPoint!
         
         static var minCamPos : CGFloat!
-        static let gravity = CGVectorMake(0, -20)
+        static let gravity = CGVectorMake(0, -60)
         static let minForce : CGFloat = 30.0
         static let maxForce : CGFloat = 120.0
         static let maxForceGeral : CGFloat = maxForce + 70
@@ -121,10 +125,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     // MARK: Asset Pre-loading
     
-    class func loadSceneAssetsWithCompletionHandler(skView : SKView, completionHandler: W1_Level_1 -> Void) {
+    class func loadSceneAssetsWithCompletionHandler(completionHandler: W1_Level_1 -> Void) {
         dispatch_async(Constants.backgroundQueue) {
             
-            let loadedScene = W1_Level_1(size: skView.bounds.size)
+            let loadedScene = W1_Level_1(size: CGSizeMake(2048, 1536))
             
             //W1_Level_1.unarchiveFromFile("W1_Level_1") as? W1_Level_1
             
@@ -140,14 +144,15 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
         self.worldLayer.setScale(Constants.defaultScale)
         
-         layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.platformLayer, self.upperCloudLayer]
+        layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.platformLayer, self.upperCloudLayer, self.levelsLayer]
 
-//        let scene = SKScene(fileNamed: "W1_Level_2")
-//        let templateWorld = scene.children.first!.copy() as SKNode
-//
-//        populateLayersFromWorld(templateWorld)
+
         
-        self.map = JSTileMap(named: "SegundaFase.tmx")
+
+
+//       populateLayersFromWorld(templateWorld)
+        
+        self.map = JSTileMap(named: "FaseTeste.tmx")
 
         let map_layer = map.layerNamed("Walls")
         map_layer.zPosition = Constants.zPosWall
@@ -177,13 +182,15 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         Constants.defaultSpawnPoint = getStartPosition(map, groupName: "Ninja", name: "ninja")
         Constants.defaultGroundPoint = getStartPosition(map, groupName: "Ground", name: "ground")
-        Constants.minCamPos = Constants.defaultGroundPoint.y + self.scene!.size.height
+        Constants.minCamPos = Constants.defaultGroundPoint.y + self.scene!.size.height/2
+        
 
+//        self.worldLayer.position = CGPointMake(self.worldLayer.position.x - Constants.defaultGroundPoint.x, self.worldLayer.position.y - v)
         
-        centerWorldOnPoint(CGPointMake(Constants.defaultSpawnPoint.x, Constants.defaultGroundPoint.y + self.frame.height))
+//        self.worldLayer.
+        
+        centerWorldOnPoint(CGPointMake(Constants.defaultSpawnPoint.x, Constants.minCamPos))
 
-        
-        
     }
     
     
@@ -410,9 +417,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         }
         
-        backCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y)
+        backCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y + self.size.height/18)
         
-        frontCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y - 35)
+        frontCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y + self.size.height/18 - 35)
 
         backCloudLayer.zPosition = Constants.zPosCloudBack
         frontCloudLayer.zPosition = Constants.zPosCloudFront
@@ -430,7 +437,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
         let map_width : CGFloat = CGFloat(self.map.mapSize.width * self.map.tileSize.width)
 
-        let numberOfMontains = Int(map_width / montain.size.width) * 2
+        let numberOfMontains = Int(map_width / montain.size.width)
 
         for index in 0...numberOfMontains {
             
@@ -505,6 +512,23 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     }
     
+    func loadLevels(){
+        
+        println("tamnho tela = \(self.size)")
+        
+        let scene = SKScene(fileNamed: "teste")
+        
+        let templateWorld = scene.children.first!.copy() as SKNode
+        templateWorld.zPosition = 500
+        //templateWorld.
+        //templateWorld.setScale(0.5)
+        templateWorld.position = CGPointMake(0, 0)
+        
+        self.teste = templateWorld
+        self.addChild(teste)
+        
+    }
+    
     func animateClouds(){
         
         //Moving the front clounds
@@ -546,6 +570,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         //dispatch_async(Constants.backgroundQueue) {
             self.loadWorld()
             self.loadHud()
+            self.loadLevels()
             self.loadPhysics()
             self.loadNinja()
             self.loadClouds()
@@ -617,6 +642,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         println("ninja y: \(self.ninja.position.y)")
         println("ground y: \(Constants.defaultGroundPoint.y)")
+        println("mimCam y: \(Constants.minCamPos)")
+
 
         var point : CGPoint!
         if(self.ninja.position.y > Constants.minCamPos){
@@ -642,14 +669,18 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         self.worldLayer.position = CGPointMake(posX, posY)
         
+        let parallaxAmount : CGFloat = 1.2
+        let parallaxAmountBack : CGFloat = 1.1
+
+        
         //Parallax Montain
-        posX = self.frontMoutainLayer.position.x + cameraPositionInScene!.x * 2
-        posY = self.frontMoutainLayer.position.y + cameraPositionInScene!.y * 2
+        posX = self.frontMoutainLayer.position.x + cameraPositionInScene!.x / parallaxAmount
+        posY = self.frontMoutainLayer.position.y + cameraPositionInScene!.y / parallaxAmount
         self.frontMoutainLayer.position = CGPointMake(posX, posY)
         
         //Parallax Montain Back
-        posX = self.backMountainLayer.position.x + cameraPositionInScene!.x * 2.5
-        posY = self.backMountainLayer.position.y + cameraPositionInScene!.y * 2
+        posX = self.backMountainLayer.position.x + cameraPositionInScene!.x / parallaxAmountBack
+        posY = self.backMountainLayer.position.y + cameraPositionInScene!.y / parallaxAmountBack
         self.backMountainLayer.position = CGPointMake(posX, posY)
         
         
@@ -789,8 +820,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             if(self.HUD!.pauseButton!.containsPoint(self.HUD!.convertPoint(location, fromNode: self))){
                 println("comecou toque2")
 
-                self.gameStarted = false
-                self.HUD?.moveButtonsInScreen()
+                //self.gameStarted = false
+                //self.HUD?.moveButtonsInScreen()
+                self.teste.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+                self.frontCloudLayer.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+
+                
             }
             
             if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){

@@ -25,7 +25,9 @@ class GameViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        W1_Level_1.loadSceneAssetsWithCompletionHandler(self.skView) { loadedScene in
+        //println("size viewctrl = \(self.scene.size)")
+        
+        W1_Level_1.loadSceneAssetsWithCompletionHandler() { loadedScene in
             
             self.scene = loadedScene
             self.scene.scaleMode = .AspectFill

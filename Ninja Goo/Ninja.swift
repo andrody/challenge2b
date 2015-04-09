@@ -174,8 +174,8 @@ class Ninja: SKNode {
         
        // self.physicsBody?.applyImpulse(CGVectorMake(amountToMoveX, amountToMoveY))
         
-        self.physicsBody?.velocity.dx = amountToMoveX * 10
-        self.physicsBody?.velocity.dy = amountToMoveY * 10
+        self.physicsBody?.velocity.dx = amountToMoveX * 34
+        self.physicsBody?.velocity.dy = amountToMoveY * 34
 
         
         self.runAction(SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true))
