@@ -11,6 +11,8 @@ import SpriteKit
 class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     // MARK: Properties
+    
+    var levelName : String!
 
     //Scores
     var score:Int = 0
@@ -125,11 +127,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     // MARK: Asset Pre-loading
     
-    class func loadSceneAssetsWithCompletionHandler(completionHandler: W1_Level_1 -> Void) {
+    class func loadSceneAssetsWithCompletionHandler(levelName : String, completionHandler: W1_Level_1 -> Void) {
         dispatch_async(Constants.backgroundQueue) {
             
             let loadedScene = W1_Level_1(size: CGSizeMake(2048, 1536))
-            
+            loadedScene.levelName = levelName
+            loadedScene.loadAll()
+
             //W1_Level_1.unarchiveFromFile("W1_Level_1") as? W1_Level_1
             
     
@@ -152,7 +156,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
 //       populateLayersFromWorld(templateWorld)
         
-        self.map = JSTileMap(named: "FaseTeste.tmx")
+        self.map = JSTileMap(named: "\(levelName).tmx")
 
         let map_layer = map.layerNamed("Walls")
         map_layer.zPosition = Constants.zPosWall
@@ -562,28 +566,48 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func loadNinja2(){
+        
+        let ninja = Ninja()
+        //ninja.position = Constants.defaultSpawnPoint
+        ninja.spin()
+        ninja.currentPosition = self.ninja.position
+        self.addChild(ninja)
+        //ninja.antPosition = self.ninja.currentPosition
+        
+        //ninjaCurrentPositionScene = self.worldLayer.convertPoint(self.ninja.position, fromNode: self)
+        //ninjaAntPositionScene = self.ninjaCurrentPositionScene
+        
+        //self.ninja.jump(amountToMoveX: 0, amountToMoveY: -100)
+        
+    }
+    
+    
+    func loadAll(){
+        self.loadWorld()
+        self.loadHud()
+//        self.loadLevels()
+        self.loadPhysics()
+        self.loadNinja()
+        self.loadClouds()
+        self.loadBackground()
+        self.loadUpperClouds()
+    }
+    
     override func didMoveToView(view: SKView) {
         
         println("didmoveToView")
         //self.backgroundColor = SKColor.whiteColor()
-        
-        //dispatch_async(Constants.backgroundQueue) {
-            self.loadWorld()
-            self.loadHud()
-            self.loadLevels()
-            self.loadPhysics()
-            self.loadNinja()
-            self.loadClouds()
-            self.loadBackground()
-            self.loadUpperClouds()
-        
-
-            
-            //self.centerWorldOnPosition(Constants.defaultSpawnPoint)
-            
-         //   dispatch_async(dispatch_get_main_queue(), self.finishedMovingToView)
-            
-        //}
+//        dispatch_async(Constants.backgroundQueue) {
+//        
+//
+//
+//            
+//            //self.centerWorldOnPosition(Constants.defaultSpawnPoint)
+//            
+//            dispatch_async(dispatch_get_main_queue(), self.finishedMovingToView)
+//            
+//        }
       
     }
    

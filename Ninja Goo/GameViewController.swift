@@ -11,6 +11,8 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var skView: SKView!
     
     var scene: W1_Level_1!
@@ -19,36 +21,32 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
+        //self.view.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
+        
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
         
-        //println("size viewctrl = \(self.scene.size)")
-        
-        W1_Level_1.loadSceneAssetsWithCompletionHandler() { loadedScene in
-            
-            self.scene = loadedScene
+//        W1_Level_1.loadSceneAssetsWithCompletionHandler() { loadedScene in
+            //self.scene = loadedScene
             self.scene.scaleMode = .AspectFill
             
-            //#if DEBUG
                 self.skView.showsDrawCount = true
                 self.skView.showsNodeCount = true
 
                 self.skView.showsFPS = true
-               // self.skView.showsPhysics = true
-            //#endif
             
-            //self.skView.backgroundColor = SKColor(red: 229, green: 233, blue: 248, alpha: 1)
-            loadedScene.backgroundColor = SKColor(red: 229.0/255.0, green: 233.0/255.0, blue: 248.0/255.0, alpha: 1)
+            
+            self.scene.backgroundColor = SKColor(red: 182.0/255.0, green: 217.0/255.0, blue: 241.0/255.0, alpha: 1)
 
 
             
             
             self.skView.presentScene(self.scene!)
-            //skView.presentScene(scene, transition: SKTransition.fadeWithColor(SKColor(red: 25.0/255.0, green: 55.0/255.0, blue: 12.0/255.0, alpha: 1), duration: 1.0))
-        }
+//        }
     }
 
 
@@ -74,4 +72,8 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-}
+    
+    
+    
+    
+  }

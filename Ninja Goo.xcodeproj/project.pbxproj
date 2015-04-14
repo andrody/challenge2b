@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		652E0E0F1AD6B137008DB720 /* SegundaFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652E0E0E1AD6B137008DB720 /* SegundaFase.tmx */; };
+		652E0E0F1AD6B137008DB720 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652E0E0E1AD6B137008DB720 /* minifase3.tmx */; };
+		C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */; };
+		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
+		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
+		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
 		C50F9E3C1AD45B92008C4514 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C50F9E3B1AD45B92008C4514 /* wall.png */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
-		C5A53EAA1AD5A89200A97B1D /* FaseTeste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */; };
+		C5A53EAA1AD5A89200A97B1D /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EA91AD5A89200A97B1D /* minifase1.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
-		C5A53EBC1AD5C78A00A97B1D /* ZeroFase.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */; };
+		C5A53EBC1AD5C78A00A97B1D /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBB1AD5C78A00A97B1D /* minifase2.tmx */; };
 		C5A53EC11AD5E66B00A97B1D /* espinho_tile_direito.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBD1AD5E66B00A97B1D /* espinho_tile_direito.png */; };
 		C5A53EC21AD5E66B00A97B1D /* espinho_tile_esquerdo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBE1AD5E66B00A97B1D /* espinho_tile_esquerdo.png */; };
 		C5A53EC31AD5E66B00A97B1D /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EBF1AD5E66B00A97B1D /* espinho_tile_invertido.png */; };
@@ -51,14 +55,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		652E0E0E1AD6B137008DB720 /* SegundaFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SegundaFase.tmx; sourceTree = "<group>"; };
+		652E0E0E1AD6B137008DB720 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
+		C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
+		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
 		C50F9E3B1AD45B92008C4514 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
-		C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FaseTeste.tmx; sourceTree = "<group>"; };
+		C5A53EA91AD5A89200A97B1D /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
-		C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ZeroFase.tmx; sourceTree = "<group>"; };
+		C5A53EBB1AD5C78A00A97B1D /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		C5A53EBD1AD5E66B00A97B1D /* espinho_tile_direito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_direito.png; sourceTree = "<group>"; };
 		C5A53EBE1AD5E66B00A97B1D /* espinho_tile_esquerdo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_esquerdo.png; sourceTree = "<group>"; };
 		C5A53EBF1AD5E66B00A97B1D /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
@@ -125,9 +133,9 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				652E0E0E1AD6B137008DB720 /* SegundaFase.tmx */,
-				C5A53EBB1AD5C78A00A97B1D /* ZeroFase.tmx */,
-				C5A53EA91AD5A89200A97B1D /* FaseTeste.tmx */,
+				652E0E0E1AD6B137008DB720 /* minifase3.tmx */,
+				C5A53EBB1AD5C78A00A97B1D /* minifase2.tmx */,
+				C5A53EA91AD5A89200A97B1D /* minifase1.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -161,6 +169,10 @@
 				C5CB3F631ACD6B30001A37B7 /* Scene */,
 				C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */,
 				C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */,
+				C50BB38E1ADAFD97007827B7 /* LevelsController.swift */,
+				C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */,
+				C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */,
+				C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */,
 				C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */,
 				C5CB3F791ACD7954001A37B7 /* LaunchScreen.xib */,
 				C5CB3F3D1ACD6AA8001A37B7 /* Supporting Files */,
@@ -359,11 +371,11 @@
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
 				C5A53EC41AD5E66B00A97B1D /* espinho_tile.png in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
-				C5A53EAA1AD5A89200A97B1D /* FaseTeste.tmx in Resources */,
+				C5A53EAA1AD5A89200A97B1D /* minifase1.tmx in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
-				652E0E0F1AD6B137008DB720 /* SegundaFase.tmx in Resources */,
+				652E0E0F1AD6B137008DB720 /* minifase3.tmx in Resources */,
 				C5A53EC31AD5E66B00A97B1D /* espinho_tile_invertido.png in Resources */,
-				C5A53EBC1AD5C78A00A97B1D /* ZeroFase.tmx in Resources */,
+				C5A53EBC1AD5C78A00A97B1D /* minifase2.tmx in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
 				C5A53EC11AD5E66B00A97B1D /* espinho_tile_direito.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
@@ -387,7 +399,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
+				C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */,
 				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
+				C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */,
+				C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */,
+				C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */,
 				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
 				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,

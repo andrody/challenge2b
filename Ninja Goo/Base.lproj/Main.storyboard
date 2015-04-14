@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZA2-tp-xmd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="B5P-D8-duA">
+            <objects>
+                <pageViewController storyboardIdentifier="MenuController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QtM-bS-jLZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5I-D0-lf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="-1124"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="lfK-Qf-sWb">
+            <objects>
+                <viewController id="ZA2-tp-xmd" customClass="MenuViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lYz-wG-255"/>
+                        <viewControllerLayoutGuide type="bottom" id="WuK-LN-r4M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bIj-WK-5mJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gqa-RN-Ode" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="-1124"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BV1-FR-VrT" customClass="GameViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="maK-i9-Uhn"/>
                         <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
@@ -47,6 +74,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-447" y="269"/>
+        </scene>
+        <!--Start Screen View Controller-->
+        <scene sceneID="cPW-SU-7Sw">
+            <objects>
+                <viewController storyboardIdentifier="StartScreenViewCtrl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pk9-VL-jcb" customClass="StartScreenViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gCv-QI-ckn"/>
+                        <viewControllerLayoutGuide type="bottom" id="hkL-gm-Pwv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5rW-01-OQW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-u1-8bL">
+                                <rect key="frame" x="-2" y="2" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NP7-u1-8bL" secondAttribute="trailing" constant="-14" id="9b9-bx-x7f"/>
+                            <constraint firstItem="NP7-u1-8bL" firstAttribute="top" secondItem="5rW-01-OQW" secondAttribute="topMargin" constant="2" id="Bdd-jo-Sxm"/>
+                            <constraint firstItem="NP7-u1-8bL" firstAttribute="leading" secondItem="5rW-01-OQW" secondAttribute="leadingMargin" constant="-18" id="jXm-AA-KZc"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="NP7-u1-8bL" secondAttribute="bottom" constant="-2" id="pqD-up-1iO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="NP7-u1-8bL" id="2Cf-K2-fZ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWy-As-6hx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="-442"/>
+        </scene>
+        <!--Levels Controller-->
+        <scene sceneID="mU9-PV-Vzi">
+            <objects>
+                <viewController storyboardIdentifier="LevelsController" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ABy-pG-dPu" customClass="LevelsController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rZc-g1-qEG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZXC-Vp-mkx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZX8-K5-dKf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nail_left" translatesAutoresizingMaskIntoConstraints="NO" id="4VI-wf-LW6">
+                                <rect key="frame" x="0.0" y="1" width="200" height="600"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nuvem_escura" translatesAutoresizingMaskIntoConstraints="NO" id="TJ1-7s-LcJ">
+                                <rect key="frame" x="200" y="0.0" width="200" height="600"/>
+                                <color key="backgroundColor" red="0.93064260480000005" green="0.94313412900000004" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plataforma3.png" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-is-Z8K">
+                                <rect key="frame" x="400" y="0.0" width="200" height="600"/>
+                                <color key="backgroundColor" red="0.93064260480000005" green="0.94313412900000004" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-xz-JiA">
+                                <rect key="frame" x="90" y="274" width="37" height="37"/>
+                                <color key="color" red="0.98251348810000005" green="1" blue="0.97068622329999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="width" secondItem="4VI-wf-LW6" secondAttribute="width" id="3Cu-59-GWZ"/>
+                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="bottom" secondItem="ZXC-Vp-mkx" secondAttribute="top" id="5d5-G1-Byc"/>
+                            <constraint firstItem="4VI-wf-LW6" firstAttribute="leading" secondItem="ZX8-K5-dKf" secondAttribute="leading" id="JDs-9g-MdB"/>
+                            <constraint firstItem="SEq-is-Z8K" firstAttribute="leading" secondItem="TJ1-7s-LcJ" secondAttribute="trailing" id="JsJ-Li-1Yo"/>
+                            <constraint firstAttribute="trailing" secondItem="SEq-is-Z8K" secondAttribute="trailing" id="MF7-8B-Y9Y"/>
+                            <constraint firstItem="4VI-wf-LW6" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="topMargin" constant="1" id="Mc8-91-E3X"/>
+                            <constraint firstItem="SEq-is-Z8K" firstAttribute="bottom" secondItem="ZXC-Vp-mkx" secondAttribute="top" id="cDY-yw-TOA"/>
+                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="centerX" secondItem="ZX8-K5-dKf" secondAttribute="centerX" id="fPJ-93-WQV"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4VI-wf-LW6" secondAttribute="bottom" constant="-1" id="gi6-ba-yMd"/>
+                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="width" secondItem="SEq-is-Z8K" secondAttribute="width" id="uRB-ST-JwG"/>
+                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="top" id="xqv-Jo-FtY"/>
+                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="top" secondItem="SEq-is-Z8K" secondAttribute="top" id="zmc-I4-WHh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageOne" destination="4VI-wf-LW6" id="Nto-5j-Wo9"/>
+                        <outlet property="imageThree" destination="SEq-is-Z8K" id="yts-tU-5vS"/>
+                        <outlet property="imageTwo" destination="TJ1-7s-LcJ" id="4fy-qP-8cB"/>
+                        <outlet property="loadingIndicator" destination="nk3-xz-JiA" id="imO-mJ-pFR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9O-gP-2za" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="-443"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nail_left" width="1450" height="1450"/>
+        <image name="nuvem_escura" width="1403" height="243"/>
+        <image name="plataforma3.png" width="1320" height="1836"/>
+    </resources>
 </document>
