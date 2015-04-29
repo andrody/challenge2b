@@ -165,18 +165,27 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         //preenchimento.zPosition = Constants.zPosWall
 
 
-        createNodesFromLayer(map_layer)
+        //createNodesFromLayer(map_layer)
         
         let spikes = map.layerNamed("Spikes")
         spikes.zPosition = Constants.zPosWall
-        createNodesFromLayer(spikes)
+        //createNodesFromLayer(spikes)
+        createPhysicalBodiesWalls(self.map)
+        //createPhysicalBodiesSpikes(self.map)
 
         
         for l in layers {
             self.worldLayer.addChild(l)
         }
         
-        self.worldLayer.addChild(map)
+        map_layer.removeFromParent()
+        self.worldLayer.addChild(map_layer)
+        
+        spikes.removeFromParent()
+        self.worldLayer.addChild(spikes)
+
+        //self.worldLayer.addChild(spikes)
+
 
         self.worldLayer.name = "worldLayer"
 
@@ -196,6 +205,61 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         centerWorldOnPoint(CGPointMake(Constants.defaultSpawnPoint.x, Constants.minCamPos))
 
     }
+    
+    func createPhysicalBodiesWalls(tileMap: JSTileMap){
+        
+        let group = tileMap.groupNamed("Corpos")
+        let allObjects = group.objects
+        
+        for bodysObject in allObjects{
+            
+            let x = bodysObject["x"] as? NSNumber
+            let y = bodysObject["y"] as? NSNumber
+            
+            let w = (bodysObject["width"] as String).toInt()
+            let h = (bodysObject["height"] as String).toInt()
+            
+            let body = SKSpriteNode()
+            body.size = CGSizeMake( CGFloat(w!) , CGFloat(h!) )
+            body.anchorPoint = CGPointMake(0, 0)
+            body.position = CGPointMake( CGFloat(x!) + CGFloat(w!)/2 , CGFloat(y!) + CGFloat(h!)/2 )
+            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w!) , CGFloat(h!) ), center: CGPointMake(1, 1))
+            body.physicsBody?.restitution = 0.0
+            body.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+            body.physicsBody!.dynamic = false
+            body.physicsBody!.friction = 0.3
+            
+            self.platformLayer.addChild(body)
+        }
+    }
+    
+    func createPhysicalBodiesSpikes(tileMap: JSTileMap){
+        
+        let group = tileMap.groupNamed("Espinho")
+        let allObjects = group.objects
+        
+        for bodysObject in allObjects{
+            
+            let x = bodysObject["x"] as? NSNumber
+            let y = bodysObject["y"] as? NSNumber
+            
+            let w = (bodysObject["width"] as String).toInt()
+            let h = (bodysObject["height"] as String).toInt()
+            
+            let body = SKSpriteNode()
+            body.size = CGSizeMake( CGFloat(w!) , CGFloat(h!) )
+            body.anchorPoint = CGPointMake(0, 0)
+            body.position = CGPointMake( CGFloat(x!) + CGFloat(w!)/2 , CGFloat(y!) + CGFloat(h!)/2 )
+            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w!) , CGFloat(h!) ), center: CGPointMake(1, 1))
+            body.physicsBody?.restitution = 0.0
+            body.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
+            body.physicsBody!.dynamic = false
+            body.physicsBody!.friction = 0.3
+            
+            self.platformLayer.addChild(body)
+        }
+    }
+
     
     
     func createNodesFromLayer(layer: TMXLayer) {
@@ -228,44 +292,44 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     
                     let tile = layer.tileAtCoord(coord)
 
-                    if properties["wall"] != nil {
-                        //setPhysicBody(tile, pos: (w, h))
-                        
-                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
-                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
-                        tile.physicsBody!.dynamic = false
-                        tile.physicsBody!.friction = 0
-
-                    }
+//                    if properties["wall"] != nil {
+//                        //setPhysicBody(tile, pos: (w, h))
+//                        
+//                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+//                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+//                        tile.physicsBody!.dynamic = false
+//                        tile.physicsBody!.friction = 0
+//
+//                    }
                     
                     
                     
-                    if properties["isMoveable"] != nil {
-                        
-                        let steps = (properties["isMoveable"] as String!).toInt()
-                        let direction = (properties["direction"] as String!).toInt()
-                        let speed = (properties["speed"] as String!).toInt()
-                        //let wall = (properties["wall"] as String!).toInt()
-
-                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
-                        tile.physicsBody!.dynamic = false
-                        tile.physicsBody!.friction = 0
-                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
-                        tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
-                        
-                    }
-                    
-                    if properties["spike"] != nil {
-                        
-                        let spikeProp = (properties["spike"] as String!).toInt()
-                        
-                        tile.physicsBody = SKPhysicsBody(texture: spikesArray[spikeProp!], alphaThreshold: 0.5, size: tile.size)
-                        tile.texture = spikesArray[spikeProp!]
-                        tile.physicsBody!.dynamic = false
-                        tile.physicsBody!.friction = 0
-                        tile.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
-                        
-                    }
+//                    if properties["isMoveable"] != nil {
+//                        
+//                        let steps = (properties["isMoveable"] as String!).toInt()
+//                        let direction = (properties["direction"] as String!).toInt()
+//                        let speed = (properties["speed"] as String!).toInt()
+//                        //let wall = (properties["wall"] as String!).toInt()
+//
+//                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+//                        tile.physicsBody!.dynamic = false
+//                        tile.physicsBody!.friction = 0
+//                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+//                        tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
+//                        
+//                    }
+//                    
+//                    if properties["spike"] != nil {
+//                        
+//                        let spikeProp = (properties["spike"] as String!).toInt()
+//                        
+//                        tile.physicsBody = SKPhysicsBody(texture: spikesArray[spikeProp!], alphaThreshold: 0.5, size: tile.size)
+//                        tile.texture = spikesArray[spikeProp!]
+//                        tile.physicsBody!.dynamic = false
+//                        tile.physicsBody!.friction = 0
+//                        tile.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
+//                        
+//                    }
 
                 }
             }
@@ -585,8 +649,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func loadAll(){
         self.loadWorld()
-        self.loadHud()
+//        self.loadHud()
 //        self.loadLevels()
+        
+        self.gameStarted = true
         self.loadPhysics()
         self.loadNinja()
         self.loadClouds()
@@ -841,22 +907,22 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             println("comecou toque")
 
-            if(self.HUD!.pauseButton!.containsPoint(self.HUD!.convertPoint(location, fromNode: self))){
-                println("comecou toque2")
-
-                //self.gameStarted = false
-                //self.HUD?.moveButtonsInScreen()
-                self.teste.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
-                self.frontCloudLayer.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
-
-                
-            }
+//            if(self.HUD!.pauseButton!.containsPoint(self.HUD!.convertPoint(location, fromNode: self))){
+//                println("comecou toque2")
+//
+//                //self.gameStarted = false
+//                //self.HUD?.moveButtonsInScreen()
+//                self.teste.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+//                self.frontCloudLayer.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+//
+//                
+//            }
             
-            if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
-                println("comecou toque3")
-
-                //self.showLeader()
-            }
+//            if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
+//                println("comecou toque3")
+//
+//                //self.showLeader()
+//            }
             
             if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
                 println("comecou toque4")
@@ -864,24 +930,24 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 self.initialTapPosition = location
                 self.isDraging = true
             }
-            else{
-                println("comecou toque5")
-
-                
-                if(self.HUD!.playButton!.containsPoint(location) && self.gameStarted == false){
-                    
-                    self.startGame()
-                }
-                else{
-                    
-                    if(self.gameStarted == true){
-                        
-                        
-                    }
-                }
-                
-                
-            }
+//            else{
+//                println("comecou toque5")
+//
+//                
+//                if(self.HUD!.playButton!.containsPoint(location) && self.gameStarted == false){
+//                    
+//                    self.startGame()
+//                }
+//                else{
+//                    
+//                    if(self.gameStarted == true){
+//                        
+//                        
+//                    }
+//                }
+//                
+//                
+//            }
         }
     }
     

@@ -131,8 +131,8 @@
                                 <rect key="frame" x="400" y="0.0" width="200" height="600"/>
                                 <color key="backgroundColor" red="0.93064260480000005" green="0.94313412900000004" blue="1" alpha="1" colorSpace="deviceRGB"/>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-xz-JiA">
-                                <rect key="frame" x="90" y="274" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-xz-JiA">
+                                <rect key="frame" x="282" y="302" width="37" height="37"/>
                                 <color key="color" red="0.98251348810000005" green="1" blue="0.97068622329999998" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -146,8 +146,10 @@
                             <constraint firstItem="4VI-wf-LW6" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="topMargin" constant="1" id="Mc8-91-E3X"/>
                             <constraint firstItem="SEq-is-Z8K" firstAttribute="bottom" secondItem="ZXC-Vp-mkx" secondAttribute="top" id="cDY-yw-TOA"/>
                             <constraint firstItem="TJ1-7s-LcJ" firstAttribute="centerX" secondItem="ZX8-K5-dKf" secondAttribute="centerX" id="fPJ-93-WQV"/>
+                            <constraint firstItem="nk3-xz-JiA" firstAttribute="top" secondItem="rZc-g1-qEG" secondAttribute="bottom" constant="282" id="fdy-tC-yr9"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4VI-wf-LW6" secondAttribute="bottom" constant="-1" id="gi6-ba-yMd"/>
                             <constraint firstItem="TJ1-7s-LcJ" firstAttribute="width" secondItem="SEq-is-Z8K" secondAttribute="width" id="uRB-ST-JwG"/>
+                            <constraint firstItem="nk3-xz-JiA" firstAttribute="centerX" secondItem="TJ1-7s-LcJ" secondAttribute="centerX" id="wBz-Mi-gPZ"/>
                             <constraint firstItem="TJ1-7s-LcJ" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="top" id="xqv-Jo-FtY"/>
                             <constraint firstItem="TJ1-7s-LcJ" firstAttribute="top" secondItem="SEq-is-Z8K" secondAttribute="top" id="zmc-I4-WHh"/>
                         </constraints>
