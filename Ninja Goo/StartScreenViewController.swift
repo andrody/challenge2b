@@ -34,6 +34,14 @@ class StartScreenViewController: ItemViewCtrl {
         let tapGesture = UITapGestureRecognizer(target: self, action: "moveToLevels")
         tapGesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(tapGesture)
+        
+        loadName()
+    }
+    
+    func loadName() {
+        
+        
+        
     }
     
     func moveToLevels(){
