@@ -171,7 +171,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         spikes.zPosition = Constants.zPosWall
         //createNodesFromLayer(spikes)
         createPhysicalBodiesWalls(self.map)
-        //createPhysicalBodiesSpikes(self.map)
+        createPhysicalBodiesSpikes(self.map)
 
         
         for l in layers {
