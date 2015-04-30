@@ -99,14 +99,24 @@
                                     <constraint firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="288:157" id="WyR-kt-LCN"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="taptoplay" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-Bp-m2g">
+                                <rect key="frame" x="193" y="559" width="210" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="5m2-td-wyx"/>
+                                    <constraint firstAttribute="width" constant="290" id="71Y-cy-MrG"/>
+                                    <constraint firstAttribute="width" secondItem="dnV-Bp-m2g" secondAttribute="height" multiplier="10:1" id="IoW-w6-e3s"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="NP7-u1-8bL" secondAttribute="trailing" constant="-14" id="9b9-bx-x7f"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="top" secondItem="5rW-01-OQW" secondAttribute="topMargin" constant="2" id="Bdd-jo-Sxm"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" constant="203" id="K6P-E4-D33"/>
+                            <constraint firstItem="dnV-Bp-m2g" firstAttribute="centerX" secondItem="5rW-01-OQW" secondAttribute="centerX" id="N6Y-NZ-SEk"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerY" secondItem="NP7-u1-8bL" secondAttribute="centerY" constant="-0.5" id="QXW-4E-hic"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="leading" secondItem="5rW-01-OQW" secondAttribute="leadingMargin" constant="-18" id="jXm-AA-KZc"/>
+                            <constraint firstAttribute="bottom" secondItem="dnV-Bp-m2g" secondAttribute="bottom" constant="20" symbolic="YES" id="ped-As-Zkl"/>
                             <constraint firstItem="hkL-gm-Pwv" firstAttribute="top" secondItem="Fh1-Tb-ZAh" secondAttribute="bottom" constant="220" id="ppd-JG-jcr"/>
                             <constraint firstAttribute="bottomMargin" secondItem="NP7-u1-8bL" secondAttribute="bottom" constant="-2" id="pqD-up-1iO"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerX" secondItem="NP7-u1-8bL" secondAttribute="centerX" id="zZJ-yv-JrB"/>
@@ -114,6 +124,7 @@
                     </view>
                     <connections>
                         <outlet property="contentImageView" destination="NP7-u1-8bL" id="2Cf-K2-fZ3"/>
+                        <outlet property="logo" destination="Fh1-Tb-ZAh" id="DuD-Mh-hPI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWy-As-6hx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -183,5 +194,6 @@
         <image name="nail_left" width="1450" height="1450"/>
         <image name="nuvem_escura" width="1403" height="243"/>
         <image name="plataforma3.png" width="1320" height="1836"/>
+        <image name="taptoplay" width="694" height="71"/>
     </resources>
 </document>

@@ -22,6 +22,7 @@ class StartScreenViewController: ItemViewCtrl {
         }
     }
     
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet var contentImageView: UIImageView?
     
     // MARK: - View Lifecycle
@@ -35,10 +36,15 @@ class StartScreenViewController: ItemViewCtrl {
         tapGesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(tapGesture)
         
-        loadName()
+        animateLogo()
     }
     
-    func loadName() {
+    func animateLogo() {
+        
+        UIView.animateWithDuration(0.8, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut | .Repeat | .Autoreverse, animations: {
+            //self.logo.center = CGPointMake(self.logo.center.x + 200, self.logo.center.y)
+            self.view.layoutIfNeeded()
+            }, completion: nil)
         
         
         
