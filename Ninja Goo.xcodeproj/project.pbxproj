@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6571A6461AF29EF0007450B4 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571A6431AF29EF0007450B4 /* JSTileMap.m */; };
+		6571A6471AF29EF0007450B4 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571A6451AF29EF0007450B4 /* LFCGzipUtility.m */; };
+		6571A6491AF29F86007450B4 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6571A6481AF29F86007450B4 /* minifase3.tmx */; };
 		C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */; };
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
@@ -15,8 +18,6 @@
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
-		C5A53ECF1AD6EF4300A97B1D /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A53ECC1AD6EF4300A97B1D /* JSTileMap.m */; };
-		C5A53ED01AD6EF4300A97B1D /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A53ECE1AD6EF4300A97B1D /* LFCGzipUtility.m */; };
 		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
 		C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F411ACD6AA8001A37B7 /* teste.sks */; };
 		C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */; };
@@ -41,7 +42,6 @@
 		C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */; };
 		C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D854901AF15CC3008CE610 /* espinho_tile.png */; };
 		C5F4C0A01AF14CD200898C44 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5F4C09D1AF14CD200898C44 /* minifase2.tmx */; };
-		C5F4C0A11AF14CD200898C44 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5F4C09E1AF14CD200898C44 /* minifase3.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6571A6421AF29EF0007450B4 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.h"; sourceTree = "<group>"; };
+		6571A6431AF29EF0007450B4 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.m"; sourceTree = "<group>"; };
+		6571A6441AF29EF0007450B4 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.h"; sourceTree = "<group>"; };
+		6571A6451AF29EF0007450B4 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.m"; sourceTree = "<group>"; };
+		6571A6481AF29F86007450B4 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
 		C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
@@ -64,10 +69,6 @@
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
-		C5A53ECB1AD6EF4300A97B1D /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
-		C5A53ECC1AD6EF4300A97B1D /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
-		C5A53ECD1AD6EF4300A97B1D /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
-		C5A53ECE1AD6EF4300A97B1D /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
 		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CB3F3E1ACD6AA8001A37B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
 		C5D854901AF15CC3008CE610 /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
 		C5F4C09D1AF14CD200898C44 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
-		C5F4C09E1AF14CD200898C44 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +121,10 @@
 		C547473D1AD44E0A00C4E23F /* JSTileMap */ = {
 			isa = PBXGroup;
 			children = (
-				C5A53ECB1AD6EF4300A97B1D /* JSTileMap.h */,
-				C5A53ECC1AD6EF4300A97B1D /* JSTileMap.m */,
-				C5A53ECD1AD6EF4300A97B1D /* LFCGzipUtility.h */,
-				C5A53ECE1AD6EF4300A97B1D /* LFCGzipUtility.m */,
+				6571A6421AF29EF0007450B4 /* JSTileMap.h */,
+				6571A6431AF29EF0007450B4 /* JSTileMap.m */,
+				6571A6441AF29EF0007450B4 /* LFCGzipUtility.h */,
+				6571A6451AF29EF0007450B4 /* LFCGzipUtility.m */,
 			);
 			name = JSTileMap;
 			path = "../../../../Dropbox/Challenge2/Other Resources/JSTileMap";
@@ -135,7 +135,7 @@
 			children = (
 				C5D8548B1AF1593D008CE610 /* minifase1.tmx */,
 				C5F4C09D1AF14CD200898C44 /* minifase2.tmx */,
-				C5F4C09E1AF14CD200898C44 /* minifase3.tmx */,
+				6571A6481AF29F86007450B4 /* minifase3.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -328,7 +328,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -368,8 +368,8 @@
 				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
+				6571A6491AF29F86007450B4 /* minifase3.tmx in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
-				C5F4C0A11AF14CD200898C44 /* minifase3.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				C5F4C0A01AF14CD200898C44 /* minifase2.tmx in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
@@ -401,16 +401,16 @@
 				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
 				C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */,
 				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
+				6571A6461AF29EF0007450B4 /* JSTileMap.m in Sources */,
 				C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */,
 				C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */,
 				C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */,
 				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
 				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
+				6571A6471AF29EF0007450B4 /* LFCGzipUtility.m in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,
 				C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */,
 				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,
-				C5A53ED01AD6EF4300A97B1D /* LFCGzipUtility.m in Sources */,
-				C5A53ECF1AD6EF4300A97B1D /* JSTileMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
