@@ -13,6 +13,9 @@
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
 		C50F9E3C1AD45B92008C4514 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C50F9E3B1AD45B92008C4514 /* wall.png */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
+		C54ADBC81AF2C5D3006441F2 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C54ADBC71AF2C5D3006441F2 /* minifase3.tmx */; };
+		C56FB0601AF2A2D0007FC1E4 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C56FB05D1AF2A2D0007FC1E4 /* minifase1.tmx */; };
+		C56FB0611AF2A2D0007FC1E4 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C56FB05E1AF2A2D0007FC1E4 /* minifase2.tmx */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
 		C5A53ECF1AD6EF4300A97B1D /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A53ECC1AD6EF4300A97B1D /* JSTileMap.m */; };
@@ -35,13 +38,10 @@
 		C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */; };
 		C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F811ACDEBE4001A37B7 /* WorldLayer.swift */; };
 		C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F831ACDFF18001A37B7 /* Hud.swift */; };
-		C5D8548C1AF1593D008CE610 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548B1AF1593D008CE610 /* minifase1.tmx */; };
 		C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548D1AF15CC3008CE610 /* espinho_tile_direito.png */; };
 		C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */; };
 		C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */; };
 		C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D854901AF15CC3008CE610 /* espinho_tile.png */; };
-		C5D854981AF16F8C008CE610 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5D854971AF16F8C008CE610 /* minifase2.tmx */; };
-		C5F4C0A11AF14CD200898C44 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5F4C09E1AF14CD200898C44 /* minifase3.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +62,9 @@
 		C50F9E3B1AD45B92008C4514 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
+		C54ADBC71AF2C5D3006441F2 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
+		C56FB05D1AF2A2D0007FC1E4 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
+		C56FB05E1AF2A2D0007FC1E4 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
 		C5A53ECB1AD6EF4300A97B1D /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
@@ -90,13 +93,10 @@
 		C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertUtilities.swift; sourceTree = "<group>"; };
 		C5CB3F811ACDEBE4001A37B7 /* WorldLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldLayer.swift; sourceTree = "<group>"; };
 		C5CB3F831ACDFF18001A37B7 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
-		C5D8548B1AF1593D008CE610 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		C5D8548D1AF15CC3008CE610 /* espinho_tile_direito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_direito.png; sourceTree = "<group>"; };
 		C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_esquerdo.png; sourceTree = "<group>"; };
 		C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
 		C5D854901AF15CC3008CE610 /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
-		C5D854971AF16F8C008CE610 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
-		C5F4C09E1AF14CD200898C44 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +133,9 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				C5D8548B1AF1593D008CE610 /* minifase1.tmx */,
-				C5D854971AF16F8C008CE610 /* minifase2.tmx */,
-				C5F4C09E1AF14CD200898C44 /* minifase3.tmx */,
+				C56FB05D1AF2A2D0007FC1E4 /* minifase1.tmx */,
+				C56FB05E1AF2A2D0007FC1E4 /* minifase2.tmx */,
+				C54ADBC71AF2C5D3006441F2 /* minifase3.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -362,20 +362,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5CB3F751ACD6E9D001A37B7 /* jump.wav in Resources */,
-				C5D8548C1AF1593D008CE610 /* minifase1.tmx in Resources */,
+				C56FB0601AF2A2D0007FC1E4 /* minifase1.tmx in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C50F9E3C1AD45B92008C4514 /* wall.png in Resources */,
 				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
+				C54ADBC81AF2C5D3006441F2 /* minifase3.tmx in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
-				C5F4C0A11AF14CD200898C44 /* minifase3.tmx in Resources */,
+				C56FB0611AF2A2D0007FC1E4 /* minifase2.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
-				C5D854981AF16F8C008CE610 /* minifase2.tmx in Resources */,
 				C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,

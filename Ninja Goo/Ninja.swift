@@ -45,6 +45,10 @@ class Ninja: SKNode {
     var nailState = NailState.Down
     var isMoving =  false
     var isDead =  false
+    var isInMoveable = false
+    var mWall : SKPhysicsBody!
+    var mWallInitialPosition : CGPoint!
+
     var movimentDirctionX: Int8 = 0
     var movimentDirectionY: Int8 = 0
     

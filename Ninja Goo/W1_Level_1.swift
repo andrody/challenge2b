@@ -19,6 +19,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     var teste : SKNode!
     
+    var ninjaPosTemp : CGPoint!
+    var mWallTempo : SKPhysicsBody!
+    
+    
     
     //Positions
     var lastBackgroundPositionX: CGFloat = 0.0
@@ -108,7 +112,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static var minCamPos : CGFloat!
         static let gravity = CGVectorMake(0, -50)
         static let minForce : CGFloat = 30.0
-        static let maxForce : CGFloat = 80.0
+        static let maxForce : CGFloat = 100.0
         static let maxForceGeral : CGFloat = maxForce + 70
         static let minDistanceSlide : CGFloat = 600.0
 
@@ -167,7 +171,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         //preenchimento.zPosition = Constants.zPosWall
 
 
-        //createNodesFromLayer(map_layer)
+        createNodesFromLayer(map_layer)
         
         let spikes = map.layerNamed("Spikes")
         spikes.zPosition = Constants.zPosWall
@@ -229,7 +233,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             body.physicsBody?.restitution = 0.0
             body.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
             body.physicsBody!.dynamic = false
-            body.physicsBody!.friction = 0.3
+            body.physicsBody!.friction = 1
             
             self.platformLayer.addChild(body)
         }
@@ -269,13 +273,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let map = layer.map
         
 
-        let espinho_tile = SKTexture(imageNamed: "espinho_tile")
-        let espinho_tile_direito = SKTexture(imageNamed: "espinho_tile_direito")
-        let espinho_tile_invertido = SKTexture(imageNamed: "espinho_tile_invertido")
-        let espinho_tile_esquerdo = SKTexture(imageNamed: "espinho_tile_esquerdo")
-
-
-        let spikesArray = [espinho_tile, espinho_tile_direito, espinho_tile_invertido, espinho_tile_esquerdo]
+//        let espinho_tile = SKTexture(imageNamed: "espinho_tile")
+//        let espinho_tile_direito = SKTexture(imageNamed: "espinho_tile_direito")
+//        let espinho_tile_invertido = SKTexture(imageNamed: "espinho_tile_invertido")
+//        let espinho_tile_esquerdo = SKTexture(imageNamed: "espinho_tile_esquerdo")
+//
+//
+//        let spikesArray = [espinho_tile, espinho_tile_direito, espinho_tile_invertido, espinho_tile_esquerdo]
         
 
         for w in 0..<Int(layer.layerInfo.layerGridSize.width) {
@@ -286,7 +290,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 let coord = CGPoint(x: w, y: h)
                 let tileGid = layer.layerInfo.tileGidAtCoord(coord)
                 
-                if tileGid == 0 {
+                if tileGid == 0 || tileGid == 103 || tileGid == 175{
                     continue
                 }
                 
@@ -306,21 +310,26 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     
                     
                     
-//                    if properties["isMoveable"] != nil {
-//                        
-//                        let steps = (properties["isMoveable"] as String!).toInt()
-//                        let direction = (properties["direction"] as String!).toInt()
-//                        let speed = (properties["speed"] as String!).toInt()
-//                        //let wall = (properties["wall"] as String!).toInt()
+                    if properties["isMoveable"] != nil {
+                        
+                        let steps = (properties["isMoveable"] as String!).toInt()
+                        let direction = (properties["direction"] as String!).toInt()
+                        let speed = (properties["speed"] as String!).toInt()
+                        //let wall = (properties["wall"] as String!).toInt()
+
+                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+                        tile.physicsBody!.dynamic = false
+                        //tile.physicsBody?.affectedByGravity = false
+                        tile.physicsBody!.friction = 0.9
+                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+                        //tile.physicsBody?.contactTestBitMask = ColliderType.Ninja.rawValue
+                        //tile.physicsBody?.collisionBitMask = ColliderType.Ninja.rawValue
+                        tile.name = "mWall"
+
+                        tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
 //
-//                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
-//                        tile.physicsBody!.dynamic = false
-//                        tile.physicsBody!.friction = 0
-//                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
-//                        tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
-//                        
-//                    }
-//                    
+                    }
+//
 //                    if properties["spike"] != nil {
 //                        
 //                        let spikeProp = (properties["spike"] as String!).toInt()
@@ -415,7 +424,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 firstTile!.physicsBody = SKPhysicsBody(rectangleOfSize: finalSize, center:CGPointMake(0,-finalSize.height/2))
                 firstTile!.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
                 firstTile!.physicsBody!.dynamic = false
-                firstTile!.physicsBody!.friction = 0
+                firstTile!.physicsBody!.friction = 1
                 
                 firstTile = tile
                 tileSizeTotal = tile.size
@@ -732,25 +741,41 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //        var y :CGFloat = cameraPositionInScene!.y
 //        ninja.parent!.position = CGPointMake(ninja.parent!.position.x - cameraPositionInScene!.x , ninja.parent!.position.y - cameraPositionInScene!.y)
         
-        println("ninja y: \(self.ninja.position.y)")
-        println("ground y: \(Constants.defaultGroundPoint.y)")
-        println("mimCam y: \(Constants.minCamPos)")
-
-
+//        println("ninja y: \(self.ninja.position.y)")
+//        println("ground y: \(Constants.defaultGroundPoint.y)")
+//        println("mimCam y: \(Constants.minCamPos)")
         var point : CGPoint!
-        if(self.ninja.position.y > Constants.minCamPos){
-            point = self.ninja.position
+        if(self.ninja.isInMoveable && self.ninja.mWall != nil) {
+            
+            if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos){
+                point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
+            }
+            else {
+                point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos)
+                
+            }
+
         }
         else {
-            point = CGPointMake(self.ninja.position.x, Constants.minCamPos)
+            if(self.ninja.position.y > Constants.minCamPos){
+                point = self.ninja.position
+            }
+            else {
+                point = CGPointMake(self.ninja.position.x, Constants.minCamPos)
+                
+            }
 
         }
+
+
         
         centerWorldOnPoint(point)
 
     }
     
     func centerWorldOnPoint(point : CGPoint) {
+        
+        
         
         var cameraPositionInScene = self.worldLayer.scene?.convertPoint(point, fromNode: worldLayer)
         
@@ -819,6 +844,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
         }
         
+        if(self.ninja.isInMoveable && self.ninja.physicsBody!.pinned == false) {
+            if(self.ninja.position.x != self.ninjaPosTemp.x || self.ninja.position.y != self.ninjaPosTemp.y) {
+                self.mWallTempo.categoryBitMask = ColliderType.Wall.rawValue
+                self.ninja.isInMoveable = false
+            }
+        }
+        
     }
     
     
@@ -828,70 +860,102 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         //ninja.position.x = 0
         
-        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-        switch(contactMask){
-            
-            case ColliderType.Wall.rawValue | ColliderType.Ninja.rawValue:
+            let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+            switch(contactMask){
                 
-                if(self.ninja.isDead == false) {
+                case ColliderType.Wall.rawValue | ColliderType.Ninja.rawValue:
                     
-//                      self.ninja.physicsBody?.dynamic = false
-                      self.physicsWorld.speed = 0
-//                    var ninjaNode : SKNode!
-//                    var wallNode : SKNode!
-//
-//                    if(contact.bodyA.node!.isEqual(self.ninja)){
-//                        wallNode = contact.bodyB.node!
-//                    }
-//                    
-//                    else {
-//                        
-//                        wallNode = contact.bodyA.node!
-//                    }
-                    
-//                    ninjaNode.removeFromParent()
-//                    wallNode.addChild(ninjaNode)
-                    
-                    
-                    println("colidiu com plataforma")
-                    self.ninja.isMoving = false
-                    let dirColision = contact.contactNormal
-                    
-                    if(dirColision.dx > 0.0){
-                        self.ninja.nail_right()
-                    }
-                    else if(dirColision.dx < 0.0){
-                        self.ninja.nail_left()
-                        self.ninja.lookTo(self.ninja.eyes, angle: -120)
-                    }
-                    else {
-                        self.ninja.nail_down()
-                    }
-                    
-                    let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
-                    self.runAction(wallSE)
-                    
-                    self.ninja.IdleAnimation()
-                
-                }
-            
-            case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
-                println("colidiu com spike")
+                    if(self.ninja.isDead == false) {
+                        self.physicsWorld.speed = 0
 
-                self.runAction(SKAction.playSoundFileNamed("impact.wav", waitForCompletion: true))
+    //                      self.ninja.physicsBody?.dynamic = false
+    //                    var ninjaNode : SKNode!
+    //                    var wallNode : SKNode!
+    //
+    //                    if(contact.bodyA.node!.isEqual(self.ninja)){
+    //                        wallNode = contact.bodyB.node!
+    //                    }
+    //                    
+    //                    else {
+    //                        
+    //                        wallNode = contact.bodyA.node!
+    //                    }
+                        
+    //                    ninjaNode.removeFromParent()
+//    //                    wallNode.addChild(ninjaNode)
+//                        if(contact.bodyA.node?.name != "mWall" && contact.bodyB.node?.name != "mWall") {
+//                            self.ninja.isInMoveable = false
+//                        }
+                    
+                        println("colidiu com plataforma")
+                        self.ninja.isMoving = false
+                        let dirColision = contact.contactNormal
+                        
+                        if(!self.ninja.isInMoveable) {
+
+                            if(contact.bodyA.node?.name == "mWall") {
+                                self.ninja.mWall = contact.bodyA!
+                            }
+                            else if(contact.bodyB.node?.name == "mWall") {
+                                self.ninja.mWall = contact.bodyB!
+                            }
+                            if(self.ninja.mWall != nil) {
+                                
+                                self.ninja.removeFromParent()
+                                
+                                self.ninja.mWall.categoryBitMask = 99
+                                self.ninja.mWall.node!.addChild(self.ninja)
+                                self.ninja.physicsBody!.pinned = true
+                                self.ninja.isInMoveable = true
+                                //self.ninja.mWallInitialPosition = self.ninja.mWall.p
+                            }
+                        }
+
+                        
+                        if(dirColision.dx > 0.0){
+                            self.ninja.nail_right()
+                        }
+                        else if(dirColision.dx < 0.0){
+                            self.ninja.nail_left()
+                            self.ninja.lookTo(self.ninja.eyes, angle: -120)
+                        }
+                        else {
+                            //0.9 = moveable
+                            self.ninja.nail_down()
+                        }
+                        
+                        let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
+                        self.runAction(wallSE)
+                        
+                        self.ninja.IdleAnimation()
+                    
+                    }
                 
-                if(!self.ninja.isDead){
+                case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
+                    println("colidiu com spike")
+
+                    self.runAction(SKAction.playSoundFileNamed("impact.wav", waitForCompletion: true))
                     
-                    self.ninja.isDead = true
-                    self.restart()
+                    if(!self.ninja.isDead){
+                        
+                        self.ninja.isDead = true
+                        self.restart()
+                        
+                    }
                     
+                default:
+                    println("colidiu com default")
                 }
-                
-            default:
-                println("colidiu com default")
-            }
         
+    }
+    
+    func didEndContact(contact: SKPhysicsContact) {
+//        if(self.ninja.isInMoveable) {
+//            self.ninja.isInMoveable = false
+//
+//        }
     }
 
     
@@ -955,7 +1019,6 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         
-        println("moveu toque")
 
         if(self.isDraging == true && self.gameStarted == true && !self.ninja.isDead){
             
@@ -1005,6 +1068,18 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //            self.ninja.physicsBody?.dynamic = true
 //            self.ninja.removeFromParent()
             self.physicsWorld.speed = 1
+            
+            if(self.ninja.isInMoveable) {
+                self.ninja.physicsBody!.pinned = false
+                self.ninjaPosTemp = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
+                self.mWallTempo = self.ninja.mWall
+                self.ninja.mWall = nil
+
+                self.ninja.removeFromParent()
+                self.worldLayer.addChild(ninja)
+                self.ninja.position = self.ninjaPosTemp
+
+            }
 
             
             self.isDraging = false
@@ -1021,6 +1096,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
 
             self.ninja.jump(amountToMoveX: speed.0, amountToMoveY: speed.1)
+            
+            
+
+            
             
             self.score += 1
             
