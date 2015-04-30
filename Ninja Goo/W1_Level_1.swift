@@ -308,13 +308,36 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //
 //                    }
                     
-                    
+                    if properties["isRotate"] != nil {
+                        let rotation = (properties["isRotate"] as String!).toInt()
+                        //if(rotation != nil) {
+                            let radians = ConvertUtilities.degreesToRadians(CGFloat(rotation!))
+                            
+                            let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(2.0))
+                            
+                            let action = SKAction.repeatActionForever(rotateAction)
+                            tile.runAction(action)
+                        
+                            tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+                            tile.physicsBody!.dynamic = false
+                            //tile.physicsBody?.affectedByGravity = false
+                            tile.physicsBody!.friction = 0.9
+                            tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+                            tile.name = "mWall"
+
+                        
+                        //}
+
+                        
+                    }
+
                     
                     if properties["isMoveable"] != nil {
                         
                         let steps = (properties["isMoveable"] as String!).toInt()
                         let direction = (properties["direction"] as String!).toInt()
                         let speed = (properties["speed"] as String!).toInt()
+
                         //let wall = (properties["wall"] as String!).toInt()
 
                         tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
@@ -325,9 +348,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         //tile.physicsBody?.contactTestBitMask = ColliderType.Ninja.rawValue
                         //tile.physicsBody?.collisionBitMask = ColliderType.Ninja.rawValue
                         tile.name = "mWall"
-
-                        tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
-//
+                        
+                        //if(steps != nil) {
+                            tile.runAction(self.getMoveAction(steps!, direction: direction!, speed: speed!))
+                        //}
+                        
+                        //
                     }
 //
 //                    if properties["spike"] != nil {
