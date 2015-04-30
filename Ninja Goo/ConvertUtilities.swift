@@ -70,19 +70,19 @@ class ConvertUtilities {
             
         }
         
-        var totalPower : CGFloat
-                
-        do {
-            
-            totalPower = sqrt(pow(fSX, 2) + pow(fSY, 2))
-
-            if fSX < 0 { fSX += 2 }
-            else { fSX -= 2 }
-
-            if fSY < 0 { fSY += 2 }
-            else { fSY -= 2 }
-            
-        }while(totalPower > W1_Level_1.Constants.maxForceGeral)
+//        var totalPower : CGFloat
+//                
+//        do {
+//            
+//            totalPower = sqrt(pow(fSX, 2) + pow(fSY, 2))
+//
+//            if fSX < 0 { fSX += 2 }
+//            else { fSX -= 2 }
+//
+//            if fSY < 0 { fSY += 2 }
+//            else { fSY -= 2 }
+//            
+//        }while(totalPower > W1_Level_1.Constants.maxForceGeral)
         
         return (fSX, fSY)
         

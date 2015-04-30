@@ -106,10 +106,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static var defaultGroundPoint : CGPoint!
         
         static var minCamPos : CGFloat!
-        static let gravity = CGVectorMake(0, -60)
+        static let gravity = CGVectorMake(0, -50)
         static let minForce : CGFloat = 30.0
-        static let maxForce : CGFloat = 120.0
+        static let maxForce : CGFloat = 80.0
         static let maxForceGeral : CGFloat = maxForce + 70
+        static let minDistanceSlide : CGFloat = 600.0
+
         
         static let zPosBackgroundBackLayer : CGFloat = 1
         static let zPosBackgroundFrontLayer : CGFloat = 2
@@ -834,8 +836,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 if(self.ninja.isDead == false) {
                     
-                    self.ninja.physicsBody?.dynamic = false
-                    
+//                      self.ninja.physicsBody?.dynamic = false
+                      self.physicsWorld.speed = 0
 //                    var ninjaNode : SKNode!
 //                    var wallNode : SKNode!
 //
@@ -967,9 +969,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             var distance = sqrt( pow(speedX, 2) + pow(speedY, 2))
             var realDistance = distance
             
-            if(distance > 300){
+            if(distance > Constants.minDistanceSlide){
                 
-                distance = 300
+                distance = Constants.minDistanceSlide
             }
             else{
                 if(distance == 0){
@@ -1000,8 +1002,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         if(self.isDraging == true && self.gameStarted == true && self.ninja.isMoving == false && !self.ninja.isDead){
             
 //            self.worldLayer.addChild(ninja)
-            self.ninja.physicsBody?.dynamic = true
+//            self.ninja.physicsBody?.dynamic = true
 //            self.ninja.removeFromParent()
+            self.physicsWorld.speed = 1
+
             
             self.isDraging = false
             self.ninja.isMoving = true
