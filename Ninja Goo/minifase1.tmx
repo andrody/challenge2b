@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="50" tileheight="50" nextobjectid="79">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="50" tileheight="50" nextobjectid="87">
  <tileset firstgid="1" name="wall" tilewidth="500" tileheight="700">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -75,7 +75,7 @@
   <object id="1" name="ninja" x="99.0099" y="2158.42"/>
  </objectgroup>
  <objectgroup name="Ground">
-  <object id="2" name="ground" x="54.8619" y="3950.1" width="51.2295" height="53.791"/>
+  <object id="2" name="ground" x="50" y="3650" width="51.2295" height="53.791"/>
   <object id="3" x="5005.64" y="-1082.3"/>
  </objectgroup>
  <objectgroup name="Corpos">

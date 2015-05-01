@@ -199,7 +199,7 @@
   </data>
  </layer>
  <objectgroup name="Ground">
-  <object id="1" name="ground" x="84.4564" y="1788.18" width="41.3467" height="35.44"/>
+  <object id="1" name="ground" x="100" y="1550" width="41.3467" height="35.44"/>
  </objectgroup>
  <objectgroup name="Ninja">
   <object id="2" name="ninja" x="69.0223" y="1021"/>
