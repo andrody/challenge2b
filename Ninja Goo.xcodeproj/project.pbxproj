@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6571A6461AF29EF0007450B4 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571A6431AF29EF0007450B4 /* JSTileMap.m */; };
-		6571A6471AF29EF0007450B4 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571A6451AF29EF0007450B4 /* LFCGzipUtility.m */; };
-		6571A6491AF29F86007450B4 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6571A6481AF29F86007450B4 /* minifase3.tmx */; };
+		652309651AF2A1B100D3A713 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 652309621AF2A1B100D3A713 /* JSTileMap.m */; };
+		652309661AF2A1B100D3A713 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 652309641AF2A1B100D3A713 /* LFCGzipUtility.m */; };
+		6523096E1AF2AE3700D3A713 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6523096D1AF2AE3700D3A713 /* minifase3.tmx */; };
 		C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */; };
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
@@ -41,7 +41,7 @@
 		C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */; };
 		C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */; };
 		C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D854901AF15CC3008CE610 /* espinho_tile.png */; };
-		C5F4C0A01AF14CD200898C44 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5F4C09D1AF14CD200898C44 /* minifase2.tmx */; };
+		C5D854981AF16F8C008CE610 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5D854971AF16F8C008CE610 /* minifase2.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6571A6421AF29EF0007450B4 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.h"; sourceTree = "<group>"; };
-		6571A6431AF29EF0007450B4 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.m"; sourceTree = "<group>"; };
-		6571A6441AF29EF0007450B4 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.h"; sourceTree = "<group>"; };
-		6571A6451AF29EF0007450B4 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.m"; sourceTree = "<group>"; };
-		6571A6481AF29F86007450B4 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
+		652309611AF2A1B100D3A713 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.h"; sourceTree = "<group>"; };
+		652309621AF2A1B100D3A713 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.m"; sourceTree = "<group>"; };
+		652309631AF2A1B100D3A713 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.h"; sourceTree = "<group>"; };
+		652309641AF2A1B100D3A713 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.m"; sourceTree = "<group>"; };
+		6523096D1AF2AE3700D3A713 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
 		C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_esquerdo.png; sourceTree = "<group>"; };
 		C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
 		C5D854901AF15CC3008CE610 /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
-		C5F4C09D1AF14CD200898C44 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
+		C5D854971AF16F8C008CE610 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,10 +121,10 @@
 		C547473D1AD44E0A00C4E23F /* JSTileMap */ = {
 			isa = PBXGroup;
 			children = (
-				6571A6421AF29EF0007450B4 /* JSTileMap.h */,
-				6571A6431AF29EF0007450B4 /* JSTileMap.m */,
-				6571A6441AF29EF0007450B4 /* LFCGzipUtility.h */,
-				6571A6451AF29EF0007450B4 /* LFCGzipUtility.m */,
+				652309611AF2A1B100D3A713 /* JSTileMap.h */,
+				652309621AF2A1B100D3A713 /* JSTileMap.m */,
+				652309631AF2A1B100D3A713 /* LFCGzipUtility.h */,
+				652309641AF2A1B100D3A713 /* LFCGzipUtility.m */,
 			);
 			name = JSTileMap;
 			path = "../../../../Dropbox/Challenge2/Other Resources/JSTileMap";
@@ -134,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				C5D8548B1AF1593D008CE610 /* minifase1.tmx */,
-				C5F4C09D1AF14CD200898C44 /* minifase2.tmx */,
-				6571A6481AF29F86007450B4 /* minifase3.tmx */,
+				C5D854971AF16F8C008CE610 /* minifase2.tmx */,
+				6523096D1AF2AE3700D3A713 /* minifase3.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -368,7 +368,7 @@
 				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
-				6571A6491AF29F86007450B4 /* minifase3.tmx in Resources */,
+				6523096E1AF2AE3700D3A713 /* minifase3.tmx in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
@@ -401,13 +401,13 @@
 				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
 				C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */,
 				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
-				6571A6461AF29EF0007450B4 /* JSTileMap.m in Sources */,
+				652309651AF2A1B100D3A713 /* JSTileMap.m in Sources */,
 				C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */,
 				C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */,
 				C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */,
 				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
 				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
-				6571A6471AF29EF0007450B4 /* LFCGzipUtility.m in Sources */,
+				652309661AF2A1B100D3A713 /* LFCGzipUtility.m in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,
 				C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */,
 				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,

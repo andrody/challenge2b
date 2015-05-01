@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="51">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="53">
  <tileset firstgid="1" name="plataforma3" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -65,14 +65,12 @@
    <image width="50" height="50" source="espinho_tile.png"/>
   </tile>
  </tileset>
+ <tileset firstgid="251" name="espinho_tile" tilewidth="50" tileheight="50">
+  <image source="espinho_tile.png" width="50" height="50"/>
+ </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
    eJzt21EOwiAMANB5DE/o8byiWfwjYBSlFHzvk48FunZdl+w4AAAAOF1mb6DDinsulWdonam2/u4a8Jq6WZP7RqRP+jP06s0neRhnh1jvcAYAgBrfSmOIaRyxBgDoN/pdyvwRI0NMr7M3AMB0t4HXvg+8dmb6K7sxf+xBTFmd/krJc40oco0ocu3J/DHHr//rFVP4P+oe8lKf0Gb+mOOb+UNMgZO6B6Ame39Yff7IHt+WqPnjAZ/8AZw=
-  </data>
- </layer>
- <layer name="Spikes" width="160" height="40">
-  <data encoding="base64" compression="zlib">
-   eJzt2ssKAjEQRcH5/x/2sXKpQkfIONNXSRVkn8VJE0K2Dd5d0xtgafojSX8k6Y8k/ZGkP5L0R5L+nm6DxXn0R9Ke/kZzwrxg1qf+9EUHnUHefbAAAF65uwPA2Ow7/+WUXbAq/X3P+9h++pujs2Ppb0xr59Nfzf+rHvqr6a9HR3//eD/XXw/zr5bu79fP51H0V0v3twr91fTXQ381/fXQX01/PfRX018P/ZGkP5L0R5L+SNIfSfojSX8k6S/vAVSgd24=
   </data>
  </layer>
  <objectgroup name="Ninja">
@@ -114,4 +112,9 @@
   <object id="49" x="7000" y="500" width="300" height="50"/>
   <object id="50" x="7300" y="450" width="400" height="50"/>
  </objectgroup>
+ <layer name="Spikes" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt2sEJwkAQhtEt1VIsxVLsy4u5iTCrRM38at6DveWwhC/DkmQMuHcZ45DeA/ulP5L0R5L+SNIfSfojSX8k6e9muRfnaqX39c/0R9Ir/c3mhHnBWo/60xcddAZ5yzN3rFZ6XwDAd3F2B4C5te/5l+tP2+yEPdLf+y6TxXP6W0dnn6W/OXNte/qr+f+qh/5q+uvR0d8vfr/WXw/zr5buby/nTP3V0v3thf5q+uuhv5r+euivpr8e+qvpr4f+SNIfSfojSX8k6Y8k/ZGkP5L0l3cFI7O0FQ==
+  </data>
+ </layer>
 </map>
