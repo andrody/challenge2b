@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="99">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="102">
  <tileset firstgid="1" name="plataforma3" tilewidth="400" tileheight="600">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -195,11 +195,11 @@
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2osKwiAUgOF8wd6z+wV6sl4gZBsp0dBNd87R/wMhaMTMP1bL3Q6ANkcnfQboGf1BEv3ZcW5wrejPjhb7gx2a+ju579Dsrvz8LNHUnxX0Vw795aO/cugvzSN4n+ivnBb7q/H71/f3Hh/TXzma+ivVTa3+JvRXDv2lob86eu/vmngs/dWhqb9S6M+WnPu9Je4P126+Rn/e0w1jjQPtipPu7xU8n9PfWi1eayxKXYel60V/mEN/kMT1F5LoD5LoD57UPuF/63Bxv2OJlP724zH0V0fKXLX1l3M+c/NLeZ2bG8aW6C/Wc38S6C+mdZ1Shfv1Lezdp7+Y9f6sab0//9/iNHroL5xvOLRqvb9cEv1tsQZaP1f0F6M/SKI/9Ib+IInvQJBEf5BEfwAAAACAXB+LaGbZ
+   eJzt2UGKwkAQhlHn/idx9JCShWAGkbQ4/lXd70HvsuimvpCEnE5ANb8/6R2wMv2RpL8+rhPOSn99zNgffeiPJP2RpD+S9EfSjP35/u2jUn+f6kZ/feiPJP2RVKm/T9FfL5eBeW3Xjlz/zH83X7m/c+G9rWLV/mZ81nR0dA7vzkt/vKI/kjx/SdIfSfpjk5qT/uZ35KzV+hvZz6vz6S9Pf/Xob6/qnI66/4v5u6rS3173/rqZvb/t3+J9rdDf43kfV1Wz9zcq0d83ZlD1vtLfnv5I0h+r0R9J3oFI0h9J+gMAAGDUDf3rRzI=
   </data>
  </layer>
  <objectgroup name="Ground">
-  <object id="1" name="ground" x="100" y="1550" width="41.3467" height="35.44"/>
+  <object id="1" name="ground" x="100" y="1700" width="41.3467" height="35.44"/>
  </objectgroup>
  <objectgroup name="Ninja">
   <object id="2" name="ninja" x="69.0223" y="1021"/>
@@ -217,10 +217,7 @@
   <object id="19" x="2050" y="150" width="50" height="600"/>
   <object id="20" x="950" y="150" width="1100" height="50"/>
   <object id="21" x="2350" y="50" width="50" height="1150"/>
-  <object id="22" x="2350" y="1200" width="450" height="50"/>
-  <object id="23" x="2800" y="1150" width="50" height="100"/>
   <object id="24" x="2550" y="300" width="50" height="900"/>
-  <object id="25" x="2600" y="1150" width="200" height="50"/>
   <object id="26" x="2550" y="250" width="900" height="50"/>
   <object id="27" x="3450" y="50" width="50" height="250"/>
   <object id="29" x="2400" y="50" width="1050" height="50"/>
@@ -233,6 +230,7 @@
   <object id="38" x="5450" y="850" width="50" height="1150"/>
   <object id="39" x="5450" y="800" width="350" height="50"/>
   <object id="40" x="5800" y="800" width="50" height="1200"/>
+  <object id="99" x="2350" y="1200" width="250" height="50"/>
  </objectgroup>
  <objectgroup name="Espinho">
   <object id="43" x="200" y="1350" width="150" height="50"/>
@@ -243,9 +241,7 @@
   <object id="48" x="1450" y="750" width="100" height="50"/>
   <object id="49" x="2300" y="750" width="50" height="500"/>
   <object id="50" x="2250" y="1400" width="50" height="350"/>
-  <object id="51" x="2600" y="1100" width="250" height="50"/>
   <object id="52" x="2600" y="550" width="50" height="150"/>
-  <object id="54" x="2600" y="300" width="150" height="50"/>
   <object id="55" x="2800" y="850" width="50" height="100"/>
   <object id="56" x="3150" y="1150" width="50" height="100"/>
   <object id="57" x="3200" y="1250" width="300" height="50"/>
@@ -253,28 +249,8 @@
   <object id="59" x="3500" y="1400" width="50" height="200"/>
   <object id="60" x="3500" y="500" width="50" height="750"/>
   <object id="62" x="3500" y="50" width="50" height="200"/>
-  <object id="63" x="3900" y="800" width="50" height="350">
-   <properties>
-    <property name="direction" value="4"/>
-    <property name="isMoveable" value="7"/>
-    <property name="speed" value="1"/>
-   </properties>
-  </object>
-  <object id="72" x="4050" y="650" width="50" height="500">
-   <properties>
-    <property name="direction" value="4"/>
-    <property name="isMoveable" value="7"/>
-    <property name="speed" value="1"/>
-   </properties>
-  </object>
-  <object id="73" x="3950" y="1150" width="100" height="50">
-   <properties>
-    <property name="direction" value="4"/>
-    <property name="isMoveable" value="7"/>
-    <property name="speed" value="1"/>
-   </properties>
-  </object>
   <object id="74" x="5400" y="800" width="50" height="650"/>
   <object id="76" x="5450" y="750" width="50" height="50"/>
+  <object id="101" x="2600" y="1150" width="50" height="100"/>
  </objectgroup>
 </map>

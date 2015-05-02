@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZA2-tp-xmd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZA2-tp-xmd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -89,14 +89,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-u1-8bL">
-                                <rect key="frame" x="-2" y="2" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-u1-8bL">
+                                <rect key="frame" x="-2" y="0.0" width="602" height="602"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-Tb-ZAh">
                                 <rect key="frame" x="154" y="223" width="288" height="157"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="IqN-ip-so0"/>
-                                    <constraint firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="288:157" id="WyR-kt-LCN"/>
+                                    <constraint firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="288:157" id="bmQ-4w-2RZ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="taptoplay" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-Bp-m2g">
@@ -115,6 +114,7 @@
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" constant="203" id="K6P-E4-D33"/>
                             <constraint firstItem="dnV-Bp-m2g" firstAttribute="centerX" secondItem="5rW-01-OQW" secondAttribute="centerX" id="N6Y-NZ-SEk"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerY" secondItem="NP7-u1-8bL" secondAttribute="centerY" constant="-0.5" id="QXW-4E-hic"/>
+                            <constraint firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="width" id="W5Z-I9-CgI"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="leading" secondItem="5rW-01-OQW" secondAttribute="leadingMargin" constant="-18" id="jXm-AA-KZc"/>
                             <constraint firstAttribute="bottom" secondItem="dnV-Bp-m2g" secondAttribute="bottom" constant="20" symbolic="YES" id="ped-As-Zkl"/>
                             <constraint firstItem="hkL-gm-Pwv" firstAttribute="top" secondItem="Fh1-Tb-ZAh" secondAttribute="bottom" constant="220" id="ppd-JG-jcr"/>
@@ -123,8 +123,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="constrintDeCima" destination="K6P-E4-D33" id="o2f-8s-Cz1"/>
                         <outlet property="contentImageView" destination="NP7-u1-8bL" id="2Cf-K2-fZ3"/>
+                        <outlet property="contrintDeBaixo" destination="ppd-JG-jcr" id="KWR-2h-7RF"/>
                         <outlet property="logo" destination="Fh1-Tb-ZAh" id="DuD-Mh-hPI"/>
+                        <outlet property="tapToPlay" destination="dnV-Bp-m2g" id="MFA-fu-eu7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWy-As-6hx" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="53">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="55">
  <tileset firstgid="1" name="plataforma3" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -73,6 +73,11 @@
    eJzt21EOwiAMANB5DE/o8byiWfwjYBSlFHzvk48FunZdl+w4AAAAOF1mb6DDinsulWdonam2/u4a8Jq6WZP7RqRP+jP06s0neRhnh1jvcAYAgBrfSmOIaRyxBgDoN/pdyvwRI0NMr7M3AMB0t4HXvg+8dmb6K7sxf+xBTFmd/krJc40oco0ocu3J/DHHr//rFVP4P+oe8lKf0Gb+mOOb+UNMgZO6B6Ame39Yff7IHt+WqPnjAZ/8AZw=
   </data>
  </layer>
+ <layer name="Spikes" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt2sFtg0AQhlFKdSkpJaW4q0TiYqQ95DJgYYf5SXhP2hMcRuhjhYBpOq/vjWNfbVNczzxNt/QMZ6C/DP0N+svQ36C/DP0N+svQ36C/DP0N+svQ36C/DP39WK7FvVrpuf4z/ZH0Sn9r+4T9gr22+tMXHXQGecs991Gt9FwAwLl4dgeAdXvf8y/nfx4zCVekv/fNK4vn9LePzn6X/tbZ146nv5r/r3ror6a/Hh39/cXv1/rrYf+rpfu7ynOm/mrp/q5CfzX99dBfTX899FfTXw/91fTXQ38k6Y8k/ZGkP5L0R5L+SNIfSfrLewC2isON
+  </data>
+ </layer>
  <objectgroup name="Ninja">
   <object id="1" name="ninja" x="111.279" y="1000.14"/>
  </objectgroup>
@@ -111,10 +116,7 @@
   <object id="48" x="6700" y="550" width="300" height="50"/>
   <object id="49" x="7000" y="500" width="300" height="50"/>
   <object id="50" x="7300" y="450" width="400" height="50"/>
+  <object id="53" x="1950" y="0" width="50" height="400"/>
+  <object id="54" x="2300" y="0" width="50" height="400"/>
  </objectgroup>
- <layer name="Spikes" width="160" height="40">
-  <data encoding="base64" compression="zlib">
-   eJzt2sEJwkAQhtEt1VIsxVLsy4u5iTCrRM38at6DveWwhC/DkmQMuHcZ45DeA/ulP5L0R5L+SNIfSfojSX8k6e9muRfnaqX39c/0R9Ir/c3mhHnBWo/60xcddAZ5yzN3rFZ6XwDAd3F2B4C5te/5l+tP2+yEPdLf+y6TxXP6W0dnn6W/OXNte/qr+f+qh/5q+uvR0d8vfr/WXw/zr5buby/nTP3V0v3thf5q+uuhv5r+euivpr8e+qvpr4f+SNIfSfojSX8k6Y8k/ZGkP5L0l3cFI7O0FQ==
-  </data>
- </layer>
 </map>
