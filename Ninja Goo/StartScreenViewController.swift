@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class StartScreenViewController: ItemViewCtrl {
     
@@ -24,10 +25,18 @@ class StartScreenViewController: ItemViewCtrl {
     
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet var contentImageView: UIImageView?
+    @IBOutlet weak var tapToPlay: UIImageView!
+    @IBOutlet weak var constrintDeCima: NSLayoutConstraint!
+    @IBOutlet weak var contrintDeBaixo: NSLayoutConstraint!
+    //@IBOutlet weak var larguraIgual: NSLayoutConstraint!
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tapToPlay.bringSubviewToFront(logo)
+        //logo.removeConstraint(larguraIgual)
+
         contentImageView!.image = UIImage(named: imageName)
         contentImageView?.alpha = 0.4
         
@@ -36,14 +45,53 @@ class StartScreenViewController: ItemViewCtrl {
         tapGesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(tapGesture)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
         animateLogo()
+
     }
     
     func animateLogo() {
         
+        self.view.layoutIfNeeded()
+        
+        
+        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad){
+            
+            self.constrintDeCima.constant = 150
+            self.contrintDeBaixo.constant = 150
+            
+    
+        }
+        else{
+            self.constrintDeCima.constant = 180
+            self.contrintDeBaixo.constant = 200
+            
+        }
+        
+        //self.constrintDeCima.constant = self.constrintDeCima.constant + 100
+        
+        
+        
         UIView.animateWithDuration(0.8, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut | .Repeat | .Autoreverse, animations: {
-            //self.logo.center = CGPointMake(self.logo.center.x + 200, self.logo.center.y)
+            
+            
             self.view.layoutIfNeeded()
+
+            //self.constrintDeCima.constant = self.constrintDeCima.constant - 100
+            //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant + 100
+            //self.constrintDeCima.constant = self.constrintDeCima.constant + 100
+            //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant - 100
+            
+            //self.view.setNeedsLayout()
+            //self.logo.layer.anchorPoint = CGPointMake(0.5, 0.5)
+           // self.logo.center = CGPointMake(self.logo.center.x, self.logo.center.y + 200)
+            //self.view.layoutSubviews()
+            //self.view.layer.anchorPoint = CGPointMake(0.5, 0.5)
+            
+            
             }, completion: nil)
         
         
