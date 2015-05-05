@@ -323,7 +323,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                             //tile.physicsBody?.affectedByGravity = false
                             tile.physicsBody!.friction = 0.9
                             tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
-                            tile.name = "mWall"
+                        
+                        tile.name = "mWall"
 
                         
                         //}
