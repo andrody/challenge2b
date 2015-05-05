@@ -110,7 +110,7 @@ class LevelsController: ItemViewCtrl {
     
     func loadLevel(levelName : String){
         
-        var gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as GameViewController
+        var gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
         
         W1_Level_1.loadSceneAssetsWithCompletionHandler(levelName) { loadedScene in
             

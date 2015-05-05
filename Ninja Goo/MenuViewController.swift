@@ -28,13 +28,13 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
    
     private func createPageViewController() {
         
-        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("MenuController") as UIPageViewController
+        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("MenuController") as! UIPageViewController
         pageController.dataSource = self
         
         if contentImages.count > 0 {
             let startScreenCtrl = getStartSItemController()!
             let startingViewControllers: NSArray = [startScreenCtrl]
-            pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            pageController.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
         
         pageViewController = pageController
@@ -49,13 +49,13 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         
-        let itemController = viewController as ItemViewCtrl
+        let itemController = viewController as? ItemViewCtrl
             
-        if itemController.itemIndex > 0 {
-            if(itemController.itemIndex-1 == 0){
+        if itemController!.itemIndex > 0 {
+            if(itemController!.itemIndex-1 == 0){
                 return getStartSItemController()
             }
-            return getItemController(itemController.itemIndex-1)
+            return getItemController(itemController!.itemIndex-1)
         }
         
         return nil
@@ -63,7 +63,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        var itemController = viewController as ItemViewCtrl
+        var itemController = viewController as! ItemViewCtrl
         
         if itemController.itemIndex+1 < contentImages.count {
             return getItemController(itemController.itemIndex+1)
@@ -75,7 +75,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     private func getItemController(itemIndex: Int) -> LevelsController? {
         
       if itemIndex < contentImages.count {
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LevelsController") as LevelsController
+            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LevelsController") as! LevelsController
             pageItemController.itemIndex = itemIndex
             pageItemController.imageOneName = contentImages[itemIndex][0]
             pageItemController.imageTwoName = contentImages[itemIndex][1]
@@ -89,7 +89,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     
     private func getStartSItemController() -> StartScreenViewController? {
         
-        let startScreenCtrl = self.storyboard!.instantiateViewControllerWithIdentifier("StartScreenViewCtrl") as StartScreenViewController
+        let startScreenCtrl = self.storyboard!.instantiateViewControllerWithIdentifier("StartScreenViewCtrl") as! StartScreenViewController
         startScreenCtrl.itemIndex = 0
         startScreenCtrl.imageName = contentImages[0][0]
         startScreenCtrl.menuViewController = self
@@ -99,7 +99,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     func goToPage(page : Int) {
         
         let startingViewControllers: NSArray = [getItemController(page)!]
-        self.pageViewController!.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        self.pageViewController!.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         
     }
 

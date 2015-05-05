@@ -65,7 +65,7 @@ class WorldLayer: SKNode {
                 
                 node.removeFromParent()
                 
-                let node_sprite = node as SKSpriteNode
+                let node_sprite = node as! SKSpriteNode
                 intoLayer.addChild(node_sprite)
                 
                 println(node_sprite.name)

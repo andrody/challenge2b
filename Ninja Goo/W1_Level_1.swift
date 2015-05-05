@@ -176,8 +176,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let spikes = map.layerNamed("Spikes")
         spikes.zPosition = Constants.zPosWall
         //createNodesFromLayer(spikes)
-        createPhysicalBodiesWalls(self.map)
-        createPhysicalBodiesSpikes(self.map)
+        //createPhysicalBodiesWalls(self.map)
+//        createPhysicalBodiesSpikes(self.map)
+
+        createPhysicalBodies(self.map, groupNamed: "Corpos", friction: 1, bitMask: ColliderType.Wall.rawValue)
+        createPhysicalBodies(self.map, groupNamed: "Espinho", friction: 0.3, bitMask: ColliderType.Spike.rawValue)
 
         
         for l in layers {
@@ -212,59 +215,59 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    func createPhysicalBodiesWalls(tileMap: JSTileMap){
+    func createPhysicalBodies(tileMap: JSTileMap, groupNamed : String, friction : CGFloat, bitMask : UInt32 ){
         
-        let group = tileMap.groupNamed("Corpos")
+        let group = tileMap.groupNamed(groupNamed)
         let allObjects = group.objects
         
         for bodysObject in allObjects{
             
-            let x = bodysObject["x"] as? NSNumber
-            let y = bodysObject["y"] as? NSNumber
+            let x : NSNumber = bodysObject.objectForKey("x") as! NSNumber
+            let y : NSNumber = bodysObject.objectForKey("y") as! NSNumber
             
-            let w = (bodysObject["width"] as String).toInt()
-            let h = (bodysObject["height"] as String).toInt()
+            let w : NSNumber = (bodysObject.objectForKey("width") as! String).toInt()!
+            let h : NSNumber = (bodysObject.objectForKey("height") as! String).toInt()!
             
             let body = SKSpriteNode()
-            body.size = CGSizeMake( CGFloat(w!) , CGFloat(h!) )
+            body.size = CGSizeMake( CGFloat(w) , CGFloat(h) )
             body.anchorPoint = CGPointMake(0, 0)
-            body.position = CGPointMake( CGFloat(x!) + CGFloat(w!)/2 , CGFloat(y!) + CGFloat(h!)/2 )
-            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w!) , CGFloat(h!) ), center: CGPointMake(1, 1))
+            body.position = CGPointMake( CGFloat(x) + CGFloat(w)/2 , CGFloat(y) + CGFloat(h)/2 )
+            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w) , CGFloat(h) ), center: CGPointMake(1, 1))
             body.physicsBody?.restitution = 0.0
-            body.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+            body.physicsBody!.categoryBitMask = bitMask
             body.physicsBody!.dynamic = false
-            body.physicsBody!.friction = 1
+            body.physicsBody!.friction = friction
             
             self.platformLayer.addChild(body)
         }
     }
     
-    func createPhysicalBodiesSpikes(tileMap: JSTileMap){
-        
-        let group = tileMap.groupNamed("Espinho")
-        let allObjects = group.objects
-        
-        for bodysObject in allObjects{
-            
-            let x = bodysObject["x"] as? NSNumber
-            let y = bodysObject["y"] as? NSNumber
-            
-            let w = (bodysObject["width"] as String).toInt()
-            let h = (bodysObject["height"] as String).toInt()
-            
-            let body = SKSpriteNode()
-            body.size = CGSizeMake( CGFloat(w!) , CGFloat(h!) )
-            body.anchorPoint = CGPointMake(0, 0)
-            body.position = CGPointMake( CGFloat(x!) + CGFloat(w!)/2 , CGFloat(y!) + CGFloat(h!)/2 )
-            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w!) , CGFloat(h!) ), center: CGPointMake(1, 1))
-            body.physicsBody?.restitution = 0.0
-            body.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
-            body.physicsBody!.dynamic = false
-            body.physicsBody!.friction = 0.3
-            
-            self.platformLayer.addChild(body)
-        }
-    }
+//    func createPhysicalBodiesSpikes(tileMap: JSTileMap){
+//        
+//        let group = tileMap.groupNamed("Espinho")
+//        let allObjects = group.objects
+//        
+//        for bodysObject in allObjects{
+//            
+//            let x = bodysObject["x"] as? NSNumber
+//            let y = bodysObject["y"] as? NSNumber
+//            
+//            let w = (bodysObject["width"] as! String).toInt()
+//            let h = (bodysObject["height"] as! String).toInt()
+//            
+//            let body = SKSpriteNode()
+//            body.size = CGSizeMake( CGFloat(w!) , CGFloat(h!) )
+//            body.anchorPoint = CGPointMake(0, 0)
+//            body.position = CGPointMake( CGFloat(x!) + CGFloat(w!)/2 , CGFloat(y!) + CGFloat(h!)/2 )
+//            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w!) , CGFloat(h!) ), center: CGPointMake(1, 1))
+//            body.physicsBody?.restitution = 0.0
+//            body.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
+//            body.physicsBody!.dynamic = false
+//            body.physicsBody!.friction = 0.3
+//            
+//            self.platformLayer.addChild(body)
+//        }
+//    }
 
     
     
@@ -309,7 +312,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //                    }
                     
                     if properties["isRotate"] != nil {
-                        let rotation = (properties["isRotate"] as String!).toInt()
+                        let rotation = (properties["isRotate"] as! String!).toInt()
                         //if(rotation != nil) {
                             let radians = ConvertUtilities.degreesToRadians(CGFloat(rotation!))
                             
@@ -335,9 +338,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     
                     if properties["isMoveable"] != nil {
                         
-                        let steps = (properties["isMoveable"] as String!).toInt()
-                        let direction = (properties["direction"] as String!).toInt()
-                        let speed = (properties["speed"] as String!).toInt()
+                        let steps = (properties["isMoveable"] as! String!).toInt()
+                        let direction = (properties["direction"] as! String!).toInt()
+                        let speed = (properties["speed"] as! String!).toInt()
 
                         //let wall = (properties["wall"] as String!).toInt()
 
@@ -513,11 +516,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         for index in 0...numberOfClouds {
             
-            let c = cloud.copy() as SKSpriteNode
+            let c = cloud.copy() as! SKSpriteNode
             c.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
             self.backCloudLayer.addChild(c)
             
-            let cc = cloud_clara.copy() as SKSpriteNode
+            let cc = cloud_clara.copy() as! SKSpriteNode
             cc.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
             self.frontCloudLayer.addChild(cc)
         
@@ -548,7 +551,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         for index in 0...numberOfMontains {
             
             //Montanha Escura
-            let m = montain.copy() as SKSpriteNode
+            let m = montain.copy() as! SKSpriteNode
             
             let randomDis = CGFloat(arc4random_uniform(50))/100 + 0.5
             let randomScale = CGFloat(arc4random_uniform(100))/100 + 0.3
@@ -563,7 +566,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             
             //Montanha Clara
-            let mC = montain_clara.copy() as SKSpriteNode
+            let mC = montain_clara.copy() as! SKSpriteNode
             
             let randomDis2 = CGFloat(arc4random_uniform(150))/100 + 0.3
             let randomScale2 = CGFloat(arc4random_uniform(100))/100 + 0.2
@@ -596,7 +599,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
         for index in 0...numberOfClouds {
             
-            let c = cloud.copy() as SKSpriteNode
+            let c = cloud.copy() as! SKSpriteNode
             
             let randomPos = CGFloat(arc4random_uniform(80))/100 + 0.1
             let randomScale = CGFloat(arc4random_uniform(80))/100 + 0.2
@@ -624,7 +627,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         let scene = SKScene(fileNamed: "teste")
         
-        let templateWorld = scene.children.first!.copy() as SKNode
+        let templateWorld = scene.children.first!.copy() as! SKNode
         templateWorld.zPosition = 500
         //templateWorld.
         //templateWorld.setScale(0.5)
@@ -989,8 +992,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     // MARK: Touch
 
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 
         
         for touch: AnyObject in touches{
@@ -1044,12 +1046,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         
 
         if(self.isDraging == true && self.gameStarted == true && !self.ninja.isDead){
             
-            let touch: AnyObject = touches.anyObject()!
+            let touch: AnyObject = (touches.first as? UITouch)!
             self.actualTouchLocation = touch.locationInNode(self)
             self.finalTapPosition = touch.locationInNode(self)
             
@@ -1084,8 +1086,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    
         println("terminou")
 
         
@@ -1112,7 +1114,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             self.isDraging = false
             self.ninja.isMoving = true
             
-            let touch: AnyObject = touches.anyObject()!
+            let touch: AnyObject = (touches.first as? UITouch)!
             
             self.finalTapPosition = touch.locationInNode(self)
             

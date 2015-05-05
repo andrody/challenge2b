@@ -11,15 +11,15 @@ import SpriteKit
 
 class Hud: SKNode {
    
-    let pointsBoard: SKLabelNode?
-    let playButton: SKSpriteNode?
-    let stageButton: SKSpriteNode?
+    var pointsBoard: SKLabelNode?
+    var playButton: SKSpriteNode?
+    var stageButton: SKSpriteNode?
     //let optionsButton: SKSpriteNode?
-    let gamecenterButton: SKSpriteNode?
-    let logo: SKSpriteNode?
-    let pauseButton: SKSpriteNode?
+    var gamecenterButton: SKSpriteNode?
+    var logo: SKSpriteNode?
+    var pauseButton: SKSpriteNode?
     
-    let sceneSize: CGSize?
+    var sceneSize: CGSize?
     
 
     //POSITION

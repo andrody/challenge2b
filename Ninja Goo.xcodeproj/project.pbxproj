@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		652309651AF2A1B100D3A713 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 652309621AF2A1B100D3A713 /* JSTileMap.m */; };
-		652309661AF2A1B100D3A713 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 652309641AF2A1B100D3A713 /* LFCGzipUtility.m */; };
 		6572D7091AF51835003037B6 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6572D7061AF51835003037B6 /* minifase2.tmx */; };
 		6572D70A1AF51835003037B6 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6572D7071AF51835003037B6 /* minifase3.tmx */; };
 		6572D7121AF51D1E003037B6 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 6572D7111AF51D1E003037B6 /* minifase1.tmx */; };
@@ -18,6 +16,8 @@
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
 		C50F9E3C1AD45B92008C4514 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = C50F9E3B1AD45B92008C4514 /* wall.png */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
+		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
+		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
 		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
@@ -55,10 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		652309611AF2A1B100D3A713 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSTileMap.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.h"; sourceTree = "<group>"; };
-		652309621AF2A1B100D3A713 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSTileMap.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/JSTileMap.m"; sourceTree = "<group>"; };
-		652309631AF2A1B100D3A713 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFCGzipUtility.h; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.h"; sourceTree = "<group>"; };
-		652309641AF2A1B100D3A713 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFCGzipUtility.m; path = "../../../../brunorolim/Dropbox/Challenge2/Other Resources/JSTileMap/LFCGzipUtility.m"; sourceTree = "<group>"; };
 		6572D7061AF51835003037B6 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		6572D7071AF51835003037B6 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
 		6572D7111AF51D1E003037B6 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
@@ -69,6 +65,10 @@
 		C50F9E3B1AD45B92008C4514 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
+		C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
+		C58F739E1AF95E8400D6E6DB /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
+		C58F739F1AF95E8400D6E6DB /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
+		C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
 		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,18 +118,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C547473D1AD44E0A00C4E23F /* JSTileMap */ = {
-			isa = PBXGroup;
-			children = (
-				652309611AF2A1B100D3A713 /* JSTileMap.h */,
-				652309621AF2A1B100D3A713 /* JSTileMap.m */,
-				652309631AF2A1B100D3A713 /* LFCGzipUtility.h */,
-				652309641AF2A1B100D3A713 /* LFCGzipUtility.m */,
-			);
-			name = JSTileMap;
-			path = "../../../../Dropbox/Challenge2/Other Resources/JSTileMap";
-			sourceTree = "<group>";
-		};
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +127,17 @@
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
+			sourceTree = "<group>";
+		};
+		C58F73961AF95E0600D6E6DB /* JSTileMap */ = {
+			isa = PBXGroup;
+			children = (
+				C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */,
+				C58F739E1AF95E8400D6E6DB /* JSTileMap.m */,
+				C58F739F1AF95E8400D6E6DB /* LFCGzipUtility.h */,
+				C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */,
+			);
+			name = JSTileMap;
 			sourceTree = "<group>";
 		};
 		C5CB3F311ACD6AA8001A37B7 = {
@@ -271,7 +270,7 @@
 		C5CB3F7E1ACD9EF6001A37B7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				C547473D1AD44E0A00C4E23F /* JSTileMap */,
+				C58F73961AF95E0600D6E6DB /* JSTileMap */,
 				C5CB3F811ACDEBE4001A37B7 /* WorldLayer.swift */,
 				C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */,
 				C54747471AD4503500C4E23F /* TileMapHeader.h */,
@@ -328,7 +327,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CT54P8A873;
+						DevelopmentTeam = CC953577YZ;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -401,13 +400,13 @@
 				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
 				C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */,
 				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
-				652309651AF2A1B100D3A713 /* JSTileMap.m in Sources */,
+				C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */,
 				C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */,
 				C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */,
 				C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */,
 				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
 				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
-				652309661AF2A1B100D3A713 /* LFCGzipUtility.m in Sources */,
+				C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,
 				C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */,
 				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,
