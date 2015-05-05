@@ -114,7 +114,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let minForce : CGFloat = 30.0
         static let maxForce : CGFloat = 100.0
         static let maxForceGeral : CGFloat = maxForce + 70
-        static let minDistanceSlide : CGFloat = 600.0
+        static let maxDistanceSlide : CGFloat = 400.0
 
         
         static let zPosBackgroundBackLayer : CGFloat = 1
@@ -1061,9 +1061,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             var distance = sqrt( pow(speedX, 2) + pow(speedY, 2))
             var realDistance = distance
             
-            if(distance > Constants.minDistanceSlide){
+            if(distance > Constants.maxDistanceSlide){
                 
-                distance = Constants.minDistanceSlide
+                distance = Constants.maxDistanceSlide
             }
             else{
                 if(distance == 0){
@@ -1126,7 +1126,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
             self.ninja.jump(amountToMoveX: speed.0, amountToMoveY: speed.1)
             
-            
+            println("speedY1: \(speedY), speedY2: \(speed.1)")
+            println("speedX1: \(speedX), speedX2: \(speed.0)")
+
 
             
             

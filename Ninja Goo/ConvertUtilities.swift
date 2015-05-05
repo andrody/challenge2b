@@ -20,7 +20,8 @@ class ConvertUtilities {
     
     class func minMaxSpeed(sX : CGFloat, sY : CGFloat) -> (CGFloat,CGFloat) {
         var minD :CGFloat = W1_Level_1.Constants.minForce
-        var maxD : CGFloat = W1_Level_1.Constants.maxForce
+        var maxForce :CGFloat = W1_Level_1.Constants.maxForce
+        var maxD : CGFloat = W1_Level_1.Constants.maxDistanceSlide
         var fSX : CGFloat = sX
         var fSY : CGFloat = sY
         
@@ -47,6 +48,20 @@ class ConvertUtilities {
             
         }
         
+        fSX = (fSX * maxForce / maxD)
+        
+//        if(fSX > 0){
+//            if(fSX < minD){
+//                fSX = minD
+//            }
+//        }
+//
+//        if(fSX < 0){
+//            if(fSX > -minD){
+//                fSX = -minD
+//            }
+//        }
+        
         //For Y
         if(sY > 0){
             
@@ -68,6 +83,20 @@ class ConvertUtilities {
                 fSY = -maxD
             }
             
+        }
+        
+        fSY = (fSY * maxForce / maxD)
+
+        if(fSY > 0){
+            if(fSY < minD){
+                fSY = minD
+            }
+        }
+        
+        if(fSY < 0){
+            if(fSY > -minD){
+                fSY = -minD
+            }
         }
         
 //        var totalPower : CGFloat
