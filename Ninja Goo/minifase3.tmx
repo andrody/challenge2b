@@ -75,7 +75,7 @@
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2sFtg0AQhlFKdSkpJaW4q0TiYqQ95DJgYYf5SXhP2hMcRuhjhYBpOq/vjWNfbVNczzxNt/QMZ6C/DP0N+svQ36C/DP0N+svQ36C/DP0N+svQ36C/DP39WK7FvVrpuf4z/ZH0Sn9r+4T9gr22+tMXHXQGecs991Gt9FwAwLl4dgeAdXvf8y/nfx4zCVekv/fNK4vn9LePzn6X/tbZ146nv5r/r3ror6a/Hh39/cXv1/rrYf+rpfu7ynOm/mrp/q5CfzX99dBfTX899FfTXw/91fTXQ38k6Y8k/ZGkP5L0R5L+SNIfSfrLewC2isON
+   eJzt2ksOgjAUhlGW6lJciktxX0wk6cDJRYOP+6Ock3TEpGk+moYyTfs1T9PpwbNL30yO5dG6H4n+MvQ36C9Df4P+MvQ36C9Df4P+MvQ36C9Df4P+MvR3t6zFtRrpef0z/ZH0Sn9r+4T9gq2enHv0xdfpDPKWd+5cjfS8AIB9cXYHgHVbv/O7c+aT9Pe+eWXwnP620dln6W+dfe379Ffz/1UP/dX016Ojv1+8v9ZfD/tfLd3fUc6Z+qul+zsK/dX010N/Nf310F9Nfz30V9NfD/2RpD+S9EeS/kjSH0n6I0l/JOkv7wYukcvF
   </data>
  </layer>
  <objectgroup name="Ninja">
