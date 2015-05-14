@@ -38,7 +38,7 @@ class StartScreenViewController: ItemViewCtrl {
         //logo.removeConstraint(larguraIgual)
 
         contentImageView!.image = UIImage(named: imageName)
-        contentImageView?.alpha = 0.4
+        //contentImageView?.alpha = 0.4
         
         //let aSelector : Selector = “start”
         let tapGesture = UITapGestureRecognizer(target: self, action: "moveToLevels")
@@ -49,7 +49,7 @@ class StartScreenViewController: ItemViewCtrl {
     
     override func viewDidAppear(animated: Bool) {
         
-        animateLogo()
+        //animateLogo()
 
     }
     
@@ -58,18 +58,18 @@ class StartScreenViewController: ItemViewCtrl {
         self.view.layoutIfNeeded()
         
         
-        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad){
-            
-            self.constrintDeCima.constant = 150
-            self.contrintDeBaixo.constant = 150
-            
-    
-        }
-        else{
-            self.constrintDeCima.constant = 180
-            self.contrintDeBaixo.constant = 200
-            
-        }
+//        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad){
+//            
+//            self.constrintDeCima.constant = 150
+//            self.contrintDeBaixo.constant = 150
+//            
+//    
+//        }
+//        else{
+//            self.constrintDeCima.constant = 180
+//            self.contrintDeBaixo.constant = 200
+//            
+//        }
         
         //self.constrintDeCima.constant = self.constrintDeCima.constant + 100
         
