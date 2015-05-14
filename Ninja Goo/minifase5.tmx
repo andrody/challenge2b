@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="118">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="170">
  <tileset firstgid="1" name="plataforma3" tilewidth="400" tileheight="600">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -201,12 +201,12 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2jEOgzAMBVC69lKcs0foLasOlVAFlBBjS+l7C0MYLPSFicM0AQAAAMSaqwvgr8kfleQPAID7xhXgqFvn2t49ETW8re1/vffIYv5CJfkDiPeoLgDgJPtgYGR78z/odWb+DFnkj0ryl+sZcag6EPmjkvxRSf7aVD6vEc+Tjvx/ZR4DAG1G/GYAAGiROUv4ddbSuw4AUa7uj5n997t9LvvpWmv9rG+1Xf34ei9J2gq4
+   eJzt2zEOwyAMAMB07afyzjwhv+zUoUQqqQgmpnerGawE2RaIZQEAAAAAAAA4ejTGvq2B2dT2e2scIFKmmtQ710zfAgBmof/yto1OgBTW0QlAEP0RgFnoafey+yEAAJBC6+h+xeg/8jzenREAcMYvM0Pv9x/ejwAQoXbX1xonn+foBCAJ9Q/+S+/+GNl/y/JV1rNa3KzwKeJ85wXaSwcx
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20Hb6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1wBkAAAB
+   eJzt2k2uwjAMReGy0ywtm2DO0qCCCQiFpLZ743A+qaPSxqDzIn7etq3hetnKCWvU4Pu/HV6PRbwV+vOWbd7MZunvc186uqf1nmvd/2h/Xnuq5bXIZob+RmY4Y17r+pb9M/r+s6G/MfTnK1t/avTni/7G0J8v+htDf76y9TfDvJHX01/IGtVrhhnmjbye/kLWqOoZzkR//bL0l+k1p78xj+dzizw61i8dj6kOT9WMzx/rGd2DlX8v9LeeTO//6G89mfrrQX9Q2vu4Hv9fntJzf59J8Y9a/dAfotEflOhvPa33W96Hw6y1ca5Yrgd+oT8o0R+U6G8+1t+Qs3h9N1gb54vleqAlS3/en7kwhwz9fZuBPfdphd+K6S+vFfqzoj8d+qM/JfqjPyX6oz8l+qM/aNEflOgPSvQHJfqDEv1Bif6gtLdwByJGZAo=
   </data>
  </layer>
  <objectgroup name="Ground">
@@ -218,9 +218,42 @@
  <objectgroup name="Corpos">
   <object id="109" x="0" y="1500" width="200" height="500"/>
   <object id="110" x="1200" y="1350" width="200" height="650"/>
-  <object id="111" x="2550" y="150" width="1200" height="600"/>
   <object id="112" x="4200" y="150" width="400" height="1050"/>
-  <object id="117" x="4850" y="150" width="400" height="1350"/>
+  <object id="118" x="4750" y="1050" width="2000" height="600"/>
+  <object id="119" x="6350" y="150" width="400" height="950"/>
+  <object id="124" x="2550" y="0" width="1200" height="600"/>
+  <object id="126" x="6750" y="850" width="400" height="1150"/>
+  <object id="127" x="7150" y="1400" width="400" height="600"/>
+  <object id="128" x="7550" y="150" width="400" height="1850"/>
+  <object id="168" x="4750" y="50" width="1200" height="600"/>
  </objectgroup>
- <objectgroup name="Espinho"/>
+ <objectgroup name="Espinho">
+  <object id="125" x="2550" y="600" width="1200" height="50"/>
+  <object id="129" x="1200" y="1300" width="200" height="50"/>
+  <object id="130" x="1150" y="1350" width="50" height="650"/>
+  <object id="131" x="2500" y="0" width="50" height="600"/>
+  <object id="134" x="3750" y="0" width="50" height="600"/>
+  <object id="135" x="4150" y="150" width="50" height="650"/>
+  <object id="136" x="4200" y="100" width="400" height="50"/>
+  <object id="137" x="4200" y="1200" width="400" height="50"/>
+  <object id="139" x="4600" y="550" width="50" height="100"/>
+  <object id="143" x="4700" y="1350" width="50" height="300"/>
+  <object id="152" x="6300" y="600" width="50" height="150"/>
+  <object id="153" x="6300" y="150" width="50" height="250"/>
+  <object id="154" x="6650" y="100" width="100" height="50"/>
+  <object id="155" x="6750" y="150" width="50" height="700"/>
+  <object id="156" x="6800" y="800" width="350" height="50"/>
+  <object id="157" x="7150" y="850" width="50" height="550"/>
+  <object id="158" x="7500" y="150" width="50" height="1250"/>
+  <object id="159" x="7550" y="100" width="400" height="50"/>
+  <object id="160" x="5000" y="1000" width="1350" height="50"/>
+  <object id="161" x="4750" y="650" width="1200" height="50"/>
+  <object id="162" x="4700" y="400" width="50" height="100"/>
+  <object id="163" x="4700" y="150" width="50" height="100"/>
+  <object id="164" x="4950" y="0" width="200" height="50"/>
+  <object id="165" x="5500" y="0" width="200" height="50"/>
+  <object id="166" x="5950" y="50" width="50" height="100"/>
+  <object id="167" x="5950" y="400" width="50" height="100"/>
+  <object id="169" x="1400" y="1350" width="50" height="650"/>
+ </objectgroup>
 </map>
