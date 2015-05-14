@@ -866,7 +866,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         
         //Check for gameover
-        if(self.ninja.position.y < -Constants.defaultGroundPoint.y/8 ){
+        if(self.ninja.position.y < -Constants.defaultGroundPoint.y + -100*10){
             
             self.runAction(SKAction.playSoundFileNamed("impact.wav", waitForCompletion: true))
 

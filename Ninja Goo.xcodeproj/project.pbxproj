@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		652343A41B00DD85001CE608 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 652343A31B00DD85001CE608 /* wall.png */; };
 		652343AC1B00E283001CE608 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652343AB1B00E283001CE608 /* minifase4.tmx */; };
+		658464E01B04EA7D00E21EC7 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 658464DF1B04EA7D00E21EC7 /* minifase5.tmx */; };
 		65A31FBC1AFA35D10025305D /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A31FB91AFA35D10025305D /* minifase1.tmx */; };
 		65A31FBD1AFA35D10025305D /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A31FBA1AFA35D10025305D /* minifase2.tmx */; };
 		65A31FBE1AFA35D10025305D /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A31FBB1AFA35D10025305D /* minifase3.tmx */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		652343A31B00DD85001CE608 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		652343AB1B00E283001CE608 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
+		658464DF1B04EA7D00E21EC7 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
 		65A31FB91AFA35D10025305D /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		65A31FBA1AFA35D10025305D /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		65A31FBB1AFA35D10025305D /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				65A31FBA1AFA35D10025305D /* minifase2.tmx */,
 				65A31FBB1AFA35D10025305D /* minifase3.tmx */,
 				652343AB1B00E283001CE608 /* minifase4.tmx */,
+				658464DF1B04EA7D00E21EC7 /* minifase5.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -333,7 +336,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -366,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658464E01B04EA7D00E21EC7 /* minifase5.tmx in Resources */,
 				C5CB3F751ACD6E9D001A37B7 /* jump.wav in Resources */,
 				65A31FBC1AFA35D10025305D /* minifase1.tmx in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
