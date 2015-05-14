@@ -26,7 +26,7 @@ class StartScreenViewController: ItemViewCtrl {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet var contentImageView: UIImageView?
     @IBOutlet weak var tapToPlay: UIImageView!
-    @IBOutlet weak var constrintDeCima: NSLayoutConstraint!
+    @IBOutlet weak var constraintDeCima: NSLayoutConstraint!
     @IBOutlet weak var contrintDeBaixo: NSLayoutConstraint!
     //@IBOutlet weak var larguraIgual: NSLayoutConstraint!
     
@@ -49,7 +49,9 @@ class StartScreenViewController: ItemViewCtrl {
     
     override func viewDidAppear(animated: Bool) {
         
-        //animateLogo()
+        
+        animateTaptoPlay()
+        animateLogo()
 
     }
     
@@ -78,14 +80,13 @@ class StartScreenViewController: ItemViewCtrl {
         UIView.animateWithDuration(0.8, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut | .Repeat | .Autoreverse, animations: {
             
             
-            self.view.layoutIfNeeded()
 
-            //self.constrintDeCima.constant = self.constrintDeCima.constant - 100
+            self.constraintDeCima.constant = self.constraintDeCima.constant + 5
             //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant + 100
             //self.constrintDeCima.constant = self.constrintDeCima.constant + 100
             //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant - 100
             
-            //self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
             //self.logo.layer.anchorPoint = CGPointMake(0.5, 0.5)
            // self.logo.center = CGPointMake(self.logo.center.x, self.logo.center.y + 200)
             //self.view.layoutSubviews()
@@ -97,6 +98,22 @@ class StartScreenViewController: ItemViewCtrl {
         
         
     }
+    
+    func animateTaptoPlay() {
+        
+        
+        UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut | .Repeat | .Autoreverse, animations: {
+            
+            
+            self.tapToPlay.alpha = 0
+            
+            
+            }, completion: nil)
+        
+        
+        
+    }
+
     
     func moveToLevels(){
         self.menuViewController!.goToPage(1)
