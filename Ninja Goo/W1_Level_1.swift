@@ -316,7 +316,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         //if(rotation != nil) {
                             let radians = ConvertUtilities.degreesToRadians(CGFloat(rotation!))
                             
-                            let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(2.0))
+                            let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(20.0))
                             
                             let action = SKAction.repeatActionForever(rotateAction)
                             tile.runAction(action)
@@ -325,7 +325,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                             tile.physicsBody!.dynamic = false
                             //tile.physicsBody?.affectedByGravity = false
                             tile.physicsBody!.friction = 0.9
-                            tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
+                            tile.physicsBody!.categoryBitMask = ColliderType.RotateWall.rawValue
                         
                         tile.name = "mWall"
 
@@ -751,7 +751,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func changeNinjaCollisionCategory(){
         
-        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue
+        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue
+
         self.ninja.isMoving = false
         self.ninja.isDead = false
         //self.ninja.physicsBody?.applyImpulse(CGVectorMake(0 , -9.8 * self.ninja.physicsBody!.mass))
@@ -974,7 +975,19 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         self.restart()
                         
                     }
+                
+            case ColliderType.RotateWall.rawValue | ColliderType.Ninja.rawValue:
+
+                    self.ninja.isMoving = false
+                    self.ninja.nail_down()
+                    //let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
+                    //self.runAction(wallSE)
                     
+                    self.ninja.IdleAnimation()
+
+
+
+                
                 default:
                     println("colidiu com default")
                 }
