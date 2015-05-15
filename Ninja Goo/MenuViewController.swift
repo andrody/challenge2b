@@ -17,7 +17,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     // Initialize it right away here
     private let contentImages = [["fundoMenu"],
         [SceneManager.sharedInstance.fases[0], SceneManager.sharedInstance.fases[1], SceneManager.sharedInstance.fases[2]],
-        [SceneManager.sharedInstance.fases[0], SceneManager.sharedInstance.fases[1], SceneManager.sharedInstance.fases[2]]
+        [SceneManager.sharedInstance.fases[3], SceneManager.sharedInstance.fases[4], SceneManager.sharedInstance.fases[5]]
     ];
     
     override func viewDidLoad() {
