@@ -41,7 +41,7 @@ class SceneManager {
             corPlataforma: [16,31,39],
             corFundo: [49,67,131])
         
-        var faseThree = Scenario(nome: "minifase6",
+        var faseThree = Scenario(nome: "minifase3",
             corMontanha: [25,33,65],
             corMontanhaClara: [43, 57, 109],
             corNuvemBack: [25,117,166],

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="66">
- <tileset firstgid="1" name="plataforma3" tilewidth="100" tileheight="500">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="58">
+ <tileset firstgid="1" name="plataforma3" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
  </tileset>
  <tileset firstgid="40" name="plataforma3" tilewidth="300" tileheight="300">
