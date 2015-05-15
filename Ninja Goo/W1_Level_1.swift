@@ -341,6 +341,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                             tile.physicsBody!.friction = 0.9
                             tile.physicsBody!.categoryBitMask = ColliderType.RotateWall.rawValue
                         
+                            let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corNuvemMeio
+
+                            tile.colorBlendFactor = 1
+                            tile.color = SKColor(red: cMiddleColor[0]/255, green: cMiddleColor[1]/255, blue: cMiddleColor[2]/255, alpha: 1.0)
+                        
                         tile.name = "mWall"
 
                         
