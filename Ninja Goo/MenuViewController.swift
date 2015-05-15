@@ -16,7 +16,9 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     
     // Initialize it right away here
     private let contentImages = [["fundoMenu"],
-        ["minifase1", "minifase2","minifase3"]
+        ["minifase1", "minifase2","minifase3"],
+        ["minifase4", "minifase5","minifase6"]
+
     ];
     
     override func viewDidLoad() {
