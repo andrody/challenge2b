@@ -320,7 +320,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //                        
 //                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
 //                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
-//                        tile.physicsBody!.dynamic = false
+// /Users/brunorolim/Dropbox/Challenge2/Ninja Goo Assets/Maps/zerofase/minifase6.tmx                       tile.physicsBody!.dynamic = false
 //                        tile.physicsBody!.friction = 0
 //
 //                    }
@@ -330,7 +330,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         //if(rotation != nil) {
                             let radians = ConvertUtilities.degreesToRadians(CGFloat(rotation!))
                             
-                            let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(20.0))
+                            let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(5.0))
                             
                             let action = SKAction.repeatActionForever(rotateAction)
                             tile.runAction(action)
