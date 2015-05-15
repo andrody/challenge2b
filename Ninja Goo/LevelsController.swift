@@ -11,36 +11,36 @@ import UIKit
 class LevelsController: ItemViewCtrl {
     
     // MARK: - Variables
-    var imageOneName: String = "" {
+    var levelOne: Scenario! {
         
         didSet {
             
             if let imageView = imageOne {
-                imageView.image = UIImage(named: imageOneName)
+                imageView.image = UIImage(named: levelOne.nome)
             }
             
         }
     }
     
     // MARK: - Variables
-    var imageTwoName: String = "" {
+    var levelTwo: Scenario! {
         
         didSet {
             
             if let imageView = imageTwo {
-                imageView.image = UIImage(named: imageTwoName)
+                imageView.image = UIImage(named: levelTwo.nome)
             }
             
         }
     }
     
     // MARK: - Variables
-    var imageThreeName: String = "" {
+    var levelThree: Scenario! {
         
         didSet {
             
             if let imageView = imageThree {
-                imageView.image = UIImage(named: imageThreeName)
+                imageView.image = UIImage(named: levelThree.nome)
             }
             
         }
@@ -55,9 +55,9 @@ class LevelsController: ItemViewCtrl {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageOne.image = UIImage(named: imageOneName)
-        imageTwo.image = UIImage(named: imageTwoName)
-        imageThree.image = UIImage(named: imageThreeName)
+        imageOne.image = UIImage(named: levelOne.nome)
+        imageTwo.image = UIImage(named: levelTwo.nome)
+        imageThree.image = UIImage(named: levelThree.nome)
 
         
         
@@ -88,7 +88,7 @@ class LevelsController: ItemViewCtrl {
     {
         
         loadingIndicator.hidden = false
-        loadLevel(imageOneName)
+        loadLevel(levelOne)
         
     }
     
@@ -96,7 +96,7 @@ class LevelsController: ItemViewCtrl {
     {
         
         loadingIndicator.hidden = false
-        loadLevel(imageTwoName)
+        loadLevel(levelTwo)
         
     }
     
@@ -104,15 +104,15 @@ class LevelsController: ItemViewCtrl {
     {
         
         loadingIndicator.hidden = false
-        loadLevel(imageThreeName)
+        loadLevel(levelThree)
         
     }
     
-    func loadLevel(levelName : String){
+    func loadLevel(level : Scenario){
         
         var gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
         
-        W1_Level_1.loadSceneAssetsWithCompletionHandler(levelName) { loadedScene in
+        W1_Level_1.loadSceneAssetsWithCompletionHandler(level) { loadedScene in
             
             self.loadingIndicator.hidden = true
             gVC.scene = loadedScene
