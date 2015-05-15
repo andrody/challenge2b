@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		650D89781B061A9F00631D86 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 650D89771B061A9F00631D86 /* minifase6.tmx */; };
 		652343A41B00DD85001CE608 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 652343A31B00DD85001CE608 /* wall.png */; };
 		652343AC1B00E283001CE608 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652343AB1B00E283001CE608 /* minifase4.tmx */; };
 		658465081B0504FA00E21EC7 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 658465071B0504FA00E21EC7 /* minifase5.tmx */; };
@@ -18,17 +17,15 @@
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
+		C511A51D1B0626FC007835BE /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C511A51C1B0626FC007835BE /* minifase6.tmx */; };
+		C520FEF61B0657390021615C /* shaking.wav in Resources */ = {isa = PBXBuildFile; fileRef = C520FEF51B0657390021615C /* shaking.wav */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
 		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
 		C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F73A31B04BF2E00D6E6DB /* wall_gray.png */; };
 		C58F73A81B05860F00D6E6DB /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A71B05860F00D6E6DB /* Scenario.swift */; };
 		C58F73AA1B05896F00D6E6DB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A91B05896F00D6E6DB /* SceneManager.swift */; };
-		C58F73AC1B0606AF00D6E6DB /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = C58F73AB1B0606AF00D6E6DB /* click.wav */; };
-		C58F73AE1B06078F00D6E6DB /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C58F73AD1B06078F00D6E6DB /* click2.wav */; };
-		C58F73B01B0608D300D6E6DB /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C58F73AF1B0608D300D6E6DB /* 3.wav */; };
-		C58F73B21B060C7F00D6E6DB /* misc_menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = C58F73B11B060C7F00D6E6DB /* misc_menu.wav */; };
-		C58F73B41B06214300D6E6DB /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C58F73B31B06214300D6E6DB /* minifase6.tmx */; };
+		C58F73B21B060C7F00D6E6DB /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = C58F73B11B060C7F00D6E6DB /* click.wav */; };
 		C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F73B71B06232E00D6E6DB /* plataforma3G.png */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
@@ -67,7 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		650D89771B061A9F00631D86 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		652343A31B00DD85001CE608 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		652343AB1B00E283001CE608 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
 		658465071B0504FA00E21EC7 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
@@ -78,6 +74,8 @@
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
+		C511A51C1B0626FC007835BE /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
+		C520FEF51B0657390021615C /* shaking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shaking.wav; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
@@ -87,11 +85,7 @@
 		C58F73A31B04BF2E00D6E6DB /* wall_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall_gray.png; sourceTree = "<group>"; };
 		C58F73A71B05860F00D6E6DB /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		C58F73A91B05896F00D6E6DB /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
-		C58F73AB1B0606AF00D6E6DB /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
-		C58F73AD1B06078F00D6E6DB /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
-		C58F73AF1B0608D300D6E6DB /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		C58F73B11B060C7F00D6E6DB /* misc_menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = misc_menu.wav; sourceTree = "<group>"; };
-		C58F73B31B06214300D6E6DB /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
+		C58F73B11B060C7F00D6E6DB /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		C58F73B71B06232E00D6E6DB /* plataforma3G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3G.png; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
@@ -150,7 +144,7 @@
 				65A31FBB1AFA35D10025305D /* minifase3.tmx */,
 				652343AB1B00E283001CE608 /* minifase4.tmx */,
 				658465071B0504FA00E21EC7 /* minifase5.tmx */,
-				C58F73B31B06214300D6E6DB /* minifase6.tmx */,
+				C511A51C1B0626FC007835BE /* minifase6.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -272,12 +266,10 @@
 			isa = PBXGroup;
 			children = (
 				C5CB3F761ACD6ECF001A37B7 /* wall.wav */,
-				C58F73AF1B0608D300D6E6DB /* 3.wav */,
-				C58F73AB1B0606AF00D6E6DB /* click.wav */,
-				C58F73AD1B06078F00D6E6DB /* click2.wav */,
-				C58F73B11B060C7F00D6E6DB /* misc_menu.wav */,
+				C58F73B11B060C7F00D6E6DB /* click.wav */,
 				C5CB3F721ACD6E90001A37B7 /* impact.wav */,
 				C5CB3F741ACD6E9D001A37B7 /* jump.wav */,
+				C520FEF51B0657390021615C /* shaking.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -362,7 +354,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CT54P8A873;
+						DevelopmentTeam = CC953577YZ;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -397,15 +389,12 @@
 			files = (
 				658465081B0504FA00E21EC7 /* minifase5.tmx in Resources */,
 				C5CB3F751ACD6E9D001A37B7 /* jump.wav in Resources */,
-				C58F73B41B06214300D6E6DB /* minifase6.tmx in Resources */,
 				65A31FBC1AFA35D10025305D /* minifase1.tmx in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
 				652343AC1B00E283001CE608 /* minifase4.tmx in Resources */,
-				C58F73B01B0608D300D6E6DB /* 3.wav in Resources */,
-				C58F73AE1B06078F00D6E6DB /* click2.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
-				C58F73B21B060C7F00D6E6DB /* misc_menu.wav in Resources */,
+				C58F73B21B060C7F00D6E6DB /* click.wav in Resources */,
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
 				65A31FBE1AFA35D10025305D /* minifase3.tmx in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
@@ -413,7 +402,9 @@
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
+				C511A51D1B0626FC007835BE /* minifase6.tmx in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
+				C520FEF61B0657390021615C /* shaking.wav in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
@@ -422,7 +413,6 @@
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
 				C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */,
 				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
-				C58F73AC1B0606AF00D6E6DB /* click.wav in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,12 +6,15 @@
 //  Copyright (c) 2015 Koruja. All rights reserved.
 //
 
-import Foundation
+import AVFoundation
+
 
 private let _SceneManagerSharedInstance = SceneManager()
 
 class SceneManager {
     static let sharedInstance = SceneManager()
+    var audioPlayer = AVAudioPlayer()
+
     
     var fases = [Scenario]()
     var faseEscolhida : Scenario!
@@ -85,6 +88,19 @@ class SceneManager {
         fases.append(faseSix)
 
     
+    }
+    
+    func playClickSound(){
+        // Load
+        let soundURL = NSBundle.mainBundle().URLForResource("click", withExtension: "wav")
+        // Removed deprecated use of AVAudioSessionDelegate protocol
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        var error:NSError?
+        audioPlayer = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
     
 }

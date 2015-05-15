@@ -109,7 +109,8 @@ class LevelsController: ItemViewCtrl {
     }
     
     func loadLevel(level : Scenario){
-        
+        SceneManager.sharedInstance.playClickSound()
+
         var gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
         
         W1_Level_1.loadSceneAssetsWithCompletionHandler(level) { loadedScene in

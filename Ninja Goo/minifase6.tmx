@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="58">
- <tileset firstgid="1" name="plataforma3" tilewidth="300" tileheight="300">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="66">
+ <tileset firstgid="1" name="plataforma3" tilewidth="100" tileheight="500">
   <image source="plataforma3.png" width="1320" height="1836"/>
  </tileset>
  <tileset firstgid="40" name="plataforma3" tilewidth="300" tileheight="300">
@@ -15,7 +15,8 @@
   <image source="plataforma3G.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="isRotate" value="360"/>
+    <property name="isFaller" value="2000"/>
+    <property name="isRotate" value="-360"/>
     <property name="wall" value="1"/>
    </properties>
   </tile>
@@ -94,12 +95,12 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt28sJgDAMANC6jWPo/kuJdxWlH0vy3jHkUGiwJK2lAAAAjLN+iNfktsoByML3j1HUWi7L3wuATvQWvHFXF7X9bytqNK7Zzl+1BgDQX+t7tpqYHhkAAOKabf4MAAAAAOTi/UFc5s8Az/aL2DYgDyAz/Uds9hcAII9z/tz7n8oeMWI4ALvdCBk=
+   eJzt28ENgCAMAEDcxjF0/6WMA2g0UDTt3bPpg4RG0oKtAQAAzLO+iPfkjsoBqML3j1nUWi3L1wuAIHoLnriqi97+dxQ1mtffzl+1BgAQb/Q9W09MjwwAAHn9bf4MAAAAANTi/UFe5s8A9/aL+BacD1CZ/iM3+wsAUMc5f47+pzIiRg4H1HoH2Q==
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20Hb6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1wBkAAAB
+   eJztw0EJAAAIBLCzsf1f1lDcYAkAAAAAAAAAAAAAAAAAAAAAAAAAAF917QgAAABw2QCTMQ8D
   </data>
  </layer>
  <objectgroup name="Ninja">

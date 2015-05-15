@@ -19,6 +19,7 @@ enum ColliderType: UInt32 {
     case Wall = 2
     case Spike = 4
     case RotateWall = 8
+    case FallerWall = 16
 
 }
 
@@ -128,8 +129,8 @@ class Ninja: SKNode {
         self.physicsBody?.angularDamping = 0.0
         self.physicsBody?.linearDamping = 1.5
         self.physicsBody?.categoryBitMask = ColliderType.Ninja.rawValue
-        self.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue
-        self.physicsBody?.collisionBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue
+        self.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue
+        self.physicsBody?.collisionBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue
         self.physicsBody?.mass = 1.0
         self.physicsBody?.usesPreciseCollisionDetection = true
 
@@ -223,12 +224,13 @@ class Ninja: SKNode {
         
         var changer :CGFloat = 1
         
-        if(self.nailState != NailState.Down) {
-            changer = -1
-        }
+//        if(self.nailState != NailState.Down) {
+//            changer = -1
+//        }
         
         let stretchCharY = SKAction.scaleYTo(1.0 - scale * changer, duration: NSTimeInterval(time))
-        let stretchCharX = SKAction.scaleXTo(1.0 + scale * changer, duration: NSTimeInterval(time))
+        let stretchCharX = SKAction.scaleXTo(1.0 - scale * changer, duration: NSTimeInterval(time))
+        
         
         self.container.runAction(stretchCharX)
         self.container.runAction(stretchCharY)

@@ -22,7 +22,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     var ninjaPosTemp : CGPoint!
     var mWallTempo : SKPhysicsBody!
     
-    
+    var fallerWalls : [SKNode]! = []
     
     //Positions
     var lastBackgroundPositionX: CGFloat = 0.0
@@ -164,7 +164,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.middleCloudLayer, self.platformLayer, self.upperCloudLayer, self.levelsLayer]
 
 
-        
+        self.platformLayer.zPosition = Constants.zPosWall
+
 
 
 //       populateLayersFromWorld(templateWorld)
@@ -202,10 +203,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
         
         map_layer.removeFromParent()
-        self.worldLayer.addChild(map_layer)
+        self.platformLayer.addChild(map_layer)
         
         spikes.removeFromParent()
-        self.worldLayer.addChild(spikes)
+        self.platformLayer.addChild(spikes)
 
         //self.worldLayer.addChild(spikes)
 
@@ -325,34 +326,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //
 //                    }
                     
-                    if properties["isRotate"] != nil {
-                        let rotation = (properties["isRotate"] as! String!).toInt()
-                        //if(rotation != nil) {
-                            let radians = ConvertUtilities.degreesToRadians(CGFloat(rotation!))
-                            
-                            let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(20.0))
-                            
-                            let action = SKAction.repeatActionForever(rotateAction)
-                            tile.runAction(action)
-                        
-                            tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
-                            tile.physicsBody!.dynamic = false
-                            //tile.physicsBody?.affectedByGravity = false
-                            tile.physicsBody!.friction = 0.9
-                            tile.physicsBody!.categoryBitMask = ColliderType.RotateWall.rawValue
-                        
-                            let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corNuvemMeio
-
-                            tile.colorBlendFactor = 1
-                            tile.color = SKColor(red: cMiddleColor[0]/255, green: cMiddleColor[1]/255, blue: cMiddleColor[2]/255, alpha: 1.0)
-                        
-                        tile.name = "mWall"
-
-                        
-                        //}
-
-                        
-                    }
+                    
 
                     
                     if properties["isMoveable"] != nil {
@@ -378,6 +352,70 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         
                         //
                     }
+                    
+                    if properties["isRotate"] != nil {
+                        let rotation = (properties["isRotate"] as! String!).toInt()
+                        //if(rotation != nil) {
+                        let radians = ConvertUtilities.degreesToRadians(CGFloat(rotation!))
+                        
+                        let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(20.0))
+                        
+                        let action = SKAction.repeatActionForever(rotateAction)
+                        tile.runAction(action)
+                        
+                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+                        tile.physicsBody!.dynamic = false
+                        //tile.physicsBody?.affectedByGravity = false
+                        tile.physicsBody!.friction = 0.9
+                        tile.physicsBody!.categoryBitMask = ColliderType.RotateWall.rawValue
+                        
+                        let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corNuvemMeio
+                        
+                        tile.colorBlendFactor = 1
+                        tile.color = SKColor(red: cMiddleColor[0]/255, green: cMiddleColor[1]/255, blue: cMiddleColor[2]/255, alpha: 1.0)
+                        
+                        tile.name = "mWall"
+                        
+                        
+                        //}
+                        
+                        
+                    }
+                    
+                    if properties["isFaller"] != nil {
+                        let duration = (properties["isFaller"] as! String!).toInt()
+                        
+                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
+                        tile.physicsBody!.dynamic = false
+                        //tile.physicsBody!.linearDamping = CGFloat(duration!)
+                        tile.physicsBody!.friction = 0.9
+                        tile.physicsBody?.restitution = 0
+                        tile.userData = NSMutableDictionary()
+                        tile.userData?.setObject(duration!, forKey: "duration")
+                        tile.userData?.setObject(false, forKey: "jaColidiu")
+
+                        println("CATEGORY = \(tile.physicsBody!.categoryBitMask)")
+
+                        
+                        if(properties["isRotate"] != nil) {
+                            tile.physicsBody!.categoryBitMask = ColliderType.FallerWall.rawValue | ColliderType.RotateWall.rawValue
+                        }
+                        
+                        else {
+                            tile.physicsBody!.categoryBitMask = ColliderType.FallerWall.rawValue
+                        }
+                        let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corNuvemMeio
+                        
+                        tile.colorBlendFactor = 1
+                        tile.color = SKColor(red: cMiddleColor[0]/255, green: cMiddleColor[1]/255, blue: cMiddleColor[2]/255, alpha: 1.0)
+                        
+                        tile.name = "mWall"
+                        tile.userData?.setObject(tile.copy(), forKey: "initialCopy")
+                        self.fallerWalls.append(tile)
+                        
+                        
+                    }
+
 //
 //                    if properties["spike"] != nil {
 //                        
@@ -811,16 +849,31 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.ninja.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         let moveninja = SKAction.moveTo(Constants.defaultSpawnPoint, duration: 0.5)
         
-        let block = SKAction.runBlock({ self.changeNinjaCollisionCategory() })
+        let block = SKAction.runBlock({
+            self.changeNinjaCollisionCategory()
+            var new_faller_list : [SKNode]! = []
+            for f: SKNode in self.fallerWalls {
+                f.removeFromParent()
+                let new_faller = f.userData!.objectForKey("initialCopy") as! SKNode
+                new_faller.userData?.setObject(new_faller.copy(), forKey: "initialCopy")
+                new_faller_list.append(new_faller)
+                self.platformLayer.addChild(new_faller)
+                
+            }
+            
+            self.fallerWalls = new_faller_list
+
+        })
     
         self.ninja.runAction( SKAction.sequence([moveninja, block]))
+        
+        
         
     }
     
     func changeNinjaCollisionCategory(){
         
-        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue
-
+        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue
         self.ninja.isMoving = false
         self.ninja.isDead = false
         //self.ninja.physicsBody?.applyImpulse(CGVectorMake(0 , -9.8 * self.ninja.physicsBody!.mass))
@@ -952,6 +1005,83 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func shakeAndFall(node : SKNode, duration : CGFloat){
+        self.ninja.mWall = nil
+        let shake = SKAction.moveBy(CGVectorMake(0, 15), duration: NSTimeInterval(0.1))
+        let shakeBack = SKAction.moveBy(CGVectorMake(0, -15), duration: NSTimeInterval(0.1))
+        let action = SKAction.repeatActionForever(SKAction.sequence([shake, shakeBack]))
+
+        let wallSE = SKAction.playSoundFileNamed("shaking.wav", waitForCompletion: false)
+        node.runAction(wallSE, withKey: "shakingSound")
+
+        node.runAction(action)
+        
+        var wait = SKAction.waitForDuration(NSTimeInterval(duration/1000))
+        var run = SKAction.runBlock {
+            node.removeActionForKey("shakingSound")
+
+            node.removeAllActions()
+            node.physicsBody!.linearDamping = 0
+            node.physicsBody!.mass = 1000
+            node.physicsBody!.dynamic = true
+            self.ninja.mWall = nil
+        }
+        
+        node.runAction(SKAction.sequence([wait, run]))
+    }
+    
+    func colideComWall(contact: SKPhysicsContact){
+        if(contact.bodyA.node?.name == "mWall") {
+            self.ninja.mWall = contact.bodyA!
+        }
+        else if(contact.bodyB.node?.name == "mWall") {
+            self.ninja.mWall = contact.bodyB!
+        }
+        
+        if(self.ninja.isDead == false) {
+            self.physicsWorld.speed = 0
+            
+            
+            println("colidiu com plataforma")
+            self.ninja.isMoving = false
+            let dirColision = contact.contactNormal
+            
+            if(!self.ninja.isInMoveable) {
+                
+                if(self.ninja.mWall != nil) {
+                    
+                    self.ninja.removeFromParent()
+                    
+                    self.ninja.mWall.categoryBitMask = 99
+                    self.ninja.mWall.node!.addChild(self.ninja)
+                    self.ninja.physicsBody!.pinned = true
+                    self.ninja.isInMoveable = true
+                    //self.ninja.mWallInitialPosition = self.ninja.mWall.p
+                }
+            }
+            
+            
+            if(dirColision.dx > 0.0){
+                self.ninja.nail_right()
+            }
+            else if(dirColision.dx < 0.0){
+                self.ninja.nail_left()
+                self.ninja.lookTo(self.ninja.eyes, angle: -120)
+            }
+            else {
+                //0.9 = moveable
+                self.ninja.nail_down()
+            }
+            
+            let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
+            self.runAction(wallSE)
+            
+            self.ninja.IdleAnimation()
+            
+        }
+
+    }
+    
     
     // MARK: Collision
 
@@ -962,75 +1092,14 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
             let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
+            println("contatcMAks = \(contactMask)")
+            println("quero = \(ColliderType.FallerWall.rawValue | ColliderType.Ninja.rawValue)")
+        
+        
             switch(contactMask){
                 
                 case ColliderType.Wall.rawValue | ColliderType.Ninja.rawValue:
-                    
-                    if(self.ninja.isDead == false) {
-                        self.physicsWorld.speed = 0
-
-    //                      self.ninja.physicsBody?.dynamic = false
-    //                    var ninjaNode : SKNode!
-    //                    var wallNode : SKNode!
-    //
-    //                    if(contact.bodyA.node!.isEqual(self.ninja)){
-    //                        wallNode = contact.bodyB.node!
-    //                    }
-    //                    
-    //                    else {
-    //                        
-    //                        wallNode = contact.bodyA.node!
-    //                    }
-                        
-    //                    ninjaNode.removeFromParent()
-//    //                    wallNode.addChild(ninjaNode)
-//                        if(contact.bodyA.node?.name != "mWall" && contact.bodyB.node?.name != "mWall") {
-//                            self.ninja.isInMoveable = false
-//                        }
-                    
-                        println("colidiu com plataforma")
-                        self.ninja.isMoving = false
-                        let dirColision = contact.contactNormal
-                        
-                        if(!self.ninja.isInMoveable) {
-
-                            if(contact.bodyA.node?.name == "mWall") {
-                                self.ninja.mWall = contact.bodyA!
-                            }
-                            else if(contact.bodyB.node?.name == "mWall") {
-                                self.ninja.mWall = contact.bodyB!
-                            }
-                            if(self.ninja.mWall != nil) {
-                                
-                                self.ninja.removeFromParent()
-                                
-                                self.ninja.mWall.categoryBitMask = 99
-                                self.ninja.mWall.node!.addChild(self.ninja)
-                                self.ninja.physicsBody!.pinned = true
-                                self.ninja.isInMoveable = true
-                                //self.ninja.mWallInitialPosition = self.ninja.mWall.p
-                            }
-                        }
-
-                        
-                        if(dirColision.dx > 0.0){
-                            self.ninja.nail_right()
-                        }
-                        else if(dirColision.dx < 0.0){
-                            self.ninja.nail_left()
-                            self.ninja.lookTo(self.ninja.eyes, angle: -120)
-                        }
-                        else {
-                            //0.9 = moveable
-                            self.ninja.nail_down()
-                        }
-                        
-                        let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
-                        self.runAction(wallSE)
-                        
-                        self.ninja.IdleAnimation()
-                    
-                    }
+                    colideComWall(contact)
                 
                 case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
                     println("colidiu com spike")
@@ -1052,10 +1121,56 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     //self.runAction(wallSE)
                     
                     self.ninja.IdleAnimation()
+                
+            case ColliderType.RotateWall.rawValue | ColliderType.Ninja.rawValue | ColliderType.FallerWall.rawValue:
+                
+                self.ninja.isMoving = false
+                self.ninja.nail_down()
+                self.ninja.IdleAnimation()
+                
+                //self.colideComWall(contact)
+                if(contact.bodyA.node?.name == "mWall") {
+                    self.ninja.mWall = contact.bodyA!
+                }
+                else if(contact.bodyB.node?.name == "mWall") {
+                    self.ninja.mWall = contact.bodyB!
+                }
+
+                if(self.ninja.mWall.node?.userData?.objectForKey("jaColidiu") as! Bool == false) {
+                    let duration = self.ninja.mWall.node?.userData?.objectForKey("duration") as! Int
+                    self.shakeAndFall(self.ninja.mWall.node!, duration: CGFloat(duration))
+                    let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
+                    self.runAction(wallSE)
+                }
 
 
+            case ColliderType.FallerWall.rawValue | ColliderType.Ninja.rawValue:
+                self.ninja.isMoving = false
+                self.ninja.nail_down()
+                self.ninja.IdleAnimation()
+
+                if(contact.bodyA.node?.name == "mWall") {
+                    self.ninja.mWall = contact.bodyA!
+                }
+                else if(contact.bodyB.node?.name == "mWall") {
+                    self.ninja.mWall = contact.bodyB!
+                }
 
                 
+                if(self.ninja.mWall.node?.userData?.objectForKey("jaColidiu") as! Bool == false) {
+                
+
+                    
+                    let duration = self.ninja.mWall.node?.userData?.objectForKey("duration") as! Int
+                    
+                    self.ninja.mWall.node!.userData?.setObject(true, forKey: "jaColidiu")
+
+                    
+                    self.shakeAndFall(self.ninja.mWall.node!, duration: CGFloat(duration))
+                    let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
+                    self.runAction(wallSE)
+                }
+        
                 default:
                     println("colidiu com default")
                 }
@@ -1154,7 +1269,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             }
             
             
-            self.ninja.stretch(scale: abs(distance) * 0.23 / 300, time: 0)
+            self.ninja.stretch(scale: abs(distance) * 0.16 / Constants.maxDistanceSlide, time: 0)
             
             var direction = ConvertUtilities.radiansToDegree(-1 * atan(speedX / speedY))
             

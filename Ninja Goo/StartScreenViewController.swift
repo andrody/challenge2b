@@ -8,7 +8,6 @@
 
 import UIKit
 import QuartzCore
-import AVFoundation
 
 
 class StartScreenViewController: ItemViewCtrl {
@@ -118,13 +117,7 @@ class StartScreenViewController: ItemViewCtrl {
 
     
     func moveToLevels(){
-        // Load
-        let soundURL = NSBundle.mainBundle().URLForResource("misc_menu", withExtension: "wav")
-        var mySound: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(soundURL, &mySound)
-        
-        // Play
-        AudioServicesPlaySystemSound(mySound);
+        SceneManager.sharedInstance.playClickSound()
         self.menuViewController!.goToPage(1)
     }
    
