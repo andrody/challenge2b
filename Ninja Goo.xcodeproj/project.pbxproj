@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		650D89B41B0645A600631D86 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 650D89B31B0645A600631D86 /* minifase6.tmx */; };
+		650D89B41B0645A600631D86 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		650D89B61B0668BD00631D86 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 650D89B51B0668BD00631D86 /* minifase6.tmx */; };
 		652343A41B00DD85001CE608 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 652343A31B00DD85001CE608 /* wall.png */; };
 		652343AC1B00E283001CE608 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652343AB1B00E283001CE608 /* minifase4.tmx */; };
 		658465081B0504FA00E21EC7 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 658465071B0504FA00E21EC7 /* minifase5.tmx */; };
@@ -18,7 +19,6 @@
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
-		C511A51D1B0626FC007835BE /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C511A51C1B0626FC007835BE /* minifase6.tmx */; };
 		C520FEF61B0657390021615C /* shaking.wav in Resources */ = {isa = PBXBuildFile; fileRef = C520FEF51B0657390021615C /* shaking.wav */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
@@ -65,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		650D89B51B0668BD00631D86 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		652343A31B00DD85001CE608 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		652343AB1B00E283001CE608 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
 		658465071B0504FA00E21EC7 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
@@ -75,7 +76,6 @@
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
-		C511A51C1B0626FC007835BE /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		C520FEF51B0657390021615C /* shaking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shaking.wav; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				65A31FBB1AFA35D10025305D /* minifase3.tmx */,
 				652343AB1B00E283001CE608 /* minifase4.tmx */,
 				658465071B0504FA00E21EC7 /* minifase5.tmx */,
-				C511A51C1B0626FC007835BE /* minifase6.tmx */,
+				650D89B51B0668BD00631D86 /* minifase6.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -355,7 +355,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -390,6 +390,7 @@
 			files = (
 				658465081B0504FA00E21EC7 /* minifase5.tmx in Resources */,
 				C5CB3F751ACD6E9D001A37B7 /* jump.wav in Resources */,
+				650D89B61B0668BD00631D86 /* minifase6.tmx in Resources */,
 				65A31FBC1AFA35D10025305D /* minifase1.tmx in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
@@ -402,9 +403,8 @@
 				65A31FBD1AFA35D10025305D /* minifase2.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
-				650D89B41B0645A600631D86 /* minifase6.tmx in Resources */,
+				650D89B41B0645A600631D86 /* (null) in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
-				C511A51D1B0626FC007835BE /* minifase6.tmx in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
 				C520FEF61B0657390021615C /* shaking.wav in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,

@@ -4,8 +4,6 @@
   <image source="espinho_tile.png" width="50" height="50"/>
  </tileset>
  <tileset firstgid="2" name="plataforma3" tilewidth="100" tileheight="500">
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="66">
- <tileset firstgid="1" name="plataforma3" tilewidth="100" tileheight="500">
   <image source="plataforma3.png" width="1320" height="1836"/>
  </tileset>
  <tileset firstgid="41" name="plataforma3" tilewidth="300" tileheight="300">
@@ -31,8 +29,7 @@
   <image source="plataforma3G.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="isFaller" value="2000"/>
-    <property name="isRotate" value="-360"/>
+    <property name="isRotate" value="360"/>
     <property name="wall" value="1"/>
    </properties>
   </tile>
@@ -71,7 +68,7 @@
   <tile id="1">
    <properties>
     <property name="direction" value="1"/>
-    <property name="isFaller" value="100"/>
+    <property name="isFaller" value="1000"/>
     <property name="isMoveable" value="5"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
@@ -128,12 +125,12 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt28ENgCAMAEDcxjF0/6WMA2g0UDTt3bPpg4RG0oKtAQAAzLO+iPfkjsoBqML3j1nUWi3L1wuAIHoLnriqi97+dxQ1mtffzl+1BgAQb/Q9W09MjwwAAHn9bf4MAAAAANTi/UFe5s8A9/aL+BacD1CZ/iM3+wsAUMc5f47+pzIiRg4H1HoH2Q==
+   eJzt281RwzAQhmGbbiiCA2XAKe3QhUqhKThDZvDYB7T625W0yvvM5IAjKcb+Rn9xts2vfdtC5PittA5QivxhJPKHkcgfRiJ/a3guON5SVqvMQcpfaR2gFP0feqjp/2JtkT9IYln7D/nz72n0CTQgf5C0rC1ykL81xHLRuv7Vwvp3XbONv8z/5vCxl78n1VkR+fPDcnwchfxhJPLnh9T/aX/P1nKM798e0+99+fT2Gn3NoId+AVd74mXwecGgWTgkzZ8vZUJJm6/K7WFdFvmLOfafyR8OFvlL7f+RvzV9V9Tp2f9ZtTeL99En4BD5O7GX3N91/1TaR9VcH896L2vy90iZrRlfU3L6v4w2wvVvr+tf8tefRf60y/dC/vqzyJ/X9e/q+XtJTJYsxtcU+r9TzbMEnvI3o575k55/nuFe1fZ/PP9ST7p+Oc8r/bURFM6juQ2Fc7gJ7wWtOjiNWP+m2ojt475FjmuVt87fV6xgodj/5dGI+Z9H9H82LPLX6zkuC6w/+tLIXwmvv01i/WFDun440f/ZkK5f7vr3EZA/G73HX6/In42e+bvvP1v/ptLi2B3zPxsa+8+55X4AlrmInA==
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJztw0EJAAAIBLCzsf1f1lDcYAkAAAAAAAAAAAAAAAAAAAAAAAAAAF917QgAAABw2QCTMQ8D
+   eJzt2EEJAAAIADHtX9oEPlWEDa7ERQAAAAAAAAAAAAAAAAAAAMzKJgAAAAAA7nUPdzsAAACAzwqVZQAp
   </data>
  </layer>
  <objectgroup name="Ninja">
