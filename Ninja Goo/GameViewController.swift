@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
                 self.skView.showsFPS = true
             
             
-            self.scene.backgroundColor = SKColor(red: 182.0/255.0, green: 217.0/255.0, blue: 241.0/255.0, alpha: 1)
+//            self.scene.backgroundColor = SKColor(red: 182.0/255.0, green: 217.0/255.0, blue: 241.0/255.0, alpha: 1)
 
 
             

@@ -16,9 +16,8 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     
     // Initialize it right away here
     private let contentImages = [["fundoMenu"],
-        ["minifase1", "minifase2","minifase3"],
-        ["minifase4", "minifase5","minifase6"]
-
+        [SceneManager.sharedInstance.fases[0], SceneManager.sharedInstance.fases[1], SceneManager.sharedInstance.fases[2]],
+        [SceneManager.sharedInstance.fases[0], SceneManager.sharedInstance.fases[1], SceneManager.sharedInstance.fases[2]]
     ];
     
     override func viewDidLoad() {
@@ -79,9 +78,9 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
       if itemIndex < contentImages.count {
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LevelsController") as! LevelsController
             pageItemController.itemIndex = itemIndex
-            pageItemController.imageOneName = contentImages[itemIndex][0]
-            pageItemController.imageTwoName = contentImages[itemIndex][1]
-            pageItemController.imageThreeName = contentImages[itemIndex][2]
+            pageItemController.levelOne = (contentImages[itemIndex][0] as! Scenario)
+            pageItemController.levelTwo = (contentImages[itemIndex][1] as! Scenario)
+            pageItemController.levelThree = (contentImages[itemIndex][2] as! Scenario)
             return pageItemController
         }
     
@@ -93,7 +92,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
         
         let startScreenCtrl = self.storyboard!.instantiateViewControllerWithIdentifier("StartScreenViewCtrl") as! StartScreenViewController
         startScreenCtrl.itemIndex = 0
-        startScreenCtrl.imageName = contentImages[0][0]
+        startScreenCtrl.imageName = contentImages[0][0] as! String
         startScreenCtrl.menuViewController = self
         return startScreenCtrl
     }

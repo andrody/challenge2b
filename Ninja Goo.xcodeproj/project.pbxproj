@@ -22,6 +22,8 @@
 		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
 		C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F73A31B04BF2E00D6E6DB /* wall_gray.png */; };
 		C58F73A61B05778600D6E6DB /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C58F73A51B05778600D6E6DB /* minifase6.tmx */; };
+		C58F73A81B05860F00D6E6DB /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A71B05860F00D6E6DB /* Scenario.swift */; };
+		C58F73AA1B05896F00D6E6DB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A91B05896F00D6E6DB /* SceneManager.swift */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
 		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
@@ -77,6 +79,8 @@
 		C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
 		C58F73A31B04BF2E00D6E6DB /* wall_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall_gray.png; sourceTree = "<group>"; };
 		C58F73A51B05778600D6E6DB /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
+		C58F73A71B05860F00D6E6DB /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		C58F73A91B05896F00D6E6DB /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
 		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +270,7 @@
 			children = (
 				C5CB3F411ACD6AA8001A37B7 /* teste.sks */,
 				C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */,
+				C58F73A71B05860F00D6E6DB /* Scenario.swift */,
 			);
 			name = WorldOne;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				C5CB3F811ACDEBE4001A37B7 /* WorldLayer.swift */,
 				C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */,
 				C54747471AD4503500C4E23F /* TileMapHeader.h */,
+				C58F73A91B05896F00D6E6DB /* SceneManager.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -420,12 +426,14 @@
 				C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */,
 				C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */,
 				C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */,
+				C58F73AA1B05896F00D6E6DB /* SceneManager.swift in Sources */,
 				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
 				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
 				C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,
 				C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */,
 				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,
+				C58F73A81B05860F00D6E6DB /* Scenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

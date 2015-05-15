@@ -38,6 +38,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     //Clouds
     let frontCloudLayer = SKNode()
+    let middleCloudLayer = SKNode()
     let backCloudLayer = SKNode()
     let upperCloudLayer = SKNode()
 
@@ -133,11 +134,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     // MARK: Asset Pre-loading
     
-    class func loadSceneAssetsWithCompletionHandler(levelName : String, completionHandler: W1_Level_1 -> Void) {
+    class func loadSceneAssetsWithCompletionHandler(level : Scenario, completionHandler: W1_Level_1 -> Void) {
         dispatch_async(Constants.backgroundQueue) {
             
             let loadedScene = W1_Level_1(size: CGSizeMake(2048, 1536))
-            loadedScene.levelName = levelName
+            loadedScene.levelName = level.nome
+            SceneManager.sharedInstance.faseEscolhida = level
+            
             loadedScene.loadAll()
 
             //W1_Level_1.unarchiveFromFile("W1_Level_1") as? W1_Level_1
@@ -148,13 +151,17 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
     func loadWorld() {
         
         //self.worldLayer.setScale(0.1)
 
         self.worldLayer.setScale(Constants.defaultScale)
         
-        layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.platformLayer, self.upperCloudLayer, self.levelsLayer]
+        let corFundo = SceneManager.sharedInstance.faseEscolhida.corFundo
+        self.backgroundColor = SKColor(red: corFundo[0]/255.0, green: corFundo[1]/255.0, blue: corFundo[2]/255.0, alpha: 1)
+        
+        layers = [self.backMountainLayer, self.frontMoutainLayer, self.backCloudLayer, self.frontCloudLayer, self.middleCloudLayer, self.platformLayer, self.upperCloudLayer, self.levelsLayer]
 
 
         
@@ -165,6 +172,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.map = JSTileMap(named: "\(levelName).tmx")
 
         let map_layer = map.layerNamed("Walls")
+        
+        let wallColor = SceneManager.sharedInstance.faseEscolhida.corPlataforma
+        
+        
+//        map_layer.color = SKColor(red: wallColor[0]/255, green: wallColor[1]/255, blue: wallColor[2]/255, alpha: 1.0)
+//        map_layer.colorBlendFactor=1
+        
         map_layer.zPosition = Constants.zPosWall
         
         //let preenchimento = map.layerNamed("preenchimento")
@@ -507,8 +521,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func loadClouds(){
         
         
-        let cloud = SKSpriteNode(texture: SKTexture(imageNamed: "nuvem_escura"))
-        let cloud_clara = SKSpriteNode(texture: SKTexture(imageNamed: "nuvem_clara"))
+        let cloud = SKSpriteNode(texture: SKTexture(imageNamed: "nuvem_clara"))
+
+        let cBackColor = SceneManager.sharedInstance.faseEscolhida.corNuvemBack
+        let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corNuvemMeio
+        let cFrontColor = SceneManager.sharedInstance.faseEscolhida.corNuvemFront
+
 
         let map_width : CGFloat = CGFloat(self.map.mapSize.width * self.map.tileSize.width)
         
@@ -516,21 +534,39 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         for index in 0...numberOfClouds {
             
-            let c = cloud.copy() as! SKSpriteNode
-            c.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
-            self.backCloudLayer.addChild(c)
+            //Cloud Back
+            let cloud_back = cloud.copy() as! SKSpriteNode
+            cloud_back.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
+            cloud_back.color = SKColor(red: cBackColor[0]/255, green: cBackColor[1]/255, blue: cBackColor[2]/255, alpha: 1.0)
+            cloud_back.colorBlendFactor=1
+            self.backCloudLayer.addChild(cloud_back)
             
-            let cc = cloud_clara.copy() as! SKSpriteNode
-            cc.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
-            self.frontCloudLayer.addChild(cc)
+            //Cloud Middle
+            let cloud_middle = cloud.copy() as! SKSpriteNode
+            cloud_middle.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
+            cloud_middle.color = SKColor(red: cMiddleColor[0]/255, green: cMiddleColor[1]/255, blue: cMiddleColor[2]/255, alpha: 1.0)
+            cloud_middle.colorBlendFactor=1
+
+            self.middleCloudLayer.addChild(cloud_middle)
+            
+            //Cloud Front
+            let cloud_front = cloud.copy() as! SKSpriteNode
+            cloud_front.position = CGPointMake(CGFloat(index) * cloud.size.width, 0)
+            cloud_front.color = SKColor(red: cFrontColor[0]/255, green: cFrontColor[1]/255, blue: cFrontColor[2]/255, alpha: 1.0)
+            cloud_front.colorBlendFactor=1
+            
+            self.frontCloudLayer.addChild(cloud_front)
         
         }
         
-        backCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y + self.size.height/18)
+        backCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y + self.size.height/18 + 55)
         
-        frontCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y + self.size.height/18 - 35)
+        middleCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y + self.size.height/18)
+        
+        frontCloudLayer.position = CGPointMake(Constants.defaultGroundPoint.x - CGFloat(numberOfClouds) * cloud.size.width/4, Constants.defaultGroundPoint.y + self.size.height/18 - 55)
 
         backCloudLayer.zPosition = Constants.zPosCloudBack
+        middleCloudLayer.zPosition = Constants.zPosCloudBack
         frontCloudLayer.zPosition = Constants.zPosCloudFront
 
         
@@ -541,9 +577,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func loadBackground(){
         
         
-        let montain = SKSpriteNode(texture: SKTexture(imageNamed: "montanha_escura"))
-        let montain_clara = SKSpriteNode(texture: SKTexture(imageNamed: "montanha_clara"))
+        let montain = SKSpriteNode(texture: SKTexture(imageNamed: "montanha_branco"))
+        
+        let montainColor = SceneManager.sharedInstance.faseEscolhida.corMontanha
+        let montainClaraColor = SceneManager.sharedInstance.faseEscolhida.corMontanhaClara
 
+        
         let map_width : CGFloat = CGFloat(self.map.mapSize.width * self.map.tileSize.width)
 
         let numberOfMontains = Int(map_width / montain.size.width)
@@ -552,9 +591,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             //Montanha Escura
             let m = montain.copy() as! SKSpriteNode
+            m.color = SKColor(red: montainColor[0]/255, green: montainColor[1]/255, blue: montainColor[2]/255, alpha: 1.0)
+            m.colorBlendFactor=1
+
             
             let randomDis = CGFloat(arc4random_uniform(50))/100 + 0.5
-            let randomScale = CGFloat(arc4random_uniform(100))/100 + 0.3
+            let randomScale = CGFloat(arc4random_uniform(150))/100 + 0.3
 
             
             m.position = CGPointMake(CGFloat(index) * montain.size.width * randomDis, 0)
@@ -566,10 +608,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             
             //Montanha Clara
-            let mC = montain_clara.copy() as! SKSpriteNode
+            let mC = montain.copy() as! SKSpriteNode
+            mC.color = SKColor(red: montainClaraColor[0]/255, green: montainClaraColor[1]/255, blue: montainClaraColor[2]/255, alpha: 1.0)
+            mC.colorBlendFactor=1
+
             
             let randomDis2 = CGFloat(arc4random_uniform(150))/100 + 0.3
-            let randomScale2 = CGFloat(arc4random_uniform(100))/100 + 0.2
+            let randomScale2 = CGFloat(arc4random_uniform(150))/100 + 0.3
             
             mC.position = CGPointMake(CGFloat(index) * montain.size.width * randomDis2, 0)
             mC.setScale(randomScale2)
@@ -593,6 +638,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func loadUpperClouds(){
         
         let cloud = SKSpriteNode(texture: SKTexture(imageNamed: "flat_cloud"))
+
+        let cloudColor = SceneManager.sharedInstance.faseEscolhida.corMontanhaClara
+
+        cloud.color = SKColor(red: cloudColor[0]/255, green: cloudColor[1]/255, blue: cloudColor[2]/255, alpha: 1.0)
+        cloud.colorBlendFactor=1
+
+        
         let map_width : CGFloat = CGFloat(self.map.mapSize.width * self.map.tileSize.width)
         
         let numberOfClouds = 300//Int(map_width / cloud.size.width)
@@ -605,9 +657,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             let randomScale = CGFloat(arc4random_uniform(80))/100 + 0.2
             let randomDis = CGFloat(arc4random_uniform(100))/100 + 0.4
 
+            let randomAlpha = CGFloat(arc4random_uniform(7))/10 + 0.3
+
             
             c.setScale(randomScale)
-            c.alpha = 0.4
+            c.alpha = randomAlpha
             c.position = CGPointMake(CGFloat(index) * cloud.size.width * randomDis, self.frame.height * randomPos * 3)
             self.upperCloudLayer.addChild(c)
 
@@ -650,10 +704,18 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let animateCloudDown_B = SKAction.moveByX(0, y: -20, duration: 1.5)
         let seqB = SKAction.sequence([animateCloudUp_B , animateCloudDown_B])
         let repeteB = SKAction.repeatActionForever(seqB)
+        
+        let animateCloudUp_C = SKAction.moveByX(0, y: 20, duration: 2.0)
+        let animateCloudDown_C = SKAction.moveByX(0, y: -20, duration: 0.7)
+        let seqC = SKAction.sequence([animateCloudUp_C , animateCloudDown_C])
+        let repeteC = SKAction.repeatActionForever(seqC)
+
 
         
         self.frontCloudLayer.runAction(repeteA, withKey: "move")
         self.backCloudLayer.runAction(repeteB, withKey: "move")
+        self.middleCloudLayer.runAction(repeteC, withKey: "move")
+
         
     }
     
@@ -690,6 +752,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func loadAll(){
         self.loadWorld()
+
 //        self.loadHud()
 //        self.loadLevels()
         
