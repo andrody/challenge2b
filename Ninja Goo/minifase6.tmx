@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="50" tileheight="50" nextobjectid="104">
- <tileset firstgid="1" name="wall" tilewidth="500" tileheight="700">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="66">
+ <tileset firstgid="1" name="plataforma3" tilewidth="100" tileheight="500">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+ </tileset>
+ <tileset firstgid="40" name="plataforma3" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
@@ -8,117 +11,109 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="5" name="plataforma3" tilewidth="1000" tileheight="150">
-  <image source="plataforma3.png" trans="ff00ff" width="1320" height="1836"/>
+ <tileset firstgid="64" name="Rotatable" tilewidth="100" tileheight="300">
+  <image source="plataforma3G.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
+    <property name="isRotate" value="360"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="isRotate" value="-360"/>
     <property name="wall" value="1"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="17" name="plataforma3" tilewidth="1300" tileheight="1300">
-  <image source="plataforma3.png" trans="ff00ff" width="1320" height="1836"/>
+ <tileset firstgid="142" name="plataforma3" tilewidth="100" tileheight="300">
+  <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
+    <property name="isRotate" value="360"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="isRotate" value="-360"/>
     <property name="wall" value="1"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="18" name="espinho_tile" tilewidth="50" tileheight="50">
-  <image source="espinho_tile.png" trans="ff00ff" width="50" height="50"/>
+ <tileset firstgid="220" name="plataforma3" tilewidth="300" tileheight="100">
+  <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="spike" value="0"/>
+    <property name="direction" value="1"/>
+    <property name="isFaller" value="1"/>
+    <property name="isMoveable" value="10"/>
+    <property name="wall" value="1"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="19" name="espinho_tile_invertido" tilewidth="50" tileheight="50">
-  <image source="espinho_tile_invertido.png" width="50" height="50"/>
+ <tileset firstgid="292" name="plataforma3" tilewidth="300" tileheight="100">
+  <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
-    <property name="spike" value="2"/>
+    <property name="direction" value="2"/>
+    <property name="isFaller" value="1"/>
+    <property name="isMoveable" value="10"/>
+    <property name="wall" value="1"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="20" name="espinho_tile_direito" tilewidth="50" tileheight="50">
-  <image source="espinho_tile_direito.png" width="50" height="50"/>
+ <tileset firstgid="364" name="spikes" tilewidth="50" tileheight="50">
   <tile id="0">
    <properties>
     <property name="spike" value="1"/>
    </properties>
+   <image width="50" height="50" source="espinho_tile_direito.png"/>
   </tile>
- </tileset>
- <tileset firstgid="21" name="espinho_tile_esquerdo" tilewidth="50" tileheight="50">
-  <image source="espinho_tile_esquerdo.png" width="50" height="50"/>
-  <tile id="0">
+  <tile id="1">
    <properties>
     <property name="spike" value="3"/>
    </properties>
+   <image width="50" height="50" source="espinho_tile_esquerdo.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="spike" value="2"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_invertido.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="spike" value="0"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile.png"/>
   </tile>
  </tileset>
- <layer name="Walls" width="160" height="90">
+ <tileset firstgid="368" name="espinho_tile" tilewidth="50" tileheight="50">
+  <image source="espinho_tile.png" width="50" height="50"/>
+ </tileset>
+ <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2rERACEIBEANLOD7b/YbcIwUGdyNGSC/aw0AAAAAAAAAiDAOzQIAAAAAAAAAAAAAAADs1G8/AKTw3X4AAAAAAACgCLkLQDz9FwAAAAAAAADgZVG9tWp3MtF/AQAAAACgkpF8X6b9p29H5S6zrEP+AQAAAAAAsCZPAQAAAIC6fmR8AJA=
+   eJzt28sJgDAMANC6jWPo/kuJdxWlH0vy3jHkUGiwJK2lAAAAjLN+iNfktsoByML3j1HUWi7L3wuATvQWvHFXF7X9bytqNK7Zzl+1BgDQX+t7tpqYHhkAAOKabf4MAAAAAOTi/UFc5s8Az/aL2DYgDyAz/Uds9hcAII9z/tz7n8oeMWI4ALvdCBk=
   </data>
  </layer>
- <layer name="Spikes" width="160" height="90">
+ <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt3csKgCAQBdC+ocf//2qbVkEkZl20c2B2Q4jchUgy0wQAAAAAAAAAwOjW9AL4NfkjSf5Ikj8A6M98VMtv3RU8dT53bpFVAAAAAMB/uIMjSf4AAAAAAGjF+zeS5I8k+QMAAAAA4G3ef5AkfwAA4/P/CwC13BuQJH9t2Mc69o0k+SNJ/ujZ0rCnpO/cf1UAAAD06W52cOl84Zo5xF/MLTYfGQAAAAAAAAAAAAAAAKAPO9r6A+g=
-  </data>
- </layer>
- <layer name="Intwall" width="160" height="90">
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20IX6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgNcA4QAAAQ==
+   eJztwTEBAAAAwqD1T20Hb6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1wBkAAAB
   </data>
  </layer>
  <objectgroup name="Ninja">
-  <object id="1" name="ninja" x="99.0099" y="2158.42"/>
+  <object id="60" name="ninja" x="200" y="1450"/>
  </objectgroup>
  <objectgroup name="Ground">
-  <object id="2" name="ground" x="50" y="3750" width="51.2295" height="53.791"/>
-  <object id="3" x="5005.64" y="-1082.3"/>
+  <object id="59" name="ground" x="150" y="1850"/>
  </objectgroup>
  <objectgroup name="Corpos">
-  <object id="21" x="0" y="3450" width="2500" height="50"/>
-  <object id="23" x="2450" y="3500" width="50" height="100"/>
-  <object id="24" x="2700" y="3500" width="50" height="100"/>
-  <object id="26" x="2700" y="3450" width="1000" height="50"/>
-  <object id="27" x="3900" y="3500" width="50" height="100"/>
-  <object id="28" x="3900" y="3450" width="1350" height="50"/>
-  <object id="29" x="5200" y="3500" width="50" height="100"/>
-  <object id="37" x="5450" y="1000" width="50" height="2600"/>
-  <object id="40" x="5500" y="1000" width="1250" height="50"/>
-  <object id="42" x="6700" y="1050" width="50" height="1850"/>
-  <object id="43" x="6700" y="2900" width="300" height="50"/>
-  <object id="44" x="7000" y="1000" width="50" height="1950"/>
-  <object id="45" x="7050" y="1000" width="450" height="50"/>
-  <object id="46" x="5200" y="650" width="50" height="2450"/>
-  <object id="47" x="5200" y="600" width="1550" height="50"/>
-  <object id="49" x="6750" y="500" width="50" height="150"/>
-  <object id="50" x="1350" y="3050" width="3850" height="50"/>
-  <object id="51" x="3650" y="3500" width="50" height="100"/>
-  <object id="52" x="1350" y="1800" width="50" height="1250"/>
+  <object id="61" x="0" y="0" width="2350" height="850"/>
+  <object id="62" x="0" y="850" width="100" height="650"/>
+  <object id="63" x="0" y="1500" width="350" height="500"/>
+  <object id="64" x="350" y="1700" width="2000" height="300"/>
+  <object id="65" x="2050" y="1200" width="300" height="500"/>
  </objectgroup>
- <objectgroup name="Espinho">
-  <object id="56" x="1300" y="2850" width="50" height="250"/>
-  <object id="59" x="1750" y="3400" width="50" height="50"/>
-  <object id="60" x="2100" y="3100" width="50" height="50"/>
-  <object id="61" x="2550" y="3100" width="50" height="50"/>
-  <object id="62" x="3000" y="3100" width="100" height="50"/>
-  <object id="64" x="3000" y="3400" width="100" height="50"/>
-  <object id="65" x="3600" y="3100" width="400" height="50"/>
-  <object id="66" x="5250" y="2700" width="50" height="50"/>
-  <object id="67" x="5400" y="2900" width="50" height="50"/>
-  <object id="74" x="5250" y="650" width="50" height="200"/>
-  <object id="75" x="6050" y="950" width="100" height="50"/>
-  <object id="76" x="6750" y="1000" width="50" height="50"/>
-  <object id="77" x="6950" y="1000" width="50" height="50"/>
-  <object id="78" x="7000" y="950" width="500" height="50"/>
-  <object id="93" x="5400" y="1400" width="50" height="100"/>
-  <object id="97" x="5400" y="2450" width="50" height="100"/>
-  <object id="98" x="200" y="3400" width="50" height="50"/>
-  <object id="99" x="600" y="3400" width="100" height="50"/>
-  <object id="100" x="1100" y="3400" width="100" height="50"/>
-  <object id="102" x="5250" y="1900" width="50" height="150"/>
- </objectgroup>
+ <objectgroup name="Espinho"/>
 </map>
