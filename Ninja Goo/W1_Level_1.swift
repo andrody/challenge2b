@@ -321,7 +321,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //                        
 //                        tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
 //                        tile.physicsBody!.categoryBitMask = ColliderType.Wall.rawValue
-//                        tile.physicsBody!.dynamic = false
+// /Users/brunorolim/Dropbox/Challenge2/Ninja Goo Assets/Maps/zerofase/minifase6.tmx                       tile.physicsBody!.dynamic = false
 //                        tile.physicsBody!.friction = 0
 //
 //                    }

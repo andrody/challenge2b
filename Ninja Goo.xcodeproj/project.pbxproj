@@ -401,6 +401,7 @@
 				65A31FBD1AFA35D10025305D /* minifase2.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
+				650D89B41B0645A600631D86 /* minifase6.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				C511A51D1B0626FC007835BE /* minifase6.tmx in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
