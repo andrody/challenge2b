@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="98">
+ <tileset firstgid="1" name="espinho_tile" tilewidth="50" tileheight="50">
+  <image source="espinho_tile.png" width="50" height="50"/>
+ </tileset>
+ <tileset firstgid="2" name="plataforma3" tilewidth="100" tileheight="500">
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="66">
  <tileset firstgid="1" name="plataforma3" tilewidth="100" tileheight="500">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+ </tileset>
+ <tileset firstgid="41" name="plataforma3" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
    <properties>
