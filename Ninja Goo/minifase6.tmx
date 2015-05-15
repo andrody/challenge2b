@@ -60,7 +60,7 @@
   <tile id="0">
    <properties>
     <property name="direction" value="1"/>
-    <property name="isMoveable" value="10"/>
+    <property name="isMoveable" value="5"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
@@ -68,7 +68,7 @@
   <tile id="1">
    <properties>
     <property name="direction" value="1"/>
-    <property name="isFaller" value="1000"/>
+    <property name="isFaller" value="100"/>
     <property name="isMoveable" value="5"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
@@ -125,7 +125,7 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt281RwzAQhmGbbiiCA2XAKe3QhUqhKThDZvDYB7T625W0yvvM5IAjKcb+Rn9xts2vfdtC5PittA5QivxhJPKHkcgfRiJ/a3guON5SVqvMQcpfaR2gFP0feqjp/2JtkT9IYln7D/nz72n0CTQgf5C0rC1ykL81xHLRuv7Vwvp3XbONv8z/5vCxl78n1VkR+fPDcnwchfxhJPLnh9T/aX/P1nKM798e0+99+fT2Gn3NoId+AVd74mXwecGgWTgkzZ8vZUJJm6/K7WFdFvmLOfafyR8OFvlL7f+RvzV9V9Tp2f9ZtTeL99En4BD5O7GX3N91/1TaR9VcH896L2vy90iZrRlfU3L6v4w2wvVvr+tf8tefRf60y/dC/vqzyJ/X9e/q+XtJTJYsxtcU+r9TzbMEnvI3o575k55/nuFe1fZ/PP9ST7p+Oc8r/bURFM6juQ2Fc7gJ7wWtOjiNWP+m2ojt475FjmuVt87fV6xgodj/5dGI+Z9H9H82LPLX6zkuC6w/+tLIXwmvv01i/WFDun440f/ZkK5f7vr3EZA/G73HX6/In42e+bvvP1v/ptLi2B3zPxsa+8+55X4AlrmInA==
+   eJzt201ugzAQhmHobXqILnqMdpXr9BY+Si/VrptIRaCq/p8Ze+B9pCxCjEPgk42Nsyx+rcsSIttvtfsAtcgfRiJ/GIn8YSTydw7PFdt7ykqV2aTyV7sPUIv2DxZa2r9YXeQPKbGs/Yf8+fc0+gA6kD89H2vf5zPoGVuUIH/nEMtF7/hXCuPf85qt/+X+zy8PfbIk8ueHZv84CvnDSOTPj1T7J/2crWcbz9+u6X5dPr29Rp8zyKFdwNGaeSl8X1CoFg6l7p8PZUJNna/C9WF+X437aeQvZpt/Jn/YaOQvN/9H/rCxbP+06pvF++gDcIj87ZhLtnecP03No0qOj2e9li35u1JmvxXqLGn/CuoIx/dex7/kz55G/qTLWyF/9jTy53X8e/b8vWRuljT61xzav13LWgJP+ZuRZf5S659nuFat7R/rX9qlzl/JeqXfOoLAcXTXIXAMt8RnQWof7EaMf3N1xOZx3yLbpcpr56/1Gelfsd/l0Yj7P49o/3Ro5M9qHZcGxh+2JPJXw+t/kxh/6EidP+xo/3Skzl/p+PcKyJ8O6/7XK/KnwzJ/j/ln7f9Uamx74P5Ph8T8c2m5H00IiJs=
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
