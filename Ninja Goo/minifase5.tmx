@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="172">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="173">
  <tileset firstgid="1" name="plataforma3" tilewidth="400" tileheight="600">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -71,6 +71,14 @@
  <tileset firstgid="425" name="plataformaGandeMovel" tilewidth="200" tileheight="750">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1">
    <properties>
     <property name="direction" value="3"/>
     <property name="isMoveable" value="7"/>
@@ -201,7 +209,7 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2zEOgzAMAEC69lO8kyfwy04dGlQiNcTB6d1qBguIbSXKsgAAAAAAAAAcPRpjZ8/AbGr/e2scIFKmmtQ710zvAgBmof/yto1OgBTW0QlAEP0RgFnoafey+yAAAJBC6+h+xeg/cj/emRH8xtoB+K73/Q/3RwCIUDvra42Tz3N0ApCE+gf/pXd/jOy/Zfkq61ktblb4FLG/8wLSsAcx
+   eJzt2zsOwyAMANA0Yy6Vc+YI6Sm7J6qiFmHzeW9DLJYAGxmxLAAAAAAAAAB3a+V5GInzAozklR3AD2rnT/kZmJX8B7TgyA6ALuzZAUAQ9zMARtFT/3kGpwUBAAijv0OJFvZPZj/emxH8x9kB+K72/w//RwCI8H546yudpz9bdgAA0KDa9TGy/l7vb6Xj2UX0dz6mTAiU
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
