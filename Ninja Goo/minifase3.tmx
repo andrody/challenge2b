@@ -91,7 +91,7 @@
   </data>
  </layer>
  <objectgroup name="Ninja">
-  <object id="1" name="ninja" x="100" y="1350"/>
+  <object id="1" name="ninja" x="100" y="850"/>
  </objectgroup>
  <objectgroup name="Ground">
   <object id="2" name="ground" x="50" y="1600" width="26.1025" height="21.981"/>
