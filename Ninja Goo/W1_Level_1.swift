@@ -1017,11 +1017,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
             if(self.ninja.isInMoveable && self.ninja.mWall != nil) {
                 
-                if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos){
+                if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos - iphoneEqualizer){
                         point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
                 }
                 else {
-                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos)
+                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos - iphoneEqualizer)
                     
                 }
             
