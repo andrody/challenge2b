@@ -117,6 +117,7 @@ class LevelsController: ItemViewCtrl {
             
             self.loadingIndicator.hidden = true
             gVC.scene = loadedScene
+            SceneManager.sharedInstance.scene = loadedScene
             
             self.presentViewController(gVC, animated: true, completion: nil)
         }

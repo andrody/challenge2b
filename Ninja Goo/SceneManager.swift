@@ -14,6 +14,7 @@ private let _SceneManagerSharedInstance = SceneManager()
 class SceneManager {
     static let sharedInstance = SceneManager()
     var audioPlayer = AVAudioPlayer()
+    var scene : W1_Level_1!
 
     
     var fases = [Scenario]()

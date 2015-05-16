@@ -13,6 +13,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     // MARK: Properties
     
     var levelName : String!
+    
+    var pauseButton: SKSpriteNode!
+
+    var iphoneEqualizer : CGFloat = 0
+    
+    var worldScale : CGFloat!
+
 
     //Scores
     var score:Int = 0
@@ -111,6 +118,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let midAnchor = CGPointMake(0.5, 0.5)
         static var defaultSpawnPoint = CGPoint(x: 0, y: 0)
         static let defaultScale :CGFloat = 1.0
+        static let defaultLanscapeIphone :CGFloat = 1.5
+        static let defaultPortraitIphone :CGFloat = 1.3
+
+
         static var defaultGroundPoint : CGPoint!
         
         static var minCamPos : CGFloat!
@@ -160,6 +171,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         //self.worldLayer.setScale(0.1)
 
         self.worldLayer.setScale(Constants.defaultScale)
+        self.worldScale = Constants.defaultScale
         
         let corFundo = SceneManager.sharedInstance.faseEscolhida.corFundo
         self.backgroundColor = SKColor(red: corFundo[0]/255.0, green: corFundo[1]/255.0, blue: corFundo[2]/255.0, alpha: 1)
@@ -228,6 +240,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //        self.worldLayer.position = CGPointMake(self.worldLayer.position.x - Constants.defaultGroundPoint.x, self.worldLayer.position.y - v)
         
 //        self.worldLayer.
+        
+        
+        
         
         centerWorldOnPoint(CGPointMake(Constants.defaultSpawnPoint.x, Constants.minCamPos))
 
@@ -536,21 +551,74 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         return CGPointMake(CGFloat(x!), CGFloat(y!))
     }
     
+    override func didChangeSize(oldSize: CGSize) {
+        resizePositions()
+    }
+    
+    
+    
+    func resizePositions(){
+    
+        if(UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft || UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight) {
+            
+            if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone){
+                self.worldLayer.setScale(Constants.defaultLanscapeIphone)
+                self.worldScale = Constants.defaultLanscapeIphone
+            }
+            
+            if(self.pauseButton != nil) {
+                self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.width/2 + self.pauseButton.size.width + 20, self.size.height/2 - self.pauseButton.size.height - 20))
+            }
+        }
+        else {
+            if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone){
+                self.worldLayer.setScale(Constants.defaultPortraitIphone)
+                self.worldScale = Constants.defaultPortraitIphone
+
+            }
+            
+            if(self.pauseButton != nil) {
+
+                self.pauseButton!.position = CGPointMake(-self.size.height/2 + self.pauseButton.size.width*4 - 50, self.size.width/2 - self.pauseButton.size.height*4 - 10)
+            }
+        }
+
+    }
     
     func loadHud(){
+        
+        
+        
+        self.pauseButton = SKSpriteNode(texture: SKTexture(imageNamed: "pause"))
+        self.pauseButton?.name = "pauseButton"
+        self.pauseButton?.anchorPoint = CGPointMake(0.5 , 0.5)
+        self.pauseButton?.zPosition = 90
+        self.pauseButton?.setScale(0.7)
+        self.pauseButton?.alpha = 0.6
+        
+        
+//        self.pauseButton!.position = CGPointMake(-self.scene!.frame.width/2 + 120, self.scene!.frame.height/2 - 120)
+        println("SCRENN SIZZEEEEE = \(UIApplication.sharedApplication().statusBarOrientation)")
+        println("SCRENN HEIGHTTTTT = \(self.size.height)")
+        
+        
+        self.addChild(self.pauseButton)
+
+        resizePositions()
+
 
         //Adding HUD
-        self.HUD = Hud(sceneSize: CGSizeMake(self.size.width, self.size.height))
-        self.HUD?.zPosition = 90
-        self.HUD?.addChild(HUD!.playButton!)
-        self.HUD?.addChild(HUD!.logo!)
-        //self.addChild(HUD!.pointsBoard!)
-        self.HUD?.addChild(HUD!.stageButton!)
-        self.HUD?.addChild(HUD!.pauseButton!)
-        
-        self.HUD?.moveButtonsInScreen()
-        
-        self.addChild(HUD!)
+//        self.HUD = Hud(sceneSize: CGSizeMake(self.size.width, self.size.height))
+//        self.HUD?.zPosition = 90
+////        self.HUD?.addChild(HUD!.playButton!)
+////        self.HUD?.addChild(HUD!.logo!)
+////        //self.addChild(HUD!.pointsBoard!)
+////        self.HUD?.addChild(HUD!.stageButton!)
+//        self.HUD?.addChild(HUD!.pauseButton!)
+//        
+////        self.HUD?.moveButtonsInScreen()
+//        
+//        self.addChild(HUD!)
         //self.HUD?.setScale(0.1)
         
     }
@@ -613,7 +681,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
         backCloudLayer.zPosition = Constants.zPosCloudBack
         middleCloudLayer.zPosition = Constants.zPosCloudBack
-        frontCloudLayer.zPosition = Constants.zPosCloudFront
+        frontCloudLayer.zPosition = 999//Constants.zPosCloudFront
 
         
         self.animateClouds()
@@ -799,7 +867,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func loadAll(){
         self.loadWorld()
 
-//        self.loadHud()
+        self.loadHud()
 //        self.loadLevels()
         
         self.gameStarted = true
@@ -901,66 +969,78 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //        println("mimCam y: \(Constants.minCamPos)")
         var point : CGPoint!
         
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone{
+//        if UIDevice.currentDevice().userInterfaceIdiom == .Phone{
+//        
+//            if(self.ninja.isInMoveable && self.ninja.mWall != nil) {
+//                
+//                if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos){
+//                    point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y - 100)
+//                }
+//                else {
+//                    point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos-100)
+//                    
+//                }
+//                
+//                
+//                
+//                
+//            }
+//            else {
+//                if(self.ninja.position.y > Constants.minCamPos){
+//                    point = self.ninja.position
+//                }
+//                else {
+//                    point = CGPointMake(self.ninja.position.x, Constants.minCamPos - 100)
+//                    
+//                }
+//                
+//            }
+//            
+//        }
+        
+        
+//        else {
+        
+        
+            if UIDevice.currentDevice().userInterfaceIdiom == .Phone{
+                if UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft || UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight {
+                    
+                    self.iphoneEqualizer = 267
+                    
+                }
+                
+                else {
+                    self.iphoneEqualizer = 200
+                }
+            }
+
         
             if(self.ninja.isInMoveable && self.ninja.mWall != nil) {
                 
                 if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos){
-                    point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y - 100)
+                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
                 }
                 else {
-                    point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos-100)
+                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos)
                     
                 }
-                
-                
-                
-                
+            
             }
             else {
-                if(self.ninja.position.y > Constants.minCamPos){
+                if(self.ninja.position.y > Constants.minCamPos - iphoneEqualizer){
                     point = self.ninja.position
                 }
                 else {
-                    point = CGPointMake(self.ninja.position.x, Constants.minCamPos - 100)
-                    
-                }
-                
-            }
-            
-        }
-        
-        
-        else {
-            if(self.ninja.isInMoveable && self.ninja.mWall != nil) {
-                
-            if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos){
-                    point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
-            }
-            else {
-                    point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos)
-                
-                }
-
-            
-            
-            
-            }
-            else {
-                if(self.ninja.position.y > Constants.minCamPos){
-                    point = self.ninja.position
-                }
-                else {
-                point = CGPointMake(self.ninja.position.x, Constants.minCamPos)
+                    point = CGPointMake(self.ninja.position.x, Constants.minCamPos - iphoneEqualizer)
                 
                 }
 
             }
-        }
+//        }
 
 
         
-        centerWorldOnPoint(point)
+        centerWorldOnPoint(CGPointMake(point.x, point.y))
 
     }
     
@@ -977,18 +1057,19 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         self.worldLayer.position = CGPointMake(posX, posY)
         
-        let parallaxAmount : CGFloat = 1.2
-        let parallaxAmountBack : CGFloat = 1.1
+        let parallaxAmount : CGFloat = 1.2 * self.worldScale
+        let parallaxAmountBack : CGFloat = 1.1 * self.worldScale
+
 
         
         //Parallax Montain
         posX = self.frontMoutainLayer.position.x + cameraPositionInScene!.x / parallaxAmount
-        posY = self.frontMoutainLayer.position.y + cameraPositionInScene!.y / parallaxAmount
+        posY = self.frontMoutainLayer.position.y + cameraPositionInScene!.y / (parallaxAmount + 0.2)
         self.frontMoutainLayer.position = CGPointMake(posX, posY)
         
         //Parallax Montain Back
         posX = self.backMountainLayer.position.x + cameraPositionInScene!.x / parallaxAmountBack
-        posY = self.backMountainLayer.position.y + cameraPositionInScene!.y / parallaxAmountBack
+        posY = self.backMountainLayer.position.y + cameraPositionInScene!.y / (parallaxAmountBack + 0.2)
         self.backMountainLayer.position = CGPointMake(posX, posY)
         
         
