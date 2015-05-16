@@ -190,7 +190,7 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt29ENQDAQANDawy42sJ85LeC3EdKgVNv3vkQTuY/rcbgQAAAASBlPjnOcAwAAiOkbAOC/Uu/83MfrN7y83oq1dABkk6tuqX8A18y9PDTwiH8O+DO5yB3yBuA+NbQdU+kA4ENHtevqHhhPrgMAEPPZBdq2lA4AAKBTei0AAABaUOtceM/z7jXHvrcBiqEEeQ==
+   eJzt27sNwzAMBUA5rWbwLN4g+3nOLJDWENjYgM0wumsEfYrXCCABqTUAAADOWi+uRWcAAACOenYAAICJvW7ej/RWrwb8ZAcAgOLeS3YCKhhrxGherY4EAIDZbdkB4EFR33r2DvRhBACIXHmrAdSxZwcAAJiUXgsAAIB/cMe/8Cdk/Hf/FZWzj74sNwNd
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
