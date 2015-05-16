@@ -19,6 +19,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     var teste : SKNode!
     
+    var mWallTempo2 : SKPhysicsBody!
+
+    
     var ninjaPosTemp : CGPoint!
     var mWallTempo : SKPhysicsBody!
     
@@ -1042,6 +1045,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     }
     
     func shakeAndFall(node : SKNode, duration : CGFloat){
+        self.mWallTempo2 = self.ninja.mWall
+        
         self.ninja.mWall = nil
         let shake = SKAction.moveBy(CGVectorMake(0, 15), duration: NSTimeInterval(0.1))
         let shakeBack = SKAction.moveBy(CGVectorMake(0, -15), duration: NSTimeInterval(0.1))
@@ -1332,8 +1337,17 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             if(self.ninja.isInMoveable) {
                 self.ninja.physicsBody!.pinned = false
-                self.ninjaPosTemp = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
-                self.mWallTempo = self.ninja.mWall
+                
+                var mWallTemp : SKPhysicsBody!
+                if(self.ninja.mWall != nil) {
+                    mWallTemp = self.ninja.mWall
+                }
+                else {
+                    mWallTemp = self.mWallTempo2
+                }
+                
+                self.ninjaPosTemp = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, mWallTemp.node!.position.y + self.ninja.position.y)
+                self.mWallTempo = mWallTemp
                 self.ninja.mWall = nil
 
                 self.ninja.removeFromParent()

@@ -82,7 +82,7 @@ class StartScreenViewController: ItemViewCtrl {
             
             
 
-            self.constraintDeCima.constant = self.constraintDeCima.constant + 5
+            self.constraintDeCima.constant = self.constraintDeCima.constant + 50
             //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant + 100
             //self.constrintDeCima.constant = self.constrintDeCima.constant + 100
             //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant - 100

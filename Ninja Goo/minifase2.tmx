@@ -29,7 +29,9 @@
   <tile id="0">
    <properties>
     <property name="direction" value="1"/>
-    <property name="isMoveable" value="7"/>
+    <property name="isFaller" value="500"/>
+
+
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
@@ -40,7 +42,8 @@
   <tile id="0">
    <properties>
     <property name="direction" value="2"/>
-    <property name="isMoveable" value="7"/>
+    <property name="isFaller" value="500"/>
+
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
    </properties>
