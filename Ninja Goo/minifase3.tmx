@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="62">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="63">
  <tileset firstgid="1" name="plataforma3" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -131,5 +131,8 @@
   <object id="53" x="1950" y="0" width="50" height="400"/>
   <object id="54" x="2300" y="0" width="50" height="400"/>
   <object id="61" x="4250" y="0" width="300" height="50"/>
+ </objectgroup>
+ <objectgroup name="Portal">
+  <object id="62" name="portal" x="7612.5" y="1300"/>
  </objectgroup>
 </map>
