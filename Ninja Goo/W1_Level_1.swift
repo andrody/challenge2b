@@ -127,8 +127,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static var minCamPos : CGFloat!
         static let gravity = CGVectorMake(0, -50)
         static let minForce : CGFloat = 30.0
-        static let maxForce : CGFloat = 100.0
-        static let maxForceGeral : CGFloat = maxForce + 70
+        static let maxForce : CGFloat = 80.0
+        static let maxForceGeral : CGFloat = maxForce
         static let maxDistanceSlide : CGFloat = 400.0
 
         
@@ -1329,7 +1329,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             println("comecou toque")
 
-//            if(self.HUD!.pauseButton!.containsPoint(self.HUD!.convertPoint(location, fromNode: self))){
+            if(self.pauseButton.containsPoint(location)){
+                println("pausou")
+            }
 //                println("comecou toque2")
 //
 //                //self.gameStarted = false
@@ -1346,11 +1348,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //                //self.showLeader()
 //            }
             
-            if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
-                println("comecou toque4")
-
-                self.initialTapPosition = location
-                self.isDraging = true
+            else {
+                if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
+                    println("comecou toque4")
+                    
+                    self.initialTapPosition = location
+                    self.isDraging = true
+                }
             }
 //            else{
 //                println("comecou toque5")
