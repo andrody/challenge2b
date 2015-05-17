@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="63">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="64">
  <tileset firstgid="1" name="plataforma3" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -82,7 +82,7 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt3FsKwjAQBdDaXXSF7n8H4m+hJJDmNXPOZ20hjpPHFfE4AAAA+PvMHkBS5wvXz8Lr9GHOxOGzBErsv4ygj9YX4cygzwCAqEq5jXdkq+lVeV+P/ouQPyCSbOsfwO6cpcapPTPvKvr7G+07ewA08/0LGWVbu0bMafsr0cgfwArsr9zJam3k33rqsp6oe8LbvbZr78ofAHuyfkM/fqvbRv6tl7Eu2efHLK29dn8+Y+9CdtZvgJii59/e4+udf1ev75PautT+H+rTfT8/ygHE
+   eJzt3FsOgjAQBVBkF67Q5blF4y8JoQm0nc6c86mY1HH6uIS4bQAAAPy9Zg+gqP2B1/eL9+nDnMnDbwlcsf8ygj6KL8OZQZ8BAFld5TaeUa2m78brevRfhvwBmVRb/wBW5yw1TuuZeVXZv18U39kDoJn7L1T0mT2AwUbMafsr2cgfQAT2V45ktXtWyb8R7qlErEt1WfeEp3tt1d6VPwDWZP2Gfjyre88q+TeCinWpPj9mudtrx89X7F2ozvoNkFP2/Nt7fL3zb/T6nmmtS+v/oZ5d9wPaKAK7
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
@@ -91,7 +91,7 @@
   </data>
  </layer>
  <objectgroup name="Ninja">
-  <object id="1" name="ninja" x="100" y="850"/>
+  <object id="1" name="ninja" x="100" y="937.5"/>
  </objectgroup>
  <objectgroup name="Ground">
   <object id="2" name="ground" x="50" y="1600" width="26.1025" height="21.981"/>
@@ -111,8 +111,9 @@
   <object id="30" x="7500" y="1450" width="500" height="550"/>
   <object id="31" x="7700" y="450" width="300" height="1000"/>
   <object id="55" x="4700" y="1050" width="300" height="100"/>
-  <object id="57" x="5550" y="950" width="300" height="100"/>
+  <object id="57" x="5850" y="950" width="300" height="100"/>
   <object id="58" x="4250" y="50" width="300" height="750"/>
+  <object id="63" x="5300" y="1300" width="300" height="100"/>
  </objectgroup>
  <objectgroup name="Espinho">
   <object id="32" x="250" y="1350" width="50" height="50"/>
