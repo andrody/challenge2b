@@ -1146,10 +1146,15 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             node.physicsBody!.linearDamping = 0
             node.physicsBody!.mass = 1000
             node.physicsBody!.dynamic = true
-            self.ninja.mWall = nil
+            //self.ninja.mWall = nil
+            //self.ninja.mWall = self.mWallTempo2 olhe AQUI
         }
         
+        
+        
         node.runAction(SKAction.sequence([wait, run]))
+       
+        
     }
     
     func colideComWall(contact: SKPhysicsContact){

@@ -37,49 +37,49 @@ class SceneManager {
             corFundo: [49,67,131])
         
         var faseTwo = Scenario(nome: "minifase2",
-            corMontanha: [25,33,65],
-            corMontanhaClara: [43, 57, 109],
-            corNuvemBack: [25,117,166],
-            corNuvemMeio: [43,147,202],
-            corNuvemFront: [70,161,209],
+            corMontanha: [0,160,3],
+            corMontanhaClara: [119, 215, 0],
+            corNuvemBack: [0,90,86],
+            corNuvemMeio: [0,116,111],
+            corNuvemFront: [0,157,150],
             corPlataforma: [16,31,39],
-            corFundo: [49,67,131])
+            corFundo: [191,231,231])
         
         var faseThree = Scenario(nome: "minifase3",
-            corMontanha: [25,33,65],
-            corMontanhaClara: [43, 57, 109],
-            corNuvemBack: [25,117,166],
-            corNuvemMeio: [43,147,202],
-            corNuvemFront: [70,161,209],
+            corMontanha: [178,0,103],
+            corMontanhaClara: [214, 119, 174],
+            corNuvemBack: [64,0,80],
+            corNuvemMeio: [98,0,123],
+            corNuvemFront: [124,0,155],
             corPlataforma: [16,31,39],
-            corFundo: [49,67,131])
+            corFundo: [227,201,234])
         
         var faseFour = Scenario(nome: "minifase4",
-            corMontanha: [25,33,65],
-            corMontanhaClara: [43, 57, 109],
-            corNuvemBack: [25,117,166],
-            corNuvemMeio: [43,147,202],
-            corNuvemFront: [70,161,209],
+            corMontanha: [220,159,0],
+            corMontanhaClara: [255, 185, 0],
+            corNuvemBack: [164,82,0],
+            corNuvemMeio: [222,111,0],
+            corNuvemFront: [255,128,0],
             corPlataforma: [16,31,39],
-            corFundo: [49,67,131])
+            corFundo: [255,232,168])
         
         var faseFive = Scenario(nome: "minifase5",
-            corMontanha: [25,33,65],
-            corMontanhaClara: [43, 57, 109],
-            corNuvemBack: [25,117,166],
-            corNuvemMeio: [43,147,202],
-            corNuvemFront: [70,161,209],
+            corMontanha: [0,139,134],
+            corMontanhaClara: [144, 199, 196],
+            corNuvemBack: [119,0,9],
+            corNuvemMeio: [148,1,11],
+            corNuvemFront: [242,1,18],
             corPlataforma: [16,31,39],
-            corFundo: [49,67,131])
+            corFundo: [228,233,130])
         
         var faseSix = Scenario(nome: "minifase6",
-            corMontanha: [25,33,65],
-            corMontanhaClara: [43, 57, 109],
-            corNuvemBack: [25,117,166],
-            corNuvemMeio: [43,147,202],
-            corNuvemFront: [70,161,209],
+            corMontanha: [0,64,99],
+            corMontanhaClara: [0, 66, 102],
+            corNuvemBack: [0,33,64],
+            corNuvemMeio: [0,49,96],
+            corNuvemFront: [0,86,167],
             corPlataforma: [16,31,39],
-            corFundo: [49,67,131])
+            corFundo: [0,120,185])
         
         fases.append(faseOne)
         fases.append(faseTwo)

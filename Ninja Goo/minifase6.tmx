@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="98">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="100">
  <tileset firstgid="1" name="espinho_tile" tilewidth="50" tileheight="50">
   <image source="espinho_tile.png" width="50" height="50"/>
  </tileset>
@@ -68,7 +68,7 @@
   <tile id="1">
    <properties>
     <property name="direction" value="1"/>
-    <property name="isFaller" value="1000"/>
+    <property name="isFaller" value="100"/>
     <property name="isMoveable" value="5"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>
