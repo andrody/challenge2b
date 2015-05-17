@@ -221,7 +221,7 @@
   <object id="102" name="ground" x="26.0794" y="1758.91"/>
  </objectgroup>
  <objectgroup name="Ninja">
-  <object id="103" name="ninja" x="6212.5" y="800"/>
+  <object id="103" name="ninja" x="100" y="1450"/>
  </objectgroup>
  <objectgroup name="Corpos">
   <object id="109" x="0" y="1500" width="200" height="500"/>

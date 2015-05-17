@@ -14,7 +14,7 @@
 		656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343D91B092C1A002E2031 /* minifase2.tmx */; };
 		656343E01B092E33002E2031 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343DF1B092E33002E2031 /* minifase1.tmx */; };
 		656343E61B093065002E2031 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E51B093065002E2031 /* minifase3.tmx */; };
-		656343E81B093604002E2031 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E71B093604002E2031 /* minifase5.tmx */; };
+		656343EA1B0936F9002E2031 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E91B0936F9002E2031 /* minifase5.tmx */; };
 		C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */; };
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
@@ -73,7 +73,7 @@
 		656343D91B092C1A002E2031 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		656343DF1B092E33002E2031 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343E51B093065002E2031 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
-		656343E71B093604002E2031 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
+		656343E91B0936F9002E2031 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
 		C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				656343D91B092C1A002E2031 /* minifase2.tmx */,
 				656343E51B093065002E2031 /* minifase3.tmx */,
 				65003B7C1B09224500C30286 /* minifase4.tmx */,
-				656343E71B093604002E2031 /* minifase5.tmx */,
+				656343E91B0936F9002E2031 /* minifase5.tmx */,
 				65003B7E1B09224500C30286 /* minifase6.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
@@ -407,7 +407,7 @@
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
 				65003B821B09224500C30286 /* minifase4.tmx in Resources */,
-				656343E81B093604002E2031 /* minifase5.tmx in Resources */,
+				656343EA1B0936F9002E2031 /* minifase5.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
 				656343E01B092E33002E2031 /* minifase1.tmx in Resources */,
