@@ -17,7 +17,7 @@
         <!--Menu View Controller-->
         <scene sceneID="lfK-Qf-sWb">
             <objects>
-                <viewController id="ZA2-tp-xmd" customClass="MenuViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZA2-tp-xmd" customClass="MenuViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lYz-wG-255"/>
                         <viewControllerLayoutGuide type="bottom" id="WuK-LN-r4M"/>

@@ -14,15 +14,27 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     var levelName : String!
     
+    //HUD
+    
     var pauseButton: SKSpriteNode!
+
+    var setaButton: SKSpriteNode!
+
+    
+    let hudLayer = SKNode()
 
     var iphoneEqualizer : CGFloat = 0
     
     var worldScale : CGFloat!
+    
+    var endLevel = false
+    
 
 
     //Scores
     var score:Int = 0
+    var jumps : Int = 0
+    var attemps : Int = 0
     
     var teste : SKNode!
     
@@ -127,8 +139,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static var minCamPos : CGFloat!
         static let gravity = CGVectorMake(0, -50)
         static let minForce : CGFloat = 30.0
-        static let maxForce : CGFloat = 100.0
-        static let maxForceGeral : CGFloat = maxForce + 70
+        static let maxForce : CGFloat = 80.0
+        static let maxForceGeral : CGFloat = maxForce
         static let maxDistanceSlide : CGFloat = 400.0
 
         
@@ -181,7 +193,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
         self.platformLayer.zPosition = Constants.zPosWall
 
-
+        self.addChild(hudLayer)
 
 //       populateLayersFromWorld(templateWorld)
         
@@ -559,19 +571,19 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func resizePositions(){
     
-        if(UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft || UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight) {
+        if (isLandscape()) {
             
-            if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone){
+            if(isIphone()){
                 self.worldLayer.setScale(Constants.defaultLanscapeIphone)
                 self.worldScale = Constants.defaultLanscapeIphone
             }
             
             if(self.pauseButton != nil) {
-                self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.width/2 + self.pauseButton.size.width + 20, self.size.height/2 - self.pauseButton.size.height - 20))
+                self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.width/2 + self.pauseButton.size.width + 20, self.size.height/2 - self.pauseButton.size.height - 200))
             }
         }
         else {
-            if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone){
+            if(isIphone()){
                 self.worldLayer.setScale(Constants.defaultPortraitIphone)
                 self.worldScale = Constants.defaultPortraitIphone
 
@@ -579,7 +591,16 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             if(self.pauseButton != nil) {
 
-                self.pauseButton!.position = CGPointMake(-self.size.height/2 + self.pauseButton.size.width*4 - 50, self.size.width/2 - self.pauseButton.size.height*4 - 10)
+
+                
+                if(isIphone()){
+
+                    self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.height/2 + self.pauseButton.size.width*5, self.size.width/2 - self.pauseButton.size.height*4))
+                }
+                
+                else {
+                    self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.height/2 + self.pauseButton.size.width*4 - 50, self.size.width/2 - self.pauseButton.size.height*4 - 200))
+                }
             }
         }
 
@@ -1209,6 +1230,108 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     }
     
+    // MARK : HUD
+    
+    func endsLevel() {
+        
+        endLevel = true
+        self.pauseButton.hidden = true
+        
+        var distanceConstX : CGFloat = 320.0
+        var distanceConstY : CGFloat = 100.0
+        
+        let distanceConstYInitial : CGFloat = 300.0
+
+        var fontSize : CGFloat = 120
+
+        if(isLandscape()){
+            fontSize = fontSize * 1.5
+            distanceConstY = distanceConstY * 1.5
+            distanceConstX = distanceConstX * 1.5
+        }
+            
+        
+        let congrats = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBlack")
+        congrats.text = "WELL DONE!"
+        congrats.fontSize = fontSize
+        congrats.position = CGPointMake(-distanceConstX, distanceConstYInitial)
+        congrats.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
+        
+        let tries = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBlack")
+        tries.text = "ATTEMPT #21"
+        tries.fontSize = fontSize/2
+        tries.position = CGPointMake(-distanceConstX, distanceConstYInitial - distanceConstY)
+        tries.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
+        
+        
+        let jumps = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBlack")
+        jumps.text = "\(self.jumps) JUMPS"
+        jumps.fontSize = fontSize/2
+        jumps.position = CGPointMake(-distanceConstX, distanceConstYInitial - distanceConstY * 1.85)
+        jumps.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
+
+        
+        let vidro = SKSpriteNode(texture: SKTexture(imageNamed: "branco"), size: self.size)
+        vidro.position = CGPointZero
+        //vidro.alpha = 0.8
+        
+        let color = SceneManager.sharedInstance.faseEscolhida.corNuvemBack
+        vidro.colorBlendFactor = 1
+        vidro.color = SKColor(red: color[0]/255, green: color[1]/255, blue: color[2]/255, alpha: 0.8)
+        
+        
+        self.setaButton = SKSpriteNode(texture: SKTexture(imageNamed: "seta"), size: CGSizeMake(distanceConstY*3, distanceConstY*3.3))
+        setaButton.position = CGPointMake(0,  -distanceConstY * 1.8)
+        
+//        let moveSeta = SKAction.rotateByAngle(ConvertUtilities.degreesToRadians(-5), duration: 0.2)
+//        let moveSetaBack = SKAction.rotateByAngle(ConvertUtilities.degreesToRadians(10), duration: 0.4)
+//        let moveSetaDefault = SKAction.rotateByAngle(ConvertUtilities.degreesToRadians(-5), duration: 0.2)
+//
+//        let spinForever = SKAction.repeatActionForever(SKAction.sequence([moveSeta, moveSetaBack, moveSetaDefault]))
+//        seta.runAction(spinForever)
+        
+        let moveSeta = SKAction.moveByX(0, y: 20, duration: 0.6)
+        let moveSetaBack = SKAction.moveByX(0, y: -20, duration: 0.6)
+        
+        let moveForever = SKAction.repeatActionForever(SKAction.sequence([moveSeta, moveSetaBack]))
+        setaButton.runAction(moveForever)
+
+        
+        self.hudLayer.addChild(vidro)
+        
+        self.hudLayer.addChild(congrats)
+        self.hudLayer.addChild(tries)
+        self.hudLayer.addChild(jumps)
+        self.hudLayer.addChild(self.setaButton)
+
+        self.hudLayer.position = CGPointZero
+        
+        self.hudLayer.zPosition = 990
+
+
+    }
+    
+    // MARK: Helper
+    
+    func isIphone() -> Bool{
+        
+        
+        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone){
+            return true
+        }
+        return false
+        
+    }
+    
+    func isLandscape() -> Bool{
+        
+        
+        if(UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft || UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight) {
+            return true
+        }
+        return false
+        
+    }
     
     // MARK: Collision
 
@@ -1230,7 +1353,6 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
                     println("colidiu com spike")
-
                     self.runAction(SKAction.playSoundFileNamed("impact.wav", waitForCompletion: true))
                     
                     if(!self.ninja.isDead){
@@ -1324,48 +1446,70 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             let node = self.nodeAtPoint(location)
             
             println("comecou toque")
-
-//            if(self.HUD!.pauseButton!.containsPoint(self.HUD!.convertPoint(location, fromNode: self))){
-//                println("comecou toque2")
-//
-//                //self.gameStarted = false
-//                //self.HUD?.moveButtonsInScreen()
-//                self.teste.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
-//                self.frontCloudLayer.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
-//
-//                
-//            }
             
-//            if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
-//                println("comecou toque3")
-//
-//                //self.showLeader()
-//            }
-            
-            if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
-                println("comecou toque4")
+            if(endLevel) {
+                if(self.setaButton.containsPoint(location)){
 
-                self.initialTapPosition = location
-                self.isDraging = true
+                    self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
+                    SceneManager.sharedInstance.gameViewCtrl.backToMenu()
+                    
+                }
             }
-//            else{
-//                println("comecou toque5")
-//
-//                
-//                if(self.HUD!.playButton!.containsPoint(location) && self.gameStarted == false){
-//                    
-//                    self.startGame()
-//                }
-//                else{
-//                    
-//                    if(self.gameStarted == true){
-//                        
-//                        
-//                    }
-//                }
-//                
-//                
-//            }
+            
+            else {
+
+                if(self.pauseButton.containsPoint(location)){
+                    println("pausou")
+                    
+                    self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
+                    SceneManager.sharedInstance.gameViewCtrl.backToMenu()
+
+                    //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as ViewController
+                    
+                }
+    //                println("comecou toque2")
+    //
+    //                //self.gameStarted = false
+    //                //self.HUD?.moveButtonsInScreen()
+    //                self.teste.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+    //                self.frontCloudLayer.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+    //
+    //                
+    //            }
+                
+    //            if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
+    //                println("comecou toque3")
+    //
+    //                //self.showLeader()
+    //            }
+                
+                else {
+                    if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
+                        println("comecou toque4")
+                        
+                        self.initialTapPosition = location
+                        self.isDraging = true
+                    }
+                }
+    //            else{
+    //                println("comecou toque5")
+    //
+    //                
+    //                if(self.HUD!.playButton!.containsPoint(location) && self.gameStarted == false){
+    //                    
+    //                    self.startGame()
+    //                }
+    //                else{
+    //                    
+    //                    if(self.gameStarted == true){
+    //                        
+    //                        
+    //                    }
+    //                }
+    //                
+    //                
+    //            }
+            }
         }
     }
     
@@ -1457,6 +1601,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
 
             self.ninja.jump(amountToMoveX: speed.0, amountToMoveY: speed.1)
+            
+            self.jumps = self.jumps + 1
             
             println("speedY1: \(speedY), speedY2: \(speed.1)")
             println("speedX1: \(speedX), speedX2: \(speed.0)")
