@@ -41,7 +41,7 @@
   </data>
  </layer>
  <objectgroup name="Ninja">
-  <object id="3" name="ninja" x="101.86" y="1111.6"/>
+  <object id="3" name="ninja" x="100" y="700"/>
  </objectgroup>
  <objectgroup name="Corpos">
   <object id="4" x="0" y="1150" width="300" height="500"/>
