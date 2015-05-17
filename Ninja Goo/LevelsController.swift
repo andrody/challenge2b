@@ -112,6 +112,7 @@ class LevelsController: ItemViewCtrl {
         SceneManager.sharedInstance.playClickSound()
 
         var gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
+        SceneManager.sharedInstance.gameViewCtrl = gVC
         
         W1_Level_1.loadSceneAssetsWithCompletionHandler(level) { loadedScene in
             

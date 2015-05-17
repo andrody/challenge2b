@@ -1331,6 +1331,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
             if(self.pauseButton.containsPoint(location)){
                 println("pausou")
+                
+                SceneManager.sharedInstance.gameViewCtrl.backToMenu()
+
+                //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as ViewController
+                
             }
 //                println("comecou toque2")
 //

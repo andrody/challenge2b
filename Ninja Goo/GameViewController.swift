@@ -49,7 +49,12 @@ class GameViewController: UIViewController {
 //        }
     }
 
+    func backToMenu(){
+        //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+        self.dismissViewControllerAnimated(true, completion: nil)
+        println("BACK TO MEnu")
 
+    }
  
 
     override func shouldAutorotate() -> Bool {
