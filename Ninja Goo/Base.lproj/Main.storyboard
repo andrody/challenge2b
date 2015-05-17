@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-u1-8bL">
-                                <rect key="frame" x="-2" y="-10" width="602" height="612"/>
+                                <rect key="frame" x="-2" y="-16" width="602" height="612"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taptoplay" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-Bp-m2g">
                                 <rect key="frame" x="170" y="558" width="260" height="26"/>
@@ -99,8 +99,8 @@
                                     <constraint firstAttribute="height" constant="26" id="RzY-yF-Zrg"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-Tb-ZAh">
-                                <rect key="frame" x="200" y="195" width="200" height="108"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-Tb-ZAh">
+                                <rect key="frame" x="75" y="179" width="448" height="242"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="109:59" id="8Ta-JJ-R9u"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="iPL-3R-clt"/>
@@ -110,14 +110,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerX" secondItem="dnV-Bp-m2g" secondAttribute="centerX" priority="750" id="3kf-ZF-iqu"/>
-                            <constraint firstItem="dnV-Bp-m2g" firstAttribute="top" secondItem="Fh1-Tb-ZAh" secondAttribute="bottom" priority="750" constant="255" id="7OT-eb-Vae"/>
-                            <constraint firstItem="NP7-u1-8bL" firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="301:54" id="CfK-ib-dZh"/>
                             <constraint firstAttribute="trailing" secondItem="NP7-u1-8bL" secondAttribute="trailing" id="Gxy-Fe-MHe"/>
+                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="width" secondItem="5rW-01-OQW" secondAttribute="height" multiplier="56:75" id="NVb-11-3MB"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="top" secondItem="5rW-01-OQW" secondAttribute="top" id="Vne-cE-ldX"/>
                             <constraint firstAttribute="bottom" secondItem="dnV-Bp-m2g" secondAttribute="bottom" priority="750" constant="16" id="XyQ-aN-ggz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="NP7-u1-8bL" secondAttribute="bottom" constant="-2" id="aO1-Aw-0Td"/>
                             <constraint firstItem="dnV-Bp-m2g" firstAttribute="centerX" secondItem="5rW-01-OQW" secondAttribute="centerX" priority="750" id="fZG-Xl-mkI"/>
-                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" priority="750" constant="175" id="hUf-ou-Udb"/>
+                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" constant="50" id="hUf-ou-Udb"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerY" secondItem="NP7-u1-8bL" secondAttribute="centerY" priority="750" constant="-47" id="l1C-DF-Dqq"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="leading" secondItem="5rW-01-OQW" secondAttribute="leadingMargin" constant="-18" id="yx1-6N-qee"/>
                         </constraints>

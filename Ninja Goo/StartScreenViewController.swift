@@ -50,6 +50,13 @@ class StartScreenViewController: ItemViewCtrl {
     
     override func viewDidAppear(animated: Bool) {
         
+        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad){
+            //
+            self.constraintDeCima.constant = self.constraintDeCima.constant + 125
+            //            self.contrintDeBaixo.constant = 150
+            //
+            //    
+        }
         
         animateTaptoPlay()
         animateLogo()
@@ -58,16 +65,12 @@ class StartScreenViewController: ItemViewCtrl {
     
     func animateLogo() {
         
+        
+        
         self.view.layoutIfNeeded()
         
         
-//        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad){
-//            
-//            self.constrintDeCima.constant = 150
-//            self.contrintDeBaixo.constant = 150
-//            
-//    
-//        }
+       
 //        else{
 //            self.constrintDeCima.constant = 180
 //            self.contrintDeBaixo.constant = 200
