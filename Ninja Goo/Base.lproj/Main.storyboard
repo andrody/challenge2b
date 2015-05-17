@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="height" constant="26" id="RzY-yF-Zrg"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-Tb-ZAh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-Tb-ZAh">
                                 <rect key="frame" x="200" y="195" width="200" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="109:59" id="8Ta-JJ-R9u"/>
@@ -110,6 +110,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerX" secondItem="dnV-Bp-m2g" secondAttribute="centerX" priority="750" id="3kf-ZF-iqu"/>
+                            <constraint firstItem="dnV-Bp-m2g" firstAttribute="top" secondItem="Fh1-Tb-ZAh" secondAttribute="bottom" priority="750" constant="255" id="7OT-eb-Vae"/>
+                            <constraint firstItem="NP7-u1-8bL" firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="301:54" id="CfK-ib-dZh"/>
                             <constraint firstAttribute="trailing" secondItem="NP7-u1-8bL" secondAttribute="trailing" id="Gxy-Fe-MHe"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="top" secondItem="5rW-01-OQW" secondAttribute="top" id="Vne-cE-ldX"/>
                             <constraint firstAttribute="bottom" secondItem="dnV-Bp-m2g" secondAttribute="bottom" priority="750" constant="16" id="XyQ-aN-ggz"/>
