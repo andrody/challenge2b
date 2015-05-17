@@ -19,6 +19,8 @@
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
+		C5136B691B0923A20098BC91 /* teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5136B671B0923A20098BC91 /* teleport.wav */; };
+		C5136B6A1B0923A20098BC91 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5136B681B0923A20098BC91 /* victory.wav */; };
 		C520FEF61B0657390021615C /* shaking.wav in Resources */ = {isa = PBXBuildFile; fileRef = C520FEF51B0657390021615C /* shaking.wav */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
@@ -76,6 +78,8 @@
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
+		C5136B671B0923A20098BC91 /* teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teleport.wav; sourceTree = "<group>"; };
+		C5136B681B0923A20098BC91 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
 		C520FEF51B0657390021615C /* shaking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shaking.wav; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 		C5CB3F711ACD6E59001A37B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				C5136B671B0923A20098BC91 /* teleport.wav */,
+				C5136B681B0923A20098BC91 /* victory.wav */,
 				C5CB3F761ACD6ECF001A37B7 /* wall.wav */,
 				C58F73B11B060C7F00D6E6DB /* click.wav */,
 				C5CB3F721ACD6E90001A37B7 /* impact.wav */,
@@ -407,9 +413,11 @@
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				65C159D91B07A9B900206F19 /* minifase5.tmx in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
+				C5136B691B0923A20098BC91 /* teleport.wav in Resources */,
 				65C159F91B07D3CA00206F19 /* minifase3.tmx in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
 				65C159F11B07B01D00206F19 /* minifase1.tmx in Resources */,
+				C5136B6A1B0923A20098BC91 /* victory.wav in Resources */,
 				C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
