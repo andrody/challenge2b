@@ -567,7 +567,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             }
             
             if(self.pauseButton != nil) {
-                self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.width/2 + self.pauseButton.size.width + 20, self.size.height/2 - self.pauseButton.size.height - 20))
+                self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.width/2 + self.pauseButton.size.width + 20, self.size.height/2 - self.pauseButton.size.height - 200))
             }
         }
         else {
@@ -579,7 +579,16 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             if(self.pauseButton != nil) {
 
-                self.pauseButton!.position = CGPointMake(-self.size.height/2 + self.pauseButton.size.width*4 - 50, self.size.width/2 - self.pauseButton.size.height*4 - 10)
+
+                
+                if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone){
+
+                    self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.height/2 + self.pauseButton.size.width*5, self.size.width/2 - self.pauseButton.size.height*4))
+                }
+                
+                else {
+                    self.pauseButton!.position = Hud.convertPointToIpadUp(CGPointMake(-self.size.height/2 + self.pauseButton.size.width*4 - 50, self.size.width/2 - self.pauseButton.size.height*4 - 200))
+                }
             }
         }
 
