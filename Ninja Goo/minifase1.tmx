@@ -74,6 +74,9 @@
  <objectgroup name="Ninja">
   <object id="1" name="ninja" x="99.0099" y="2158.42"/>
  </objectgroup>
+ <objectgroup name="Portal">
+     <object id="1" name="portal" x="310.0099" y="3400.42"/>
+ </objectgroup>
  <objectgroup name="Ground">
   <object id="2" name="ground" x="50" y="3750" width="51.2295" height="53.791"/>
   <object id="3" x="5005.64" y="-1082.3"/>

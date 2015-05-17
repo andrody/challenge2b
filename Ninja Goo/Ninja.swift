@@ -20,6 +20,7 @@ enum ColliderType: UInt32 {
     case Spike = 4
     case RotateWall = 8
     case FallerWall = 16
+    case Portal = 32
 
 }
 
@@ -129,8 +130,8 @@ class Ninja: SKNode {
         self.physicsBody?.angularDamping = 0.0
         self.physicsBody?.linearDamping = 1.5
         self.physicsBody?.categoryBitMask = ColliderType.Ninja.rawValue
-        self.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue
-        self.physicsBody?.collisionBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue
+        self.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue | ColliderType.Portal.rawValue
+        self.physicsBody?.collisionBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue | ColliderType.Portal.rawValue
         self.physicsBody?.mass = 1.0
         self.physicsBody?.usesPreciseCollisionDetection = true
 

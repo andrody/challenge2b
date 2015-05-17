@@ -54,6 +54,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     var ninja : Ninja! = Ninja()
     let ninjaLayer = SKNode()
     
+    var portal : SKSpriteNode!
+    
     //Mountais
     let frontMoutainLayer = SKNode()
     let backMountainLayer = SKNode()
@@ -129,6 +131,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         static let midAnchor = CGPointMake(0.5, 0.5)
         static var defaultSpawnPoint = CGPoint(x: 0, y: 0)
+        static var defaultPortalPoint = CGPoint(x: 0, y: 0)
         static let defaultScale :CGFloat = 1.0
         static let defaultLanscapeIphone :CGFloat = 1.5
         static let defaultPortraitIphone :CGFloat = 1.3
@@ -245,8 +248,41 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.addChild(self.worldLayer)
         
         Constants.defaultSpawnPoint = getStartPosition(map, groupName: "Ninja", name: "ninja")
+        Constants.defaultPortalPoint = getStartPosition(map, groupName: "Portal", name: "portal")
         Constants.defaultGroundPoint = getStartPosition(map, groupName: "Ground", name: "ground")
         Constants.minCamPos = Constants.defaultGroundPoint.y + self.scene!.size.height/2
+        
+        
+        //Portal
+        self.portal = SKSpriteNode(texture: SKTexture(imageNamed: "portal"))
+        self.portal.name = "portal"
+        self.portal.anchorPoint = CGPointMake(0.5 , 0.5)
+        self.portal.zPosition = 90
+        self.portal.setScale(0.2)
+        self.portal.position = Constants.defaultPortalPoint
+        
+        let movePortal = SKAction.moveByX(0, y: 10, duration: 0.6)
+        let movePortalBack = SKAction.moveByX(0, y: -10, duration: 0.6)
+        self.portal.physicsBody = SKPhysicsBody(rectangleOfSize: self.portal.size)
+        self.portal.physicsBody!.categoryBitMask = ColliderType.Portal.rawValue
+        self.portal.physicsBody!.dynamic = false
+        
+//        let radians = ConvertUtilities.degreesToRadians(CGFloat(360))
+        
+//        let rotateAction = SKAction.rotateByAngle(radians, duration: NSTimeInterval(3.0))
+//        let rotateActionBack = SKAction.rotateByAngle(radians, duration: NSTimeInterval(5.0))
+//        let scale = SKAction.scaleTo(0.185, duration: NSTimeInterval(1.0))
+//        let scale2 = SKAction.scaleTo(0.2, duration: NSTimeInterval(0.8))
+//
+        let moveForever = SKAction.repeatActionForever(SKAction.sequence([movePortal, movePortalBack]))
+//        let moveForever2 = SKAction.repeatActionForever(SKAction.sequence([scale,scale2]))
+
+        portal.runAction(moveForever)
+        //portal.runAction(moveForever2)
+
+
+        
+        self.worldLayer.addChild(self.portal)
         
 
 //        self.worldLayer.position = CGPointMake(self.worldLayer.position.x - Constants.defaultGroundPoint.x, self.worldLayer.position.y - v)
@@ -965,7 +1001,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func changeNinjaCollisionCategory(){
         
-        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue
+        self.ninja.physicsBody?.contactTestBitMask = ColliderType.Wall.rawValue | ColliderType.Spike.rawValue | ColliderType.RotateWall.rawValue | ColliderType.FallerWall.rawValue | ColliderType.Portal.rawValue
         self.ninja.isMoving = false
         self.ninja.isDead = false
         //self.ninja.physicsBody?.applyImpulse(CGVectorMake(0 , -9.8 * self.ninja.physicsBody!.mass))
@@ -1234,6 +1270,14 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func endsLevel() {
         
+        self.runAction(SKAction.playSoundFileNamed("teleport.wav", waitForCompletion: false))
+
+        self.ninja.runAction(SKAction.fadeOutWithDuration(NSTimeInterval(0.3)))
+        self.portal.runAction(SKAction.fadeOutWithDuration(NSTimeInterval(0.3)))
+
+        self.ninja.alpha = 0
+        
+        self.hudLayer.alpha = 0
         endLevel = true
         self.pauseButton.hidden = true
         
@@ -1307,6 +1351,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.hudLayer.position = CGPointZero
         
         self.hudLayer.zPosition = 990
+        
+        let fadeIn =  SKAction.fadeInWithDuration(NSTimeInterval(1.0))
+        let victorySound = SKAction.playSoundFileNamed("victory.wav", waitForCompletion: false)
+        self.hudLayer.runAction(SKAction.sequence([fadeIn, victorySound]))
 
 
     }
@@ -1347,6 +1395,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         
             switch(contactMask){
+                
+                case ColliderType.Portal.rawValue | ColliderType.Ninja.rawValue:
+                    if(!self.endLevel) {
+                        self.endsLevel()
+                    }
+
                 
                 case ColliderType.Wall.rawValue | ColliderType.Ninja.rawValue:
                     colideComWall(contact)
