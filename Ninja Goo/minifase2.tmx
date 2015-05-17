@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="103">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="109">
  <tileset firstgid="1" name="plataforma3" tilewidth="400" tileheight="600">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
@@ -190,19 +190,19 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt27sNwzAMBUA5rWbwLN4g+3nOLJDWENjYgM0wumsEfYrXCCABqTUAAADOWi+uRWcAAACOenYAAICJvW7ej/RWrwb8ZAcAgOLeS3YCKhhrxGherY4EAIDZbdkB4EFR33r2DvRhBACIXHmrAdSxZwcAAJiUXgsAAIB/cMe/8Cdk/Hf/FZWzj74sNwNd
+   eJzt270JwzAQBlDFrWbILN7A+2XOLODKEIwKWyAfF73XCP0UXyO4A6kUAAAA7np3rrXOAAAA/KrRAQAAJrYM3m+pJV8N+I0OAADJba/oBGRwrhFb82x1JAAAzG6NDgAPavWtd+9APY0AAIee9xlATp/oAAAAk9J3AQAA8A9G/At/QsR/90jZ8l61AyxnA10=
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2UGKwkAQhlHn/idx9JCShWAGkbQ4/lXd70HvsuimvpCEnE5ANb8/6R2wMv2RpL8+rhPOSn99zNgffeiPJP2RpD+S9EfSjP35/u2jUn+f6kZ/feiPJP2RVKm/T9FfL5eBeW3Xjlz/zH83X7m/c+G9rWLV/mZ81nR0dA7vzkt/vKI/kjx/SdIfSfpjk5qT/uZ35KzV+hvZz6vz6S9Pf/Xob6/qnI66/4v5u6rS3173/rqZvb/t3+J9rdDf43kfV1Wz9zcq0d83ZlD1vtLfnv5I0h+r0R9J3oFI0h9J+gMAAGDUDf3rRzI=
+   eJzt2c2Kg0AQhVHz/k8yPw85uAjRYRA7ZHKr2nOgdy66qU9UXBagms9begdcmf5I0l8f3xPOSn99zNgffeiPJP2RpD+S9EfSjP35/u2jUn+v6kZ/feiPJP2RVKm/V9FfL18D81qvHbn+L//dvP44ctX+ZnzWdHR2Ds/OS38c0R9Jnr8k6Y8k/bFKzUl/8ztz1mr9jezn6Hz6y9NfPfrbqzqns+7/Yn6vqvS3172/bmbv7+P2WFfob3ve7apq9v5GJfp7xwyq3lf629MfSfrjavRHkncgkvRHkv4AAAAY9QOcHEaI
   </data>
  </layer>
  <objectgroup name="Ground">
   <object id="1" name="ground" x="100" y="1700" width="41.3467" height="35.44"/>
  </objectgroup>
  <objectgroup name="Ninja">
-  <object id="2" name="ninja" x="69.0223" y="1021"/>
+  <object id="2" name="ninja" x="100" y="1250"/>
  </objectgroup>
  <objectgroup name="Corpos">
   <object id="8" x="0" y="1400" width="400" height="50"/>
@@ -227,10 +227,8 @@
   <object id="33" x="3200" y="900" width="50" height="300"/>
   <object id="34" x="3200" y="1200" width="250" height="50"/>
   <object id="36" x="3450" y="500" width="50" height="750"/>
-  <object id="38" x="5450" y="850" width="50" height="1150"/>
-  <object id="39" x="5450" y="800" width="350" height="50"/>
-  <object id="40" x="5800" y="800" width="50" height="1200"/>
   <object id="99" x="2350" y="1200" width="250" height="50"/>
+  <object id="105" x="5300" y="800" width="400" height="1200"/>
  </objectgroup>
  <objectgroup name="Espinho">
   <object id="43" x="200" y="1350" width="150" height="50"/>
@@ -249,11 +247,9 @@
   <object id="59" x="3500" y="1400" width="50" height="200"/>
   <object id="60" x="3500" y="500" width="50" height="750"/>
   <object id="62" x="3500" y="50" width="50" height="200"/>
-  <object id="74" x="5400" y="800" width="50" height="650"/>
-  <object id="76" x="5450" y="750" width="50" height="50"/>
   <object id="101" x="2600" y="1150" width="50" height="100"/>
  </objectgroup>
  <objectgroup name="Portal">
-  <object id="102" name="portal" x="5650" y="562.5"/>
+  <object id="102" name="portal" x="5500" y="562.5"/>
  </objectgroup>
 </map>

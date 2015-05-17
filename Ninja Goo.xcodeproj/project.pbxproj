@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		65003B7F1B09224500C30286 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B791B09224500C30286 /* minifase1.tmx */; };
-		65003B801B09224500C30286 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B7A1B09224500C30286 /* minifase2.tmx */; };
 		65003B811B09224500C30286 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B7B1B09224500C30286 /* minifase3.tmx */; };
 		65003B821B09224500C30286 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B7C1B09224500C30286 /* minifase4.tmx */; };
 		65003B831B09224500C30286 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B7D1B09224500C30286 /* minifase5.tmx */; };
@@ -19,9 +18,8 @@
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
-		C5136B691B0923A20098BC91 /* teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5136B671B0923A20098BC91 /* teleport.wav */; };
-		C5136B6A1B0923A20098BC91 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5136B681B0923A20098BC91 /* victory.wav */; };
 		C520FEF61B0657390021615C /* shaking.wav in Resources */ = {isa = PBXBuildFile; fileRef = C520FEF51B0657390021615C /* shaking.wav */; };
+		C524FE171B092C1B0096F4B2 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C524FE161B092C1B0096F4B2 /* minifase2.tmx */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
 		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
@@ -68,7 +66,6 @@
 
 /* Begin PBXFileReference section */
 		65003B791B09224500C30286 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
-		65003B7A1B09224500C30286 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		65003B7B1B09224500C30286 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
 		65003B7C1B09224500C30286 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
 		65003B7D1B09224500C30286 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
@@ -81,6 +78,7 @@
 		C5136B671B0923A20098BC91 /* teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teleport.wav; sourceTree = "<group>"; };
 		C5136B681B0923A20098BC91 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
 		C520FEF51B0657390021615C /* shaking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shaking.wav; sourceTree = "<group>"; };
+		C524FE161B092C1B0096F4B2 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
@@ -145,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				65003B791B09224500C30286 /* minifase1.tmx */,
-				65003B7A1B09224500C30286 /* minifase2.tmx */,
+				C524FE161B092C1B0096F4B2 /* minifase2.tmx */,
 				65003B7B1B09224500C30286 /* minifase3.tmx */,
 				65003B7C1B09224500C30286 /* minifase4.tmx */,
 				65003B7D1B09224500C30286 /* minifase5.tmx */,
@@ -361,7 +359,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CT54P8A873;
+						DevelopmentTeam = CC953577YZ;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -400,12 +398,12 @@
 				C5CB3F771ACD6ECF001A37B7 /* wall.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C58F73B21B060C7F00D6E6DB /* click.wav in Resources */,
+				C524FE171B092C1B0096F4B2 /* minifase2.tmx in Resources */,
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
 				65003B7F1B09224500C30286 /* minifase1.tmx in Resources */,
-				65003B801B09224500C30286 /* minifase2.tmx in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
 				65003B821B09224500C30286 /* minifase4.tmx in Resources */,
 				65003B831B09224500C30286 /* minifase5.tmx in Resources */,

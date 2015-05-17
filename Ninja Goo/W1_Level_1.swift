@@ -144,7 +144,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let minForce : CGFloat = 30.0
         static let maxForce : CGFloat = 80.0
         static let maxForceGeral : CGFloat = maxForce
-        static let maxDistanceSlide : CGFloat = 400.0
+        static var maxDistanceSlide : CGFloat = 400.0
 
         
         static let zPosBackgroundBackLayer : CGFloat = 1
@@ -183,6 +183,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func loadWorld() {
         
+        changeSliceDistance()
         //self.worldLayer.setScale(0.1)
 
         self.worldLayer.setScale(Constants.defaultScale)
@@ -607,6 +608,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func resizePositions(){
     
+        changeSliceDistance()
+
         if (isLandscape()) {
             
             if(isIphone()){
@@ -1270,6 +1273,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func endsLevel() {
         
+        self.ninja.physicsBody?.dynamic = false
         self.runAction(SKAction.playSoundFileNamed("teleport.wav", waitForCompletion: false))
 
         self.ninja.runAction(SKAction.fadeOutWithDuration(NSTimeInterval(0.3)))
@@ -1379,6 +1383,16 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
         return false
         
+    }
+    
+    func changeSliceDistance(){
+        if(isLandscape()) {
+            Constants.maxDistanceSlide = 600.0
+        }
+        else {
+            Constants.maxDistanceSlide = 400.0
+
+        }
     }
     
     // MARK: Collision
