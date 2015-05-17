@@ -68,7 +68,7 @@
   <tile id="1">
    <properties>
     <property name="direction" value="1"/>
-    <property name="isFaller" value="100"/>
+    <property name="isFaller" value="1000"/>
     <property name="isMoveable" value="5"/>
     <property name="speed" value="1"/>
     <property name="wall" value="1"/>

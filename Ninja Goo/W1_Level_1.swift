@@ -1188,7 +1188,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func shakeAndFall(node : SKNode, duration : CGFloat){
         self.mWallTempo2 = self.ninja.mWall
         
-        self.ninja.mWall = nil
+        //self.ninja.mWall = nil
         let shake = SKAction.moveBy(CGVectorMake(0, 15), duration: NSTimeInterval(0.1))
         let shakeBack = SKAction.moveBy(CGVectorMake(0, -15), duration: NSTimeInterval(0.1))
         let action = SKAction.repeatActionForever(SKAction.sequence([shake, shakeBack]))
@@ -1207,7 +1207,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             node.physicsBody!.mass = 1000
             node.physicsBody!.dynamic = true
             //self.ninja.mWall = nil
-            //self.ninja.mWall = self.mWallTempo2 olhe AQUI
+            //self.ninja.mWall = self.mWallTempo2 //olhe AQUI
         }
         
         
@@ -1235,12 +1235,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             if(!self.ninja.isInMoveable) {
                 
-                if(self.ninja.mWall != nil) {
+                if(self.ninja.mWall != nil && self.ninja.mWall.node != nil) {
                     
                     self.ninja.removeFromParent()
                     
                     self.ninja.mWall.categoryBitMask = 99
-                    self.ninja.mWall.node!.addChild(self.ninja)
+                    self.ninja.mWall.node?.addChild(self.ninja)
                     self.ninja.physicsBody!.pinned = true
                     self.ninja.isInMoveable = true
                     //self.ninja.mWallInitialPosition = self.ninja.mWall.p
@@ -1386,11 +1386,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     }
     
     func changeSliceDistance(){
-        if(isLandscape()) {
-            Constants.maxDistanceSlide = 600.0
+        if(isIphone()) {
+            if(isLandscape()) {
+                Constants.maxDistanceSlide = 600.0
+            }
         }
         else {
-            Constants.maxDistanceSlide = 400.0
+            Constants.maxDistanceSlide = 320.0
 
         }
     }
