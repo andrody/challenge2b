@@ -55,20 +55,20 @@ class LevelsController: ItemViewCtrl {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageOne.image = UIImage(named: levelOne.nome)
-        imageTwo.image = UIImage(named: levelTwo.nome)
-        imageThree.image = UIImage(named: levelThree.nome)
-
-        
-        
-        var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
-        imageOne.addGestureRecognizer(tapGesture1)
-        
-        var tapGesture2 = UITapGestureRecognizer(target: self, action: Selector("levelTap2:"))
-        imageTwo.addGestureRecognizer(tapGesture2)
-        
-        var tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
-        imageThree.addGestureRecognizer(tapGesture3)
+//        imageOne.image = UIImage(named: levelOne.nome)
+//        imageTwo.image = UIImage(named: levelTwo.nome)
+//        imageThree.image = UIImage(named: levelThree.nome)
+//
+//        
+//        
+//        var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
+//        imageOne.addGestureRecognizer(tapGesture1)
+//        
+//        var tapGesture2 = UITapGestureRecognizer(target: self, action: Selector("levelTap2:"))
+//        imageTwo.addGestureRecognizer(tapGesture2)
+//        
+//        var tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
+//        imageThree.addGestureRecognizer(tapGesture3)
         
         
         //imageTwo.addGestureRecognizer(tapGesture)

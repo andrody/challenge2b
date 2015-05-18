@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZA2-tp-xmd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ABy-pG-dPu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -158,46 +158,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="minifase1" translatesAutoresizingMaskIntoConstraints="NO" id="4VI-wf-LW6">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="601"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minifase2" translatesAutoresizingMaskIntoConstraints="NO" id="TJ1-7s-LcJ">
-                                <rect key="frame" x="200" y="0.0" width="200" height="600"/>
-                                <color key="backgroundColor" red="0.93064260480000005" green="0.94313412900000004" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plataforma3.png" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-is-Z8K">
-                                <rect key="frame" x="400" y="0.0" width="200" height="600"/>
-                                <color key="backgroundColor" red="0.93064260480000005" green="0.94313412900000004" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                            </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-xz-JiA">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-xz-JiA">
                                 <rect key="frame" x="282" y="302" width="37" height="37"/>
                                 <color key="color" red="0.98251348810000005" green="1" blue="0.97068622329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="382" y="302" width="37" height="37"/>
                                 </variation>
                             </activityIndicatorView>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqe-uR-mOp" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
+                                <color key="backgroundColor" red="0.41694085510000001" green="1" blue="0.3936637805" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT5-z1-iPl" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
+                                <rect key="frame" x="200" y="0.0" width="200" height="600"/>
+                                <color key="backgroundColor" red="1" green="0.68141226740000005" blue="0.44584076810000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view alpha="0.59999999999999964" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPd-1U-Qw8" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
+                                <rect key="frame" x="400" y="0.0" width="200" height="600"/>
+                                <color key="backgroundColor" red="0.33122368549999998" green="0.43933219579999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4VI-wf-LW6" firstAttribute="leading" secondItem="ZX8-K5-dKf" secondAttribute="leading" id="2hT-sS-yyM"/>
-                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="top" secondItem="SEq-is-Z8K" secondAttribute="top" id="A9P-Eg-6bM"/>
-                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="height" secondItem="SEq-is-Z8K" secondAttribute="height" id="C31-NS-LqY"/>
-                            <constraint firstItem="4VI-wf-LW6" firstAttribute="width" secondItem="TJ1-7s-LcJ" secondAttribute="width" id="CKb-NN-J7j"/>
-                            <constraint firstItem="4VI-wf-LW6" firstAttribute="top" secondItem="TJ1-7s-LcJ" secondAttribute="top" id="L8I-tM-LzM"/>
-                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="width" secondItem="SEq-is-Z8K" secondAttribute="width" id="QAX-Ef-AXA"/>
-                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="bottom" secondItem="ZXC-Vp-mkx" secondAttribute="top" id="R8s-eJ-0gV"/>
-                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="centerX" secondItem="ZX8-K5-dKf" secondAttribute="centerX" id="WyI-dp-URa"/>
-                            <constraint firstItem="SEq-is-Z8K" firstAttribute="leading" secondItem="TJ1-7s-LcJ" secondAttribute="trailing" id="aJq-uD-Jek"/>
-                            <constraint firstItem="4VI-wf-LW6" firstAttribute="height" secondItem="TJ1-7s-LcJ" secondAttribute="height" id="iDF-YE-AiY"/>
-                            <constraint firstAttribute="trailing" secondItem="SEq-is-Z8K" secondAttribute="trailing" id="nHx-9t-lcC"/>
-                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="centerX" secondItem="nk3-xz-JiA" secondAttribute="centerX" id="odg-Hz-mM0"/>
-                            <constraint firstItem="TJ1-7s-LcJ" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="top" id="tTc-ip-JAM"/>
+                            <constraint firstItem="ZXC-Vp-mkx" firstAttribute="bottom" secondItem="jPd-1U-Qw8" secondAttribute="bottom" id="3xS-UY-jHh"/>
+                            <constraint firstItem="jPd-1U-Qw8" firstAttribute="width" secondItem="Iqe-uR-mOp" secondAttribute="width" id="9ry-SA-PrM"/>
+                            <constraint firstItem="jPd-1U-Qw8" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="top" id="EYL-cL-r7P"/>
+                            <constraint firstItem="Iqe-uR-mOp" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="top" id="EjL-9r-bTX"/>
+                            <constraint firstItem="Iqe-uR-mOp" firstAttribute="left" secondItem="ZX8-K5-dKf" secondAttribute="left" id="I1S-9Y-pxJ"/>
+                            <constraint firstItem="UT5-z1-iPl" firstAttribute="left" secondItem="Iqe-uR-mOp" secondAttribute="right" id="Kz5-uo-umA"/>
+                            <constraint firstItem="UT5-z1-iPl" firstAttribute="top" secondItem="ZX8-K5-dKf" secondAttribute="top" id="La8-k0-NhL"/>
+                            <constraint firstItem="UT5-z1-iPl" firstAttribute="width" secondItem="Iqe-uR-mOp" secondAttribute="width" id="Rfa-AI-4df"/>
+                            <constraint firstItem="ZXC-Vp-mkx" firstAttribute="bottom" secondItem="Iqe-uR-mOp" secondAttribute="bottom" id="aJE-QW-ze7"/>
+                            <constraint firstItem="ZXC-Vp-mkx" firstAttribute="bottom" secondItem="UT5-z1-iPl" secondAttribute="bottom" id="bXP-vX-TX9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jPd-1U-Qw8" secondAttribute="trailing" constant="-16" id="jH6-BS-tpD"/>
+                            <constraint firstAttribute="right" secondItem="jPd-1U-Qw8" secondAttribute="right" id="mvm-Mo-pFM"/>
+                            <constraint firstItem="Iqe-uR-mOp" firstAttribute="leading" secondItem="ZX8-K5-dKf" secondAttribute="leadingMargin" constant="-16" id="nGD-9n-1lv"/>
+                            <constraint firstItem="jPd-1U-Qw8" firstAttribute="left" secondItem="UT5-z1-iPl" secondAttribute="right" id="uDL-gd-E13"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageOne" destination="4VI-wf-LW6" id="Nto-5j-Wo9"/>
-                        <outlet property="imageThree" destination="SEq-is-Z8K" id="yts-tU-5vS"/>
-                        <outlet property="imageTwo" destination="TJ1-7s-LcJ" id="4fy-qP-8cB"/>
                         <outlet property="loadingIndicator" destination="nk3-xz-JiA" id="imO-mJ-pFR"/>
                     </connections>
                 </viewController>
@@ -208,9 +207,6 @@
     </scenes>
     <resources>
         <image name="logo" width="1071" height="585"/>
-        <image name="minifase1" width="682" height="1536"/>
-        <image name="minifase2" width="682" height="1536"/>
-        <image name="plataforma3.png" width="1320" height="1836"/>
         <image name="taptoplay" width="694" height="71"/>
     </resources>
 </document>

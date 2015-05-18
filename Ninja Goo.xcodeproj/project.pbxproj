@@ -22,6 +22,8 @@
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
 		C51A43851B0939A700566E44 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C51A43831B0939A700566E44 /* minifase2.tmx */; };
 		C51A43871B0939DB00566E44 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C51A43891B0939DB00566E44 /* minifase3.tmx */; };
+		C51A438F1B0A010700566E44 /* levelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51A438E1B0A010700566E44 /* levelView.swift */; };
+		C51A43911B0A012200566E44 /* levelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51A43901B0A012200566E44 /* levelView.xib */; };
 		C520FEF61B0657390021615C /* shaking.wav in Resources */ = {isa = PBXBuildFile; fileRef = C520FEF51B0657390021615C /* shaking.wav */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
@@ -84,6 +86,8 @@
 		C5136B681B0923A20098BC91 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
 		C51A43831B0939A700566E44 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		C51A43881B0939DB00566E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/minifase3.tmx; sourceTree = "<group>"; };
+		C51A438E1B0A010700566E44 /* levelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = levelView.swift; path = ../levelView.swift; sourceTree = "<group>"; };
+		C51A43901B0A012200566E44 /* levelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = levelView.xib; path = ../levelView.xib; sourceTree = "<group>"; };
 		C520FEF51B0657390021615C /* shaking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shaking.wav; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 				C5CB3F641ACD6BD6001A37B7 /* Assets */,
 				C5CB3F631ACD6B30001A37B7 /* Scene */,
 				C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */,
+				C51A438E1B0A010700566E44 /* levelView.swift */,
+				C51A43901B0A012200566E44 /* levelView.xib */,
 				C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */,
 				C50BB38E1ADAFD97007827B7 /* LevelsController.swift */,
 				C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */,
@@ -418,6 +424,7 @@
 				C5CB3F731ACD6E90001A37B7 /* impact.wav in Resources */,
 				656343E01B092E33002E2031 /* minifase1.tmx in Resources */,
 				C51A43871B0939DB00566E44 /* minifase3.tmx in Resources */,
+				C51A43911B0A012200566E44 /* levelView.xib in Resources */,
 				C520FEF61B0657390021615C /* shaking.wav in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
@@ -459,6 +466,7 @@
 				C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,
 				C5CB3F821ACDEBE4001A37B7 /* WorldLayer.swift in Sources */,
+				C51A438F1B0A010700566E44 /* levelView.swift in Sources */,
 				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,
 				C58F73A81B05860F00D6E6DB /* Scenario.swift in Sources */,
 			);
