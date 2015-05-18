@@ -20,12 +20,15 @@ class Scenario {
     var corNuvemFront : [CGFloat]
     var corPlataforma : [CGFloat]
     var corFundo : [CGFloat]
+    var corWallEspecial : [CGFloat]
+    var backgroundFrontName : String!
+    var backgroundBackName : String!
 
 
 
 
     
-    init(nome : String, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat] ) {
+    init(nome : String, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String) {
         
         self.nome = nome
         self.corMontanha = corMontanha
@@ -35,6 +38,9 @@ class Scenario {
         self.corNuvemFront = corNuvemFront
         self.corPlataforma = corPlataforma
         self.corFundo = corFundo
+        self.corWallEspecial = corWallEspecial
+        self.backgroundBackName = backgroundBackName
+        self.backgroundFrontName = backgroundFrontName
         
     }
 

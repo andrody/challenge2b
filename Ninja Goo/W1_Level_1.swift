@@ -436,7 +436,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         tile.physicsBody!.friction = 0.9
                         tile.physicsBody!.categoryBitMask = ColliderType.RotateWall.rawValue
                         
-                        let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corNuvemMeio
+                        let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corWallEspecial
                         
                         tile.colorBlendFactor = 1
                         tile.color = SKColor(red: cMiddleColor[0]/255, green: cMiddleColor[1]/255, blue: cMiddleColor[2]/255, alpha: 1.0)
@@ -471,7 +471,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         else {
                             tile.physicsBody!.categoryBitMask = ColliderType.FallerWall.rawValue
                         }
-                        let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corNuvemMeio
+                        let cMiddleColor = SceneManager.sharedInstance.faseEscolhida.corWallEspecial
                         
                         tile.colorBlendFactor = 1
                         tile.color = SKColor(red: cMiddleColor[0]/255, green: cMiddleColor[1]/255, blue: cMiddleColor[2]/255, alpha: 1.0)
@@ -751,7 +751,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func loadBackground(){
         
         
-        let montain = SKSpriteNode(texture: SKTexture(imageNamed: "montanha_branco"))
+        let montain = SKSpriteNode(texture: SKTexture(imageNamed: SceneManager.sharedInstance.faseEscolhida.backgroundFrontName))
+        let montain_back = SKSpriteNode(texture: SKTexture(imageNamed: SceneManager.sharedInstance.faseEscolhida.backgroundBackName))
+
         
         let montainColor = SceneManager.sharedInstance.faseEscolhida.corMontanha
         let montainClaraColor = SceneManager.sharedInstance.faseEscolhida.corMontanhaClara
@@ -782,7 +784,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             
             //Montanha Clara
-            let mC = montain.copy() as! SKSpriteNode
+            let mC = montain_back.copy() as! SKSpriteNode
             mC.color = SKColor(red: montainClaraColor[0]/255, green: montainClaraColor[1]/255, blue: montainClaraColor[2]/255, alpha: 1.0)
             mC.colorBlendFactor=1
 
