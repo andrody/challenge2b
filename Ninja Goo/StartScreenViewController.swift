@@ -24,6 +24,8 @@ class StartScreenViewController: ItemViewCtrl {
         }
     }
     
+    //var initialConstraintValue : CGFloat!
+    
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet var contentImageView: UIImageView?
     @IBOutlet weak var tapToPlay: UIImageView!
@@ -46,21 +48,35 @@ class StartScreenViewController: ItemViewCtrl {
         tapGesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(tapGesture)
         
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad){
-            //
-            self.constraintDeCima.constant = self.constraintDeCima.constant + 125
-            //            self.contrintDeBaixo.constant = 150
-            //
-            //    
-        }
+        
+        adjustConstraint()
+        
+        
+        //self.initialConstraintValue = self.constraintDeCima.constant
         
         animateTaptoPlay()
         animateLogo()
 
+    }
+    
+    func adjustConstraint(){
+        if(UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone){
+            if(UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.Portrait || UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.PortraitUpsideDown){
+                self.constraintDeCima.constant = 159
+            }
+            else {
+                self.constraintDeCima.constant = 65
+            }
+        }
+        else {
+            self.constraintDeCima.constant = 65 + 125
+        }
+        
     }
     
     func animateLogo() {
@@ -85,7 +101,7 @@ class StartScreenViewController: ItemViewCtrl {
             
             
 
-            self.constraintDeCima.constant = self.constraintDeCima.constant + 50
+            self.constraintDeCima.constant = self.constraintDeCima.constant + 20
             //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant + 100
             //self.constrintDeCima.constant = self.constrintDeCima.constant + 100
             //self.contrintDeBaixo.constant = self.contrintDeBaixo.constant - 100
@@ -122,6 +138,12 @@ class StartScreenViewController: ItemViewCtrl {
     func moveToLevels(){
         SceneManager.sharedInstance.playClickSound()
         self.menuViewController!.goToPage(1)
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        adjustConstraint()
+        animateLogo()
+
     }
    
     

@@ -103,20 +103,34 @@
                                 <rect key="frame" x="75" y="179" width="448" height="242"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fh1-Tb-ZAh" secondAttribute="height" multiplier="109:59" id="8Ta-JJ-R9u"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="iPL-3R-clt"/>
+                                    <constraint firstAttribute="width" constant="550" id="iPL-3R-clt"/>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="yOz-WE-3u9"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iPL-3R-clt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="100" y="70" width="600" height="324"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="iPL-3R-clt"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerX" secondItem="dnV-Bp-m2g" secondAttribute="centerX" priority="750" id="3kf-ZF-iqu"/>
                             <constraint firstAttribute="trailing" secondItem="NP7-u1-8bL" secondAttribute="trailing" id="Gxy-Fe-MHe"/>
-                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="width" secondItem="5rW-01-OQW" secondAttribute="height" multiplier="56:75" id="NVb-11-3MB"/>
+                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="width" secondItem="5rW-01-OQW" secondAttribute="height" multiplier="56:75" priority="750" id="NVb-11-3MB"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="top" secondItem="5rW-01-OQW" secondAttribute="top" id="Vne-cE-ldX"/>
                             <constraint firstAttribute="bottom" secondItem="dnV-Bp-m2g" secondAttribute="bottom" priority="750" constant="16" id="XyQ-aN-ggz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="NP7-u1-8bL" secondAttribute="bottom" constant="-2" id="aO1-Aw-0Td"/>
                             <constraint firstItem="dnV-Bp-m2g" firstAttribute="centerX" secondItem="5rW-01-OQW" secondAttribute="centerX" priority="750" id="fZG-Xl-mkI"/>
-                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" constant="50" id="hUf-ou-Udb"/>
+                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" priority="999" constant="75" id="hUf-ou-Udb"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerY" secondItem="NP7-u1-8bL" secondAttribute="centerY" priority="750" constant="-47" id="l1C-DF-Dqq"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="leading" secondItem="5rW-01-OQW" secondAttribute="leadingMargin" constant="-18" id="yx1-6N-qee"/>
                         </constraints>
@@ -158,6 +172,9 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-xz-JiA">
                                 <rect key="frame" x="282" y="302" width="37" height="37"/>
                                 <color key="color" red="0.98251348810000005" green="1" blue="0.97068622329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="382" y="302" width="37" height="37"/>
+                                </variation>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
