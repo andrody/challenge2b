@@ -15,6 +15,7 @@ class levelView: UIView {
     
     @IBOutlet weak var levelNumber: UILabel!
 
+    @IBOutlet weak var percentageCompleted: UILabel!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -43,6 +44,7 @@ class levelView: UIView {
         self.addConstraint(constBottom)
 
         
+
 
     }
 

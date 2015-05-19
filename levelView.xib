@@ -3,12 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
             <connections>
                 <outlet property="background" destination="dvI-0W-Lmr" id="koJ-VD-fyp"/>
                 <outlet property="levelNumber" destination="yQ6-of-ng0" id="efY-ml-FQ2"/>
+                <outlet property="percentageCompleted" destination="UNB-h8-Ri7" id="O7w-jT-I89"/>
                 <outlet property="view" destination="iN0-l3-epB" id="XcV-Z4-eA6"/>
             </connections>
         </placeholder>
@@ -20,16 +22,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minifase1" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-0W-Lmr">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ6-of-ng0">
-                    <rect key="frame" x="244" y="60" width="112" height="110"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="112" id="XEy-17-c6H"/>
-                        <constraint firstAttribute="height" constant="110" id="aw8-GK-fzD"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="55"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="moldura" translatesAutoresizingMaskIntoConstraints="NO" id="j9B-ml-lee">
                     <rect key="frame" x="210" y="25" width="180" height="180"/>
                     <constraints>
@@ -53,34 +45,112 @@
                         </mask>
                     </variation>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ6-of-ng0">
+                    <rect key="frame" x="244" y="60" width="112" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="112" id="XEy-17-c6H"/>
+                        <constraint firstAttribute="height" constant="110" id="aw8-GK-fzD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="55"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNB-h8-Ri7">
+                    <rect key="frame" x="210" y="512" width="180" height="88"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="2ru-9f-qJw"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="88" id="YRB-f8-y2c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="75"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="2ru-9f-qJw"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="35"/>
+                        <mask key="constraints">
+                            <include reference="2ru-9f-qJw"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular">
+                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="35"/>
+                        <mask key="constraints">
+                            <include reference="2ru-9f-qJw"/>
+                        </mask>
+                    </variation>
+                </label>
+                <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ok" translatesAutoresizingMaskIntoConstraints="NO" id="ZwL-C7-zzR">
+                    <rect key="frame" x="276" y="536" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZwL-C7-zzR" secondAttribute="height" multiplier="1:1" id="PHv-fp-syS"/>
+                        <constraint firstAttribute="width" priority="999" constant="78" id="h2c-97-1SZ"/>
+                        <constraint firstAttribute="width" constant="36" id="jkL-Lf-JP4"/>
+                        <constraint firstAttribute="height" priority="999" constant="78" id="t9K-Cc-I3x"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="jkL-Lf-JP4"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <include reference="jkL-Lf-JP4"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="jkL-Lf-JP4"/>
+                        </mask>
+                    </variation>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.68141226740000005" blue="0.44584076810000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="j9B-ml-lee" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="51" id="1Lx-Gq-F78"/>
                 <constraint firstItem="dvI-0W-Lmr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3H2-CK-iB1"/>
                 <constraint firstAttribute="trailing" secondItem="dvI-0W-Lmr" secondAttribute="trailing" id="8Y5-vG-Ejl"/>
+                <constraint firstItem="ZwL-C7-zzR" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" priority="999" constant="-16" id="Be8-gS-bsX"/>
                 <constraint firstItem="j9B-ml-lee" firstAttribute="centerX" secondItem="dvI-0W-Lmr" secondAttribute="centerX" priority="999" id="FIw-jO-ygT"/>
+                <constraint firstItem="ZwL-C7-zzR" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="Hrj-s1-mME"/>
                 <constraint firstItem="j9B-ml-lee" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="IgU-eK-V5q"/>
                 <constraint firstItem="dvI-0W-Lmr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Io4-A7-bTZ"/>
+                <constraint firstItem="UNB-h8-Ri7" firstAttribute="leading" secondItem="j9B-ml-lee" secondAttribute="leading" id="Olv-bS-VFY"/>
+                <constraint firstItem="ZwL-C7-zzR" firstAttribute="centerX" secondItem="yQ6-of-ng0" secondAttribute="centerX" id="UPR-ip-6m9"/>
                 <constraint firstItem="yQ6-of-ng0" firstAttribute="centerX" secondItem="j9B-ml-lee" secondAttribute="centerX" priority="999" id="bao-v3-DAS"/>
+                <constraint firstItem="ZwL-C7-zzR" firstAttribute="centerX" secondItem="UNB-h8-Ri7" secondAttribute="centerX" id="cqH-Sf-JLb"/>
                 <constraint firstItem="yQ6-of-ng0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="gR0-vU-Yth"/>
                 <constraint firstAttribute="bottom" secondItem="dvI-0W-Lmr" secondAttribute="bottom" id="kFW-f2-cyn"/>
+                <constraint firstItem="UNB-h8-Ri7" firstAttribute="bottom" secondItem="dvI-0W-Lmr" secondAttribute="bottom" id="l3P-mA-Orj"/>
+                <constraint firstAttribute="bottom" secondItem="UNB-h8-Ri7" secondAttribute="bottom" constant="10" id="yQM-mk-5yr"/>
                 <constraint firstItem="j9B-ml-lee" firstAttribute="centerY" secondItem="yQ6-of-ng0" secondAttribute="centerY" priority="999" id="ypJ-PF-q5X"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="IgU-eK-V5q"/>
                     <exclude reference="gR0-vU-Yth"/>
+                    <exclude reference="yQM-mk-5yr"/>
+                    <exclude reference="Hrj-s1-mME"/>
+                    <exclude reference="cqH-Sf-JLb"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact">
                 <mask key="constraints">
                     <include reference="IgU-eK-V5q"/>
+                    <include reference="Hrj-s1-mME"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact-widthClass=regular">
                 <mask key="constraints">
                     <include reference="IgU-eK-V5q"/>
+                    <include reference="Hrj-s1-mME"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <include reference="yQM-mk-5yr"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="33" y="360"/>
@@ -96,5 +166,6 @@
     <resources>
         <image name="minifase1" width="682" height="1536"/>
         <image name="moldura" width="400" height="400"/>
+        <image name="ok" width="400" height="400"/>
     </resources>
 </document>
