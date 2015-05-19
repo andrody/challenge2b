@@ -12,6 +12,7 @@ class levelView: UIView {
 
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var background: UIImageView!
+    
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -25,7 +26,22 @@ class levelView: UIView {
         //let className = NSStringFromClass(levelView.self)
         self.view = (NSBundle.mainBundle().loadNibNamed("levelView", owner:self, options:nil).first) as! UIView
         self.addSubview(self.view)
+        
+        view.setTranslatesAutoresizingMaskIntoConstraints(false)
 
+        var constX = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
+        self.addConstraint(constX)
+        
+        var constX2 = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+        self.addConstraint(constX2)
+        
+        var constTop = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        self.addConstraint(constTop)
+        
+        var constBottom = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        self.addConstraint(constBottom)
+
+        
 
     }
 

@@ -11,64 +11,68 @@ import UIKit
 class LevelsController: ItemViewCtrl {
     
     // MARK: - Variables
-    var levelOne: Scenario! {
+    var levelOne: Scenario! //{
         
-        didSet {
-            
-            if let imageView = imageOne {
-                imageView.image = UIImage(named: levelOne.nome)
-            }
-            
-        }
-    }
+//        didSet {
+//            
+//            if let imageView = imageOne {
+//                imageView.image = UIImage(named: levelOne.nome)
+//            }
+//            
+//        }
+//    }
     
     // MARK: - Variables
-    var levelTwo: Scenario! {
+    var levelTwo: Scenario! //{
         
-        didSet {
-            
-            if let imageView = imageTwo {
-                imageView.image = UIImage(named: levelTwo.nome)
-            }
-            
-        }
-    }
+//        didSet {
+//            
+//            if let imageView = imageTwo {
+//                imageView.image = UIImage(named: levelTwo.nome)
+//            }
+//            
+//        }
+//    }
     
     // MARK: - Variables
-    var levelThree: Scenario! {
+    var levelThree: Scenario! //{
         
-        didSet {
-            
-            if let imageView = imageThree {
-                imageView.image = UIImage(named: levelThree.nome)
-            }
-            
-        }
-    }
+//        didSet {
+//            
+//            if let imageView = imageThree {
+//                imageView.image = UIImage(named: levelThree.nome)
+//            }
+//            
+//        }
+//    }
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var loadedScene : W1_Level_1!
 
-    @IBOutlet var imageOne: UIImageView!
-    @IBOutlet weak var imageTwo: UIImageView!
-    @IBOutlet weak var imageThree: UIImageView!
+    @IBOutlet weak var levelOneView: levelView!
+    @IBOutlet weak var levelTwoView: levelView!
+    @IBOutlet weak var levelThreeView: levelView!
+    
+//    @IBOutlet var imageOne: UIImageView!
+//    @IBOutlet weak var imageTwo: UIImageView!
+//    @IBOutlet weak var imageThree: UIImageView!
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        imageOne.image = UIImage(named: levelOne.nome)
-//        imageTwo.image = UIImage(named: levelTwo.nome)
-//        imageThree.image = UIImage(named: levelThree.nome)
-//
-//        
-//        
-//        var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
-//        imageOne.addGestureRecognizer(tapGesture1)
-//        
-//        var tapGesture2 = UITapGestureRecognizer(target: self, action: Selector("levelTap2:"))
-//        imageTwo.addGestureRecognizer(tapGesture2)
-//        
-//        var tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
-//        imageThree.addGestureRecognizer(tapGesture3)
+        levelOneView.background.image = UIImage(named: levelOne.nome)
+        levelTwoView.background.image = UIImage(named: levelTwo.nome)
+        levelThreeView.background.image = UIImage(named: levelThree.nome)
+
+        
+        
+        var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
+        levelOneView.addGestureRecognizer(tapGesture1)
+        
+        var tapGesture2 = UITapGestureRecognizer(target: self, action: Selector("levelTap2:"))
+        levelTwoView.addGestureRecognizer(tapGesture2)
+        
+        var tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
+        levelThreeView.addGestureRecognizer(tapGesture3)
         
         
         //imageTwo.addGestureRecognizer(tapGesture)
