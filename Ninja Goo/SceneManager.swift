@@ -41,7 +41,7 @@ class SceneManager {
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco"
         )
-        
+                
         var faseTwo = Scenario(nome: "minifase2",
             levelNumber: 2,
             corMontanha: [0,160,3],
@@ -133,5 +133,19 @@ class SceneManager {
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
+    
+    func save(key : String, value : AnyObject?) {
+        
+        NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+    }
+    
+    func load(key : String) -> AnyObject? {
+        
+        return NSUserDefaults.standardUserDefaults().objectForKey(key)
+    }
+    
+    
     
 }

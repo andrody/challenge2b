@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="109">
+ <tileset firstgid="1" name="plataforma3" tilewidth="400" tileheight="600">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="10" name="plataforma3" tilewidth="200" tileheight="500">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="28" name="plataforma3" tilewidth="250" tileheight="250">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="63" name="plataforma_movel_horozontal" tilewidth="250" tileheight="100">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="1"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="153" name="plataforma_movel_horizontal" tilewidth="250" tileheight="100">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="2"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="243" name="plataforma_movel_vertical" tilewidth="100" tileheight="250">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="334" name="plataforma3" tilewidth="100" tileheight="250">
+  <image source="plataforma3.png" width="1320" height="1836"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="425" name="espinho_tile" tilewidth="50" tileheight="50">
+  <image source="espinho_tile.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="426" name="espinho_tile_direito" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_direito.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="427" name="espinho_tile_invertido" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_invertido.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="2"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="428" name="espinho_tile_esquerdo" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_esquerdo.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="3"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="429" name="espinho_tile_movel_horizontal" tilewidth="50" tileheight="50">
+  <image source="espinho_tile.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="1"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="430" name="espinho_tile_direito_movel_horizontal" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_direito.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="431" name="espinho_tile_invertido_vertical" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_invertido.png" width="50" height="50"/>
+  <terraintypes>
+   <terrain name="teste" tile="-1"/>
+  </terraintypes>
+  <tile id="0" terrain=",0,,">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="2"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="432" name="espinhos_verticais_decendentes" tilewidth="50" tileheight="50">
+  <tile id="0">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="1"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_direito.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="3"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_esquerdo.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="2"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_invertido.png"/>
+  </tile>
+  <tile id="3">
+   <image width="50" height="50" source="espinho_tile.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="436" name="espinhos_verticais_ascendentes" tilewidth="50" tileheight="50">
+  <tile id="0">
+   <image width="50" height="50" source="espinho_tile_direito.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="direction" value="3"/>
+    <property name="isMoveable" value="7"/>
+    <property name="speed" value="1"/>
+    <property name="spike" value="3"/>
+   </properties>
+   <image width="50" height="50" source="espinho_tile_esquerdo.png"/>
+  </tile>
+  <tile id="2">
+   <image width="50" height="50" source="espinho_tile_invertido.png"/>
+  </tile>
+  <tile id="3">
+   <image width="50" height="50" source="espinho_tile.png"/>
+  </tile>
+ </tileset>
+ <layer name="Walls" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt270JwzAQBlDFrWbILN7A+2XOLODKEIwKWyAfF73XCP0UXyO4A6kUAAAA7np3rrXOAAAA/KrRAQAAJrYM3m+pJV8N+I0OAADJba/oBGRwrhFb82x1JAAAzG6NDgAPavWtd+9APY0AAIee9xlATp/oAAAAk9J3AQAA8A9G/At/QsR/90jZ8l61AyxnA10=
+  </data>
+ </layer>
+ <layer name="Spikes" width="160" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt2c2Kg0AQhVHz/k8yPw85uAjRYRA7ZHKr2nOgdy66qU9UXBagms9begdcmf5I0l8f3xPOSn99zNgffeiPJP2RpD+S9EfSjP35/u2jUn+v6kZ/feiPJP2RVKm/V9FfL18D81qvHbn+L//dvP44ctX+ZnzWdHR2Ds/OS38c0R9Jnr8k6Y8k/bFKzUl/8ztz1mr9jezn6Hz6y9NfPfrbqzqns+7/Yn6vqvS3172/bmbv7+P2WFfob3ve7apq9v5GJfp7xwyq3lf629MfSfrjavRHkncgkvRHkv4AAAAY9QOcHEaI
+  </data>
+ </layer>
+ <objectgroup name="Ground">
+  <object id="1" name="ground" x="100" y="1700" width="41.3467" height="35.44"/>
+ </objectgroup>
+ <objectgroup name="Ninja">
+  <object id="2" name="ninja" x="100" y="1250"/>
+ </objectgroup>
+ <objectgroup name="Corpos">
+  <object id="8" x="0" y="1400" width="400" height="50"/>
+  <object id="9" x="400" y="1100" width="50" height="350"/>
+  <object id="10" x="450" y="1100" width="300" height="50"/>
+  <object id="12" x="750" y="1100" width="50" height="900"/>
+  <object id="13" x="2300" y="1450" width="50" height="550"/>
+  <object id="14" x="3450" y="1450" width="50" height="550"/>
+  <object id="15" x="2300" y="1400" width="1200" height="50"/>
+  <object id="16" x="950" y="700" width="1100" height="50"/>
+  <object id="17" x="900" y="150" width="50" height="600"/>
+  <object id="19" x="2050" y="150" width="50" height="600"/>
+  <object id="20" x="950" y="150" width="1100" height="50"/>
+  <object id="21" x="2350" y="50" width="50" height="1150"/>
+  <object id="24" x="2550" y="300" width="50" height="900"/>
+  <object id="26" x="2550" y="250" width="900" height="50"/>
+  <object id="27" x="3450" y="50" width="50" height="250"/>
+  <object id="29" x="2400" y="50" width="1050" height="50"/>
+  <object id="30" x="2850" y="450" width="50" height="450"/>
+  <object id="31" x="2900" y="450" width="600" height="50"/>
+  <object id="32" x="2850" y="900" width="350" height="50"/>
+  <object id="33" x="3200" y="900" width="50" height="300"/>
+  <object id="34" x="3200" y="1200" width="250" height="50"/>
+  <object id="36" x="3450" y="500" width="50" height="750"/>
+  <object id="99" x="2350" y="1200" width="250" height="50"/>
+  <object id="105" x="5300" y="800" width="400" height="1200"/>
+ </objectgroup>
+ <objectgroup name="Espinho">
+  <object id="43" x="200" y="1350" width="150" height="50"/>
+  <object id="44" x="350" y="1150" width="50" height="250"/>
+  <object id="45" x="800" y="1100" width="50" height="450"/>
+  <object id="46" x="850" y="200" width="50" height="550"/>
+  <object id="47" x="900" y="750" width="50" height="50"/>
+  <object id="48" x="1450" y="750" width="100" height="50"/>
+  <object id="49" x="2300" y="750" width="50" height="500"/>
+  <object id="50" x="2250" y="1400" width="50" height="350"/>
+  <object id="52" x="2600" y="550" width="50" height="150"/>
+  <object id="55" x="2800" y="850" width="50" height="100"/>
+  <object id="56" x="3150" y="1150" width="50" height="100"/>
+  <object id="57" x="3200" y="1250" width="300" height="50"/>
+  <object id="58" x="3200" y="1350" width="300" height="50"/>
+  <object id="59" x="3500" y="1400" width="50" height="200"/>
+  <object id="60" x="3500" y="500" width="50" height="750"/>
+  <object id="62" x="3500" y="50" width="50" height="200"/>
+  <object id="101" x="2600" y="1150" width="50" height="100"/>
+ </objectgroup>
+ <objectgroup name="Portal">
+  <object id="102" name="portal" x="5500" y="562.5"/>
+ </objectgroup>
+</map>

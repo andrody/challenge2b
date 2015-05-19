@@ -165,15 +165,15 @@
                                     <rect key="frame" x="382" y="302" width="37" height="37"/>
                                 </variation>
                             </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqe-uR-mOp" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqe-uR-mOp" customClass="LevelView" customModule="Ninja_Goo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="600"/>
                                 <color key="backgroundColor" red="0.41694085510000001" green="1" blue="0.3936637805" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT5-z1-iPl" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT5-z1-iPl" customClass="LevelView" customModule="Ninja_Goo" customModuleProvider="target">
                                 <rect key="frame" x="200" y="0.0" width="200" height="600"/>
                                 <color key="backgroundColor" red="1" green="0.68141226740000005" blue="0.44584076810000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPd-1U-Qw8" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPd-1U-Qw8" customClass="LevelView" customModule="Ninja_Goo" customModuleProvider="target">
                                 <rect key="frame" x="400" y="0.0" width="200" height="600"/>
                                 <color key="backgroundColor" red="0.33122368549999998" green="0.43933219579999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>

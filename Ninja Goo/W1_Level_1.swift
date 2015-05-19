@@ -968,7 +968,30 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func saveRecord(){
+        
+        let distanceFromSpawn = self.portal.position.x - self.ninja.position.x
+        let distancePortalFromSpawn = self.portal.position.x - Constants.defaultSpawnPoint.x
+        
+        println("fromSpawn = \(distanceFromSpawn)")
+        println("distancePortalFromSpawn = \(distancePortalFromSpawn)")
+
+        
+        var percentage = Int(100 * (1 - distanceFromSpawn / distancePortalFromSpawn))
+        
+        if percentage >= 100 {
+            percentage = 99
+        }
+        
+        if(percentage > SceneManager.sharedInstance.faseEscolhida.distanceRecord ) {
+            SceneManager.sharedInstance.faseEscolhida.distanceRecord = percentage
+        }
+        
+    }
+    
     func restart(){
+        
+        saveRecord()
         
         println("restart")
         
@@ -1274,6 +1297,14 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     // MARK : HUD
     
     func endsLevel() {
+        
+        SceneManager.sharedInstance.faseEscolhida.ended = true
+        for (index, fase) in enumerate(SceneManager.sharedInstance.fases) {
+            if fase.nome == SceneManager.sharedInstance.faseEscolhida.nome {
+                SceneManager.sharedInstance.fases[index + 1].locked = false
+            }
+            
+        }
         
         self.ninja.physicsBody?.dynamic = false
         self.runAction(SKAction.playSoundFileNamed("teleport.wav", waitForCompletion: false))

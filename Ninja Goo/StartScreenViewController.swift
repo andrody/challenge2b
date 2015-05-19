@@ -48,6 +48,8 @@ class StartScreenViewController: ItemViewCtrl {
         tapGesture.numberOfTapsRequired = 1
         view.addGestureRecognizer(tapGesture)
         
+        SceneManager.sharedInstance.fases[0].locked = false
+        
         
     }
     

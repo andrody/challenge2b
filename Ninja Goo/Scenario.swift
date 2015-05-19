@@ -10,6 +10,14 @@
 import UIKit
 import SpriteKit
 
+enum Saves: String {
+    case maxDistance = "maxDistancia"
+    case ended = "ended"
+    case locked = "locked"
+
+}
+
+
 class Scenario {
     
     var nome : String!
@@ -26,6 +34,47 @@ class Scenario {
     var backgroundBackName : String!
 
 
+    var distanceRecord : Int {
+        get {
+            var returnValue: Int? = NSUserDefaults.standardUserDefaults().objectForKey(self.nome + Saves.maxDistance.rawValue) as? Int
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = 0 //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save(self.nome + Saves.maxDistance.rawValue, value: newValue)
+        }
+    }
+
+    var ended : Bool {
+        get {
+            var returnValue: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(self.nome + Saves.ended.rawValue) as? Bool
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = false //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save(self.nome + Saves.ended.rawValue, value: newValue)
+        }
+    }
+    
+    var locked : Bool {
+        get {
+            var returnValue: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(self.nome + Saves.locked.rawValue) as? Bool
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = true //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save(self.nome + Saves.locked.rawValue, value: newValue)
+        }
+    }
 
 
     

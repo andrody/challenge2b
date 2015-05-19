@@ -63,7 +63,7 @@
  </layer>
  <layer name="Spikes" width="160" height="90">
   <data encoding="base64" compression="zlib">
-   eJzt3csKgCAQBdC+ocf//2qbVkEkZl20c2B2g4jcRYQy0wQAAAAAAAAAwOjW9Ab4NfkjSf5Ikj8A6M98VMu17gqe8t0JAAAAAN/a0hvg1+QPAAAAAIBW3EMmSf5Ikj8AAAAAAN7m/QdJ8gcAMD73XwCo5b8BSfLXhnOs49xIkj+S5I+eLQ17SvrO/VcFAABAn+5mB5fOF66ZQ/zF3GLzkQEAAAAAAAAAAAAAAAD6sAOsxAPT
+   eJzt3csKgCAQBdC+ocf//2qbVkEkZl20c2B2Q4jchUgy0wQAAAAAAAAAwOjW9AL4NfkjSf5Ikj8A6M98VMtv3RU8dT53bpFVAAAAAMB/uIMjSf4AAAAAAGjF+zeS5I8k+QMAAAAA4G3ef5AkfwAA4/P/CwC13BuQJH9t2Mc69o0k+SNJ/ujZ0rCnpO/cf1UAAAD06W52cOl84Zo5xF/MLTYfGQAAAAAAAAAAAAAAAKAPO9r6A+g=
   </data>
  </layer>
  <layer name="Intwall" width="160" height="90">
@@ -112,6 +112,7 @@
   <object id="74" x="5250" y="650" width="50" height="200"/>
   <object id="75" x="6050" y="950" width="100" height="50"/>
   <object id="76" x="6750" y="1000" width="50" height="50"/>
+  <object id="77" x="6950" y="1000" width="50" height="50"/>
   <object id="78" x="7000" y="950" width="500" height="50"/>
   <object id="93" x="5400" y="1400" width="50" height="100"/>
   <object id="97" x="5400" y="2450" width="50" height="100"/>

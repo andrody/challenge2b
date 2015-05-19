@@ -49,9 +49,9 @@ class LevelsController: ItemViewCtrl {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var loadedScene : W1_Level_1!
 
-    @IBOutlet weak var levelOneView: levelView!
-    @IBOutlet weak var levelTwoView: levelView!
-    @IBOutlet weak var levelThreeView: levelView!
+    @IBOutlet weak var levelOneView: LevelView!
+    @IBOutlet weak var levelTwoView: LevelView!
+    @IBOutlet weak var levelThreeView: LevelView!
     
 //    @IBOutlet var imageOne: UIImageView!
 //    @IBOutlet weak var imageTwo: UIImageView!
@@ -69,7 +69,6 @@ class LevelsController: ItemViewCtrl {
         levelThreeView.levelNumber.text = String( levelThree.levelNumber )
 
         
-        
         var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
         levelOneView.addGestureRecognizer(tapGesture1)
         
@@ -78,6 +77,8 @@ class LevelsController: ItemViewCtrl {
         
         var tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
         levelThreeView.addGestureRecognizer(tapGesture3)
+        
+        
         
         
         //imageTwo.addGestureRecognizer(tapGesture)
@@ -92,6 +93,55 @@ class LevelsController: ItemViewCtrl {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        checkAll()
+
+    }
+    
+    func checkAll(){
+        checkEnded(levelOne, levelView: levelOneView)
+        checkEnded(levelTwo, levelView: levelTwoView)
+        checkEnded(levelThree, levelView: levelThreeView)
+    }
+    
+    func checkEnded(levelScene : Scenario, levelView : LevelView) {
+        
+        if(levelScene.ended) {
+            levelView.percentageCompleted.hidden = true
+            levelView.ok.hidden = false
+            levelView.lockedView.hidden = true
+            levelView.molduraView.hidden = false
+            levelView.levelNumber.hidden = false
+
+
+        }
+        else {
+            
+            if levelScene.locked {
+                
+                levelView.percentageCompleted.hidden = true
+                levelView.ok.hidden = true
+                levelView.lockedView.hidden = false
+                levelView.molduraView.hidden = true
+                levelView.levelNumber.hidden = true
+
+            }
+            
+            else {
+                levelView.percentageCompleted.hidden = false
+                levelView.percentageCompleted.text = String(levelScene.distanceRecord) + "%"
+                levelView.ok.hidden = true
+                levelView.lockedView.hidden = true
+                levelView.molduraView.hidden = false
+                levelView.levelNumber.hidden = false
+
+
+
+            }
+        }
+
+        
+    }
     
     func levelTap1(gestureRecognizer: UITapGestureRecognizer)
     {
@@ -132,5 +182,7 @@ class LevelsController: ItemViewCtrl {
             self.presentViewController(gVC, animated: true, completion: nil)
         }
     }
+    
+    
     
 }
