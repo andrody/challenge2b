@@ -29,6 +29,7 @@ class SceneManager {
     func loadFases() {
     
         var faseOne = Scenario(nome: "minifase1",
+            levelNumber: 1,
             corMontanha: [25,33,65],
             corMontanhaClara: [43, 57, 109],
             corNuvemBack: [25,117,166],
@@ -42,6 +43,7 @@ class SceneManager {
         )
         
         var faseTwo = Scenario(nome: "minifase2",
+            levelNumber: 2,
             corMontanha: [0,160,3],
             corMontanhaClara: [119, 215, 0],
             corNuvemBack: [0,90,86],
@@ -54,6 +56,7 @@ class SceneManager {
             backgroundBackName : "trapezio_B_branco")
         
         var faseThree = Scenario(nome: "minifase3",
+            levelNumber: 3,
             corMontanha: [178,0,103],
             corMontanhaClara: [214, 119, 174],
             corNuvemBack: [64,0,80],
@@ -67,6 +70,7 @@ class SceneManager {
         )
         
         var faseFour = Scenario(nome: "minifase4",
+            levelNumber: 4,
             corMontanha: [220,159,0],
             corMontanhaClara: [255, 185, 0],
             corNuvemBack: [164,82,0],
@@ -80,6 +84,7 @@ class SceneManager {
         )
         
         var faseFive = Scenario(nome: "minifase5",
+            levelNumber: 5,
             corMontanha: [0,139,134],
             corMontanhaClara: [144, 199, 196],
             corNuvemBack: [119,0,9],
@@ -93,6 +98,7 @@ class SceneManager {
         )
         
         var faseSix = Scenario(nome: "minifase6",
+            levelNumber: 6,
             corMontanha: [0,64,99],
             corMontanhaClara: [0, 66, 102],
             corNuvemBack: [0,33,64],

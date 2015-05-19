@@ -13,6 +13,7 @@ import SpriteKit
 class Scenario {
     
     var nome : String!
+    var levelNumber : Int!
     var corMontanha : [CGFloat]
     var corMontanhaClara : [CGFloat]
     var corNuvemBack : [CGFloat]
@@ -28,9 +29,10 @@ class Scenario {
 
 
     
-    init(nome : String, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String) {
+    init(nome : String, levelNumber : Int, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String) {
         
         self.nome = nome
+        self.levelNumber = levelNumber
         self.corMontanha = corMontanha
         self.corMontanhaClara = corMontanhaClara
         self.corNuvemBack = corNuvemBack

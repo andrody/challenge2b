@@ -13,6 +13,7 @@ class levelView: UIView {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var background: UIImageView!
     
+    @IBOutlet weak var levelNumber: UILabel!
 
     /*
     // Only override drawRect: if you perform custom drawing.

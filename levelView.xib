@@ -2,11 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="levelView" customModule="Ninja_Goo" customModuleProvider="target">
             <connections>
                 <outlet property="background" destination="dvI-0W-Lmr" id="koJ-VD-fyp"/>
+                <outlet property="levelNumber" destination="yQ6-of-ng0" id="efY-ml-FQ2"/>
                 <outlet property="view" destination="iN0-l3-epB" id="XcV-Z4-eA6"/>
             </connections>
         </placeholder>
@@ -18,18 +20,81 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minifase1" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-0W-Lmr">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ6-of-ng0">
+                    <rect key="frame" x="244" y="60" width="112" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="112" id="XEy-17-c6H"/>
+                        <constraint firstAttribute="height" constant="110" id="aw8-GK-fzD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="55"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="moldura" translatesAutoresizingMaskIntoConstraints="NO" id="j9B-ml-lee">
+                    <rect key="frame" x="210" y="25" width="180" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="5z1-Zu-yfM"/>
+                        <constraint firstAttribute="width" secondItem="j9B-ml-lee" secondAttribute="height" multiplier="1:1" id="GKe-Mu-R8W"/>
+                        <constraint firstAttribute="width" constant="64" id="N4v-IM-MrI"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="N4v-IM-MrI"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <include reference="N4v-IM-MrI"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="N4v-IM-MrI"/>
+                        </mask>
+                    </variation>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.68141226740000005" blue="0.44584076810000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="j9B-ml-lee" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" priority="999" constant="51" id="1Lx-Gq-F78"/>
                 <constraint firstItem="dvI-0W-Lmr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3H2-CK-iB1"/>
                 <constraint firstAttribute="trailing" secondItem="dvI-0W-Lmr" secondAttribute="trailing" id="8Y5-vG-Ejl"/>
+                <constraint firstItem="j9B-ml-lee" firstAttribute="centerX" secondItem="dvI-0W-Lmr" secondAttribute="centerX" priority="999" id="FIw-jO-ygT"/>
+                <constraint firstItem="j9B-ml-lee" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="IgU-eK-V5q"/>
                 <constraint firstItem="dvI-0W-Lmr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Io4-A7-bTZ"/>
+                <constraint firstItem="yQ6-of-ng0" firstAttribute="centerX" secondItem="j9B-ml-lee" secondAttribute="centerX" priority="999" id="bao-v3-DAS"/>
+                <constraint firstItem="yQ6-of-ng0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="gR0-vU-Yth"/>
                 <constraint firstAttribute="bottom" secondItem="dvI-0W-Lmr" secondAttribute="bottom" id="kFW-f2-cyn"/>
+                <constraint firstItem="j9B-ml-lee" firstAttribute="centerY" secondItem="yQ6-of-ng0" secondAttribute="centerY" priority="999" id="ypJ-PF-q5X"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="IgU-eK-V5q"/>
+                    <exclude reference="gR0-vU-Yth"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <include reference="IgU-eK-V5q"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=regular">
+                <mask key="constraints">
+                    <include reference="IgU-eK-V5q"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="33" y="360"/>
         </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y8f-GB-FhQ">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+            <nil key="highlightedColor"/>
+        </label>
     </objects>
     <resources>
         <image name="minifase1" width="682" height="1536"/>
+        <image name="moldura" width="400" height="400"/>
     </resources>
 </document>

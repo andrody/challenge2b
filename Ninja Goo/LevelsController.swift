@@ -60,8 +60,13 @@ class LevelsController: ItemViewCtrl {
     override func viewDidLoad() {
         super.viewDidLoad()
         levelOneView.background.image = UIImage(named: levelOne.nome)
+        levelOneView.levelNumber.text = String( levelOne.levelNumber )
+        
         levelTwoView.background.image = UIImage(named: levelTwo.nome)
+        levelTwoView.levelNumber.text = String( levelTwo.levelNumber )
+
         levelThreeView.background.image = UIImage(named: levelThree.nome)
+        levelThreeView.levelNumber.text = String( levelThree.levelNumber )
 
         
         
