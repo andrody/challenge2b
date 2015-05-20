@@ -153,10 +153,14 @@ class StartScreenViewController: ItemViewCtrl {
 
     }
     
-    override func shouldAutorotate() -> Bool {
-        return false
-    }
-   
-    
+//    override func shouldAutorotate() -> Bool {
+//        return false
+//    }
+//    
+//    override func supportedInterfaceOrientations() -> Int {
+//        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+//    }
+//   
+//    
     
 }

@@ -23,15 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
-        
-        if self.window?.rootViewController?.presentedViewController is GameViewController {
-            return Int(UIInterfaceOrientationMask.All.rawValue);
-        } else {
-            return Int(UIInterfaceOrientationMask.Landscape.rawValue);
-        }
-        
-    }
+//    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+//        
+//        if self.window?.rootViewController?.presentedViewController is GameViewController {
+//            return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue) || Int(UIInterfaceOrientationMask.Landscape.rawValue);
+//        } else {
+//            return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue);
+//        }
+//        
+//    }
+    
     func rotate(){
         if(SceneManager.sharedInstance.scene != nil) {
             SceneManager.sharedInstance.scene.resizePositions()
