@@ -210,14 +210,14 @@ class LevelsController: ItemViewCtrl {
             self.presentViewController(gVC, animated: true, completion: nil)
         }
     }
-    
-    override func shouldAutorotate() -> Bool {
-        return false
-    }
-    
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
-    }
-    
+//    
+//    override func shouldAutorotate() -> Bool {
+//        return false
+//    }
+//    
+//    override func supportedInterfaceOrientations() -> Int {
+//        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+//    }
+//    
     
 }
