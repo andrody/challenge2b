@@ -11,6 +11,7 @@
 		65003B841B09224500C30286 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B7E1B09224500C30286 /* minifase6.tmx */; };
 		650D89B41B0645A600631D86 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		652343A41B00DD85001CE608 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 652343A31B00DD85001CE608 /* wall.png */; };
+		652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652BD2E11B0CC3A10064535F /* minifase1.tmx */; };
 		656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343D91B092C1A002E2031 /* minifase2.tmx */; };
 		656343E01B092E33002E2031 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343DF1B092E33002E2031 /* minifase1.tmx */; };
 		656343E61B093065002E2031 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E51B093065002E2031 /* minifase3.tmx */; };
@@ -58,7 +59,6 @@
 		C5EDCF0D1B0BBB4100614097 /* wall.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF061B0BBB4100614097 /* wall.wav */; };
 		C5EDCF0E1B0BBB4100614097 /* teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF071B0BBB4100614097 /* teleport.wav */; };
 		C5EDCF0F1B0BBB4100614097 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF081B0BBB4100614097 /* victory.wav */; };
-		C5EDCF111B0BC00A00614097 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF101B0BC00A00614097 /* minifase1.tmx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +75,7 @@
 		65003B7C1B09224500C30286 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
 		65003B7E1B09224500C30286 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		652343A31B00DD85001CE608 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
+		652BD2E11B0CC3A10064535F /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343D91B092C1A002E2031 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		656343DF1B092E33002E2031 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343E51B093065002E2031 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
@@ -129,7 +130,6 @@
 		C5EDCF061B0BBB4100614097 /* wall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wall.wav; sourceTree = "<group>"; };
 		C5EDCF071B0BBB4100614097 /* teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teleport.wav; sourceTree = "<group>"; };
 		C5EDCF081B0BBB4100614097 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
-		C5EDCF101B0BC00A00614097 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				C5EDCF101B0BC00A00614097 /* minifase1.tmx */,
+				652BD2E11B0CC3A10064535F /* minifase1.tmx */,
 				C51A43831B0939A700566E44 /* minifase2.tmx */,
 				C51A43891B0939DB00566E44 /* minifase3.tmx */,
 				65003B7C1B09224500C30286 /* minifase4.tmx */,
@@ -373,7 +373,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -415,7 +415,7 @@
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
-				C5EDCF111B0BC00A00614097 /* minifase1.tmx in Resources */,
+				652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
 				C5EDCF0E1B0BBB4100614097 /* teleport.wav in Resources */,
