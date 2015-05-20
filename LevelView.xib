@@ -125,17 +125,50 @@
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwg-BT-IgW">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cadeado" translatesAutoresizingMaskIntoConstraints="NO" id="ods-1k-jGR">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cadeado" translatesAutoresizingMaskIntoConstraints="NO" id="ods-1k-jGR">
                                     <rect key="frame" x="263" y="263" width="75" height="75"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="ods-1k-jGR" secondAttribute="height" multiplier="1:1" id="15T-JC-vlH"/>
-                                        <constraint firstAttribute="height" constant="150" id="UAP-iQ-vkQ"/>
                                         <constraint firstAttribute="width" constant="75" id="dFH-qe-3Ht"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="999" constant="75" id="igs-hn-mph"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="UAP-iQ-vkQ"/>
+                                            <exclude reference="dFH-qe-3Ht"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="dFH-qe-3Ht"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=regular">
+                                        <mask key="constraints">
+                                            <include reference="dFH-qe-3Ht"/>
+                                        </mask>
+                                    </variation>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="MEl-rK-bid">
+                                    <rect key="frame" x="280" y="436" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" priority="999" constant="50" id="7KP-wI-UfH"/>
+                                        <constraint firstAttribute="width" secondItem="MEl-rK-bid" secondAttribute="height" multiplier="1:1" id="ddE-Kc-IZ8"/>
+                                        <constraint firstAttribute="width" constant="30" id="jKX-8D-94s"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="jKX-8D-94s"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="jKX-8D-94s"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=regular">
+                                        <mask key="constraints">
+                                            <include reference="jKX-8D-94s"/>
                                         </mask>
                                     </variation>
                                 </imageView>
@@ -143,10 +176,28 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ods-1k-jGR" secondAttribute="trailing" constant="225" id="2Qh-zN-j0f"/>
+                                <constraint firstItem="MEl-rK-bid" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" constant="85" id="37E-ig-InL"/>
                                 <constraint firstAttribute="bottom" secondItem="ods-1k-jGR" secondAttribute="bottom" constant="225" id="FdV-px-jzk"/>
                                 <constraint firstItem="ods-1k-jGR" firstAttribute="centerX" secondItem="wwg-BT-IgW" secondAttribute="centerX" id="G6V-qY-P5j"/>
+                                <constraint firstItem="MEl-rK-bid" firstAttribute="centerX" secondItem="ods-1k-jGR" secondAttribute="centerX" id="P8E-fF-81b"/>
                                 <constraint firstItem="ods-1k-jGR" firstAttribute="centerY" secondItem="wwg-BT-IgW" secondAttribute="centerY" id="W28-QA-aad"/>
+                                <constraint firstItem="MEl-rK-bid" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" priority="999" constant="230" id="vdX-f4-7Xf"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="37E-ig-InL"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact">
+                                <mask key="constraints">
+                                    <include reference="37E-ig-InL"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact-widthClass=regular">
+                                <mask key="constraints">
+                                    <include reference="37E-ig-InL"/>
+                                </mask>
+                            </variation>
                         </scrollView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -234,6 +285,7 @@
     </objects>
     <resources>
         <image name="cadeado" width="128" height="128"/>
+        <image name="key" width="256" height="256"/>
         <image name="minifase1" width="682" height="1536"/>
         <image name="moldura" width="400" height="400"/>
         <image name="ok" width="400" height="400"/>
