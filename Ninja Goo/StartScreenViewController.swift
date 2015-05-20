@@ -52,6 +52,8 @@ class StartScreenViewController: ItemViewCtrl {
         view.addGestureRecognizer(tapGesture)
         
         SceneManager.sharedInstance.fases[0].locked = false
+        SceneManager.sharedInstance.fases[1].unlockable = true
+
         
         
     }

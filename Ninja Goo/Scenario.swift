@@ -14,6 +14,9 @@ enum Saves: String {
     case maxDistance = "maxDistancia"
     case ended = "ended"
     case locked = "locked"
+    case unlockable = "unlockable"
+    case attempts = "attempts"
+
 
 }
 
@@ -47,6 +50,21 @@ class Scenario {
             SceneManager.sharedInstance.save(self.nome + Saves.maxDistance.rawValue, value: newValue)
         }
     }
+    
+    var attempts : Int {
+        get {
+            var returnValue: Int? = NSUserDefaults.standardUserDefaults().objectForKey(self.nome + Saves.attempts.rawValue) as? Int
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = 0 //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save(self.nome + Saves.attempts.rawValue, value: newValue)
+        }
+    }
+
 
     var ended : Bool {
         get {
@@ -75,6 +93,23 @@ class Scenario {
             SceneManager.sharedInstance.save(self.nome + Saves.locked.rawValue, value: newValue)
         }
     }
+    
+    var unlockable : Bool {
+        get {
+            var returnValue: Bool? = NSUserDefaults.standardUserDefaults().objectForKey(self.nome + Saves.unlockable.rawValue) as? Bool
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = false //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save(self.nome + Saves.unlockable.rawValue, value: newValue)
+        }
+    }
+    
+    
+
 
 
     

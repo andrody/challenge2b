@@ -137,6 +137,19 @@ class LevelsController: ItemViewCtrl {
                 levelView.lockedView.hidden = false
                 levelView.molduraView.hidden = true
                 levelView.levelNumber.hidden = true
+                
+                if !levelScene.unlockable {
+                    
+                    levelView.unlockLabel.hidden = true
+                    levelView.buyButton.hidden = true
+                    levelView.keyView.hidden = true
+                    
+                }
+                else {
+                    levelView.unlockLabel.hidden = false
+                    levelView.buyButton.hidden = false
+                    levelView.keyView.hidden = false
+                }
 
             }
             

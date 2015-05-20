@@ -987,6 +987,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             SceneManager.sharedInstance.faseEscolhida.distanceRecord = percentage
         }
         
+        if (!SceneManager.sharedInstance.faseEscolhida.ended) {
+            SceneManager.sharedInstance.faseEscolhida.attempts += 1
+        }
+        
     }
     
     func restart(){
@@ -997,6 +1001,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         //self.saveHighscore(self.score)
         self.score = 0
+        self.jumps = 0
         self.ninja.getRandomMask()
         self.ninja.isMoving = true
         //self.ninja.physicsBody?.collisionBitMask = 0
@@ -1301,7 +1306,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         SceneManager.sharedInstance.faseEscolhida.ended = true
         for (index, fase) in enumerate(SceneManager.sharedInstance.fases) {
             if fase.nome == SceneManager.sharedInstance.faseEscolhida.nome {
-                SceneManager.sharedInstance.fases[index + 1].locked = false
+                if(SceneManager.sharedInstance.fases.endIndex != index) {
+                    SceneManager.sharedInstance.fases[index + 1].locked = false
+                }
+                if(SceneManager.sharedInstance.fases.endIndex != index + 1) {
+                    SceneManager.sharedInstance.fases[index + 2].unlockable = true
+                }
             }
             
         }
@@ -1339,7 +1349,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         congrats.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
         
         let tries = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBlack")
-        tries.text = "ATTEMPT #21"
+        tries.text = "ATTEMPT #\(SceneManager.sharedInstance.faseEscolhida.attempts)"
         tries.fontSize = fontSize/2
         tries.position = CGPointMake(-distanceConstX, distanceConstYInitial - distanceConstY)
         tries.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left;
