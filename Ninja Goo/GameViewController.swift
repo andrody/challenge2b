@@ -57,17 +57,17 @@ class GameViewController: UIViewController {
     }
  
 
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    override func supportedInterfaceOrientations() -> Int {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
-        } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
-        }
-    }
+//    override func shouldAutorotate() -> Bool {
+//        return true
+//    }
+//
+//    override func supportedInterfaceOrientations() -> Int {
+//        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+//            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+//        } else {
+//            return Int(UIInterfaceOrientationMask.All.rawValue)
+//        }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,6 +76,14 @@ class GameViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
     }
     
     

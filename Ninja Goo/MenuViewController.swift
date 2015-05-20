@@ -119,18 +119,6 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     
     
     
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-    
-    override func supportedInterfaceOrientations() -> Int {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
-        } else {
-            return Int(UIInterfaceOrientationMask.All.rawValue)
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
@@ -141,6 +129,13 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+    }
     
     
     
