@@ -8,7 +8,9 @@
 
 import UIKit
 
+
 class LevelView: UIView {
+
 
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var background: UIImageView!
@@ -23,6 +25,19 @@ class LevelView: UIView {
     
     @IBOutlet weak var lockedView: UIView!
     
+    
+    @IBOutlet weak var keyView: UIImageView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var mask: UIImageView!
+    
+    @IBOutlet var unlockLabel: UILabel!
+    
+    @IBOutlet weak var buyButton: UIImageView!
+    
+    
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -34,8 +49,12 @@ class LevelView: UIView {
         super.init(coder: aDecoder)
         //let className = NSStringFromClass(levelView.self)
         self.view = (NSBundle.mainBundle().loadNibNamed("LevelView", owner:self, options:nil).first) as! UIView
+        
         self.addSubview(self.view)
         
+        
+        
+
         view.setTranslatesAutoresizingMaskIntoConstraints(false)
 
         var constX = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
@@ -51,6 +70,23 @@ class LevelView: UIView {
         self.addConstraint(constBottom)
 
 
+        var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("key:"))
+        keyView.addGestureRecognizer(tapGesture1)
+        
+        let color = UIColor(red: 252/255, green: 249/255, blue: 172/255, alpha: 1.0)
+        unlockLabel.textColor = color
+        buyButton.image = buyButton.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        buyButton.tintColor = color
+
+
+    }
+    
+    func key(gestureRecognizer: UITapGestureRecognizer){
+        
+//        levelTwoView.unlockLabel.center = CGPointMake(0, levelTwoView.scrollView.frame.height - 100);
+
+        scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
+//        mask.frame = CGRectMake( scrollView.frame.width/2, scrollView.frame.height, 100, 100 );
 
     }
 

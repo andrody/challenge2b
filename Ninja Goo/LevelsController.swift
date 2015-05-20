@@ -93,10 +93,21 @@ class LevelsController: ItemViewCtrl {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        levelOneView.scrollView.frame = CGRectMake(0, 0, levelTwoView.frame.width*2, levelTwoView.frame.height)
+        levelTwoView.scrollView.frame = CGRectMake(0, 0, levelTwoView.frame.width*2, levelTwoView.frame.height)
+        levelThreeView.scrollView.frame = CGRectMake(0, 0, levelTwoView.frame.width*2, levelTwoView.frame.height)
+        
+
+
+    }
+    
     override func viewWillAppear(animated: Bool) {
         checkAll()
 
     }
+    
+    
     
     func checkAll(){
         checkEnded(levelOne, levelView: levelOneView)
@@ -105,6 +116,8 @@ class LevelsController: ItemViewCtrl {
     }
     
     func checkEnded(levelScene : Scenario, levelView : LevelView) {
+        
+
         
         if(levelScene.ended) {
             levelView.percentageCompleted.hidden = true
@@ -145,26 +158,28 @@ class LevelsController: ItemViewCtrl {
     
     func levelTap1(gestureRecognizer: UITapGestureRecognizer)
     {
-        
-        loadingIndicator.hidden = false
-        loadLevel(levelOne)
+        if(!levelOne.locked) {
+            loadingIndicator.hidden = false
+            loadLevel(levelOne)
+        }
         
     }
     
     func levelTap2(gestureRecognizer: UITapGestureRecognizer)
     {
-        
-        loadingIndicator.hidden = false
-        loadLevel(levelTwo)
+        if(!levelTwo.locked) {
+            loadingIndicator.hidden = false
+            loadLevel(levelTwo)
+        }
         
     }
     
     func levelTap3(gestureRecognizer: UITapGestureRecognizer)
     {
-        
-        loadingIndicator.hidden = false
-        loadLevel(levelThree)
-        
+        if(!levelThree.locked) {
+            loadingIndicator.hidden = false
+            loadLevel(levelThree)
+        }
     }
     
     func loadLevel(level : Scenario){
