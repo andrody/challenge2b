@@ -37,6 +37,9 @@ class StartScreenViewController: ItemViewCtrl {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        
         self.tapToPlay.bringSubviewToFront(logo)
         //logo.removeConstraint(larguraIgual)
 
@@ -146,6 +149,10 @@ class StartScreenViewController: ItemViewCtrl {
         adjustConstraint()
         animateLogo()
 
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
    
     

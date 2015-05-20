@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotate", name: UIDeviceOrientationDidChangeNotification, object: nil)
@@ -21,6 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+        
+        if self.window?.rootViewController?.presentedViewController is GameViewController {
+            return Int(UIInterfaceOrientationMask.All.rawValue);
+        } else {
+            return Int(UIInterfaceOrientationMask.Landscape.rawValue);
+        }
+        
+    }
     func rotate(){
         if(SceneManager.sharedInstance.scene != nil) {
             SceneManager.sharedInstance.scene.resizePositions()
