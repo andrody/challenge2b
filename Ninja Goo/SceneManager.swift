@@ -52,8 +52,10 @@ class SceneManager {
             corPlataforma: [16,31,39],
             corFundo: [191,231,231],
             corWallEspecial: [0,116,111],
-            backgroundFrontName: "trapezio_branco",
-            backgroundBackName : "trapezio_B_branco")
+            backgroundFrontName: "arvore_branco",
+            backgroundBackName : "arvore_b_branco")
+        
+        
         
         var faseThree = Scenario(nome: "minifase3",
             levelNumber: 3,
@@ -65,8 +67,8 @@ class SceneManager {
             corPlataforma: [16,31,39],
             corFundo: [227,201,234],
             corWallEspecial: [98,0,123],
-            backgroundFrontName: "arvore_branco",
-            backgroundBackName : "arvore_b_branco"
+            backgroundFrontName: "trapezio_branco",
+            backgroundBackName : "trapezio_B_branco"
         )
         
         var faseFour = Scenario(nome: "minifase4",
