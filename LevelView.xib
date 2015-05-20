@@ -9,11 +9,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LevelView">
             <connections>
                 <outlet property="background" destination="dvI-0W-Lmr" id="koJ-VD-fyp"/>
+                <outlet property="buyButton" destination="zfQ-DZ-PTc" id="lE6-oB-MBy"/>
+                <outlet property="keyView" destination="MEl-rK-bid" id="RoT-EU-WbG"/>
                 <outlet property="levelNumber" destination="yQ6-of-ng0" id="efY-ml-FQ2"/>
                 <outlet property="lockedView" destination="0Ev-ET-C5W" id="How-SA-YqK"/>
                 <outlet property="molduraView" destination="j9B-ml-lee" id="XWq-rv-4v9"/>
                 <outlet property="ok" destination="ZwL-C7-zzR" id="05U-gC-z5p"/>
                 <outlet property="percentageCompleted" destination="UNB-h8-Ri7" id="O7w-jT-I89"/>
+                <outlet property="scrollView" destination="wwg-BT-IgW" id="dlB-im-HJ4"/>
+                <outlet property="unlockLabel" destination="n5G-KU-I0l" id="IOf-Ff-b57"/>
                 <outlet property="view" destination="iN0-l3-epB" id="XcV-Z4-eA6"/>
             </connections>
         </placeholder>
@@ -115,15 +119,15 @@
                         </mask>
                     </variation>
                 </label>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-ET-C5W" userLabel="locked">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-ET-C5W" userLabel="locked">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <view alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5m-SQ-rTa" userLabel="vidro">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwg-BT-IgW">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwg-BT-IgW">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cadeado" translatesAutoresizingMaskIntoConstraints="NO" id="ods-1k-jGR">
                                     <rect key="frame" x="263" y="263" width="75" height="75"/>
@@ -149,7 +153,7 @@
                                         </mask>
                                     </variation>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="MEl-rK-bid">
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="MEl-rK-bid">
                                     <rect key="frame" x="280" y="436" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" priority="999" constant="50" id="7KP-wI-UfH"/>
@@ -172,15 +176,32 @@
                                         </mask>
                                     </variation>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Unlock Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5G-KU-I0l">
+                                    <rect key="frame" x="248" y="576" width="103" height="48"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="099" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-DZ-PTc" userLabel="099">
+                                    <rect key="frame" x="180" y="536" width="240" height="128"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="zfQ-DZ-PTc" secondAttribute="height" multiplier="15:8" id="U9f-N6-kdw"/>
+                                        <constraint firstAttribute="width" constant="128" id="bqq-qd-Tbf"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="n5G-KU-I0l" firstAttribute="centerX" secondItem="zfQ-DZ-PTc" secondAttribute="centerX" constant="-0.5" id="1tj-bm-yIf"/>
                                 <constraint firstAttribute="trailing" secondItem="ods-1k-jGR" secondAttribute="trailing" constant="225" id="2Qh-zN-j0f"/>
                                 <constraint firstItem="MEl-rK-bid" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" constant="85" id="37E-ig-InL"/>
+                                <constraint firstItem="n5G-KU-I0l" firstAttribute="centerX" secondItem="MEl-rK-bid" secondAttribute="centerX" constant="-0.5" id="9l0-1f-sRo"/>
                                 <constraint firstAttribute="bottom" secondItem="ods-1k-jGR" secondAttribute="bottom" constant="225" id="FdV-px-jzk"/>
                                 <constraint firstItem="ods-1k-jGR" firstAttribute="centerX" secondItem="wwg-BT-IgW" secondAttribute="centerX" id="G6V-qY-P5j"/>
                                 <constraint firstItem="MEl-rK-bid" firstAttribute="centerX" secondItem="ods-1k-jGR" secondAttribute="centerX" id="P8E-fF-81b"/>
                                 <constraint firstItem="ods-1k-jGR" firstAttribute="centerY" secondItem="wwg-BT-IgW" secondAttribute="centerY" id="W28-QA-aad"/>
+                                <constraint firstItem="n5G-KU-I0l" firstAttribute="top" secondItem="MEl-rK-bid" secondAttribute="bottom" constant="20" id="YXe-Eo-uJ0"/>
+                                <constraint firstItem="n5G-KU-I0l" firstAttribute="bottom" secondItem="zfQ-DZ-PTc" secondAttribute="top" constant="5" id="bBh-Ot-ynv"/>
                                 <constraint firstItem="MEl-rK-bid" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" priority="999" constant="230" id="vdX-f4-7Xf"/>
                             </constraints>
                             <variation key="default">
@@ -241,8 +262,10 @@
                 <constraint firstItem="0Ev-ET-C5W" firstAttribute="trailing" secondItem="dvI-0W-Lmr" secondAttribute="trailing" id="LKb-wl-zT3"/>
                 <constraint firstItem="UNB-h8-Ri7" firstAttribute="trailing" secondItem="dvI-0W-Lmr" secondAttribute="trailing" id="ROc-RZ-oND"/>
                 <constraint firstItem="ZwL-C7-zzR" firstAttribute="centerX" secondItem="yQ6-of-ng0" secondAttribute="centerX" id="UPR-ip-6m9"/>
+                <constraint firstItem="dvI-0W-Lmr" firstAttribute="width" secondItem="0Ev-ET-C5W" secondAttribute="width" id="YaZ-iq-Za9"/>
                 <constraint firstItem="yQ6-of-ng0" firstAttribute="centerX" secondItem="j9B-ml-lee" secondAttribute="centerX" priority="999" id="bao-v3-DAS"/>
                 <constraint firstItem="ZwL-C7-zzR" firstAttribute="centerX" secondItem="UNB-h8-Ri7" secondAttribute="centerX" id="cqH-Sf-JLb"/>
+                <constraint firstItem="dvI-0W-Lmr" firstAttribute="height" secondItem="0Ev-ET-C5W" secondAttribute="height" id="eRC-eg-1i5"/>
                 <constraint firstItem="yQ6-of-ng0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="gR0-vU-Yth"/>
                 <constraint firstItem="UNB-h8-Ri7" firstAttribute="leading" secondItem="dvI-0W-Lmr" secondAttribute="leading" id="h1C-pU-89K"/>
                 <constraint firstAttribute="bottom" secondItem="dvI-0W-Lmr" secondAttribute="bottom" id="kFW-f2-cyn"/>
@@ -254,6 +277,8 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="v6X-JJ-23o"/>
+                    <exclude reference="YaZ-iq-Za9"/>
+                    <exclude reference="eRC-eg-1i5"/>
                     <exclude reference="IgU-eK-V5q"/>
                     <exclude reference="gR0-vU-Yth"/>
                     <exclude reference="cqH-Sf-JLb"/>
@@ -271,19 +296,9 @@
             </variation>
             <point key="canvasLocation" x="33" y="360"/>
         </view>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y8f-GB-FhQ">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-            <nil key="highlightedColor"/>
-        </label>
-        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="EWN-6G-Zgk">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-        </imageView>
     </objects>
     <resources>
+        <image name="099" width="600" height="400"/>
         <image name="cadeado" width="128" height="128"/>
         <image name="key" width="256" height="256"/>
         <image name="minifase1" width="682" height="1536"/>
