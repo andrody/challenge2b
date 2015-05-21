@@ -86,7 +86,7 @@ class LevelsController: ItemViewCtrl {
         var buy = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
         levelOneView.addGestureRecognizer(tapGesture1)
 
-        
+        println("CARREGOU A BUCETAA")
         
         //imageTwo.addGestureRecognizer(tapGesture)
         //imageThree.addGestureRecognizer(tapGesture)
@@ -105,12 +105,14 @@ class LevelsController: ItemViewCtrl {
         levelTwoView.scrollView.frame = CGRectMake(0, 0, levelTwoView.frame.width*2, levelTwoView.frame.height)
         levelThreeView.scrollView.frame = CGRectMake(0, 0, levelTwoView.frame.width*2, levelTwoView.frame.height)
         
+        println("VIEWDIDLOAD")
 
 
     }
     
     override func viewWillAppear(animated: Bool) {
         checkAll()
+        println("CHECANDO")
 
     }
     
