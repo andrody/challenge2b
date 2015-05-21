@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import StoreKit
 
 
-class LevelView: UIView, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+class LevelView: UIView {
 
 
     @IBOutlet weak var view: UIView!
@@ -37,8 +36,11 @@ class LevelView: UIView, SKProductsRequestDelegate, SKPaymentTransactionObserver
     
     @IBOutlet weak var buyButton: UIImageView!
     
-    var keyId : String = "levelkey"
 
+    @IBOutlet weak var loadBuy: UIActivityIndicatorView!
+    
+    
+    @IBOutlet weak var loadLevelSpin: UIActivityIndicatorView!
     
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -54,7 +56,8 @@ class LevelView: UIView, SKProductsRequestDelegate, SKPaymentTransactionObserver
         
         self.addSubview(self.view)
         
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideLoad", name: "unlockedLevel", object: nil)
+
         
 
         view.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -75,7 +78,7 @@ class LevelView: UIView, SKProductsRequestDelegate, SKPaymentTransactionObserver
         var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("key:"))
         keyView.addGestureRecognizer(tapGesture1)
         
-        var buyObserver = UITapGestureRecognizer(target: self, action: Selector("buyKey:"))
+        var buyObserver = UITapGestureRecognizer(target: self, action: Selector("buyKey"))
         buyButton.addGestureRecognizer(buyObserver)
 
         
@@ -84,11 +87,15 @@ class LevelView: UIView, SKProductsRequestDelegate, SKPaymentTransactionObserver
         buyButton.image = buyButton.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         buyButton.tintColor = color
 
+        loadBuy.hidden = true
+        loadLevelSpin.hidden = true
+
 
     }
     
     func key(gestureRecognizer: UITapGestureRecognizer){
-        
+        SceneManager.sharedInstance.playClickSound()
+
 //        levelTwoView.unlockLabel.center = CGPointMake(0, levelTwoView.scrollView.frame.height - 100);
 
         scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
@@ -97,78 +104,16 @@ class LevelView: UIView, SKProductsRequestDelegate, SKPaymentTransactionObserver
     }
     
     func buyKey(){
-        println("About to fetch the products");
-        // We check that we are allow to make the purchase.
-        if (SKPaymentQueue.canMakePayments())
-        {
-            var productID:NSSet = NSSet(object: self.keyId);
-            var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as Set<NSObject>);
-            productsRequest.delegate = self;
-            productsRequest.start();
-            println("Fething Products");
-        }else{
-            println("can't make purchases");
-        }
+        SceneManager.sharedInstance.playClickSound()
+
+        SceneManager.sharedInstance.buyKey()
+        loadBuy.hidden = false
     }
     
-    // Helper Methods
-    
-    func buyProduct(product: SKProduct){
-        println("Sending the Payment Request to Apple");
-        var payment = SKPayment(product: product)
-        SKPaymentQueue.defaultQueue().addPayment(payment);
-        
+    func hideLoad() {
+        loadBuy.hidden = true
     }
     
     
-    // Delegate Methods for IAP
-    
-    func productsRequest (request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        println("got the request from Apple")
-        var count : Int = response.products.count
-        if (count>0) {
-            var validProducts = response.products
-            var validProduct: SKProduct = response.products[0] as! SKProduct
-            if (validProduct.productIdentifier == self.keyId) {
-                println(validProduct.localizedTitle)
-                println(validProduct.localizedDescription)
-                println(validProduct.price)
-                buyProduct(validProduct);
-            } else {
-                println(validProduct.productIdentifier)
-            }
-        } else {
-            println("nothing")
-        }
-    }
-    
-    
-    func request(request: SKRequest!, didFailWithError error: NSError!) {
-        println("La vaina fallo");
-    }
-    
-    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!)    {
-        println("Received Payment Transaction Response from Apple");
-        
-        for transaction:AnyObject in transactions {
-            if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
-                switch trans.transactionState {
-                case .Purchased:
-                    println("Product Purchased");
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
-                    break;
-                case .Failed:
-                    println("Purchased Failed");
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
-                    break;
-                    // case .Restored:
-                    //[self restoreTransaction:transaction];
-                default:
-                    break;
-                }
-            }
-        }
-        
-    }
 
 }

@@ -61,6 +61,9 @@ class LevelsController: ItemViewCtrl {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkAll", name: "unlockedLevel", object: nil)
+        
         levelOneView.background.image = UIImage(named: levelOne.nome)
         levelOneView.levelNumber.text = String( levelOne.levelNumber )
         
@@ -176,8 +179,7 @@ class LevelsController: ItemViewCtrl {
     func levelTap1(gestureRecognizer: UITapGestureRecognizer)
     {
         if(!levelOne.locked) {
-            loadingIndicator.hidden = false
-            loadLevel(levelOne)
+            loadLevel(levelOne, levelView: levelOneView)
         }
         
     }
@@ -185,8 +187,7 @@ class LevelsController: ItemViewCtrl {
     func levelTap2(gestureRecognizer: UITapGestureRecognizer)
     {
         if(!levelTwo.locked) {
-            loadingIndicator.hidden = false
-            loadLevel(levelTwo)
+            loadLevel(levelTwo, levelView: levelTwoView)
         }
         
     }
@@ -194,12 +195,14 @@ class LevelsController: ItemViewCtrl {
     func levelTap3(gestureRecognizer: UITapGestureRecognizer)
     {
         if(!levelThree.locked) {
-            loadingIndicator.hidden = false
-            loadLevel(levelThree)
+            loadLevel(levelThree, levelView: levelThreeView)
         }
     }
     
-    func loadLevel(level : Scenario){
+    func loadLevel(level : Scenario, levelView : LevelView){
+        levelView.loadLevelSpin.hidden = false
+
+        
         SceneManager.sharedInstance.playClickSound()
 
         var gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
@@ -211,6 +214,7 @@ class LevelsController: ItemViewCtrl {
             gVC.scene = loadedScene
             SceneManager.sharedInstance.scene = loadedScene
             
+            levelView.loadLevelSpin.hidden = true
             self.presentViewController(gVC, animated: true, completion: nil)
         }
     }
@@ -223,7 +227,6 @@ class LevelsController: ItemViewCtrl {
 //        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
 //    }
 //    
-    
     
     
 }

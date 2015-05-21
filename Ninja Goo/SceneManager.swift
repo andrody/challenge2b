@@ -7,22 +7,27 @@
 //
 
 import AVFoundation
+import StoreKit
 
 
 private let _SceneManagerSharedInstance = SceneManager()
 
-class SceneManager {
+class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     static let sharedInstance = SceneManager()
     var audioPlayer = AVAudioPlayer()
     var scene : W1_Level_1!
     var gameViewCtrl : GameViewController!
 
-    
+    var keyId : String = "levelkey"
+
     var fases = [Scenario]()
     var faseEscolhida : Scenario!
     
-    init(){
+    override init(){
+        super.init()
         loadFases()
+        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+
     }
     
     
@@ -123,9 +128,9 @@ class SceneManager {
     
     }
     
-    func playClickSound(){
+    func playClickSound(name : String = "click"){
         // Load
-        let soundURL = NSBundle.mainBundle().URLForResource("click", withExtension: "wav")
+        let soundURL = NSBundle.mainBundle().URLForResource(name, withExtension: "wav")
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
         AVAudioSession.sharedInstance().setActive(true, error: nil)
@@ -147,6 +152,108 @@ class SceneManager {
         
         return NSUserDefaults.standardUserDefaults().objectForKey(key)
     }
+    
+    func unlockNextLevel() {
+        var flag = false
+        playClickSound(name: "victory")
+
+        
+        for fase in fases {
+            if(flag) {
+                println("desbloqueaVEL fase \(fase.nome)")
+
+                fase.unlockable = true
+                flag = false
+                break
+            }
+
+            if fase.unlockable && fase.locked {
+                println("desbloqueado fase \(fase.nome)")
+                fase.locked = false
+                fase.unlockable = false
+                flag = true
+            }
+        }
+        
+    }
+    
+    func buyKey(){
+        println("About to fetch the products");
+        // We check that we are allow to make the purchase.
+        if (SKPaymentQueue.canMakePayments())
+        {
+            var productID:NSSet = NSSet(object: self.keyId);
+            var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as Set<NSObject>);
+            productsRequest.delegate = self;
+            productsRequest.start();
+            println("Fething Products");
+        }else{
+            println("can't make purchases");
+        }
+    }
+    
+    // Helper Methods
+    
+    func buyProduct(product: SKProduct){
+        println("Sending the Payment Request to Apple");
+        var payment = SKPayment(product: product)
+        SKPaymentQueue.defaultQueue().addPayment(payment);
+        
+    }
+    
+    
+    // Delegate Methods for IAP
+    
+    func productsRequest (request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
+        println("got the request from Apple")
+        var count : Int = response.products.count
+        if (count>0) {
+            var validProducts = response.products
+            var validProduct: SKProduct = response.products[0] as! SKProduct
+            if (validProduct.productIdentifier == self.keyId) {
+                println(validProduct.localizedTitle)
+                println(validProduct.localizedDescription)
+                println(validProduct.price)
+                buyProduct(validProduct);
+            } else {
+                println(validProduct.productIdentifier)
+            }
+        } else {
+            println("nothing")
+        }
+    }
+    
+    
+    func request(request: SKRequest!, didFailWithError error: NSError!) {
+        println("La vaina fallo");
+    }
+    
+    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!)    {
+        println("Received Payment Transaction Response from Apple");
+        
+        for transaction:AnyObject in transactions {
+            if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
+                switch trans.transactionState {
+                case .Purchased:
+                    println("Product Purchased");
+                    SceneManager.sharedInstance.unlockNextLevel()
+                    NSNotificationCenter.defaultCenter().postNotificationName("unlockedLevel", object: nil)
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
+                    break;
+                case .Failed:
+                    println("Purchased Failed");
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
+                    break;
+                    // case .Restored:
+                    //[self restoreTransaction:transaction];
+                default:
+                    break;
+                }
+            }
+        }
+        
+    }
+
     
     
     

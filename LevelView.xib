@@ -12,6 +12,8 @@
                 <outlet property="buyButton" destination="zfQ-DZ-PTc" id="lE6-oB-MBy"/>
                 <outlet property="keyView" destination="MEl-rK-bid" id="RoT-EU-WbG"/>
                 <outlet property="levelNumber" destination="yQ6-of-ng0" id="efY-ml-FQ2"/>
+                <outlet property="loadBuy" destination="J2M-sq-jij" id="7Of-v6-ZyQ"/>
+                <outlet property="loadLevelSpin" destination="5Lf-S9-NFL" id="fln-5L-QD6"/>
                 <outlet property="lockedView" destination="0Ev-ET-C5W" id="How-SA-YqK"/>
                 <outlet property="molduraView" destination="j9B-ml-lee" id="XWq-rv-4v9"/>
                 <outlet property="ok" destination="ZwL-C7-zzR" id="05U-gC-z5p"/>
@@ -92,6 +94,9 @@
                         </mask>
                     </variation>
                 </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-S9-NFL" userLabel="loadLevelSpin">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.44999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNB-h8-Ri7">
                     <rect key="frame" x="0.0" y="512" width="600" height="88"/>
                     <constraints>
@@ -119,7 +124,7 @@
                         </mask>
                     </variation>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-ET-C5W" userLabel="locked">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ev-ET-C5W" userLabel="locked">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <view alpha="0.74999999999999978" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5m-SQ-rTa" userLabel="vidro">
@@ -189,6 +194,9 @@
                                         <constraint firstAttribute="width" constant="128" id="bqq-qd-Tbf"/>
                                     </constraints>
                                 </imageView>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J2M-sq-jij" userLabel="loadBuy">
+                                    <rect key="frame" x="290" y="380" width="20" height="20"/>
+                                </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -201,12 +209,16 @@
                                 <constraint firstItem="n5G-KU-I0l" firstAttribute="top" secondItem="MEl-rK-bid" secondAttribute="bottom" priority="999" constant="50" id="H5W-gS-RUM"/>
                                 <constraint firstItem="MEl-rK-bid" firstAttribute="centerX" secondItem="ods-1k-jGR" secondAttribute="centerX" id="P8E-fF-81b"/>
                                 <constraint firstItem="ods-1k-jGR" firstAttribute="centerY" secondItem="wwg-BT-IgW" secondAttribute="centerY" id="W28-QA-aad"/>
+                                <constraint firstItem="ods-1k-jGR" firstAttribute="top" secondItem="J2M-sq-jij" secondAttribute="bottom" constant="52" id="W5V-Jw-7oz"/>
                                 <constraint firstItem="n5G-KU-I0l" firstAttribute="top" secondItem="MEl-rK-bid" secondAttribute="bottom" constant="20" id="YXe-Eo-uJ0"/>
                                 <constraint firstItem="n5G-KU-I0l" firstAttribute="bottom" secondItem="zfQ-DZ-PTc" secondAttribute="top" constant="5" id="bBh-Ot-ynv"/>
+                                <constraint firstItem="J2M-sq-jij" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" constant="42" id="g1o-Ia-vTe"/>
+                                <constraint firstItem="J2M-sq-jij" firstAttribute="centerX" secondItem="ods-1k-jGR" secondAttribute="centerX" constant="-0.5" id="ljq-AQ-Z2D"/>
                                 <constraint firstItem="MEl-rK-bid" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" priority="999" constant="230" id="vdX-f4-7Xf"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="W5V-Jw-7oz"/>
                                     <exclude reference="37E-ig-InL"/>
                                     <exclude reference="YXe-Eo-uJ0"/>
                                 </mask>
@@ -260,7 +272,9 @@
                 <constraint firstItem="0Ev-ET-C5W" firstAttribute="top" secondItem="dvI-0W-Lmr" secondAttribute="top" id="6bK-cw-I7U"/>
                 <constraint firstAttribute="trailing" secondItem="dvI-0W-Lmr" secondAttribute="trailing" id="8Y5-vG-Ejl"/>
                 <constraint firstItem="ZwL-C7-zzR" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" priority="999" constant="-8" id="Be8-gS-bsX"/>
+                <constraint firstAttribute="centerX" secondItem="5Lf-S9-NFL" secondAttribute="centerX" id="Csz-ls-c30"/>
                 <constraint firstItem="j9B-ml-lee" firstAttribute="centerX" secondItem="dvI-0W-Lmr" secondAttribute="centerX" priority="999" id="FIw-jO-ygT"/>
+                <constraint firstAttribute="centerY" secondItem="5Lf-S9-NFL" secondAttribute="centerY" id="G6a-0u-LWh"/>
                 <constraint firstItem="j9B-ml-lee" firstAttribute="top" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="IgU-eK-V5q"/>
                 <constraint firstItem="dvI-0W-Lmr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Io4-A7-bTZ"/>
                 <constraint firstItem="0Ev-ET-C5W" firstAttribute="trailing" secondItem="dvI-0W-Lmr" secondAttribute="trailing" id="LKb-wl-zT3"/>
