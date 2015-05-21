@@ -654,7 +654,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.pauseButton?.anchorPoint = CGPointMake(0.5 , 0.5)
         self.pauseButton?.zPosition = 90
         self.pauseButton?.setScale(0.7)
-        self.pauseButton?.alpha = 0.6
+        //self.pauseButton?.alpha = 0.6
         
         
 //        self.pauseButton!.position = CGPointMake(-self.scene!.frame.width/2 + 120, self.scene!.frame.height/2 - 120)
