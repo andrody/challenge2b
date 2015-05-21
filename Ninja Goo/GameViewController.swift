@@ -11,7 +11,8 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
-    
+    var startAppAd: STAStartAppAd?
+
     
     @IBOutlet weak var skView: SKView!
     
@@ -20,6 +21,10 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startAppAd = STAStartAppAd()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAd", name: "showAd", object: nil)
+
 
         //self.view.backgroundColor = SKColor(red: 255, green: 255, blue: 255, alpha: 1)
         
@@ -48,12 +53,21 @@ class GameViewController: UIViewController {
             self.skView.presentScene(self.scene!)
 //        }
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        startAppAd!.loadAd()
+
+    }
 
     func backToMenu(){
         //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
         self.dismissViewControllerAnimated(true, completion: nil)
         println("BACK TO MEnu")
 
+    }
+    
+    func showAd(){
+        startAppAd!.showAd()
     }
  
 

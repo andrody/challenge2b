@@ -31,6 +31,14 @@
 		C51A43871B0939DB00566E44 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C51A43891B0939DB00566E44 /* minifase3.tmx */; };
 		C51A438F1B0A010700566E44 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51A438E1B0A010700566E44 /* LevelView.swift */; };
 		C51A43911B0A012200566E44 /* LevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51A43901B0A012200566E44 /* LevelView.xib */; };
+		C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C51CBE8E1B0E506C00913FAA /* StartApp.bundle */; };
+		C51CBE911B0E506C00913FAA /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE8F1B0E506C00913FAA /* StartApp.framework */; };
+		C51CBE931B0E512100913FAA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE921B0E512100913FAA /* CoreTelephony.framework */; };
+		C51CBE951B0E512F00913FAA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE941B0E512F00913FAA /* SystemConfiguration.framework */; };
+		C51CBE971B0E513900913FAA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE961B0E513900913FAA /* CoreGraphics.framework */; };
+		C51CBE991B0E514000913FAA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE981B0E514000913FAA /* StoreKit.framework */; };
+		C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE9A1B0E515000913FAA /* AdSupport.framework */; };
+		C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE9C1B0E516700913FAA /* QuartzCore.framework */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
 		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
@@ -95,6 +103,14 @@
 		C51A43881B0939DB00566E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/minifase3.tmx; sourceTree = "<group>"; };
 		C51A438E1B0A010700566E44 /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelView.swift; path = ../LevelView.swift; sourceTree = "<group>"; };
 		C51A43901B0A012200566E44 /* LevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LevelView.xib; path = ../LevelView.xib; sourceTree = "<group>"; };
+		C51CBE8E1B0E506C00913FAA /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		C51CBE8F1B0E506C00913FAA /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
+		C51CBE921B0E512100913FAA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		C51CBE941B0E512F00913FAA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C51CBE961B0E513900913FAA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C51CBE981B0E514000913FAA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C51CBE9A1B0E515000913FAA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		C51CBE9C1B0E516700913FAA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
@@ -138,6 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */,
+				C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */,
+				C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */,
+				C51CBE991B0E514000913FAA /* StoreKit.framework in Frameworks */,
+				C51CBE971B0E513900913FAA /* CoreGraphics.framework in Frameworks */,
+				C51CBE951B0E512F00913FAA /* SystemConfiguration.framework in Frameworks */,
+				C51CBE931B0E512100913FAA /* CoreTelephony.framework in Frameworks */,
+				C51CBE911B0E506C00913FAA /* StartApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +202,14 @@
 		C5CB3F311ACD6AA8001A37B7 = {
 			isa = PBXGroup;
 			children = (
+				C51CBE9C1B0E516700913FAA /* QuartzCore.framework */,
+				C51CBE9A1B0E515000913FAA /* AdSupport.framework */,
+				C51CBE981B0E514000913FAA /* StoreKit.framework */,
+				C51CBE961B0E513900913FAA /* CoreGraphics.framework */,
+				C51CBE941B0E512F00913FAA /* SystemConfiguration.framework */,
+				C51CBE921B0E512100913FAA /* CoreTelephony.framework */,
+				C51CBE8E1B0E506C00913FAA /* StartApp.bundle */,
+				C51CBE8F1B0E506C00913FAA /* StartApp.framework */,
 				C547473A1AD44D2800C4E23F /* libz.dylib */,
 				C5CB3F3C1ACD6AA8001A37B7 /* Ninja Goo */,
 				C5CB3F561ACD6AA8001A37B7 /* Ninja GooTests */,
@@ -373,7 +404,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CT54P8A873;
+						DevelopmentTeam = CC953577YZ;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -415,6 +446,7 @@
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
+				C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
@@ -598,6 +630,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Ninja Goo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -610,6 +646,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Ninja Goo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
