@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class LevelsController: ItemViewCtrl {
     
@@ -46,6 +47,7 @@ class LevelsController: ItemViewCtrl {
 //        }
 //    }
     
+    
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var loadedScene : W1_Level_1!
 
@@ -78,7 +80,9 @@ class LevelsController: ItemViewCtrl {
         var tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
         levelThreeView.addGestureRecognizer(tapGesture3)
         
-        
+        var buy = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
+        levelOneView.addGestureRecognizer(tapGesture1)
+
         
         
         //imageTwo.addGestureRecognizer(tapGesture)
@@ -219,5 +223,7 @@ class LevelsController: ItemViewCtrl {
 //        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
 //    }
 //    
+    
+    
     
 }
