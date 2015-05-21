@@ -34,7 +34,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     //Scores
     var score:Int = 0
     var jumps : Int = 0
-    var attemps : Int = 0
+    var diedForAd : Int = 0
     
     var teste : SKNode!
     
@@ -996,6 +996,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func restart(){
         
         saveRecord()
+        diedForAd += 1
         
         println("restart")
         
@@ -1248,6 +1249,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     }
     
     func colideComWall(contact: SKPhysicsContact){
+        
+        if(self.diedForAd >= 3) {
+            NSNotificationCenter.defaultCenter().postNotificationName("showAd", object: nil)
+            self.diedForAd = 0
+        }
+        
         if(contact.bodyA.node?.name == "mWall") {
             self.ninja.mWall = contact.bodyA!
         }

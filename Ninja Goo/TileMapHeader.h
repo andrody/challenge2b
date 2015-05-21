@@ -11,7 +11,7 @@
 
 #import "JSTileMap.h"
 #import "LFCGzipUtility.h"
-
+#import <StartApp/StartApp.h>
 
 
 #endif
