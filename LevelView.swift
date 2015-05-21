@@ -36,7 +36,11 @@ class LevelView: UIView {
     
     @IBOutlet weak var buyButton: UIImageView!
     
+
+    @IBOutlet weak var loadBuy: UIActivityIndicatorView!
     
+    
+    @IBOutlet weak var loadLevelSpin: UIActivityIndicatorView!
     
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -52,7 +56,8 @@ class LevelView: UIView {
         
         self.addSubview(self.view)
         
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideLoad", name: "unlockedLevel", object: nil)
+
         
 
         view.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -73,21 +78,42 @@ class LevelView: UIView {
         var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("key:"))
         keyView.addGestureRecognizer(tapGesture1)
         
+        var buyObserver = UITapGestureRecognizer(target: self, action: Selector("buyKey"))
+        buyButton.addGestureRecognizer(buyObserver)
+
+        
         let color = UIColor(red: 252/255, green: 249/255, blue: 172/255, alpha: 1.0)
         unlockLabel.textColor = color
         buyButton.image = buyButton.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         buyButton.tintColor = color
 
+        loadBuy.hidden = true
+        loadLevelSpin.hidden = true
+
 
     }
     
     func key(gestureRecognizer: UITapGestureRecognizer){
-        
+        SceneManager.sharedInstance.playClickSound()
+
 //        levelTwoView.unlockLabel.center = CGPointMake(0, levelTwoView.scrollView.frame.height - 100);
 
         scrollView.setContentOffset(CGPointMake(0, 100), animated: true)
 //        mask.frame = CGRectMake( scrollView.frame.width/2, scrollView.frame.height, 100, 100 );
 
     }
+    
+    func buyKey(){
+        SceneManager.sharedInstance.playClickSound()
+
+        SceneManager.sharedInstance.buyKey()
+        loadBuy.hidden = false
+    }
+    
+    func hideLoad() {
+        loadBuy.hidden = true
+    }
+    
+    
 
 }
