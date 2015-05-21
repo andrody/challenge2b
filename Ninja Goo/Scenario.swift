@@ -35,7 +35,7 @@ class Scenario {
     var corWallEspecial : [CGFloat]
     var backgroundFrontName : String!
     var backgroundBackName : String!
-
+    var rank : Ranks!
 
     var distanceRecord : Int {
         get {
@@ -113,7 +113,7 @@ class Scenario {
 
 
     
-    init(nome : String, levelNumber : Int, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String) {
+    init(nome : String, levelNumber : Int, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String, rank : Ranks) {
         
         self.nome = nome
         self.levelNumber = levelNumber
@@ -127,6 +127,7 @@ class Scenario {
         self.corWallEspecial = corWallEspecial
         self.backgroundBackName = backgroundBackName
         self.backgroundFrontName = backgroundFrontName
+        self.rank = rank
         
     }
 

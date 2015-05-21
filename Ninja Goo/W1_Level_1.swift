@@ -995,8 +995,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func restart(){
         
+        
         saveRecord()
-        diedForAd += 1
+        self.diedForAd += 1
         
         println("restart")
         
@@ -1250,7 +1251,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func colideComWall(contact: SKPhysicsContact){
         
-        if(self.diedForAd >= 3) {
+        println("diedForAd = \(self.diedForAd)")
+
+        
+        if(self.diedForAd >= 4) {
             NSNotificationCenter.defaultCenter().postNotificationName("showAd", object: nil)
             self.diedForAd = 0
         }
@@ -1309,6 +1313,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     // MARK : HUD
     
     func endsLevel() {
+        
+        let leaderboard = SceneManager.sharedInstance.faseEscolhida.rank
+        SceneManager.sharedInstance.gameCenter.saveHighscore(self.jumps, leaderboard: leaderboard)
         
         SceneManager.sharedInstance.faseEscolhida.ended = true
         for (index, fase) in enumerate(SceneManager.sharedInstance.fases) {

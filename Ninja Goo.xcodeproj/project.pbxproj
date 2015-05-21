@@ -32,6 +32,7 @@
 		C51CBE991B0E514000913FAA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE981B0E514000913FAA /* StoreKit.framework */; };
 		C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE9A1B0E515000913FAA /* AdSupport.framework */; };
 		C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE9C1B0E516700913FAA /* QuartzCore.framework */; };
+		C51CBEA31B0E5C0600913FAA /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CBEA21B0E5C0600913FAA /* GameCenter.swift */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
 		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
@@ -104,6 +105,7 @@
 		C51CBE981B0E514000913FAA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C51CBE9A1B0E515000913FAA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C51CBE9C1B0E516700913FAA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C51CBEA21B0E5C0600913FAA /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				C5CB3F7F1ACD9F1D001A37B7 /* ConvertUtilities.swift */,
 				C54747471AD4503500C4E23F /* TileMapHeader.h */,
 				C58F73A91B05896F00D6E6DB /* SceneManager.swift */,
+				C51CBEA21B0E5C0600913FAA /* GameCenter.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */,
 				C58F73AA1B05896F00D6E6DB /* SceneManager.swift in Sources */,
 				C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */,
+				C51CBEA31B0E5C0600913FAA /* GameCenter.swift in Sources */,
 				C5CB3F841ACDFF18001A37B7 /* Hud.swift in Sources */,
 				C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */,
 				C5CB3F7D1ACD79B2001A37B7 /* Ninja.swift in Sources */,

@@ -17,6 +17,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     var audioPlayer = AVAudioPlayer()
     var scene : W1_Level_1!
     var gameViewCtrl : GameViewController!
+    var gameCenter : GameCenter!
 
     var keyId : String = "levelkey"
 
@@ -26,6 +27,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     override init(){
         super.init()
         loadFases()
+        gameCenter = GameCenter()
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
 
     }
@@ -44,7 +46,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corFundo: [49,95,130],
             corWallEspecial: [43,147,202],
             backgroundFrontName: "montanha_branco",
-            backgroundBackName : "montanha_branco"
+            backgroundBackName : "montanha_branco",
+            rank: Ranks.levelone
         )
                 
         var faseTwo = Scenario(nome: "minifase2",
@@ -58,7 +61,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corFundo: [191,231,231],
             corWallEspecial: [0,116,111],
             backgroundFrontName: "arvore_branco",
-            backgroundBackName : "arvore_b_branco")
+            backgroundBackName : "arvore_b_branco",
+            rank: Ranks.leveltwo
+        )
         
         
         
@@ -73,7 +78,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corFundo: [227,201,234],
             corWallEspecial: [98,0,123],
             backgroundFrontName: "trapezio_branco",
-            backgroundBackName : "trapezio_B_branco"
+            backgroundBackName : "trapezio_B_branco",
+            rank: Ranks.levelthree
+
         )
         
         var faseFour = Scenario(nome: "minifase4",
@@ -87,7 +94,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corFundo: [255,232,168],
             corWallEspecial: [222,111,0],
             backgroundFrontName: "morro_branco",
-            backgroundBackName : "morro_B_branco"
+            backgroundBackName : "morro_B_branco",
+            rank: Ranks.levelfour
+
         )
         
         var faseFive = Scenario(nome: "minifase5",
@@ -101,7 +110,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corFundo: [228,233,130],
             corWallEspecial: [148,1,11],
             backgroundFrontName: "montanha_neve_branco",
-            backgroundBackName : "montanha_neve_branco"
+            backgroundBackName : "montanha_neve_branco",
+            rank: Ranks.levelfive
+
         )
         
         var faseSix = Scenario(nome: "minifase6",
@@ -115,7 +126,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corFundo: [0,120,185],
             corWallEspecial: [0,49,96],
             backgroundFrontName: "montanha_branco",
-            backgroundBackName : "montanha_branco"
+            backgroundBackName : "montanha_branco",
+            rank: Ranks.levelsix
+
         )
         
         fases.append(faseOne)

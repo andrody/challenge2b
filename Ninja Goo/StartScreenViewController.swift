@@ -53,6 +53,8 @@ class StartScreenViewController: ItemViewCtrl {
         
         SceneManager.sharedInstance.fases[0].locked = false
         SceneManager.sharedInstance.fases[1].unlockable = true
+        
+        SceneManager.sharedInstance.gameCenter.authenticateLocalPlayer(self)
 
         
         
@@ -144,7 +146,8 @@ class StartScreenViewController: ItemViewCtrl {
     
     func moveToLevels(){
         SceneManager.sharedInstance.playClickSound()
-        self.menuViewController!.goToPage(1)
+        //self.menuViewController!.goToPage(1)
+        SceneManager.sharedInstance.gameCenter.showLeader(self)
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
