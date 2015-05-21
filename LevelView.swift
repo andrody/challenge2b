@@ -57,6 +57,8 @@ class LevelView: UIView {
         self.addSubview(self.view)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideLoad", name: "unlockedLevel", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideLoad", name: "hideLoad", object: nil)
+
 
         
 

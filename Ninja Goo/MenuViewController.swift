@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import Darwin
 
 class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     
@@ -55,7 +56,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
                 continue
             }
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("LevelsController") as! LevelsController
-            pageItemController.itemIndex = itemIndex
+            pageItemController.itemIndex = itemIndex - 1
             pageItemController.levelOne = (contentImages[itemIndex][0] as! Scenario)
             pageItemController.levelTwo = (contentImages[itemIndex][1] as! Scenario)
             pageItemController.levelThree = (contentImages[itemIndex][2] as! Scenario)
@@ -74,8 +75,8 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
         
         let itemController = viewController as? ItemViewCtrl
 
-        if itemController!.itemIndex > 0 {
-            if(itemController!.itemIndex-1 == 0){
+        if itemController!.itemIndex > -1 {
+            if(itemController!.itemIndex-1 == -1){
                 return startScreenCtrl
             }
             return levelControllers[itemController!.itemIndex-1]
@@ -94,8 +95,8 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
 //        
         let itemController = viewController as? ItemViewCtrl
         
-        if itemController!.itemIndex+1 < contentImages.count {
-            return levelControllers[itemController!.itemIndex]
+        if itemController!.itemIndex < contentImages.count - 2 {
+            return levelControllers[itemController!.itemIndex+1]
         }
         
         return nil
@@ -123,17 +124,27 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
         
         if self.startScreenCtrl == nil {
             startScreenCtrl = self.storyboard!.instantiateViewControllerWithIdentifier("StartScreenViewCtrl") as! StartScreenViewController
-            startScreenCtrl.itemIndex = 0
+            startScreenCtrl.itemIndex = -1
             startScreenCtrl.imageName = contentImages[0][0] as! String
             startScreenCtrl.menuViewController = self
         }
         return startScreenCtrl
     }
     
-    func goToPage(page : Int) {
+    func goToPage() {
         
-//            let startingViewControllers: NSArray = [getItemController(page)!]
-//            self.pageViewController!.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        var indexLevels = 1
+        
+        for (index, fase) in enumerate(SceneManager.sharedInstance.fases) {
+            if(fase.locked) {
+                let div : CGFloat = CGFloat(index-1)/3
+                indexLevels = Int(floor(div))
+                break
+            }
+        }
+        
+        let startingViewControllers: NSArray = [levelControllers[indexLevels]]
+        self.pageViewController!.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         
     }
 

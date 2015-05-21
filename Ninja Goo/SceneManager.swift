@@ -255,6 +255,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
                     break;
                 case .Failed:
                     println("Purchased Failed");
+                    NSNotificationCenter.defaultCenter().postNotificationName("hideLoad", object: nil)
+
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
                     break;
                     // case .Restored:

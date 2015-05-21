@@ -146,8 +146,8 @@ class StartScreenViewController: ItemViewCtrl {
     
     func moveToLevels(){
         SceneManager.sharedInstance.playClickSound()
-        //self.menuViewController!.goToPage(1)
-        SceneManager.sharedInstance.gameCenter.showLeader(self)
+        self.menuViewController!.goToPage()
+//        SceneManager.sharedInstance.gameCenter.showLeader(self)
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
