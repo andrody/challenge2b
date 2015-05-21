@@ -76,7 +76,7 @@ class LevelView: UIView, SKProductsRequestDelegate, SKPaymentTransactionObserver
         keyView.addGestureRecognizer(tapGesture1)
         
         var buyObserver = UITapGestureRecognizer(target: self, action: Selector("buyKey:"))
-        buyButton.addGestureRecognizer(tapGesture1)
+        buyButton.addGestureRecognizer(buyObserver)
 
         
         let color = UIColor(red: 252/255, green: 249/255, blue: 172/255, alpha: 1.0)
