@@ -12,6 +12,13 @@
 		650D89B41B0645A600631D86 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		652343A41B00DD85001CE608 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 652343A31B00DD85001CE608 /* wall.png */; };
 		652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652BD2E11B0CC3A10064535F /* minifase1.tmx */; };
+		655915E21B0E55FF00D366E6 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DB1B0E55FF00D366E6 /* click.wav */; };
+		655915E31B0E55FF00D366E6 /* impact.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DC1B0E55FF00D366E6 /* impact.wav */; };
+		655915E41B0E55FF00D366E6 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DD1B0E55FF00D366E6 /* jump.wav */; };
+		655915E51B0E55FF00D366E6 /* shaking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DE1B0E55FF00D366E6 /* shaking.wav */; };
+		655915E61B0E55FF00D366E6 /* teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DF1B0E55FF00D366E6 /* teleport.wav */; };
+		655915E71B0E55FF00D366E6 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915E01B0E55FF00D366E6 /* victory.wav */; };
+		655915E81B0E55FF00D366E6 /* wall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915E11B0E55FF00D366E6 /* wall.wav */; };
 		656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343D91B092C1A002E2031 /* minifase2.tmx */; };
 		656343E01B092E33002E2031 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343DF1B092E33002E2031 /* minifase1.tmx */; };
 		656343E61B093065002E2031 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E51B093065002E2031 /* minifase3.tmx */; };
@@ -52,13 +59,6 @@
 		C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */; };
 		C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */; };
 		C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D854901AF15CC3008CE610 /* espinho_tile.png */; };
-		C5EDCF091B0BBB4100614097 /* impact.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF021B0BBB4100614097 /* impact.wav */; };
-		C5EDCF0A1B0BBB4100614097 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF031B0BBB4100614097 /* click.wav */; };
-		C5EDCF0B1B0BBB4100614097 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF041B0BBB4100614097 /* jump.wav */; };
-		C5EDCF0C1B0BBB4100614097 /* shaking.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF051B0BBB4100614097 /* shaking.wav */; };
-		C5EDCF0D1B0BBB4100614097 /* wall.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF061B0BBB4100614097 /* wall.wav */; };
-		C5EDCF0E1B0BBB4100614097 /* teleport.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF071B0BBB4100614097 /* teleport.wav */; };
-		C5EDCF0F1B0BBB4100614097 /* victory.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5EDCF081B0BBB4100614097 /* victory.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +76,13 @@
 		65003B7E1B09224500C30286 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		652343A31B00DD85001CE608 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		652BD2E11B0CC3A10064535F /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
+		655915DB1B0E55FF00D366E6 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		655915DC1B0E55FF00D366E6 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
+		655915DD1B0E55FF00D366E6 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
+		655915DE1B0E55FF00D366E6 /* shaking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shaking.wav; sourceTree = "<group>"; };
+		655915DF1B0E55FF00D366E6 /* teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teleport.wav; sourceTree = "<group>"; };
+		655915E01B0E55FF00D366E6 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
+		655915E11B0E55FF00D366E6 /* wall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wall.wav; sourceTree = "<group>"; };
 		656343D91B092C1A002E2031 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		656343DF1B092E33002E2031 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343E51B093065002E2031 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
@@ -123,13 +130,6 @@
 		C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_esquerdo.png; sourceTree = "<group>"; };
 		C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
 		C5D854901AF15CC3008CE610 /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
-		C5EDCF021B0BBB4100614097 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
-		C5EDCF031B0BBB4100614097 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
-		C5EDCF041B0BBB4100614097 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
-		C5EDCF051B0BBB4100614097 /* shaking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shaking.wav; sourceTree = "<group>"; };
-		C5EDCF061B0BBB4100614097 /* wall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wall.wav; sourceTree = "<group>"; };
-		C5EDCF071B0BBB4100614097 /* teleport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = teleport.wav; sourceTree = "<group>"; };
-		C5EDCF081B0BBB4100614097 /* victory.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victory.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,13 +282,13 @@
 		C5CB3F711ACD6E59001A37B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				C5EDCF021B0BBB4100614097 /* impact.wav */,
-				C5EDCF031B0BBB4100614097 /* click.wav */,
-				C5EDCF041B0BBB4100614097 /* jump.wav */,
-				C5EDCF051B0BBB4100614097 /* shaking.wav */,
-				C5EDCF061B0BBB4100614097 /* wall.wav */,
-				C5EDCF071B0BBB4100614097 /* teleport.wav */,
-				C5EDCF081B0BBB4100614097 /* victory.wav */,
+				655915DB1B0E55FF00D366E6 /* click.wav */,
+				655915DC1B0E55FF00D366E6 /* impact.wav */,
+				655915DD1B0E55FF00D366E6 /* jump.wav */,
+				655915DE1B0E55FF00D366E6 /* shaking.wav */,
+				655915DF1B0E55FF00D366E6 /* teleport.wav */,
+				655915E01B0E55FF00D366E6 /* victory.wav */,
+				655915E11B0E55FF00D366E6 /* wall.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -406,37 +406,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5EDCF0B1B0BBB4100614097 /* jump.wav in Resources */,
+				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
+				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
+				655915E71B0E55FF00D366E6 /* victory.wav in Resources */,
 				65003B841B09224500C30286 /* minifase6.tmx in Resources */,
 				C51A43851B0939A700566E44 /* minifase2.tmx in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
-				C5EDCF091B0BBB4100614097 /* impact.wav in Resources */,
 				C5D854941AF15CC3008CE610 /* espinho_tile.png in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
-				C5EDCF0E1B0BBB4100614097 /* teleport.wav in Resources */,
-				C5EDCF0F1B0BBB4100614097 /* victory.wav in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
-				C5EDCF0A1B0BBB4100614097 /* click.wav in Resources */,
 				65003B821B09224500C30286 /* minifase4.tmx in Resources */,
 				656343EA1B0936F9002E2031 /* minifase5.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				656343E01B092E33002E2031 /* minifase1.tmx in Resources */,
+				655915E21B0E55FF00D366E6 /* click.wav in Resources */,
 				C51A43871B0939DB00566E44 /* minifase3.tmx in Resources */,
 				C51A43911B0A012200566E44 /* LevelView.xib in Resources */,
-				C5EDCF0D1B0BBB4100614097 /* wall.wav in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
-				C5EDCF0C1B0BBB4100614097 /* shaking.wav in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
+				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
+				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
 				C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
 				C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */,
+				655915E31B0E55FF00D366E6 /* impact.wav in Resources */,
 				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
 				656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
