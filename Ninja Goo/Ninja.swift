@@ -96,7 +96,7 @@ class Ninja: SKNode {
     
     func loadPositions(){
         
-        getRandomMask()
+        //getRandomMask()
         
         self.body.anchorPoint = CGPointMake(0.5, 0.0)
         self.container.anchorPoint = CGPointMake(0.5, 0.0)

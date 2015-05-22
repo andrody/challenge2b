@@ -8,6 +8,25 @@
 
 import SpriteKit
 
+extension SKSpriteNode {
+    
+    func aspectFillToSize(fillSize: CGSize) {
+        
+        if texture != nil {
+            self.size = texture!.size()
+            
+            let verticalRatio = fillSize.height / self.texture!.size().height
+            let horizontalRatio = fillSize.width /  self.texture!.size().width
+            
+            let scaleRatio = horizontalRatio > verticalRatio ? horizontalRatio : verticalRatio
+            
+            self.setScale(scaleRatio)
+        }
+    }
+    
+}
+
+
 class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
     // MARK: Properties
@@ -28,7 +47,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     var worldScale : CGFloat!
     
     var endLevel = false
+
+    var didShowTutorial = false
+
+    //Tutorial
     
+    var tutorial : SKSpriteNode!
+    var vidro : SKSpriteNode!
 
 
     //Scores
@@ -939,6 +964,56 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.loadClouds()
         self.loadBackground()
         self.loadUpperClouds()
+        self.loadTutorial()
+    }
+    
+    
+    func loadTutorial() {
+        self.hudLayer.zPosition = 1000
+        
+        vidro = SKSpriteNode(texture: SKTexture(imageNamed: "branco"), size: self.size)
+        vidro.position = CGPointZero
+        
+        let color = SceneManager.sharedInstance.faseEscolhida.corNuvemBack
+        vidro.colorBlendFactor = 1
+        vidro.color = SKColor(red: color[0]/255, green: color[1]/255, blue: color[2]/255, alpha: 0.8)
+
+
+        tutorial = SKSpriteNode(texture: SKTexture(imageNamed: "tutorial"), size: self.size)
+        tutorial.position = CGPointZero
+        tutorial.alpha = 1.0
+        tutorial.aspectFillToSize(self.size)
+        tutorial.setScale(1.0)
+        
+        
+        self.hudLayer.addChild(vidro)
+        self.hudLayer.addChild(tutorial)
+        self.tutorial.position = CGPointMake(0, -self.size.height)
+        self.vidro.alpha = 0
+
+//        let color = SceneManager.sharedInstance.faseEscolhida.corNuvemBack
+//        vidro.colorBlendFactor = 1
+//        vidro.color = SKColor(red: color[0]/255, green: color[1]/255, blue: color[2]/255, alpha: 0.8)
+        
+    }
+    
+    func showTutorial(){
+        let move = SKAction.moveToY(0, duration: NSTimeInterval(0.4))
+        let alpha = SKAction.fadeAlphaTo(0.95, duration: NSTimeInterval(0.5))
+        self.vidro.runAction(alpha)
+        self.tutorial.runAction(move)
+    }
+    
+    func hideTutorial() {
+        let move = SKAction.moveToY(-self.size.height, duration: NSTimeInterval(0.3))
+        let alpha = SKAction.fadeAlphaTo(0, duration: NSTimeInterval(0.4) )
+        self.vidro.runAction(alpha)
+        self.tutorial.runAction(move, completion:  {
+            self.hudLayer.removeAllChildren()
+            self.vidro = nil
+            self.tutorial = nil
+            })
+
     }
     
     override func didMoveToView(view: SKView) {
@@ -1005,7 +1080,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         //self.saveHighscore(self.score)
         self.score = 0
         self.jumps = 0
-        self.ninja.getRandomMask()
+        //self.ninja.getRandomMask()
         self.ninja.isMoving = true
         //self.ninja.physicsBody?.collisionBitMask = 0
         self.ninja.physicsBody?.contactTestBitMask = 0
@@ -1251,6 +1326,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     }
     
     func colideComWall(contact: SKPhysicsContact){
+        
+        if(!didShowTutorial && SceneManager.sharedInstance.faseEscolhida.levelNumber == 1) {
+            showTutorial()
+        }
         
         println("diedForAd = \(self.diedForAd)")
 
@@ -1567,76 +1646,84 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 
+        if(!self.didShowTutorial) {
+            self.didShowTutorial = true
+            self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
+            self.hideTutorial()
+        }
+        else {
         
-        for touch: AnyObject in touches{
-            
-            let location = touch.locationInNode(self)
-            let node = self.nodeAtPoint(location)
-            
-            println("comecou toque")
-            
-            if(endLevel) {
-                if(self.setaButton.containsPoint(location)){
-
-                    self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
-                    SceneManager.sharedInstance.gameViewCtrl.backToMenu()
-                    
-                }
-            }
-            
-            else {
-
-                if(self.pauseButton.containsPoint(location)){
-                    println("pausou")
-                    
-                    self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
-                    SceneManager.sharedInstance.gameViewCtrl.backToMenu()
-
-                    //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as ViewController
-                    
-                }
-    //                println("comecou toque2")
-    //
-    //                //self.gameStarted = false
-    //                //self.HUD?.moveButtonsInScreen()
-    //                self.teste.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
-    //                self.frontCloudLayer.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
-    //
-    //                
-    //            }
+        
+            for touch: AnyObject in touches{
                 
-    //            if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
-    //                println("comecou toque3")
-    //
-    //                //self.showLeader()
-    //            }
+                let location = touch.locationInNode(self)
+                let node = self.nodeAtPoint(location)
                 
-                else {
-                    if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
-                        println("comecou toque4")
+                println("comecou toque")
+                
+                if(endLevel) {
+                    if(self.setaButton.containsPoint(location)){
+
+                        self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
+                        SceneManager.sharedInstance.gameViewCtrl.backToMenu()
                         
-                        self.initialTapPosition = location
-                        self.isDraging = true
                     }
                 }
-    //            else{
-    //                println("comecou toque5")
-    //
-    //                
-    //                if(self.HUD!.playButton!.containsPoint(location) && self.gameStarted == false){
-    //                    
-    //                    self.startGame()
-    //                }
-    //                else{
-    //                    
-    //                    if(self.gameStarted == true){
-    //                        
-    //                        
-    //                    }
-    //                }
-    //                
-    //                
-    //            }
+                
+                else {
+
+                    if(self.pauseButton.containsPoint(location)){
+                        println("pausou")
+                        
+                        self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
+                        SceneManager.sharedInstance.gameViewCtrl.backToMenu()
+
+                        //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as ViewController
+                        
+                    }
+        //                println("comecou toque2")
+        //
+        //                //self.gameStarted = false
+        //                //self.HUD?.moveButtonsInScreen()
+        //                self.teste.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+        //                self.frontCloudLayer.runAction(SKAction.moveBy(CGVectorMake(0, self.scene!.size.height*2), duration: NSTimeInterval(1.0)))
+        //
+        //                
+        //            }
+                    
+        //            if(self.HUD!.stageButton!.containsPoint(location) && self.gameStarted == false){
+        //                println("comecou toque3")
+        //
+        //                //self.showLeader()
+        //            }
+                    
+                    else {
+                        if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
+                            println("comecou toque4")
+                            
+                            self.initialTapPosition = location
+                            self.isDraging = true
+                        }
+                    }
+        //            else{
+        //                println("comecou toque5")
+        //
+        //                
+        //                if(self.HUD!.playButton!.containsPoint(location) && self.gameStarted == false){
+        //                    
+        //                    self.startGame()
+        //                }
+        //                else{
+        //                    
+        //                    if(self.gameStarted == true){
+        //                        
+        //                        
+        //                    }
+        //                }
+        //                
+        //                
+        //            }
+                }
             }
         }
     }
