@@ -140,6 +140,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static var defaultGroundPoint : CGPoint!
         
         static var minCamPos : CGFloat!
+        static var cameraXOffset : CGFloat! = -250
         static let gravity = CGVectorMake(0, -50)
         static let minForce : CGFloat = 30.0
         static let maxForce : CGFloat = 80.0
@@ -1132,7 +1133,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
 
         
-        centerWorldOnPoint(CGPointMake(point.x, point.y))
+        centerWorldOnPoint(CGPointMake(point.x - Constants.cameraXOffset, point.y))
 
     }
     

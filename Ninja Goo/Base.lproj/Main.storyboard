@@ -125,14 +125,46 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="0Ue-bT-1ct"/>
                                     <constraint firstAttribute="width" secondItem="rAH-HC-f67" secondAttribute="height" multiplier="1:1.3" id="9mj-Xk-4md"/>
+                                    <constraint firstAttribute="width" constant="80" id="rHs-B7-LqD"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Ue-bT-1ct"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0Ue-bT-1ct"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="0Ue-bT-1ct"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sound" translatesAutoresizingMaskIntoConstraints="NO" id="4sU-F1-66F">
                                 <rect key="frame" x="16" y="20" width="60" height="60"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="80" id="7WY-S0-plm"/>
                                     <constraint firstAttribute="width" constant="40" id="TSu-SD-5jI"/>
                                     <constraint firstAttribute="width" secondItem="4sU-F1-66F" secondAttribute="height" multiplier="1:1" id="WaK-Qa-wuM"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TSu-SD-5jI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="TSu-SD-5jI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="TSu-SD-5jI"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
