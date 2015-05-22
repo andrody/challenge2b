@@ -31,6 +31,12 @@ class StartScreenViewController: ItemViewCtrl {
     @IBOutlet weak var tapToPlay: UIImageView!
     @IBOutlet weak var constraintDeCima: NSLayoutConstraint!
     @IBOutlet weak var contrintDeBaixo: NSLayoutConstraint!
+    
+    @IBOutlet weak var gameCenterButton: UIImageView!
+    
+    
+    @IBOutlet weak var soundButton: UIImageView!
+    
     //@IBOutlet weak var larguraIgual: NSLayoutConstraint!
     
     // MARK: - View Lifecycle
@@ -56,8 +62,16 @@ class StartScreenViewController: ItemViewCtrl {
         
         SceneManager.sharedInstance.gameCenter.authenticateLocalPlayer(self)
 
+        var gameCenterGesture = UITapGestureRecognizer(target: self, action: Selector("showGameCenter"))
+        gameCenterButton.addGestureRecognizer(gameCenterGesture)
         
-        
+        var soundGesture = UITapGestureRecognizer(target: self, action: Selector("muteSound"))
+        soundButton.addGestureRecognizer(soundGesture)
+
+        if SceneManager.sharedInstance.soundMuted {
+            soundButton.alpha = 0.5
+            soundButton.image = UIImage(named: "sound-muted")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -87,6 +101,37 @@ class StartScreenViewController: ItemViewCtrl {
         }
         
     }
+    
+    
+    func showGameCenter() {
+        SceneManager.sharedInstance.playClickSound()
+
+        
+        SceneManager.sharedInstance.gameCenter.showLeader(self)
+
+        
+    }
+    
+    func muteSound() {
+        
+        SceneManager.sharedInstance.playClickSound()
+
+        
+        if(SceneManager.sharedInstance.soundMuted){
+            soundButton.image = UIImage(named: "sound")
+            soundButton.alpha = 1.0
+            SceneManager.sharedInstance.soundMuted = false
+        }
+        else {
+            soundButton.image = UIImage(named: "sound-muted")
+            soundButton.alpha = 0.5
+            SceneManager.sharedInstance.soundMuted = true
+        }
+        
+        
+    }
+    
+    
     
     func animateLogo() {
         
@@ -147,7 +192,6 @@ class StartScreenViewController: ItemViewCtrl {
     func moveToLevels(){
         SceneManager.sharedInstance.playClickSound()
         self.menuViewController!.goToPage()
-//        SceneManager.sharedInstance.gameCenter.showLeader(self)
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
