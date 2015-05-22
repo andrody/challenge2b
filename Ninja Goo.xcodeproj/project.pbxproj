@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65003B821B09224500C30286 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B7C1B09224500C30286 /* minifase4.tmx */; };
-		65003B841B09224500C30286 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65003B7E1B09224500C30286 /* minifase6.tmx */; };
 		650D89B41B0645A600631D86 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		652343A41B00DD85001CE608 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 652343A31B00DD85001CE608 /* wall.png */; };
 		652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 652BD2E11B0CC3A10064535F /* minifase1.tmx */; };
@@ -22,12 +20,14 @@
 		656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343D91B092C1A002E2031 /* minifase2.tmx */; };
 		656343E01B092E33002E2031 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343DF1B092E33002E2031 /* minifase1.tmx */; };
 		656343E61B093065002E2031 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E51B093065002E2031 /* minifase3.tmx */; };
-		656343EA1B0936F9002E2031 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E91B0936F9002E2031 /* minifase5.tmx */; };
+		659C75181B0FC94C0057CE8B /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 659C75171B0FC94C0057CE8B /* minifase3.tmx */; };
+		659C751A1B0FCAFE0057CE8B /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 659C75191B0FCAFE0057CE8B /* minifase4.tmx */; };
+		659C751C1B0FCCEA0057CE8B /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 659C751B1B0FCCEA0057CE8B /* minifase6.tmx */; };
+		659C751E1B0FCF680057CE8B /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 659C751D1B0FCF680057CE8B /* minifase5.tmx */; };
 		C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */; };
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
-		C51A43871B0939DB00566E44 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C51A43891B0939DB00566E44 /* minifase3.tmx */; };
 		C51A438F1B0A010700566E44 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51A438E1B0A010700566E44 /* LevelView.swift */; };
 		C51A43911B0A012200566E44 /* LevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51A43901B0A012200566E44 /* LevelView.xib */; };
 		C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C51CBE8E1B0E506C00913FAA /* StartApp.bundle */; };
@@ -81,8 +81,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		65003B7C1B09224500C30286 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
-		65003B7E1B09224500C30286 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		652343A31B00DD85001CE608 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		652BD2E11B0CC3A10064535F /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		655915DB1B0E55FF00D366E6 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
@@ -95,12 +93,14 @@
 		656343D91B092C1A002E2031 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		656343DF1B092E33002E2031 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343E51B093065002E2031 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
-		656343E91B0936F9002E2031 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
+		659C75171B0FC94C0057CE8B /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
+		659C75191B0FCAFE0057CE8B /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
+		659C751B1B0FCCEA0057CE8B /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
+		659C751D1B0FCF680057CE8B /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
 		C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
-		C51A43881B0939DB00566E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Base; path = Base.lproj/minifase3.tmx; sourceTree = "<group>"; };
 		C51A438E1B0A010700566E44 /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelView.swift; path = ../LevelView.swift; sourceTree = "<group>"; };
 		C51A43901B0A012200566E44 /* LevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LevelView.xib; path = ../LevelView.xib; sourceTree = "<group>"; };
 		C51CBE8E1B0E506C00913FAA /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
@@ -181,10 +181,10 @@
 			children = (
 				652BD2E11B0CC3A10064535F /* minifase1.tmx */,
 				C5ED62691B0FAC94006B6DC6 /* minifase2.tmx */,
-				C51A43891B0939DB00566E44 /* minifase3.tmx */,
-				65003B7C1B09224500C30286 /* minifase4.tmx */,
-				656343E91B0936F9002E2031 /* minifase5.tmx */,
-				65003B7E1B09224500C30286 /* minifase6.tmx */,
+				659C75171B0FC94C0057CE8B /* minifase3.tmx */,
+				659C75191B0FCAFE0057CE8B /* minifase4.tmx */,
+				659C751D1B0FCF680057CE8B /* minifase5.tmx */,
+				659C751B1B0FCCEA0057CE8B /* minifase6.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -407,7 +407,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -443,8 +443,8 @@
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
+				659C751E1B0FCF680057CE8B /* minifase5.tmx in Resources */,
 				655915E71B0E55FF00D366E6 /* victory.wav in Resources */,
-				65003B841B09224500C30286 /* minifase6.tmx in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
 				C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */,
@@ -452,13 +452,12 @@
 				652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
+				659C75181B0FC94C0057CE8B /* minifase3.tmx in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
-				65003B821B09224500C30286 /* minifase4.tmx in Resources */,
-				656343EA1B0936F9002E2031 /* minifase5.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				656343E01B092E33002E2031 /* minifase1.tmx in Resources */,
+				659C751C1B0FCCEA0057CE8B /* minifase6.tmx in Resources */,
 				655915E21B0E55FF00D366E6 /* click.wav in Resources */,
-				C51A43871B0939DB00566E44 /* minifase3.tmx in Resources */,
 				C51A43911B0A012200566E44 /* LevelView.xib in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
@@ -466,6 +465,7 @@
 				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
 				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
 				C5ED62681B0FAC6B006B6DC6 /* espinho_tile.png in Resources */,
+				659C751A1B0FCAFE0057CE8B /* minifase4.tmx in Resources */,
 				C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
@@ -531,14 +531,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C51A43891B0939DB00566E44 /* minifase3.tmx */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C51A43881B0939DB00566E44 /* Base */,
-			);
-			name = minifase3.tmx;
-			sourceTree = "<group>";
-		};
 		C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
