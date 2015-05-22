@@ -24,6 +24,8 @@ class StartScreenViewController: ItemViewCtrl {
         }
     }
     
+    var isAnimating = false
+    
     //var initialConstraintValue : CGFloat!
     
     @IBOutlet weak var logo: UIImageView!
@@ -77,12 +79,11 @@ class StartScreenViewController: ItemViewCtrl {
     override func viewDidAppear(animated: Bool) {
         
         
-        adjustConstraint()
+        //adjustConstraint()
         
         
         //self.initialConstraintValue = self.constraintDeCima.constant
         
-        animateTaptoPlay()
         animateLogo()
 
     }
@@ -136,8 +137,12 @@ class StartScreenViewController: ItemViewCtrl {
     func animateLogo() {
         
         
-        
+        if(!isAnimating) {
+            
+            isAnimating = true
         self.view.layoutIfNeeded()
+            animateTaptoPlay()
+
         
         
        
@@ -169,7 +174,7 @@ class StartScreenViewController: ItemViewCtrl {
             
             }, completion: nil)
         
-        
+        }
         
     }
     
