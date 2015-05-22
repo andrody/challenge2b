@@ -317,8 +317,8 @@
     </objects>
     <resources>
         <image name="099" width="600" height="400"/>
-        <image name="cadeado" width="500" height="647"/>
-        <image name="key" width="256" height="256"/>
+        <image name="cadeado" width="300" height="398"/>
+        <image name="key" width="128" height="128"/>
         <image name="minifase1" width="682" height="1536"/>
         <image name="moldura" width="400" height="400"/>
         <image name="ok" width="400" height="400"/>
