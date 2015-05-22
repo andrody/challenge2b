@@ -19,6 +19,21 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     var gameViewCtrl : GameViewController!
     var gameCenter : GameCenter!
 
+    var soundMuted : Bool {
+        get {
+            var returnValue: Bool? = NSUserDefaults.standardUserDefaults().objectForKey("soundMuted") as? Bool
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = false //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save("soundMuted", value: newValue)
+        }
+    }
+
+
     var keyId : String = "levelkey"
 
     var fases = [Scenario]()
