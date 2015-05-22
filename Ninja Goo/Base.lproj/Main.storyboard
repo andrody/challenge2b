@@ -95,9 +95,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taptoplay" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-Bp-m2g">
                                 <rect key="frame" x="170" y="558" width="260" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="3MY-rD-NC9"/>
-                                    <constraint firstAttribute="height" constant="26" id="RzY-yF-Zrg"/>
+                                    <constraint firstAttribute="width" priority="999" constant="260" id="3MY-rD-NC9"/>
+                                    <constraint firstAttribute="width" constant="200" id="O5b-hg-0YV"/>
+                                    <constraint firstAttribute="height" priority="999" constant="26" id="RzY-yF-Zrg"/>
+                                    <constraint firstAttribute="width" secondItem="dnV-Bp-m2g" secondAttribute="height" multiplier="10:1" id="ckE-fC-FxU"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="O5b-hg-0YV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="O5b-hg-0YV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="O5b-hg-0YV"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-Tb-ZAh">
                                 <rect key="frame" x="75" y="179" width="448" height="242"/>
