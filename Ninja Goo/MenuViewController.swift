@@ -19,7 +19,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     private var pageViewController: UIPageViewController?
     
     // Initialize it right away here
-    private let contentImages = [["fundoMenu"],
+    private var contentImages = [["fundoMenu"],
         [SceneManager.sharedInstance.fases[0], SceneManager.sharedInstance.fases[1], SceneManager.sharedInstance.fases[2]],
         [SceneManager.sharedInstance.fases[3], SceneManager.sharedInstance.fases[4], SceneManager.sharedInstance.fases[5]]
     ];
@@ -32,6 +32,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     
    
     private func createPageViewController() {
+        
         
         let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("MenuController") as! UIPageViewController
         pageController.dataSource = self
@@ -125,7 +126,12 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
         if self.startScreenCtrl == nil {
             startScreenCtrl = self.storyboard!.instantiateViewControllerWithIdentifier("StartScreenViewCtrl") as! StartScreenViewController
             startScreenCtrl.itemIndex = -1
-            startScreenCtrl.imageName = contentImages[0][0] as! String
+            if UIDevice.currentDevice().userInterfaceIdiom == .Phone{
+                startScreenCtrl.imageName = "fundoMenuIphone"
+            }
+            else {
+                startScreenCtrl.imageName = contentImages[0][0] as! String
+            }
             startScreenCtrl.menuViewController = self
         }
         return startScreenCtrl

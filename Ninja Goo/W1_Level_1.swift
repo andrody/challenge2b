@@ -49,6 +49,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     var endLevel = false
 
     var didShowTutorial = false
+    
+    var spikeTexture : SKTexture!
 
     //Tutorial
     
@@ -247,6 +249,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         let spikes = map.layerNamed("Spikes")
         spikes.zPosition = Constants.zPosWall
+        changeSpikesTexture(spikes)
         //createNodesFromLayer(spikes)
         //createPhysicalBodiesWalls(self.map)
 //        createPhysicalBodiesSpikes(self.map)
@@ -346,6 +349,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             body.physicsBody!.dynamic = false
             body.physicsBody!.friction = friction
             
+//            if(bitMask == ColliderType.Spike.rawValue) {
+//                if (self.spikeTexture == nil) {
+//                    self.spikeTexture = SKTexture(imageNamed: "espinho_tile_128")
+//                }
+//                body.texture = self.spikeTexture
+//            }
+            
             self.platformLayer.addChild(body)
         }
     }
@@ -377,7 +387,54 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 //        }
 //    }
 
-    
+    func changeSpikesTexture(layer: TMXLayer) {
+        
+        let map = layer.map
+        
+        
+        let espinho_tile = SKTexture(imageNamed: "espinho_tile")
+        let espinho_tile_direito = SKTexture(imageNamed: "espinho_tile_direito")
+        let espinho_tile_invertido = SKTexture(imageNamed: "espinho_tile_invertido")
+        let espinho_tile_esquerdo = SKTexture(imageNamed: "espinho_tile_esquerdo")
+
+
+        let spikesArray = [espinho_tile, espinho_tile_direito, espinho_tile_invertido, espinho_tile_esquerdo]
+
+        
+        for w in 0..<Int(layer.layerInfo.layerGridSize.width) {
+            
+            for h in 0..<Int(layer.layerInfo.layerGridSize.height) {
+                
+                
+                let coord = CGPoint(x: w, y: h)
+                let tileGid = layer.layerInfo.tileGidAtCoord(coord)
+                
+                if tileGid == 0 || tileGid == 103 || tileGid == 175{
+                    continue
+                }
+                
+                if let properties = map.propertiesForGid(tileGid) {
+                    
+                    let tile = layer.tileAtCoord(coord)
+                    
+                    if properties["spike"] != nil {
+                        
+                        let spikeProp = (properties["spike"] as! String!).toInt()
+                        
+//                        if (self.spikeTexture == nil) {
+//                            self.spikeTexture = SKTexture(imageNamed: "espinho_tile_128"
+//                        }
+                        tile.texture = spikesArray[spikeProp!]
+                        
+                        
+                    }
+                    
+                }
+            }
+        }
+
+        
+    }
     
     func createNodesFromLayer(layer: TMXLayer) {
         
@@ -510,17 +567,17 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     }
 
 //
-//                    if properties["spike"] != nil {
-//                        
-//                        let spikeProp = (properties["spike"] as String!).toInt()
-//                        
-//                        tile.physicsBody = SKPhysicsBody(texture: spikesArray[spikeProp!], alphaThreshold: 0.5, size: tile.size)
-//                        tile.texture = spikesArray[spikeProp!]
-//                        tile.physicsBody!.dynamic = false
-//                        tile.physicsBody!.friction = 0
-//                        tile.physicsBody!.categoryBitMask = ColliderType.Spike.rawValue
-//                        
-//                    }
+                    if properties["spike"] != nil {
+                        
+                        let spikeProp = (properties["spike"] as! String!).toInt()
+                        
+                        if (self.spikeTexture == nil) {
+                            self.spikeTexture = SKTexture(imageNamed: "espinho_tile_128")
+                        }
+                        tile.texture = self.spikeTexture
+
+                        
+                    }
 
                 }
             }
@@ -1646,7 +1703,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 
-        if(!self.didShowTutorial) {
+        if(!self.didShowTutorial && SceneManager.sharedInstance.faseEscolhida.levelNumber == 1) {
             self.didShowTutorial = true
             self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
             self.hideTutorial()
