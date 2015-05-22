@@ -103,7 +103,11 @@ class LevelView: UIView {
 
 //        levelTwoView.unlockLabel.center = CGPointMake(0, levelTwoView.scrollView.frame.height - 100);
 
-        scrollView.setContentOffset(CGPointMake(0, 150), animated: true)
+        var sobe: CGFloat = 150
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone {
+            sobe = 100
+        }
+        scrollView.setContentOffset(CGPointMake(0, sobe), animated: true)
 //        mask.frame = CGRectMake( scrollView.frame.width/2, scrollView.frame.height, 100, 100 );
 
     }
