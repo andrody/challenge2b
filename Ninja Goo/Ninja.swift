@@ -289,7 +289,7 @@ class Ninja: SKNode {
         
         let raio = self.eyes.size.width/2/8
         let y = sin(ConvertUtilities.degreesToRadians(angle)) * raio
-        let x = cos(ConvertUtilities.degreesToRadians(angle)) * raio - 700.0 * dScale
+        let x = cos(ConvertUtilities.degreesToRadians(angle)) * raio - 175.0 * 0.1
         
         let moveEyes = SKAction.moveTo( CGPointMake(x, y), duration: NSTimeInterval(time) )
         
