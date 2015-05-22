@@ -41,6 +41,8 @@ class GameViewController: UIViewController {
             
 //                self.skView.showsDrawCount = true
 //                self.skView.showsNodeCount = true
+//                self.skView.showsPhysics = true;
+//
 //
 //                self.skView.showsFPS = true
         

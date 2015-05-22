@@ -343,7 +343,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             body.size = CGSizeMake( CGFloat(w) , CGFloat(h) )
             body.anchorPoint = CGPointMake(0, 0)
             body.position = CGPointMake( CGFloat(x) + CGFloat(w)/2 , CGFloat(y) + CGFloat(h)/2 )
-            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w) , CGFloat(h) ), center: CGPointMake(1, 1))
+            
+            var diminuidor : Int = 0
+            if(bitMask == ColliderType.Spike.rawValue) {
+                diminuidor = 40
+            }
+
+            body.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake( CGFloat(w.integerValue - diminuidor) , CGFloat(h.integerValue - diminuidor) ), center: CGPointMake(1, 1))
             body.physicsBody?.restitution = 0.0
             body.physicsBody!.categoryBitMask = bitMask
             body.physicsBody!.dynamic = false
@@ -567,17 +573,17 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     }
 
 //
-                    if properties["spike"] != nil {
-                        
-                        let spikeProp = (properties["spike"] as! String!).toInt()
-                        
-                        if (self.spikeTexture == nil) {
-                            self.spikeTexture = SKTexture(imageNamed: "espinho_tile_128")
-                        }
-                        tile.texture = self.spikeTexture
-
-                        
-                    }
+//                    if properties["spike"] != nil {
+//                        
+//                        let spikeProp = (properties["spike"] as! String!).toInt()
+//                        
+//                        if (self.spikeTexture == nil) {
+//                            self.spikeTexture = SKTexture(imageNamed: "espinho_tile_128")
+//                        }
+//                        tile.texture = self.spikeTexture
+//
+//                        
+//                    }
 
                 }
             }
