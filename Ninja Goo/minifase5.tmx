@@ -214,7 +214,7 @@
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2k2uwjAMReGy0ywtm2DO0qCCCQiFpLZ743A+qaPSxqDzIn7etq3hetnKCWvU4Pu/HV6PRbwV+vOWbd7MZunvc186uqf1nmvd/2h/Xnuq5bXIZob+RmY4Y17r+pb9M/r+s6G/MfTnK1t/avTni/7G0J8v+htDf76y9TfDvJHX01/IGtVrhhnmjbye/kLWqOoZzkR//bL0l+k1p78xj+dzizw61i8dj6kOT9WMzx/rGd2DlX8v9LeeTO//6G89mfrrQX9Q2vu4Hv9fntJzf59J8Y9a/dAfotEflOhvPa33W96Hw6y1ca5Yrgd+oT8o0R+U6G8+1t+Qs3h9N1gb54vleqAlS3/en7kwhwz9fZuBPfdphd+K6S+vFfqzoj8d+qM/JfqjPyX6oz8l+qM/aNEflOgPSvQHJfqDEv1Bif6gtLdwByJGZAo=
+   eJzt21sOwiAQRuGy//V4WZ7PGhEoM/1nxvMlfdOA9Iia1uOo4dn8x7g7j3Fr74fVY+GvQn/Wss03syj9fe5Lyn3qbH9Wc420Ft4i9Lcyhyvmuzv+zv6pfn1Xo7819GcrW39q9GeL/tbQny36W0N/trL1F2G+ns+nP3v0N4/+7FX6/J1Bf/Oy9JfpmgT9rXk032MkU3/8/qhndc2V7xf6qyfTmtNfPdXWnP6gtHP/Cv3B26/9kf7gjf6gRH/1jL5zWR676A9K9Acl+oMS/cWzew05E/qDUob+Kv/n899F7+/bHKLcf6QW4fzsor+8Ipyf6uivj/780V8f/fmjvz7680d/ffTnj/6gRH9Qoj8o0R+U6A9K9Acl+sPICxxZuFE=
   </data>
  </layer>
  <objectgroup name="Ground">

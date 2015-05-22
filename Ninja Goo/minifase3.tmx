@@ -76,9 +76,35 @@
  </tileset>
  <tileset firstgid="341" name="espinho_tile" tilewidth="50" tileheight="50">
   <image source="espinho_tile.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="0"/>
+   </properties>
+  </tile>
  </tileset>
- <tileset firstgid="342" name="espinho_tile" tilewidth="50" tileheight="50">
-  <image source="espinho_tile.png" width="50" height="50"/>
+ <tileset firstgid="342" name="espinho_tile_direito" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_direito.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="343" name="espinho_tile_esquerdo" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_esquerdo.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="3"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="344" name="espinho_tile_invertido" tilewidth="50" tileheight="50">
+  <image source="espinho_tile_invertido.png" width="50" height="50"/>
+  <tile id="0">
+   <properties>
+    <property name="spike" value="2"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
@@ -87,7 +113,7 @@
  </layer>
  <layer name="Spikes" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt2lGKwjAUhtG6SH12KbMUlzJLs5AHX65KRr2/nZ4DeSotIXyE0HZZvtfxsJwfXLv0zWTO6VCPrXi07nuy1f62Tn+D/jL0N+gvQ3+D/jL0N+gvQ3+D/jL0N+gvQ38361r8ViM9r/9MfyT9pb97+4T9gllPzj364uN0BgAAAMDWzb7n982Zd9Lf69Y1KQfP6W+Ozt5Lf/fZ1z5PfzX/X/XQX01/PTr6W+/5qcbsczrpr4f9r5buby/nTP3V0v3thf5q+uuhv5r+euivpr8e+qvpr4f+SNIfSfojSX8k6Y8k/ZGkP5L0l3cFjiJoCw==
+   eJzt2zsOgzAQRVFYZD77X0kKF2kGJBIyLxbnSK7cocvI4rMs/+uxbu/dd/bSbmu9ZrF33a9k1v5mp79Bfxn6G/SXob9Bfxn6G/SXob9Bfxn6G/SXob+351ovfkd/JH3S39acMC84aq8/fdFBZwAAAADM7uhzfu+cOZP+vjf7vy5J+jtGZ+fS3zat/Z7+ar6/6qG/mv56dPQ34/lcfz3Mv1q6v3+/P8+iv1q6v6vQX01/PfRX018P/dX010N/Nf310B9J+iNJfyTpjyT9kaQ/kvRHkv7yXppPLXw=
   </data>
  </layer>
  <objectgroup name="Ninja">
