@@ -214,8 +214,8 @@ class Ninja: SKNode {
         
         animationAngleDefault()
         
-        stretchYRepeat(self.container, scale: 1.05, defaultScale: 1.0, time : speed)
-        stretchXRepeat(self.container, scale: 0.95, defaultScale: 1.0, time : speed*1.6)
+        //stretchYRepeat(self.container, scale: 1.05, defaultScale: 1.0, time : speed)
+        //stretchXRepeat(self.container, scale: 0.95, defaultScale: 1.0, time : speed*1.6)
     }
     
     
