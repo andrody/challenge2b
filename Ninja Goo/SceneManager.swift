@@ -182,7 +182,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         // Load
         let soundURL = NSBundle.mainBundle().URLForResource("click1", withExtension: "wav")
         // Load Music
-        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "mp3")
+        let mainThemeUrl = NSBundle.mainBundle().URLForResource("Winding-Down", withExtension: "mp3")
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
@@ -193,6 +193,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         
         self.backGroundMusic = AVAudioPlayer(contentsOfURL: mainThemeUrl, error: &error)
         self.backGroundMusic.volume = 0.1
+        self.backGroundMusic.numberOfLoops = -1
 
     }
     

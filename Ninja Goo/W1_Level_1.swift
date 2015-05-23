@@ -1032,28 +1032,32 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     
     func loadTutorial() {
-        self.hudLayer.zPosition = 1000
         
-        vidro = SKSpriteNode(texture: SKTexture(imageNamed: "branco"), size: self.size)
-        vidro.position = CGPointZero
+        if(SceneManager.sharedInstance.faseEscolhida.levelNumber == 1) {
         
-        let color = SceneManager.sharedInstance.faseEscolhida.corNuvemBack
-        vidro.colorBlendFactor = 1
-        vidro.color = SKColor(red: color[0]/255, green: color[1]/255, blue: color[2]/255, alpha: 0.8)
+            self.hudLayer.zPosition = 1000
+            
+            vidro = SKSpriteNode(texture: SKTexture(imageNamed: "branco"), size: self.size)
+            vidro.position = CGPointZero
+            
+            let color = SceneManager.sharedInstance.faseEscolhida.corNuvemBack
+            vidro.colorBlendFactor = 1
+            vidro.color = SKColor(red: color[0]/255, green: color[1]/255, blue: color[2]/255, alpha: 0.8)
 
 
-        tutorial = SKSpriteNode(texture: SKTexture(imageNamed: "tutorial"), size: self.size)
-        tutorial.position = CGPointZero
-        tutorial.alpha = 1.0
-        tutorial.aspectFillToSize(self.size)
-        tutorial.setScale(1.0)
-        
-        
-        self.hudLayer.addChild(vidro)
-        self.hudLayer.addChild(tutorial)
-        self.hudLayer.position = CGPointMake(0, -self.size.height)
-        self.vidro.alpha = 0.95
+            tutorial = SKSpriteNode(texture: SKTexture(imageNamed: "tutorial"), size: self.size)
+            tutorial.position = CGPointZero
+            tutorial.alpha = 1.0
+            tutorial.aspectFillToSize(self.size)
+            tutorial.setScale(1.0)
+            
+            
+            self.hudLayer.addChild(vidro)
+            self.hudLayer.addChild(tutorial)
+            self.hudLayer.position = CGPointMake(0, -self.size.height)
+            self.vidro.alpha = 0.95
 
+        }
 //        let color = SceneManager.sharedInstance.faseEscolhida.corNuvemBack
 //        vidro.colorBlendFactor = 1
 //        vidro.color = SKColor(red: color[0]/255, green: color[1]/255, blue: color[2]/255, alpha: 0.8)
@@ -1075,6 +1079,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.vidro.runAction(alpha)
         self.tutorial.runAction(move, completion:  {
             self.hudLayer.removeAllChildren()
+            self.vidro.hidden = true
+            self.tutorial.hidden = true
             self.vidro = nil
             self.tutorial = nil
             })
@@ -1550,6 +1556,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         setaButton.runAction(moveForever)
 
         
+        self.hudLayer.removeAllChildren()
+
         self.hudLayer.addChild(vidro)
         
         self.hudLayer.addChild(congrats)
