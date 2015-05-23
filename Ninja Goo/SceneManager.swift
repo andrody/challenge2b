@@ -18,6 +18,11 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     var scene : W1_Level_1!
     var gameViewCtrl : GameViewController!
     var gameCenter : GameCenter!
+    var clickAudio : AVAudioPlayer!
+    var backGroundMusic : AVAudioPlayer!
+    var endLevel : Bool = false
+
+    
 
     var soundMuted : Bool {
         get {
@@ -153,21 +158,69 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         fases.append(faseFive)
         fases.append(faseSix)
 
-    
+        
+        loadAudio()
     }
     
     func playClickSound(name : String = "click"){
+        
+        if name == "click" {
+            self.clickAudio.play()
+        }
+        else {
+            // Load
+            let soundURL = NSBundle.mainBundle().URLForResource(name, withExtension: "wav")
+            
+            var error:NSError?
+            audioPlayer = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
+            audioPlayer.play()
+        }
+    }
+    
+    func loadAudio(){
+        
         // Load
-        let soundURL = NSBundle.mainBundle().URLForResource(name, withExtension: "wav")
+        let soundURL = NSBundle.mainBundle().URLForResource("click1", withExtension: "wav")
+        // Load Music
+        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "mp3")
+        
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
         AVAudioSession.sharedInstance().setActive(true, error: nil)
         
         var error:NSError?
-        audioPlayer = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
-        audioPlayer.prepareToPlay()
-        audioPlayer.play()
+        self.clickAudio = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
+        
+        self.backGroundMusic = AVAudioPlayer(contentsOfURL: mainThemeUrl, error: &error)
+        self.backGroundMusic.volume = 0.1
+
     }
+    
+    func playCaf(name : String){
+        
+        // Load
+        let soundURL = NSBundle.mainBundle().URLForResource(name, withExtension: "caf")
+     
+        
+        var error:NSError?
+        let jump  = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
+        
+        jump.play()
+    }
+
+    
+    func playMusic(name : String) {
+        
+        if(!SceneManager.sharedInstance.soundMuted) {
+        
+            self.backGroundMusic.play()
+        }
+        else {
+            self.backGroundMusic.stop()
+        }
+    }
+    
+    
     
     func save(key : String, value : AnyObject?) {
         
@@ -183,7 +236,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     
     func unlockNextLevel() {
         var flag = false
-        playClickSound(name: "victory")
+        playClickSound(name: "unlock")
 
         
         for fase in fases {

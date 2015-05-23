@@ -105,7 +105,7 @@ class StartScreenViewController: ItemViewCtrl {
     
     
     func showGameCenter() {
-        SceneManager.sharedInstance.playClickSound()
+        SceneManager.sharedInstance.playClickSound(name: "click_start")
 
         
         SceneManager.sharedInstance.gameCenter.showLeader(self)
@@ -115,7 +115,8 @@ class StartScreenViewController: ItemViewCtrl {
     
     func muteSound() {
         
-        SceneManager.sharedInstance.playClickSound()
+        SceneManager.sharedInstance.playClickSound(name: "click_start")
+
 
         
         if(SceneManager.sharedInstance.soundMuted){
@@ -128,6 +129,9 @@ class StartScreenViewController: ItemViewCtrl {
             soundButton.alpha = 0.5
             SceneManager.sharedInstance.soundMuted = true
         }
+        
+        SceneManager.sharedInstance.playMusic("main-theme")
+
         
         
     }

@@ -28,6 +28,20 @@
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
+		C5112E5B1B0FDEC6007E805C /* main-theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5A1B0FDEC6007E805C /* main-theme.mp3 */; };
+		C5112E5F1B10B095007E805C /* wizard_jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5E1B10B095007E805C /* wizard_jump.wav */; };
+		C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E631B10B7D0007E805C /* character_jump1.wav */; };
+		C5112E681B10B8CF007E805C /* impact2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E671B10B8CF007E805C /* impact2.wav */; };
+		C5112E6B1B10B8D8007E805C /* click_end.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E691B10B8D8007E805C /* click_end.wav */; };
+		C5112E6C1B10B8D8007E805C /* click_start.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E6A1B10B8D8007E805C /* click_start.wav */; };
+		C5112E6E1B10B8DF007E805C /* menu_down.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E6D1B10B8DF007E805C /* menu_down.wav */; };
+		C5112E761B10BC00007E805C /* character_land.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E6F1B10BC00007E805C /* character_land.wav */; };
+		C5112E771B10BC00007E805C /* click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E701B10BC00007E805C /* click1.wav */; };
+		C5112E781B10BC00007E805C /* jailbreak.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E711B10BC00007E805C /* jailbreak.wav */; };
+		C5112E791B10BC00007E805C /* lockpick_success.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E721B10BC00007E805C /* lockpick_success.wav */; };
+		C5112E7A1B10BC00007E805C /* miss_text.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E731B10BC00007E805C /* miss_text.wav */; };
+		C5112E7B1B10BC00007E805C /* text_appear.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E741B10BC00007E805C /* text_appear.wav */; };
+		C5112E7C1B10BC00007E805C /* unlock.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E751B10BC00007E805C /* unlock.wav */; };
 		C51A438F1B0A010700566E44 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51A438E1B0A010700566E44 /* LevelView.swift */; };
 		C51A43911B0A012200566E44 /* LevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C51A43901B0A012200566E44 /* LevelView.xib */; };
 		C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C51CBE8E1B0E506C00913FAA /* StartApp.bundle */; };
@@ -101,6 +115,20 @@
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
+		C5112E5A1B0FDEC6007E805C /* main-theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "main-theme.mp3"; sourceTree = "<group>"; };
+		C5112E5E1B10B095007E805C /* wizard_jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wizard_jump.wav; sourceTree = "<group>"; };
+		C5112E631B10B7D0007E805C /* character_jump1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = character_jump1.wav; sourceTree = "<group>"; };
+		C5112E671B10B8CF007E805C /* impact2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact2.wav; sourceTree = "<group>"; };
+		C5112E691B10B8D8007E805C /* click_end.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click_end.wav; sourceTree = "<group>"; };
+		C5112E6A1B10B8D8007E805C /* click_start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click_start.wav; sourceTree = "<group>"; };
+		C5112E6D1B10B8DF007E805C /* menu_down.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu_down.wav; sourceTree = "<group>"; };
+		C5112E6F1B10BC00007E805C /* character_land.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = character_land.wav; sourceTree = "<group>"; };
+		C5112E701B10BC00007E805C /* click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click1.wav; sourceTree = "<group>"; };
+		C5112E711B10BC00007E805C /* jailbreak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jailbreak.wav; sourceTree = "<group>"; };
+		C5112E721B10BC00007E805C /* lockpick_success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lockpick_success.wav; sourceTree = "<group>"; };
+		C5112E731B10BC00007E805C /* miss_text.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = miss_text.wav; sourceTree = "<group>"; };
+		C5112E741B10BC00007E805C /* text_appear.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = text_appear.wav; sourceTree = "<group>"; };
+		C5112E751B10BC00007E805C /* unlock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = unlock.wav; sourceTree = "<group>"; };
 		C51A438E1B0A010700566E44 /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelView.swift; path = ../LevelView.swift; sourceTree = "<group>"; };
 		C51A43901B0A012200566E44 /* LevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LevelView.xib; path = ../LevelView.xib; sourceTree = "<group>"; };
 		C51CBE8E1B0E506C00913FAA /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
@@ -176,6 +204,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5112E591B0FDE4E007E805C /* Musics */ = {
+			isa = PBXGroup;
+			children = (
+				C5112E5A1B0FDEC6007E805C /* main-theme.mp3 */,
+			);
+			name = Musics;
+			sourceTree = "<group>";
+		};
+		C5112E5C1B10B07B007E805C /* inTest */ = {
+			isa = PBXGroup;
+			children = (
+				C5112E631B10B7D0007E805C /* character_jump1.wav */,
+				C5112E671B10B8CF007E805C /* impact2.wav */,
+				C5112E691B10B8D8007E805C /* click_end.wav */,
+				C5112E6A1B10B8D8007E805C /* click_start.wav */,
+				C5112E6D1B10B8DF007E805C /* menu_down.wav */,
+				C5112E6F1B10BC00007E805C /* character_land.wav */,
+				C5112E701B10BC00007E805C /* click1.wav */,
+				C5112E711B10BC00007E805C /* jailbreak.wav */,
+				C5112E721B10BC00007E805C /* lockpick_success.wav */,
+				C5112E731B10BC00007E805C /* miss_text.wav */,
+				C5112E741B10BC00007E805C /* text_appear.wav */,
+				C5112E751B10BC00007E805C /* unlock.wav */,
+			);
+			name = inTest;
+			sourceTree = "<group>";
+		};
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +341,7 @@
 		C5CB3F641ACD6BD6001A37B7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C5112E591B0FDE4E007E805C /* Musics */,
 				C54747441AD44F0800C4E23F /* Maps */,
 				C5CB3F711ACD6E59001A37B7 /* Sounds */,
 				C5CB3F701ACD6E4F001A37B7 /* Images */,
@@ -315,7 +371,9 @@
 		C5CB3F711ACD6E59001A37B7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				C5112E5C1B10B07B007E805C /* inTest */,
 				655915DB1B0E55FF00D366E6 /* click.wav */,
+				C5112E5E1B10B095007E805C /* wizard_jump.wav */,
 				655915DC1B0E55FF00D366E6 /* impact.wav */,
 				655915DD1B0E55FF00D366E6 /* jump.wav */,
 				655915DE1B0E55FF00D366E6 /* shaking.wav */,
@@ -441,9 +499,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
+				C5112E5B1B0FDEC6007E805C /* main-theme.mp3 in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
+				C5112E771B10BC00007E805C /* click1.wav in Resources */,
+				C5112E5F1B10B095007E805C /* wizard_jump.wav in Resources */,
 				659C751E1B0FCF680057CE8B /* minifase5.tmx in Resources */,
+				C5112E791B10BC00007E805C /* lockpick_success.wav in Resources */,
 				655915E71B0E55FF00D366E6 /* victory.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
@@ -452,27 +514,37 @@
 				652BD2E21B0CC3A10064535F /* minifase1.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
+				C5112E6B1B10B8D8007E805C /* click_end.wav in Resources */,
 				659C75181B0FC94C0057CE8B /* minifase3.tmx in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				656343E01B092E33002E2031 /* minifase1.tmx in Resources */,
 				659C751C1B0FCCEA0057CE8B /* minifase6.tmx in Resources */,
+				C5112E6E1B10B8DF007E805C /* menu_down.wav in Resources */,
+				C5112E6C1B10B8D8007E805C /* click_start.wav in Resources */,
 				655915E21B0E55FF00D366E6 /* click.wav in Resources */,
 				C51A43911B0A012200566E44 /* LevelView.xib in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
+				C5112E681B10B8CF007E805C /* impact2.wav in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
 				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
 				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
 				C5ED62681B0FAC6B006B6DC6 /* espinho_tile.png in Resources */,
 				659C751A1B0FCAFE0057CE8B /* minifase4.tmx in Resources */,
+				C5112E781B10BC00007E805C /* jailbreak.wav in Resources */,
+				C5112E7C1B10BC00007E805C /* unlock.wav in Resources */,
 				C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
 				C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */,
+				C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */,
+				C5112E7B1B10BC00007E805C /* text_appear.wav in Resources */,
+				C5112E7A1B10BC00007E805C /* miss_text.wav in Resources */,
 				655915E31B0E55FF00D366E6 /* impact.wav in Resources */,
 				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
 				656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */,
+				C5112E761B10BC00007E805C /* character_land.wav in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
 				C5ED626A1B0FAC94006B6DC6 /* minifase2.tmx in Resources */,
 			);

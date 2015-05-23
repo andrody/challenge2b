@@ -112,6 +112,10 @@ class LevelsController: ItemViewCtrl {
     
     override func viewWillAppear(animated: Bool) {
         checkAll()
+        if(SceneManager.sharedInstance.endLevel) {
+            SceneManager.sharedInstance.playClickSound(name: "lockpick_success")
+            SceneManager.sharedInstance.endLevel = false
+        }
         println("CHECANDO")
 
     }
