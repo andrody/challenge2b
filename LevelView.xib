@@ -191,7 +191,7 @@
                                     <rect key="frame" x="180" y="536" width="240" height="128"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="zfQ-DZ-PTc" secondAttribute="height" multiplier="15:8" id="U9f-N6-kdw"/>
-                                        <constraint firstAttribute="width" constant="128" id="bqq-qd-Tbf"/>
+                                        <constraint firstAttribute="width" constant="118" id="bqq-qd-Tbf"/>
                                     </constraints>
                                 </imageView>
                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J2M-sq-jij" userLabel="loadBuy">
@@ -211,7 +211,7 @@
                                 <constraint firstItem="ods-1k-jGR" firstAttribute="centerY" secondItem="wwg-BT-IgW" secondAttribute="centerY" id="W28-QA-aad"/>
                                 <constraint firstItem="ods-1k-jGR" firstAttribute="top" secondItem="J2M-sq-jij" secondAttribute="bottom" constant="52" id="W5V-Jw-7oz"/>
                                 <constraint firstItem="n5G-KU-I0l" firstAttribute="top" secondItem="MEl-rK-bid" secondAttribute="bottom" constant="20" id="YXe-Eo-uJ0"/>
-                                <constraint firstItem="n5G-KU-I0l" firstAttribute="bottom" secondItem="zfQ-DZ-PTc" secondAttribute="top" constant="5" id="bBh-Ot-ynv"/>
+                                <constraint firstItem="n5G-KU-I0l" firstAttribute="bottom" secondItem="zfQ-DZ-PTc" secondAttribute="top" id="bBh-Ot-ynv"/>
                                 <constraint firstItem="J2M-sq-jij" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" constant="42" id="g1o-Ia-vTe"/>
                                 <constraint firstItem="J2M-sq-jij" firstAttribute="centerX" secondItem="ods-1k-jGR" secondAttribute="centerX" constant="-0.5" id="ljq-AQ-Z2D"/>
                                 <constraint firstItem="MEl-rK-bid" firstAttribute="top" secondItem="ods-1k-jGR" secondAttribute="bottom" priority="999" constant="230" id="vdX-f4-7Xf"/>
@@ -316,7 +316,7 @@
         </view>
     </objects>
     <resources>
-        <image name="099" width="600" height="400"/>
+        <image name="099" width="400" height="190"/>
         <image name="cadeado" width="300" height="398"/>
         <image name="key" width="128" height="128"/>
         <image name="minifase1" width="682" height="1536"/>
