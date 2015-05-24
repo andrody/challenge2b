@@ -105,7 +105,7 @@ class StartScreenViewController: ItemViewCtrl {
     
     
     func showGameCenter() {
-        SceneManager.sharedInstance.playClickSound(name: "click_start")
+        SceneManager.sharedInstance.playClickSound()
 
         
         SceneManager.sharedInstance.gameCenter.showLeader(self)
@@ -115,7 +115,7 @@ class StartScreenViewController: ItemViewCtrl {
     
     func muteSound() {
         
-        SceneManager.sharedInstance.playClickSound(name: "click_start")
+        SceneManager.sharedInstance.playClickSound()
 
 
         
