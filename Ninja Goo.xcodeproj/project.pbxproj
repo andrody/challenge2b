@@ -23,7 +23,7 @@
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
-		C5112E5B1B0FDEC6007E805C /* main-theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5A1B0FDEC6007E805C /* main-theme.mp3 */; };
+		C5112E5B1B0FDEC6007E805C /* Winding-Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */; };
 		C5112E5F1B10B095007E805C /* wizard_jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5E1B10B095007E805C /* wizard_jump.wav */; };
 		C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E631B10B7D0007E805C /* character_jump1.wav */; };
 		C5112E681B10B8CF007E805C /* impact2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E671B10B8CF007E805C /* impact2.wav */; };
@@ -49,7 +49,7 @@
 		C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE9C1B0E516700913FAA /* QuartzCore.framework */; };
 		C51CBEA31B0E5C0600913FAA /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CBEA21B0E5C0600913FAA /* GameCenter.swift */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
-		C569C5DA1B10CE3C00C999A9 /* Winding-Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5D91B10CE3C00C999A9 /* Winding-Down.mp3 */; };
+		C569C5DA1B10CE3C00C999A9 /* main-theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5D91B10CE3C00C999A9 /* main-theme.mp3 */; };
 		C569C5DC1B12044200C999A9 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5DB1B12044200C999A9 /* minifase5.tmx */; };
 		C569C5E31B12104E00C999A9 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5DF1B12104E00C999A9 /* minifase1.tmx */; };
 		C569C5E41B12104E00C999A9 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5E01B12104E00C999A9 /* minifase2.tmx */; };
@@ -111,7 +111,7 @@
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
-		C5112E5A1B0FDEC6007E805C /* main-theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "main-theme.mp3"; sourceTree = "<group>"; };
+		C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Winding-Down.mp3"; sourceTree = "<group>"; };
 		C5112E5E1B10B095007E805C /* wizard_jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wizard_jump.wav; sourceTree = "<group>"; };
 		C5112E631B10B7D0007E805C /* character_jump1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = character_jump1.wav; sourceTree = "<group>"; };
 		C5112E671B10B8CF007E805C /* impact2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact2.wav; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		C51CBEA21B0E5C0600913FAA /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		C547473A1AD44D2800C4E23F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
-		C569C5D91B10CE3C00C999A9 /* Winding-Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Winding-Down.mp3"; sourceTree = "<group>"; };
+		C569C5D91B10CE3C00C999A9 /* main-theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "main-theme.mp3"; sourceTree = "<group>"; };
 		C569C5DB1B12044200C999A9 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
 		C569C5DF1B12104E00C999A9 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		C569C5E01B12104E00C999A9 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
@@ -209,8 +209,8 @@
 		C5112E591B0FDE4E007E805C /* Musics */ = {
 			isa = PBXGroup;
 			children = (
-				C569C5D91B10CE3C00C999A9 /* Winding-Down.mp3 */,
-				C5112E5A1B0FDEC6007E805C /* main-theme.mp3 */,
+				C569C5D91B10CE3C00C999A9 /* main-theme.mp3 */,
+				C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */,
 			);
 			name = Musics;
 			sourceTree = "<group>";
@@ -502,7 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
-				C5112E5B1B0FDEC6007E805C /* main-theme.mp3 in Resources */,
+				C5112E5B1B0FDEC6007E805C /* Winding-Down.mp3 in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C569C5DC1B12044200C999A9 /* minifase5.tmx in Resources */,
 				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
@@ -513,7 +513,7 @@
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C569C5E61B12104E00C999A9 /* minifase4.tmx in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
-				C569C5DA1B10CE3C00C999A9 /* Winding-Down.mp3 in Resources */,
+				C569C5DA1B10CE3C00C999A9 /* main-theme.mp3 in Resources */,
 				C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,

@@ -232,10 +232,10 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         
         if(!SceneManager.sharedInstance.soundMuted) {
         
-            SceneManager.sharedInstance.backGroundMusic.play()
+            music.play()
         }
         else {
-            SceneManager.sharedInstance.backGroundMusic.stop()
+            music.stop()
         }
     }
     
