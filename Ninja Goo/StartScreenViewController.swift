@@ -130,7 +130,7 @@ class StartScreenViewController: ItemViewCtrl {
             SceneManager.sharedInstance.soundMuted = true
         }
         
-        SceneManager.sharedInstance.playMusic("main-theme")
+        SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.backGroundMusic)
 
         
         

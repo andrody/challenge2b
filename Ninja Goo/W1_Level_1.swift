@@ -1028,8 +1028,15 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.loadBackground()
         self.loadUpperClouds()
         self.loadTutorial()
+        self.loadMusic()
     }
     
+    func loadMusic(){
+        SceneManager.sharedInstance.faseEscolhida.backGroundMusic = SceneManager.sharedInstance.loadAudio(SceneManager.sharedInstance.faseEscolhida.backgroundMusicName)
+        SceneManager.sharedInstance.backGroundMusic.stop()
+        SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.faseEscolhida.backGroundMusic)
+        
+    }
     
     func loadTutorial() {
         
@@ -1477,7 +1484,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 if(SceneManager.sharedInstance.fases.endIndex - 1 != index) {
                     SceneManager.sharedInstance.fases[index + 1].locked = false
                 }
-                if(SceneManager.sharedInstance.fases.endIndex - 1 != index + 1) {
+                if(SceneManager.sharedInstance.fases.endIndex - 1 <= index - 1) {
                     println("index + 1 = \(index + 1)")
                     println("endindex = \(SceneManager.sharedInstance.fases.endIndex)")
 

@@ -163,7 +163,7 @@
   </data>
  </layer>
  <objectgroup name="Ninja">
-  <object id="60" name="ninja" x="200" y="1450"/>
+  <object id="60" name="ninja" x="7637.5" y="1237.5"/>
  </objectgroup>
  <objectgroup name="Ground">
   <object id="59" name="ground" x="150" y="1850"/>

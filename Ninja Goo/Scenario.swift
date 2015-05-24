@@ -8,6 +8,7 @@
 
 
 import UIKit
+import AVFoundation
 import SpriteKit
 
 enum Saves: String {
@@ -16,8 +17,6 @@ enum Saves: String {
     case locked = "locked"
     case unlockable = "unlockable"
     case attempts = "attempts"
-
-
 }
 
 
@@ -36,6 +35,9 @@ class Scenario {
     var backgroundFrontName : String!
     var backgroundBackName : String!
     var rank : Ranks!
+    var backgroundMusicName : String!
+    var backGroundMusic : AVAudioPlayer!
+
 
     var distanceRecord : Int {
         get {
@@ -113,7 +115,7 @@ class Scenario {
 
 
     
-    init(nome : String, levelNumber : Int, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String, rank : Ranks) {
+    init(nome : String, levelNumber : Int, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String, rank : Ranks, backgroundMusicName : String) {
         
         self.nome = nome
         self.levelNumber = levelNumber
@@ -128,6 +130,7 @@ class Scenario {
         self.backgroundBackName = backgroundBackName
         self.backgroundFrontName = backgroundFrontName
         self.rank = rank
+        self.backgroundMusicName = backgroundMusicName
         
     }
 

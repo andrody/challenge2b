@@ -67,7 +67,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corWallEspecial: [43,147,202],
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
-            rank: Ranks.levelone
+            rank: Ranks.levelone,
+            backgroundMusicName: "Winding-Down"
         )
                 
         var faseTwo = Scenario(nome: "minifase2",
@@ -82,7 +83,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corWallEspecial: [0,116,111],
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
-            rank: Ranks.leveltwo
+            rank: Ranks.leveltwo,
+            backgroundMusicName: "Winding-Down"
         )
         
         
@@ -99,7 +101,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corWallEspecial: [98,0,123],
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
-            rank: Ranks.levelthree
+            rank: Ranks.levelthree,
+            backgroundMusicName: "Winding-Down"
 
         )
         
@@ -115,7 +118,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corWallEspecial: [222,111,0],
             backgroundFrontName: "morro_branco",
             backgroundBackName : "morro_B_branco",
-            rank: Ranks.levelfour
+            rank: Ranks.levelfour,
+            backgroundMusicName: "Winding-Down"
 
         )
         
@@ -131,7 +135,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corWallEspecial: [148,1,11],
             backgroundFrontName: "montanha_neve_branco",
             backgroundBackName : "montanha_neve_branco",
-            rank: Ranks.levelfive
+            rank: Ranks.levelfive,
+            backgroundMusicName: "Winding-Down"
 
         )
         
@@ -147,7 +152,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             corWallEspecial: [0,49,96],
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
-            rank: Ranks.levelsix
+            rank: Ranks.levelsix,
+            backgroundMusicName: "Winding-Down"
 
         )
         
@@ -182,7 +188,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         // Load
         let soundURL = NSBundle.mainBundle().URLForResource("click1", withExtension: "wav")
         // Load Music
-        let mainThemeUrl = NSBundle.mainBundle().URLForResource("Winding-Down", withExtension: "mp3")
+        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "mp3")
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
@@ -192,9 +198,21 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         self.clickAudio = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
         
         self.backGroundMusic = AVAudioPlayer(contentsOfURL: mainThemeUrl, error: &error)
-        self.backGroundMusic.volume = 0.1
+        self.backGroundMusic.volume = 0.2
         self.backGroundMusic.numberOfLoops = -1
 
+    }
+    
+    func loadAudio(name : String) -> AVAudioPlayer {
+        
+        let music = NSBundle.mainBundle().URLForResource(name, withExtension: "mp3")
+        var error:NSError?
+        
+        let audio = AVAudioPlayer(contentsOfURL: music, error: &error)
+        audio.volume = 0.1
+        audio.numberOfLoops = -1
+        return audio   
+        
     }
     
     func playCaf(name : String){
@@ -210,14 +228,14 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     }
 
     
-    func playMusic(name : String) {
+    func playMusic(music : AVAudioPlayer) {
         
         if(!SceneManager.sharedInstance.soundMuted) {
         
-            self.backGroundMusic.play()
+            SceneManager.sharedInstance.backGroundMusic.play()
         }
         else {
-            self.backGroundMusic.stop()
+            SceneManager.sharedInstance.backGroundMusic.stop()
         }
     }
     

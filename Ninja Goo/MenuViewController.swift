@@ -28,7 +28,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
         super.viewDidLoad()
         
         createPageViewController()
-        SceneManager.sharedInstance.playMusic("main-theme")
+        SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.backGroundMusic)
     }
     
    
