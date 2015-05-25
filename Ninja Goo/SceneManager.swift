@@ -107,7 +107,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
             rank: Ranks.leveltwo,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "rise-up"
         )
         
         
@@ -142,7 +142,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "morro_branco",
             backgroundBackName : "morro_B_branco",
             rank: Ranks.levelfour,
-            backgroundMusicName: "Exotic-Island"
+            backgroundMusicName: "Winding-Down"
 
         )
         
@@ -159,7 +159,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_neve_branco",
             backgroundBackName : "montanha_neve_branco",
             rank: Ranks.levelfive,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "Exotic-Island"
 
         )
         
@@ -232,7 +232,17 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         var error:NSError?
         
         let audio = AVAudioPlayer(contentsOfURL: music, error: &error)
-        audio.volume = 0.1
+        
+        audio.volume = 0.2
+
+        if(self.faseEscolhida.levelNumber == 6) {
+            audio.volume = 0.4
+        }
+        
+        if(self.faseEscolhida.levelNumber == 2) {
+            audio.volume = 0.03
+        }
+
         audio.numberOfLoops = -1
         return audio   
         

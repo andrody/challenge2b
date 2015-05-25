@@ -1484,7 +1484,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 if(SceneManager.sharedInstance.fases.endIndex - 1 != index) {
                     SceneManager.sharedInstance.fases[index + 1].locked = false
                 }
-                if(SceneManager.sharedInstance.fases.endIndex - 1 <= index - 1) {
+                if(SceneManager.sharedInstance.fases.endIndex - 1 > index + 1) {
                     println("index + 1 = \(index + 1)")
                     println("endindex = \(SceneManager.sharedInstance.fases.endIndex)")
 
