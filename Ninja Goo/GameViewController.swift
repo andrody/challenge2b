@@ -63,7 +63,7 @@ class GameViewController: UIViewController {
 
     func backToMenu(){
         SceneManager.sharedInstance.faseEscolhida.backGroundMusic.stop()
-        SceneManager.sharedInstance.backGroundMusic.play()
+        SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.backGroundMusic)
         //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
         self.dismissViewControllerAnimated(true, completion: nil)
         println("BACK TO MEnu")

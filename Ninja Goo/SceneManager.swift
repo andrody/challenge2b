@@ -91,7 +91,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelone,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "main-theme"
         )
                 
         var faseTwo = Scenario(nome: "minifase2",
@@ -125,7 +125,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelthree,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "Misty-Forest"
 
         )
         
@@ -142,7 +142,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "morro_branco",
             backgroundBackName : "morro_B_branco",
             rank: Ranks.levelfour,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "Exotic-Island"
 
         )
         
@@ -176,7 +176,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelsix,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "Mad-Scientist"
 
         )
         
