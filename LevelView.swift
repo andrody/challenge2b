@@ -84,7 +84,7 @@ class LevelView: UIView {
         keyView.addGestureRecognizer(tapGesture1)
         
         var buyObserver = UITapGestureRecognizer(target: self, action: Selector("buyKey"))
-        buyButton.addGestureRecognizer(buyObserver)
+        buyButton.addGestureRecognizer(buyObserver)//Botao para comprar
 
         
         let color = UIColor(red: 252/255, green: 249/255, blue: 172/255, alpha: 1.0)

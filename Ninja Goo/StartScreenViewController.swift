@@ -67,13 +67,13 @@ class StartScreenViewController: ItemViewCtrl {
         var gameCenterGesture = UITapGestureRecognizer(target: self, action: Selector("showGameCenter"))
         gameCenterButton.addGestureRecognizer(gameCenterGesture)
         
-        var soundGesture = UITapGestureRecognizer(target: self, action: Selector("muteSound"))
-        soundButton.addGestureRecognizer(soundGesture)
+        var settings = UITapGestureRecognizer(target: self, action: Selector("settings"))
+        soundButton.addGestureRecognizer(settings)
 
-        if SceneManager.sharedInstance.soundMuted {
-            soundButton.alpha = 0.5
-            soundButton.image = UIImage(named: "sound-muted")
-        }
+//        if SceneManager.sharedInstance.soundMuted {
+//            soundButton.alpha = 0.5
+//            soundButton.image = UIImage(named: "sound-muted")
+//        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -113,28 +113,35 @@ class StartScreenViewController: ItemViewCtrl {
         
     }
     
-    func muteSound() {
-        
-        SceneManager.sharedInstance.playClickSound()
-
-
-        
-        if(SceneManager.sharedInstance.soundMuted){
-            soundButton.image = UIImage(named: "sound")
-            soundButton.alpha = 1.0
-            SceneManager.sharedInstance.soundMuted = false
-        }
-        else {
-            soundButton.image = UIImage(named: "sound-muted")
-            soundButton.alpha = 0.5
-            SceneManager.sharedInstance.soundMuted = true
-        }
-        
-        SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.backGroundMusic)
-
-        
-        
+    
+    func settings(){
+    
+        var setting = self.storyboard?.instantiateViewControllerWithIdentifier("OptionsViewController") as! OptionsViewController
+        self.presentViewController(setting, animated: true, completion: nil)
     }
+    
+//    func muteSound() {
+//        
+//        SceneManager.sharedInstance.playClickSound()
+//
+//
+//        
+//        if(SceneManager.sharedInstance.soundMuted){
+//            soundButton.image = UIImage(named: "sound")
+//            soundButton.alpha = 1.0
+//            SceneManager.sharedInstance.soundMuted = false
+//        }
+//        else {
+//            soundButton.image = UIImage(named: "sound-muted")
+//            soundButton.alpha = 0.5
+//            SceneManager.sharedInstance.soundMuted = true
+//        }
+//        
+//        SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.backGroundMusic)
+//
+//        
+//        
+//    }
     
     
     

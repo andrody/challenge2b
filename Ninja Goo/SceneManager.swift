@@ -62,7 +62,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     }
 
 
-    var keyId : String = "levelkey"
+    var keyId : String = "unlockkey"
 
     var fases = [Scenario]()
     var faseEscolhida : Scenario!
@@ -91,7 +91,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelone,
-            backgroundMusicName: "main-theme"
+            backgroundMusicName: "music1"
         )
                 
         var faseTwo = Scenario(nome: "minifase2",
@@ -125,7 +125,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelthree,
-            backgroundMusicName: "Misty-Forest"
+            backgroundMusicName: "music3"
 
         )
         
@@ -176,7 +176,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelsix,
-            backgroundMusicName: "Mad-Scientist"
+            backgroundMusicName: "music6"
 
         )
         
@@ -209,9 +209,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     func loadAudio(){
         
         // Load
-        let soundURL = NSBundle.mainBundle().URLForResource("click1", withExtension: "wav")
+        let soundURL = NSBundle.mainBundle().URLForResource("click", withExtension: "wav")
         // Load Music
-        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "mp3")
+        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "wav")
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
@@ -228,7 +228,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     
     func loadAudio(name : String) -> AVAudioPlayer {
         
-        let music = NSBundle.mainBundle().URLForResource(name, withExtension: "mp3")
+        let music = NSBundle.mainBundle().URLForResource(name, withExtension: "wav")
         var error:NSError?
         
         let audio = AVAudioPlayer(contentsOfURL: music, error: &error)
@@ -379,8 +379,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
                     break;
-                    // case .Restored:
+               // case .Restored:
                     //[self restoreTransaction:transaction];
+                    //SKPaymentQueue.defaultQueue().restoreCompletedTransactions() RESTAURAÇÅO DE COMPRAS
                 default:
                     break;
                 }

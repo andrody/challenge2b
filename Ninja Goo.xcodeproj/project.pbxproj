@@ -197,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F095971B14861E00A9C505 /* GameKit.framework in Frameworks */,
 				C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */,
 				C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */,
 				C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */,
@@ -229,6 +230,16 @@
 				C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */,
 				C569C5D91B10CE3C00C999A9 /* main-theme.mp3 */,
 				C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */,
+				65F0552D1B15C90D00BB12B0 /* Misty-Forest.mp3 */,
+				65F0552F1B15C96900BB12B0 /* Exotic-Island.mp3 */,
+				65F055301B15C96900BB12B0 /* Winding-Down.mp3 */,
+				65F055311B15C96900BB12B0 /* Misty-Forest.mp3 */,
+				659C75871B121F850057CE8B /* music1.wav */,
+				659C75891B1221330057CE8B /* music2.wav */,
+				659C758D1B1221E50057CE8B /* music3.wav */,
+				659C758F1B1222C40057CE8B /* music4.wav */,
+				659C75951B1224130057CE8B /* music5.wav */,
+				659C75931B1223780057CE8B /* music6.wav */,
 			);
 			name = Musics;
 			sourceTree = "<group>";
@@ -280,6 +291,7 @@
 		C5CB3F311ACD6AA8001A37B7 = {
 			isa = PBXGroup;
 			children = (
+				65F095961B14861E00A9C505 /* GameKit.framework */,
 				C51CBE9C1B0E516700913FAA /* QuartzCore.framework */,
 				C51CBE9A1B0E515000913FAA /* AdSupport.framework */,
 				C51CBE981B0E514000913FAA /* StoreKit.framework */,
@@ -317,6 +329,7 @@
 				C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */,
 				C50BB38E1ADAFD97007827B7 /* LevelsController.swift */,
 				C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */,
+				65F055371B15CB0900BB12B0 /* OptionsViewController.swift */,
 				C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */,
 				C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */,
 				C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */,
@@ -486,7 +499,12 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					C5CB3F521ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
@@ -522,6 +540,7 @@
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
 				C569C5F51B13771A00C999A9 /* minifase1.tmx in Resources */,
 				C5112E5B1B0FDEC6007E805C /* Winding-Down.mp3 in Resources */,
+				659C75941B1223780057CE8B /* music6.wav in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C569C5EE1B1375C600C999A9 /* Mad-Scientist.mp3 in Resources */,
 				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
@@ -534,7 +553,7 @@
 				C569C5FA1B13771A00C999A9 /* minifase6.tmx in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
-				C569C5DA1B10CE3C00C999A9 /* main-theme.mp3 in Resources */,
+				65F0552E1B15C90D00BB12B0 /* Misty-Forest.mp3 in Resources */,
 				C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
@@ -548,13 +567,19 @@
 				C504F79D1B1378EB0021C878 /* POL-rise-up-short.wav in Resources */,
 				C504F7A11B137AE90021C878 /* Self-Destruct-Sequence.mp3 in Resources */,
 				C5112E6E1B10B8DF007E805C /* menu_down.wav in Resources */,
+				659C758A1B1221330057CE8B /* music2.wav in Resources */,
 				C5112E6C1B10B8D8007E805C /* click_start.wav in Resources */,
 				655915E21B0E55FF00D366E6 /* click.wav in Resources */,
 				C51A43911B0A012200566E44 /* LevelView.xib in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
 				C5112E681B10B8CF007E805C /* impact2.wav in Resources */,
+				659C758E1B1221E50057CE8B /* music3.wav in Resources */,
+				65F095951B123FBD00A9C505 /* minifase6.tmx in Resources */,
+				659C75961B1224130057CE8B /* music5.wav in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
+				65F055321B15C96900BB12B0 /* Exotic-Island.mp3 in Resources */,
+				65F055341B15C96900BB12B0 /* Misty-Forest.mp3 in Resources */,
 				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
 				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
 				C5ED62681B0FAC6B006B6DC6 /* espinho_tile.png in Resources */,
@@ -562,11 +587,16 @@
 				C5112E7C1B10BC00007E805C /* unlock.wav in Resources */,
 				C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
+				659C75901B1222C40057CE8B /* music4.wav in Resources */,
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
 				C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */,
 				C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */,
 				C5112E7B1B10BC00007E805C /* text_appear.wav in Resources */,
 				C5112E7A1B10BC00007E805C /* miss_text.wav in Resources */,
+				65F0958B1B123D4600A9C505 /* minifase4.tmx in Resources */,
+				65F095891B123D4600A9C505 /* minifase2.tmx in Resources */,
+				65F055331B15C96900BB12B0 /* Winding-Down.mp3 in Resources */,
+				65F0958A1B123D4600A9C505 /* minifase3.tmx in Resources */,
 				655915E31B0E55FF00D366E6 /* impact.wav in Resources */,
 				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
 				656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */,
@@ -595,6 +625,7 @@
 				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
 				C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */,
 				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
+				65F055381B15CB0900BB12B0 /* OptionsViewController.swift in Sources */,
 				C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */,
 				C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */,
 				C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */,
@@ -726,6 +757,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -733,6 +765,7 @@
 				INFOPLIST_FILE = "Ninja Goo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ninja Goo/TileMapHeader.h";
 			};
 			name = Debug;
@@ -742,6 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -749,6 +783,7 @@
 				INFOPLIST_FILE = "Ninja Goo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ninja Goo/TileMapHeader.h";
 			};
 			name = Release;
