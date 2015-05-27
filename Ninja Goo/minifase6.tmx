@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="101">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="160" height="40" tilewidth="50" tileheight="50" nextobjectid="104">
  <tileset firstgid="1" name="plataforma3" tilewidth="100" tileheight="500">
   <image source="plataforma3.png" width="1320" height="1836"/>
  </tileset>
@@ -14,6 +14,14 @@
  <tileset firstgid="64" name="plataformaMovelVertical" tilewidth="300" tileheight="300">
   <image source="plataforma3.png" width="1320" height="1836"/>
   <tile id="0">
+   <properties>
+    <property name="direction" value="4"/>
+    <property name="isMoveable" value="4"/>
+    <property name="speed" value="1"/>
+    <property name="wall" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1">
    <properties>
     <property name="direction" value="4"/>
     <property name="isMoveable" value="4"/>
@@ -154,7 +162,7 @@
  </tileset>
  <layer name="Walls" width="160" height="40">
   <data encoding="base64" compression="zlib">
-   eJzt3EEOgjAQhWG4jdzBBcfQGxmJt9W9ujCRhsJQOtMO/F/iphaC8WVgitg0AAAAAGCjczAemzvnlLANMCUlfwAAAN7c2m3vS63tD4CSSvXFa9H/IhdqsQ+5zslAbpyPABxVrP7VdJ8tNs79NwCAlXs7/wK0PAT5GlZmsE86Enj2TNxOI38xlFKENPJHPwgpy/q3d9fSB+AQ+UNJ3/z91lxja68D/TE+Xgr7lNS/JWF97LfvEgehkT9ASiN/9L8+aZxfl1D/xjR/f5q6RrtnlvnbUUxHvNT7c4VfwH//GwrH5/pjIEWN/W9sHfeiPN+L2OfyiOu/MZ4/sqWRP9apIZUjf1Jds8/64qX/qJFl/oDQVP/L/2TACvUPJVlf/9U+zvOXtnKsP0vnvQE3kTGs
+   eJzt3F1ugkAUBlDcTd1DX9xFu6Wa7ta+qw9NCmFgnDJ/cE5iopOBaPxy5Q7gMAAAAEd3KTD2dO5gPDR3yVvCNjAnJX8AAL1ptf+Ammr1xa/S/7IVtbgPl8DzudcAQD0tnWcLjTv/BvyH/oNXfJ2WH5DLd0S+rjLIilvidiXzJ8ZMqX/UlCN/R+0/Pmu/gQ6pf9T0zN/vmmto7fWqP+bhJ8M+Y+rfGvWRVPJHTTnyd9T+o3c5fl/XqH9jOa8/TV2j3bOS+dtRTEd6uf7lvcEv4G//OzUdX+qPIUWLx3+hddyPzPN7EfpcPXL8N+b+o7Jy5M86NbG2yF+s87DP+tJL/9GikvmDqbn+1/9kUIr6R02lj/9aH3f/ZVlbrD/HzrsDwPszAg==
   </data>
  </layer>
  <layer name="Spikes" width="160" height="40">
@@ -163,7 +171,7 @@
   </data>
  </layer>
  <objectgroup name="Ninja">
-  <object id="60" name="ninja" x="7637.5" y="1237.5"/>
+  <object id="60" name="ninja" x="237.5" y="1250"/>
  </objectgroup>
  <objectgroup name="Ground">
   <object id="59" name="ground" x="150" y="1850"/>

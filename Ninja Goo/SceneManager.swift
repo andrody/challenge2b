@@ -39,7 +39,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     }
 
 
-    var keyId : String = "levelkey"
+    var keyId : String = "levelkeyunlock"
 
     var fases = [Scenario]()
     var faseEscolhida : Scenario!
@@ -68,7 +68,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelone,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "music1"
         )
                 
         var faseTwo = Scenario(nome: "minifase2",
@@ -84,7 +84,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
             rank: Ranks.leveltwo,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "music2"
         )
         
         
@@ -102,7 +102,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelthree,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "music3"
 
         )
         
@@ -119,7 +119,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "morro_branco",
             backgroundBackName : "morro_B_branco",
             rank: Ranks.levelfour,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "music4"
 
         )
         
@@ -136,7 +136,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_neve_branco",
             backgroundBackName : "montanha_neve_branco",
             rank: Ranks.levelfive,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "music5"
 
         )
         
@@ -153,7 +153,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelsix,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "music6"
 
         )
         
@@ -186,9 +186,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     func loadAudio(){
         
         // Load
-        let soundURL = NSBundle.mainBundle().URLForResource("click1", withExtension: "wav")
+        let soundURL = NSBundle.mainBundle().URLForResource("click", withExtension: "wav")
         // Load Music
-        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "mp3")
+        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "wav")
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
@@ -205,7 +205,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     
     func loadAudio(name : String) -> AVAudioPlayer {
         
-        let music = NSBundle.mainBundle().URLForResource(name, withExtension: "mp3")
+        let music = NSBundle.mainBundle().URLForResource(name, withExtension: "wav")
         var error:NSError?
         
         let audio = AVAudioPlayer(contentsOfURL: music, error: &error)
@@ -346,8 +346,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
                     break;
-                    // case .Restored:
+               // case .Restored:
                     //[self restoreTransaction:transaction];
+                    //SKPaymentQueue.defaultQueue().restoreCompletedTransactions() RESTAURAÇÅO DE COMPRAS
                 default:
                     break;
                 }

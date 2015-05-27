@@ -1459,7 +1459,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 self.ninja.nail_down()
             }
             
-            let wallSE = SKAction.playSoundFileNamed("character_land.wav", waitForCompletion: true)
+            let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
             self.runAction(wallSE)
             
             //SceneManager.sharedInstance.playCaf("character_land")
@@ -1484,8 +1484,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 if(SceneManager.sharedInstance.fases.endIndex - 1 != index) {
                     SceneManager.sharedInstance.fases[index + 1].locked = false
                 }
-                if(SceneManager.sharedInstance.fases.endIndex - 1 <= index - 1) {
-                    println("index + 1 = \(index + 1)")
+                if(SceneManager.sharedInstance.fases.endIndex - 1 > index + 1) {
+                    println("index = \(index)")
                     println("endindex = \(SceneManager.sharedInstance.fases.endIndex)")
 
                     SceneManager.sharedInstance.fases[index + 2].unlockable = true
@@ -1646,8 +1646,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
                     println("colidiu com spike")
-                    self.runAction(SKAction.playSoundFileNamed("ui.wav", waitForCompletion: false))
-                    self.runAction(SKAction.playSoundFileNamed("impact2.wav", waitForCompletion: false))
+                    //self.runAction(SKAction.playSoundFileNamed("ui.wav", waitForCompletion: false))
+                    self.runAction(SKAction.playSoundFileNamed("impact.wav", waitForCompletion: false))
 
                     
                     if(!self.ninja.isDead){
@@ -1683,7 +1683,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 if(self.ninja.mWall.node?.userData?.objectForKey("jaColidiu") as! Bool == false) {
                     let duration = self.ninja.mWall.node?.userData?.objectForKey("duration") as! Int
                     self.shakeAndFall(self.ninja.mWall.node!, duration: CGFloat(duration))
-                    let wallSE = SKAction.playSoundFileNamed("character_land.wav", waitForCompletion: true)
+                    let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
                     self.runAction(wallSE)
                 }
 
@@ -1711,7 +1711,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
                     
                     self.shakeAndFall(self.ninja.mWall.node!, duration: CGFloat(duration))
-                    let wallSE = SKAction.playSoundFileNamed("character_land.wav", waitForCompletion: true)
+                    let wallSE = SKAction.playSoundFileNamed("wall.wav", waitForCompletion: true)
                     self.runAction(wallSE)
                 }
         
@@ -1736,7 +1736,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
         if(!self.didShowTutorial && SceneManager.sharedInstance.faseEscolhida.levelNumber == 1) {
             self.didShowTutorial = true
-            self.runAction(SKAction.playSoundFileNamed("miss_text.wav", waitForCompletion: true))
+            self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
             self.hideTutorial()
         }
         else {
@@ -1752,7 +1752,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 if(endLevel) {
                     if(self.setaButton.containsPoint(location)){
 
-                        self.runAction(SKAction.playSoundFileNamed("click1.wav", waitForCompletion: true))
+                        self.runAction(SKAction.playSoundFileNamed("click.wav", waitForCompletion: true))
                         SceneManager.sharedInstance.endLevel = true
                         SceneManager.sharedInstance.gameViewCtrl.backToMenu()
                         
