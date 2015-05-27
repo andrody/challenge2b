@@ -1072,7 +1072,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     }
     
     func showTutorial(){
-        self.runAction(SKAction.playSoundFileNamed("text_appear.wav", waitForCompletion: true))
+        self.runAction(SKAction.playSoundFileNamed(Sounds.tutorialAppears.rawValue, waitForCompletion: true))
 
         let move = SKAction.moveToY(0, duration: NSTimeInterval(0.4))
         let alpha = SKAction.fadeAlphaTo(0.95, duration: NSTimeInterval(0.5))
@@ -1355,7 +1355,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         //Check for gameover
         if(self.ninja.position.y < -Constants.defaultGroundPoint.y + -100*10){
             
-            self.runAction(SKAction.playSoundFileNamed("impact.wav", waitForCompletion: true))
+            self.runAction(SKAction.playSoundFileNamed(Sounds.fall.rawValue, waitForCompletion: true))
 
             self.ninja.isDead = true
             self.restart()
@@ -1379,7 +1379,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let shakeBack = SKAction.moveBy(CGVectorMake(0, -15), duration: NSTimeInterval(0.1))
         let action = SKAction.repeatActionForever(SKAction.sequence([shake, shakeBack]))
 
-        let wallSE = SKAction.playSoundFileNamed("shaking.wav", waitForCompletion: false)
+        let wallSE = SKAction.playSoundFileNamed(Sounds.moveableWall.rawValue, waitForCompletion: false)
         node.runAction(wallSE, withKey: "shakingSound")
 
         node.runAction(action)
@@ -1495,7 +1495,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
         
         self.ninja.physicsBody?.dynamic = false
-        self.runAction(SKAction.playSoundFileNamed("teleport.wav", waitForCompletion: false))
+        self.runAction(SKAction.playSoundFileNamed(Sounds.portal.rawValue, waitForCompletion: false))
 
         self.ninja.runAction(SKAction.fadeOutWithDuration(NSTimeInterval(0.3)))
         self.portal.runAction(SKAction.fadeOutWithDuration(NSTimeInterval(0.3)))
@@ -1580,7 +1580,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.hudLayer.zPosition = 990
         
         let fadeIn =  SKAction.fadeInWithDuration(NSTimeInterval(1.0))
-        let victorySound = SKAction.playSoundFileNamed("victory.wav", waitForCompletion: false)
+        let victorySound = SKAction.playSoundFileNamed(Sounds.endsLevel.rawValue, waitForCompletion: false)
         self.hudLayer.runAction(SKAction.sequence([fadeIn, victorySound]))
 
 
@@ -1764,7 +1764,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     if(self.pauseButton.containsPoint(location)){
                         println("pausou")
                         
-                        self.runAction(SKAction.playSoundFileNamed("menu_down.wav", waitForCompletion: true))
+                        self.runAction(SKAction.playSoundFileNamed(Sounds.back.rawValue, waitForCompletion: true))
                         SceneManager.sharedInstance.gameViewCtrl.backToMenu()
 
                         //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as ViewController

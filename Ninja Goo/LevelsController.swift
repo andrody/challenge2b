@@ -86,7 +86,6 @@ class LevelsController: ItemViewCtrl {
         var buy = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
         levelOneView.addGestureRecognizer(tapGesture1)
 
-        println("CARREGOU A BUCETAA")
         
         //imageTwo.addGestureRecognizer(tapGesture)
         //imageThree.addGestureRecognizer(tapGesture)
@@ -105,7 +104,6 @@ class LevelsController: ItemViewCtrl {
         levelTwoView.scrollView.frame = CGRectMake(0, 0, levelTwoView.frame.width*2, levelTwoView.frame.height)
         levelThreeView.scrollView.frame = CGRectMake(0, 0, levelTwoView.frame.width*2, levelTwoView.frame.height)
         
-        println("VIEWDIDLOAD")
 
 
     }
@@ -113,10 +111,9 @@ class LevelsController: ItemViewCtrl {
     override func viewWillAppear(animated: Bool) {
         checkAll()
         if(SceneManager.sharedInstance.endLevel) {
-            SceneManager.sharedInstance.playClickSound(name: "lockpick_success")
+            SceneManager.sharedInstance.playClickSound(name: Sounds.passesLevelUnlock.rawValue)
             SceneManager.sharedInstance.endLevel = false
         }
-        println("CHECANDO")
 
     }
     

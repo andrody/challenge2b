@@ -537,6 +537,7 @@
 				C5112E771B10BC00007E805C /* click1.wav in Resources */,
 				C5112E5F1B10B095007E805C /* wizard_jump.wav in Resources */,
 				C5112E791B10BC00007E805C /* lockpick_success.wav in Resources */,
+				C569C5EC1B1375BA00C999A9 /* Misty-Forest.mp3 in Resources */,
 				655915E71B0E55FF00D366E6 /* victory.wav in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
@@ -584,6 +585,7 @@
 				656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */,
 				C5112E761B10BC00007E805C /* character_land.wav in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
+				C569C5EA1B1375AE00C999A9 /* Exotic-Island.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,29 @@
 import AVFoundation
 import StoreKit
 
+enum Sounds: String {
+    
+    //Music
+    case menuMusic = "main-theme"
+    
+    
+    //Sound Effects
+    case click = "click1"
+    case back = "menu_down.wav"
+    case jump = "character_jump1.wav"
+    case land = "character_land.wav"
+    case spike = "impact2.wav"
+    case fall = "impact.wav"
+    case moveableWall = "shaking.wav"
+    case endsLevel = "victory.wav"
+    case portal = "teleport.wav"
+    case tutorialAppears = "text_appear.wav"
+    case tutorialLeave = "miss_text.wav"
+    case buyLevelUnlock = "unlock"
+    case passesLevelUnlock = "lockpick_success"
+
+}
+
 
 private let _SceneManagerSharedInstance = SceneManager()
 
