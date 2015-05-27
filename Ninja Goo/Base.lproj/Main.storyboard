@@ -75,7 +75,131 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-447" y="269"/>
+            <point key="canvasLocation" x="555" y="-1124"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="5WI-m0-KoK">
+            <objects>
+                <viewController storyboardIdentifier="OptionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2cR-n9-SPI" customClass="OptionsViewController" customModule="Ninja_Goo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WhD-DB-ZD8"/>
+                        <viewControllerLayoutGuide type="bottom" id="3DL-3a-VHp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RtI-KU-oYb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause" translatesAutoresizingMaskIntoConstraints="NO" id="OzA-ts-MwE">
+                                <rect key="frame" x="28" y="36" width="50" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="66V-Oi-Iqr"/>
+                                    <constraint firstAttribute="width" secondItem="OzA-ts-MwE" secondAttribute="height" multiplier="5:6" id="SyO-5T-Ap5"/>
+                                    <constraint firstAttribute="width" priority="999" constant="40" id="gwi-66-dfL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="66V-Oi-Iqr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="66V-Oi-Iqr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="66V-Oi-Iqr"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HexagonoPropaganda" translatesAutoresizingMaskIntoConstraints="NO" id="AK7-R7-i0B">
+                                <rect key="frame" x="139" y="190" width="359" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="9fY-oK-qt3"/>
+                                    <constraint firstAttribute="width" secondItem="AK7-R7-i0B" secondAttribute="height" multiplier="359:96" id="qm9-WB-DQf"/>
+                                    <constraint firstAttribute="width" constant="359" id="rK7-Au-gHn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rK7-Au-gHn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="rK7-Au-gHn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="rK7-Au-gHn"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sound" translatesAutoresizingMaskIntoConstraints="NO" id="1ND-tQ-p2J">
+                                <rect key="frame" x="538" y="28" width="40" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1ND-tQ-p2J" secondAttribute="height" multiplier="5:6" id="9W6-AX-GS2"/>
+                                    <constraint firstAttribute="width" constant="40" id="Yaw-ZV-wzm"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HexagonoRestore" translatesAutoresizingMaskIntoConstraints="NO" id="gvz-A7-QF7">
+                                <rect key="frame" x="134" y="70" width="359" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gvz-A7-QF7" secondAttribute="height" multiplier="359:104" id="E1n-gf-lJm"/>
+                                    <constraint firstAttribute="width" priority="999" constant="359" id="L6u-c3-Dyl"/>
+                                    <constraint firstAttribute="width" priority="998" constant="700" id="aoX-GJ-W8x"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="L6u-c3-Dyl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="L6u-c3-Dyl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="L6u-c3-Dyl"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="5NT-dT-3HD">
+                                <rect key="frame" x="47" y="542" width="13" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5NT-dT-3HD" secondAttribute="height" multiplier="13:38" id="HD8-6Q-mHm"/>
+                                    <constraint firstAttribute="height" constant="38" id="pVU-sR-fou"/>
+                                    <constraint firstAttribute="width" constant="13" id="tzW-8f-vXW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.29411764705882354" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OzA-ts-MwE" firstAttribute="top" secondItem="WhD-DB-ZD8" secondAttribute="bottom" constant="16" id="0dZ-Z1-wee"/>
+                            <constraint firstAttribute="centerX" secondItem="gvz-A7-QF7" secondAttribute="centerX" constant="-2" id="0s2-uo-Dgd"/>
+                            <constraint firstItem="1ND-tQ-p2J" firstAttribute="top" secondItem="WhD-DB-ZD8" secondAttribute="bottom" constant="8" id="BJE-y6-yHY"/>
+                            <constraint firstItem="AK7-R7-i0B" firstAttribute="top" secondItem="gvz-A7-QF7" secondAttribute="bottom" constant="17" id="IOG-te-02X"/>
+                            <constraint firstItem="5NT-dT-3HD" firstAttribute="leading" secondItem="RtI-KU-oYb" secondAttribute="leadingMargin" constant="31" id="JUM-dJ-60X"/>
+                            <constraint firstItem="gvz-A7-QF7" firstAttribute="top" secondItem="WhD-DB-ZD8" secondAttribute="bottom" constant="50" id="MKL-EB-1Nd"/>
+                            <constraint firstItem="OzA-ts-MwE" firstAttribute="leading" secondItem="RtI-KU-oYb" secondAttribute="leadingMargin" constant="12" id="ckg-Pd-iDA"/>
+                            <constraint firstAttribute="centerX" secondItem="AK7-R7-i0B" secondAttribute="centerX" constant="-3" id="nqy-lk-DAs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5NT-dT-3HD" secondAttribute="trailing" constant="524" id="qIk-rX-USe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1ND-tQ-p2J" secondAttribute="trailing" constant="6" id="qWm-Zd-VHp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OzA-ts-MwE" secondAttribute="trailing" priority="999" constant="506" id="ukO-Y6-sP5"/>
+                            <constraint firstItem="3DL-3a-VHp" firstAttribute="top" secondItem="5NT-dT-3HD" secondAttribute="bottom" constant="20" id="v62-6W-7N9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="OzA-ts-MwE" id="h1S-fk-dRB"/>
+                        <outlet property="restoreButton" destination="gvz-A7-QF7" id="J4E-z1-78F"/>
+                        <outlet property="soundButton" destination="1ND-tQ-p2J" id="XMU-ul-Hbc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFY-0L-CCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="-431"/>
         </scene>
         <!--Start Screen View Controller-->
         <scene sceneID="cPW-SU-7Sw">
@@ -160,7 +284,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sound" translatesAutoresizingMaskIntoConstraints="NO" id="4sU-F1-66F">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="4sU-F1-66F">
                                 <rect key="frame" x="16" y="20" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="999" constant="80" id="7WY-S0-plm"/>
@@ -277,7 +401,12 @@
     </scenes>
     <resources>
         <image name="GC" width="152" height="201"/>
+        <image name="HexagonoPropaganda" width="2143" height="365"/>
+        <image name="HexagonoRestore" width="2143" height="365"/>
+        <image name="info" width="42" height="200"/>
         <image name="logo" width="1071" height="585"/>
+        <image name="pause" width="152" height="201"/>
+        <image name="settings" width="200" height="200"/>
         <image name="sound" width="400" height="400"/>
         <image name="taptoplay" width="694" height="71"/>
     </resources>
