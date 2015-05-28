@@ -62,7 +62,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     }
 
 
-    var keyId : String = "unlockkey"
+    var keyId : String = "levelkeyunlock"
 
     var fases = [Scenario]()
     var faseEscolhida : Scenario!

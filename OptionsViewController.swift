@@ -32,6 +32,11 @@ class OptionsViewController: UIViewController {
         var restore = UITapGestureRecognizer(target: self, action: Selector("checkRestore"))
         restoreButton.addGestureRecognizer(restore)
         
+                if SceneManager.sharedInstance.soundMuted {
+                    soundButton.alpha = 0.5
+                    soundButton.image = UIImage(named: "sound-muted")
+                }
+        
     }
     
    
