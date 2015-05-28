@@ -68,6 +68,12 @@
 		C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F73B71B06232E00D6E6DB /* plataforma3G.png */; };
 		C59F3D4A1B17839900A608AA /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F3D491B17839900A608AA /* OptionsViewController.swift */; };
 		C59F3D4E1B17856200A608AA /* main-theme.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D4D1B17856200A608AA /* main-theme.wav */; };
+		C59F3D551B1790BC00A608AA /* music1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D4F1B1790BC00A608AA /* music1.wav */; };
+		C59F3D561B1790BC00A608AA /* music2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D501B1790BC00A608AA /* music2.wav */; };
+		C59F3D571B1790BC00A608AA /* music3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D511B1790BC00A608AA /* music3.wav */; };
+		C59F3D581B1790BC00A608AA /* music4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D521B1790BC00A608AA /* music4.wav */; };
+		C59F3D591B1790BC00A608AA /* music5.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D531B1790BC00A608AA /* music5.wav */; };
+		C59F3D5A1B1790BC00A608AA /* music6.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D541B1790BC00A608AA /* music6.wav */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
 		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
@@ -165,6 +171,12 @@
 		C58F73B71B06232E00D6E6DB /* plataforma3G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3G.png; sourceTree = "<group>"; };
 		C59F3D491B17839900A608AA /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		C59F3D4D1B17856200A608AA /* main-theme.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "main-theme.wav"; sourceTree = "<group>"; };
+		C59F3D4F1B1790BC00A608AA /* music1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music1.wav; sourceTree = "<group>"; };
+		C59F3D501B1790BC00A608AA /* music2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music2.wav; sourceTree = "<group>"; };
+		C59F3D511B1790BC00A608AA /* music3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music3.wav; sourceTree = "<group>"; };
+		C59F3D521B1790BC00A608AA /* music4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music4.wav; sourceTree = "<group>"; };
+		C59F3D531B1790BC00A608AA /* music5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music5.wav; sourceTree = "<group>"; };
+		C59F3D541B1790BC00A608AA /* music6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music6.wav; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
 		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +232,12 @@
 		C5112E591B0FDE4E007E805C /* Musics */ = {
 			isa = PBXGroup;
 			children = (
+				C59F3D4F1B1790BC00A608AA /* music1.wav */,
+				C59F3D501B1790BC00A608AA /* music2.wav */,
+				C59F3D511B1790BC00A608AA /* music3.wav */,
+				C59F3D521B1790BC00A608AA /* music4.wav */,
+				C59F3D531B1790BC00A608AA /* music5.wav */,
+				C59F3D541B1790BC00A608AA /* music6.wav */,
 				C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */,
 				C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */,
 				C569C5ED1B1375C600C999A9 /* Mad-Scientist.mp3 */,
@@ -540,6 +558,8 @@
 				655915E71B0E55FF00D366E6 /* victory.wav in Resources */,
 				C569C5FA1B13771A00C999A9 /* minifase6.tmx in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
+				C59F3D551B1790BC00A608AA /* music1.wav in Resources */,
+				C59F3D571B1790BC00A608AA /* music3.wav in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
 				C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
@@ -547,6 +567,7 @@
 				C569C5F71B13771A00C999A9 /* minifase3.tmx in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
 				C5112E6B1B10B8D8007E805C /* click_end.wav in Resources */,
+				C59F3D581B1790BC00A608AA /* music4.wav in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
 				C569C5F91B13771A00C999A9 /* minifase5.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
@@ -560,6 +581,7 @@
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
 				C5112E681B10B8CF007E805C /* impact2.wav in Resources */,
+				C59F3D561B1790BC00A608AA /* music2.wav in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
 				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
 				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
@@ -572,6 +594,7 @@
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
 				C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */,
 				C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */,
+				C59F3D591B1790BC00A608AA /* music5.wav in Resources */,
 				C5112E7B1B10BC00007E805C /* text_appear.wav in Resources */,
 				C5112E7A1B10BC00007E805C /* miss_text.wav in Resources */,
 				655915E31B0E55FF00D366E6 /* impact.wav in Resources */,
@@ -580,6 +603,7 @@
 				C569C5F81B13771A00C999A9 /* minifase4.tmx in Resources */,
 				C5112E761B10BC00007E805C /* character_land.wav in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
+				C59F3D5A1B1790BC00A608AA /* music6.wav in Resources */,
 				C569C5EA1B1375AE00C999A9 /* Exotic-Island.mp3 in Resources */,
 				C569C5F61B13771A00C999A9 /* minifase2.tmx in Resources */,
 			);

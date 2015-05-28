@@ -20,8 +20,16 @@ class OptionsViewController: UIViewController {
     
     @IBOutlet weak var restoreButton: UIImageView!
     
+    @IBOutlet weak var info: UIImageView!
+    @IBOutlet weak var removeAdView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adRemoved", name: "removeadd", object: nil)
+
+        var removeAd = UITapGestureRecognizer(target: self, action: Selector("removeAd"))
+        removeAdView.addGestureRecognizer(removeAd)
         
         var backGesture = UITapGestureRecognizer(target: self, action: Selector("backbutton"))
         backButton.addGestureRecognizer(backGesture)
@@ -34,11 +42,24 @@ class OptionsViewController: UIViewController {
         
                 if SceneManager.sharedInstance.soundMuted {
                     soundButton.alpha = 0.5
-                    soundButton.image = UIImage(named: "sound-muted")
+//                    soundButton.image = UIImage(named: "sound-muted")
                 }
+        
+        if(!SceneManager.sharedInstance.shouldShowAd) {
+            adRemoved()
+        }
         
     }
     
+    func removeAd(){
+        SceneManager.sharedInstance.playClickSound()
+        SceneManager.sharedInstance.buyRemoveAds()
+    }
+    
+    func adRemoved() {
+        self.removeAdView.userInteractionEnabled = false
+        self.removeAdView.alpha = 0.5
+    }
    
     
     func backbutton(){
@@ -54,12 +75,12 @@ class OptionsViewController: UIViewController {
     
     
         if(SceneManager.sharedInstance.soundMuted){
-            soundButton.image = UIImage(named: "sound")
+            //soundButton.image = UIImage(named: "sound")
             soundButton.alpha = 1.0
             SceneManager.sharedInstance.soundMuted = false
         }
         else {
-            soundButton.image = UIImage(named: "sound-muted")
+            //soundButton.image = UIImage(named: "sound-muted")
             soundButton.alpha = 0.5
             SceneManager.sharedInstance.soundMuted = true
         }
