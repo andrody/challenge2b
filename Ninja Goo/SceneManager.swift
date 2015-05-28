@@ -32,6 +32,17 @@ enum Sounds: String {
 
 }
 
+enum Keys: String {
+    
+    case levelOne = "keylevelone"
+    case levelTwo = "keyleveltwo"
+    case levelThree = "keylevelthree"
+    case levelFour = "keylevelfour"
+    case levelFive = "keylevelfive"
+    case levelSix = "keylevelsix"
+    
+}
+
 
 private let _SceneManagerSharedInstance = SceneManager()
 
@@ -91,7 +102,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelone,
-            backgroundMusicName: "music1"
+            backgroundMusicName: "music1",
+            key: Keys.levelOne
         )
                 
         var faseTwo = Scenario(nome: "minifase2",
@@ -107,7 +119,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
             rank: Ranks.leveltwo,
-            backgroundMusicName: "rise-up"
+            backgroundMusicName: "rise-up",
+            key: Keys.levelTwo
         )
         
         
@@ -125,7 +138,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelthree,
-            backgroundMusicName: "music3"
+            backgroundMusicName: "music3",
+            key : Keys.levelThree
 
         )
         
@@ -142,7 +156,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "morro_branco",
             backgroundBackName : "morro_B_branco",
             rank: Ranks.levelfour,
-            backgroundMusicName: "Winding-Down"
+            backgroundMusicName: "Winding-Down",
+            key: Keys.levelFour
 
         )
         
@@ -159,7 +174,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_neve_branco",
             backgroundBackName : "montanha_neve_branco",
             rank: Ranks.levelfive,
-            backgroundMusicName: "Exotic-Island"
+            backgroundMusicName: "Exotic-Island",
+            key : Keys.levelFive
 
         )
         
@@ -176,7 +192,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelsix,
-            backgroundMusicName: "music6"
+            backgroundMusicName: "music6",
+            key : Keys.levelSix
 
         )
         
@@ -310,12 +327,22 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         
     }
     
+    func getKeyUnlockable() -> String {
+        for level in self.fases {
+            if level.unlockable {
+                self.keyId = level.key.rawValue
+                return self.keyId
+            }
+        }
+        return ""
+    }
+    
     func buyKey(){
         println("About to fetch the products");
         // We check that we are allow to make the purchase.
         if (SKPaymentQueue.canMakePayments())
         {
-            var productID:NSSet = NSSet(object: self.keyId);
+            var productID:NSSet = NSSet(object: getKeyUnlockable());
             var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as Set<NSObject>);
             productsRequest.delegate = self;
             productsRequest.start();
@@ -367,7 +394,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         for transaction:AnyObject in transactions {
             if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
                 switch trans.transactionState {
-                case .Purchased:
+                case .Purchased, .Restored:
                     println("Product Purchased");
                     SceneManager.sharedInstance.unlockNextLevel()
                     NSNotificationCenter.defaultCenter().postNotificationName("unlockedLevel", object: nil)
@@ -379,12 +406,10 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
                     break;
-               // case .Restored:
-                    //[self restoreTransaction:transaction];
-                    //SKPaymentQueue.defaultQueue().restoreCompletedTransactions() RESTAURAÇÅO DE COMPRAS
                 default:
                     break;
                 }
+
             }
         }
         
