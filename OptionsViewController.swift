@@ -23,6 +23,8 @@ class OptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        
         var backGesture = UITapGestureRecognizer(target: self, action: Selector("backbutton"))
         backButton.addGestureRecognizer(backGesture)
         
@@ -86,6 +88,7 @@ class OptionsViewController: UIViewController {
        // SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
     
+        
     return true
     }
 }

@@ -173,6 +173,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let maxForce : CGFloat = 80.0
         static let maxForceGeral : CGFloat = maxForce
         static var maxDistanceSlide : CGFloat = 400.0
+        
+        static var minDeadsToAd : Int = 8
 
         
         static let zPosBackgroundBackLayer : CGFloat = 1
@@ -1412,7 +1414,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         println("diedForAd = \(self.diedForAd)")
 
         
-        if(self.diedForAd >= 4) {
+        if(self.diedForAd >= Constants.minDeadsToAd) {
             NSNotificationCenter.defaultCenter().postNotificationName("showAd", object: nil)
             self.diedForAd = 0
         }
