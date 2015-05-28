@@ -23,10 +23,14 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var info: UIImageView!
     @IBOutlet weak var removeAdView: UIImageView!
     
+    @IBOutlet weak var vidro: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "adRemoved", name: "removeadd", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeVidro", name: "removeVidro", object: nil)
 
         var removeAd = UITapGestureRecognizer(target: self, action: Selector("removeAd"))
         removeAdView.addGestureRecognizer(removeAd)
@@ -51,20 +55,31 @@ class OptionsViewController: UIViewController {
         
     }
     
+    func removeVidro() {
+        self.vidro.hidden = true
+    }
+    
     func removeAd(){
         SceneManager.sharedInstance.playClickSound()
+        
+        
+            self.vidro.hidden = false
         SceneManager.sharedInstance.buyRemoveAds()
     }
     
     func adRemoved() {
         self.removeAdView.userInteractionEnabled = false
         self.removeAdView.alpha = 0.5
+        self.vidro.hidden = true
+
     }
    
     
     func backbutton(){
         
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.vidro.hidden = true
+
         println("BACK TO MEnu")
     }
     
@@ -103,7 +118,8 @@ class OptionsViewController: UIViewController {
     
     func restorePurchases() -> Bool{
     
-        
+        self.vidro.hidden = false
+
        // SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
     

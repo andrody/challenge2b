@@ -433,7 +433,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
                 switch trans.transactionState {
                 case .Purchased, .Restored:
                     println("Product Purchased or restored");
-
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("removeVidro", object: nil)
+                    
                     if trans.payment.productIdentifier == "removeadd" {
                         shouldShowAd = false
                         NSNotificationCenter.defaultCenter().postNotificationName("removeadd", object: nil)
@@ -447,6 +449,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
                     break;
                 case .Failed:
+                    NSNotificationCenter.defaultCenter().postNotificationName("removeVidro", object: nil)
                     println("Purchased Failed");
                     NSNotificationCenter.defaultCenter().postNotificationName("hideLoad", object: nil)
 

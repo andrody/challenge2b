@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause" translatesAutoresizingMaskIntoConstraints="NO" id="OzA-ts-MwE">
-                                <rect key="frame" x="16" y="36" width="60.5" height="80"/>
+                                <rect key="frame" x="16" y="36" width="61" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OzA-ts-MwE" secondAttribute="height" multiplier="152:201" id="DS7-BV-aTA"/>
                                     <constraint firstAttribute="height" constant="80" id="Doc-5d-tYs"/>
@@ -205,6 +205,19 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oeu-Kz-o7Z" userLabel="vidro">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ujt-vK-UJU" userLabel="loading">
+                                        <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.062231741440000002" green="0.74034711080000004" blue="0.82732193259999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ujt-vK-UJU" firstAttribute="centerY" secondItem="Oeu-Kz-o7Z" secondAttribute="centerY" id="Y58-jL-Rbx"/>
+                                    <constraint firstItem="ujt-vK-UJU" firstAttribute="centerX" secondItem="Oeu-Kz-o7Z" secondAttribute="centerX" id="g96-Rf-9xd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.062231741441675086" green="0.74034711081765114" blue="0.82732193256090314" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -216,12 +229,16 @@
                             <constraint firstItem="gvz-A7-QF7" firstAttribute="top" secondItem="WhD-DB-ZD8" secondAttribute="bottom" constant="45" id="MKL-EB-1Nd"/>
                             <constraint firstItem="tHK-9q-Wrt" firstAttribute="leading" secondItem="6Gr-XX-YPN" secondAttribute="trailing" constant="28" id="MeQ-pA-TNU"/>
                             <constraint firstItem="gvz-A7-QF7" firstAttribute="top" secondItem="6Gr-XX-YPN" secondAttribute="bottom" constant="19" id="Nql-uo-GIo"/>
+                            <constraint firstItem="Oeu-Kz-o7Z" firstAttribute="leading" secondItem="RtI-KU-oYb" secondAttribute="leading" id="ZB8-Cf-k4z"/>
+                            <constraint firstAttribute="trailing" secondItem="Oeu-Kz-o7Z" secondAttribute="trailing" id="ccV-ui-dD6"/>
                             <constraint firstItem="6Gr-XX-YPN" firstAttribute="top" secondItem="WhD-DB-ZD8" secondAttribute="bottom" constant="27" id="fBF-zV-QSc"/>
                             <constraint firstItem="tHK-9q-Wrt" firstAttribute="centerY" secondItem="6Gr-XX-YPN" secondAttribute="centerY" id="j5T-IK-3GO"/>
                             <constraint firstAttribute="centerX" secondItem="AK7-R7-i0B" secondAttribute="centerX" constant="-3" id="nqy-lk-DAs"/>
+                            <constraint firstItem="Oeu-Kz-o7Z" firstAttribute="bottom" secondItem="3DL-3a-VHp" secondAttribute="top" id="nzY-6B-7hO"/>
                             <constraint firstItem="6Gr-XX-YPN" firstAttribute="top" secondItem="OzA-ts-MwE" secondAttribute="bottomMargin" constant="20" id="q3k-oB-3M9"/>
                             <constraint firstItem="OzA-ts-MwE" firstAttribute="leading" secondItem="RtI-KU-oYb" secondAttribute="leadingMargin" id="sfY-Fa-wSI"/>
                             <constraint firstItem="OzA-ts-MwE" firstAttribute="top" secondItem="WhD-DB-ZD8" secondAttribute="bottom" constant="16" id="vgT-fg-JKe"/>
+                            <constraint firstItem="Oeu-Kz-o7Z" firstAttribute="top" secondItem="RtI-KU-oYb" secondAttribute="top" id="vyv-Hs-2sV"/>
                             <constraint firstItem="6Gr-XX-YPN" firstAttribute="top" secondItem="OzA-ts-MwE" secondAttribute="bottom" priority="999" constant="20" id="wNC-XX-eAS"/>
                         </constraints>
                         <variation key="default">
@@ -251,6 +268,7 @@
                         <outlet property="removeAdView" destination="AK7-R7-i0B" id="N7s-We-2nY"/>
                         <outlet property="restoreButton" destination="gvz-A7-QF7" id="J4E-z1-78F"/>
                         <outlet property="soundButton" destination="6Gr-XX-YPN" id="rNM-P7-FJh"/>
+                        <outlet property="vidro" destination="Oeu-Kz-o7Z" id="FN2-n8-luO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFY-0L-CCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
