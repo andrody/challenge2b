@@ -153,7 +153,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelthree,
-            backgroundMusicName: "Misty-Forest",
+            backgroundMusicName: "music3",
             key : Keys.levelThree
 
         )
@@ -171,7 +171,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "morro_branco",
             backgroundBackName : "morro_B_branco",
             rank: Ranks.levelfour,
-            backgroundMusicName: "Winding-Down",
+            backgroundMusicName: "music4",
             key: Keys.levelFour
 
         )
@@ -189,7 +189,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_neve_branco",
             backgroundBackName : "montanha_neve_branco",
             rank: Ranks.levelfive,
-            backgroundMusicName: "Exotic-Island",
+            backgroundMusicName: "music5",
             key : Keys.levelFive
 
         )

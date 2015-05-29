@@ -44,6 +44,9 @@ class OptionsViewController: UIViewController {
         var restore = UITapGestureRecognizer(target: self, action: Selector("checkRestore"))
         restoreButton.addGestureRecognizer(restore)
         
+        var infobutton = UITapGestureRecognizer(target: self, action: Selector("infoScreen"))
+        info.addGestureRecognizer(infobutton)
+        
                 if SceneManager.sharedInstance.soundMuted {
                     soundButton.alpha = 0.5
 //                    soundButton.image = UIImage(named: "sound-muted")
@@ -53,6 +56,12 @@ class OptionsViewController: UIViewController {
             adRemoved()
         }
         
+    }
+    
+    func infoScreen(){
+    
+        var info = self.storyboard?.instantiateViewControllerWithIdentifier("InfoViewController") as! InfoViewController
+        self.presentViewController(info, animated: true, completion: nil)
     }
     
     func removeVidro() {

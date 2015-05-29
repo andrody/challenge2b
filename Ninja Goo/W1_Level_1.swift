@@ -173,6 +173,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         static let maxForce : CGFloat = 80.0
         static let maxForceGeral : CGFloat = maxForce
         static var maxDistanceSlide : CGFloat = 400.0
+        
+        static var minDeadsToAd : Int = 8
 
         
         static let zPosBackgroundBackLayer : CGFloat = 1
