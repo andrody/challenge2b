@@ -1414,7 +1414,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         println("diedForAd = \(self.diedForAd)")
 
         
-        if(self.diedForAd >= Constants.minDeadsToAd) {
+        if(self.diedForAd >= 4 && SceneManager.sharedInstance.shouldShowAd) {
             NSNotificationCenter.defaultCenter().postNotificationName("showAd", object: nil)
             self.diedForAd = 0
         }

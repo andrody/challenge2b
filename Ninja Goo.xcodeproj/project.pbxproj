@@ -19,6 +19,16 @@
 		656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343D91B092C1A002E2031 /* minifase2.tmx */; };
 		656343E01B092E33002E2031 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343DF1B092E33002E2031 /* minifase1.tmx */; };
 		656343E61B093065002E2031 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E51B093065002E2031 /* minifase3.tmx */; };
+		65A5FF8A1B189D9800497BD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A5FF891B189D9800497BD2 /* StoreKit.framework */; };
+		65A5FF8C1B189D9B00497BD2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A5FF8B1B189D9B00497BD2 /* GameKit.framework */; };
+		65A5FF8E1B189DFA00497BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF8D1B189DFA00497BD2 /* Main.storyboard */; };
+		65A5FF951B18B7CE00497BD2 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF8F1B18B7CE00497BD2 /* minifase1.tmx */; };
+		65A5FF961B18B7CE00497BD2 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF901B18B7CE00497BD2 /* minifase2.tmx */; };
+		65A5FF971B18B7CE00497BD2 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF911B18B7CE00497BD2 /* minifase3.tmx */; };
+		65A5FF981B18B7CE00497BD2 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF921B18B7CE00497BD2 /* minifase4.tmx */; };
+		65A5FF991B18B7CE00497BD2 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF931B18B7CE00497BD2 /* minifase5.tmx */; };
+		65A5FF9A1B18B7CE00497BD2 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF941B18B7CE00497BD2 /* minifase6.tmx */; };
+		65A5FF9C1B18F02F00497BD2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5FF9B1B18F02F00497BD2 /* InfoViewController.swift */; };
 		C504F79D1B1378EB0021C878 /* POL-rise-up-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */; };
 		C504F79F1B137A460021C878 /* rise-up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C504F79E1B137A460021C878 /* rise-up.mp3 */; };
 		C504F7A11B137AE90021C878 /* Self-Destruct-Sequence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */; };
@@ -54,12 +64,6 @@
 		C569C5EA1B1375AE00C999A9 /* Exotic-Island.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */; };
 		C569C5EC1B1375BA00C999A9 /* Misty-Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5EB1B1375BA00C999A9 /* Misty-Forest.mp3 */; };
 		C569C5EE1B1375C600C999A9 /* Mad-Scientist.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5ED1B1375C600C999A9 /* Mad-Scientist.mp3 */; };
-		C569C5F51B13771A00C999A9 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5EF1B13771A00C999A9 /* minifase1.tmx */; };
-		C569C5F61B13771A00C999A9 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F01B13771A00C999A9 /* minifase2.tmx */; };
-		C569C5F71B13771A00C999A9 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F11B13771A00C999A9 /* minifase3.tmx */; };
-		C569C5F81B13771A00C999A9 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F21B13771A00C999A9 /* minifase4.tmx */; };
-		C569C5F91B13771A00C999A9 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F31B13771A00C999A9 /* minifase5.tmx */; };
-		C569C5FA1B13771A00C999A9 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F41B13771A00C999A9 /* minifase6.tmx */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
 		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
 		C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F73A31B04BF2E00D6E6DB /* wall_gray.png */; };
@@ -80,7 +84,6 @@
 		C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F411ACD6AA8001A37B7 /* teste.sks */; };
 		C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */; };
 		C5CB3F461ACD6AA8001A37B7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */; };
-		C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */; };
 		C5CB3F5A1ACD6AA8001A37B7 /* Ninja_GooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F591ACD6AA8001A37B7 /* Ninja_GooTests.swift */; };
 		C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F681ACD6C55001A37B7 /* W1_Scenario.xcassets */; };
 		C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CB3F6A1ACD6C9A001A37B7 /* Other.xcassets */; };
@@ -119,6 +122,16 @@
 		656343D91B092C1A002E2031 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		656343DF1B092E33002E2031 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343E51B093065002E2031 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
+		65A5FF891B189D9800497BD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		65A5FF8B1B189D9B00497BD2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		65A5FF8D1B189DFA00497BD2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		65A5FF8F1B18B7CE00497BD2 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
+		65A5FF901B18B7CE00497BD2 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
+		65A5FF911B18B7CE00497BD2 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
+		65A5FF921B18B7CE00497BD2 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
+		65A5FF931B18B7CE00497BD2 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
+		65A5FF941B18B7CE00497BD2 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
+		65A5FF9B1B18F02F00497BD2 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-rise-up-short.wav"; sourceTree = "<group>"; };
 		C504F79E1B137A460021C878 /* rise-up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "rise-up.mp3"; sourceTree = "<group>"; };
 		C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Self-Destruct-Sequence.mp3"; sourceTree = "<group>"; };
@@ -155,12 +168,6 @@
 		C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exotic-Island.mp3"; sourceTree = "<group>"; };
 		C569C5EB1B1375BA00C999A9 /* Misty-Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Misty-Forest.mp3"; sourceTree = "<group>"; };
 		C569C5ED1B1375C600C999A9 /* Mad-Scientist.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mad-Scientist.mp3"; sourceTree = "<group>"; };
-		C569C5EF1B13771A00C999A9 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
-		C569C5F01B13771A00C999A9 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
-		C569C5F11B13771A00C999A9 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
-		C569C5F21B13771A00C999A9 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
-		C569C5F31B13771A00C999A9 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
-		C569C5F41B13771A00C999A9 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
 		C58F739E1AF95E8400D6E6DB /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
 		C58F739F1AF95E8400D6E6DB /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
@@ -185,7 +192,6 @@
 		C5CB3F411ACD6AA8001A37B7 /* teste.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = teste.sks; sourceTree = "<group>"; };
 		C5CB3F431ACD6AA8001A37B7 /* W1_Level_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = W1_Level_1.swift; sourceTree = "<group>"; };
 		C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		C5CB3F481ACD6AA8001A37B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5CB3F531ACD6AA8001A37B7 /* Ninja GooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ninja GooTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5CB3F581ACD6AA8001A37B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5CB3F591ACD6AA8001A37B7 /* Ninja_GooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ninja_GooTests.swift; sourceTree = "<group>"; };
@@ -209,9 +215,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A5FF8C1B189D9B00497BD2 /* GameKit.framework in Frameworks */,
 				C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */,
 				C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */,
 				C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */,
+				65A5FF8A1B189D9800497BD2 /* StoreKit.framework in Frameworks */,
 				C51CBE971B0E513900913FAA /* CoreGraphics.framework in Frameworks */,
 				C51CBE951B0E512F00913FAA /* SystemConfiguration.framework in Frameworks */,
 				C51CBE931B0E512100913FAA /* CoreTelephony.framework in Frameworks */,
@@ -272,12 +280,12 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				C569C5EF1B13771A00C999A9 /* minifase1.tmx */,
-				C569C5F01B13771A00C999A9 /* minifase2.tmx */,
-				C569C5F11B13771A00C999A9 /* minifase3.tmx */,
-				C569C5F21B13771A00C999A9 /* minifase4.tmx */,
-				C569C5F31B13771A00C999A9 /* minifase5.tmx */,
-				C569C5F41B13771A00C999A9 /* minifase6.tmx */,
+				65A5FF8F1B18B7CE00497BD2 /* minifase1.tmx */,
+				65A5FF901B18B7CE00497BD2 /* minifase2.tmx */,
+				65A5FF911B18B7CE00497BD2 /* minifase3.tmx */,
+				65A5FF921B18B7CE00497BD2 /* minifase4.tmx */,
+				65A5FF931B18B7CE00497BD2 /* minifase5.tmx */,
+				65A5FF941B18B7CE00497BD2 /* minifase6.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -297,6 +305,8 @@
 		C5CB3F311ACD6AA8001A37B7 = {
 			isa = PBXGroup;
 			children = (
+				65A5FF8B1B189D9B00497BD2 /* GameKit.framework */,
+				65A5FF891B189D9800497BD2 /* StoreKit.framework */,
 				C51CBE9C1B0E516700913FAA /* QuartzCore.framework */,
 				C51CBE9A1B0E515000913FAA /* AdSupport.framework */,
 				C51CBE961B0E513900913FAA /* CoreGraphics.framework */,
@@ -336,7 +346,8 @@
 				C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */,
 				C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */,
 				C59F3D491B17839900A608AA /* OptionsViewController.swift */,
-				C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */,
+				65A5FF9B1B18F02F00497BD2 /* InfoViewController.swift */,
+				65A5FF8D1B189DFA00497BD2 /* Main.storyboard */,
 				C5CB3F791ACD7954001A37B7 /* LaunchScreen.xib */,
 				C5CB3F3D1ACD6AA8001A37B7 /* Supporting Files */,
 			);
@@ -503,13 +514,13 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -545,7 +556,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
-				C569C5F51B13771A00C999A9 /* minifase1.tmx in Resources */,
 				C5112E5B1B0FDEC6007E805C /* Winding-Down.mp3 in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C569C5EE1B1375C600C999A9 /* Mad-Scientist.mp3 in Resources */,
@@ -556,7 +566,6 @@
 				C5112E791B10BC00007E805C /* lockpick_success.wav in Resources */,
 				C569C5EC1B1375BA00C999A9 /* Misty-Forest.mp3 in Resources */,
 				655915E71B0E55FF00D366E6 /* victory.wav in Resources */,
-				C569C5FA1B13771A00C999A9 /* minifase6.tmx in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
 				C59F3D551B1790BC00A608AA /* music1.wav in Resources */,
 				C59F3D571B1790BC00A608AA /* music3.wav in Resources */,
@@ -564,19 +573,21 @@
 				C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
-				C569C5F71B13771A00C999A9 /* minifase3.tmx in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
+				65A5FF991B18B7CE00497BD2 /* minifase5.tmx in Resources */,
 				C5112E6B1B10B8D8007E805C /* click_end.wav in Resources */,
 				C59F3D581B1790BC00A608AA /* music4.wav in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
-				C569C5F91B13771A00C999A9 /* minifase5.tmx in Resources */,
+				65A5FF951B18B7CE00497BD2 /* minifase1.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				656343E01B092E33002E2031 /* minifase1.tmx in Resources */,
 				C504F79D1B1378EB0021C878 /* POL-rise-up-short.wav in Resources */,
+				65A5FF8E1B189DFA00497BD2 /* Main.storyboard in Resources */,
 				C504F7A11B137AE90021C878 /* Self-Destruct-Sequence.mp3 in Resources */,
 				C5112E6E1B10B8DF007E805C /* menu_down.wav in Resources */,
 				C5112E6C1B10B8D8007E805C /* click_start.wav in Resources */,
 				655915E21B0E55FF00D366E6 /* click.wav in Resources */,
+				65A5FF9A1B18B7CE00497BD2 /* minifase6.tmx in Resources */,
 				C51A43911B0A012200566E44 /* LevelView.xib in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
@@ -586,6 +597,7 @@
 				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
 				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
 				C5ED62681B0FAC6B006B6DC6 /* espinho_tile.png in Resources */,
+				65A5FF981B18B7CE00497BD2 /* minifase4.tmx in Resources */,
 				C5112E781B10BC00007E805C /* jailbreak.wav in Resources */,
 				C59F3D4E1B17856200A608AA /* main-theme.wav in Resources */,
 				C5112E7C1B10BC00007E805C /* unlock.wav in Resources */,
@@ -594,18 +606,17 @@
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
 				C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */,
 				C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */,
+				65A5FF971B18B7CE00497BD2 /* minifase3.tmx in Resources */,
 				C59F3D591B1790BC00A608AA /* music5.wav in Resources */,
 				C5112E7B1B10BC00007E805C /* text_appear.wav in Resources */,
 				C5112E7A1B10BC00007E805C /* miss_text.wav in Resources */,
 				655915E31B0E55FF00D366E6 /* impact.wav in Resources */,
-				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
 				656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */,
-				C569C5F81B13771A00C999A9 /* minifase4.tmx in Resources */,
 				C5112E761B10BC00007E805C /* character_land.wav in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
 				C59F3D5A1B1790BC00A608AA /* music6.wav in Resources */,
+				65A5FF961B18B7CE00497BD2 /* minifase2.tmx in Resources */,
 				C569C5EA1B1375AE00C999A9 /* Exotic-Island.mp3 in Resources */,
-				C569C5F61B13771A00C999A9 /* minifase2.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +652,7 @@
 				C51A438F1B0A010700566E44 /* LevelView.swift in Sources */,
 				C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */,
 				C58F73A81B05860F00D6E6DB /* Scenario.swift in Sources */,
+				65A5FF9C1B18F02F00497BD2 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,17 +673,6 @@
 			targetProxy = C5CB3F541ACD6AA8001A37B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5CB3F481ACD6AA8001A37B7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C5CB3F5B1ACD6AA8001A37B7 /* Debug */ = {
