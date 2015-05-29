@@ -186,7 +186,7 @@ class Ninja: SKNode {
         self.physicsBody?.velocity.dy = amountToMoveY * 34
 
         
-        self.runAction(SKAction.playSoundFileNamed("jump.wav", waitForCompletion: true))
+        self.runAction(SKAction.playSoundFileNamed(Sounds.jump.rawValue, waitForCompletion: true))
         //SceneManager.sharedInstance.playCaf("character_jump1")
         
     }

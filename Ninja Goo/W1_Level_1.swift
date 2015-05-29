@@ -1487,7 +1487,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     SceneManager.sharedInstance.fases[index + 1].locked = false
                 }
                 if(SceneManager.sharedInstance.fases.endIndex - 1 > index + 1) {
-                    println("index = \(index)")
+                    println("index + 1 = \(index + 1)")
                     println("endindex = \(SceneManager.sharedInstance.fases.endIndex)")
 
                     SceneManager.sharedInstance.fases[index + 2].unlockable = true

@@ -19,25 +19,9 @@
 		656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343D91B092C1A002E2031 /* minifase2.tmx */; };
 		656343E01B092E33002E2031 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343DF1B092E33002E2031 /* minifase1.tmx */; };
 		656343E61B093065002E2031 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E51B093065002E2031 /* minifase3.tmx */; };
-		659C757A1B121B8F0057CE8B /* main-theme.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659C75791B121B8F0057CE8B /* main-theme.wav */; };
-		659C75881B121F850057CE8B /* music1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659C75871B121F850057CE8B /* music1.wav */; };
-		659C758A1B1221330057CE8B /* music2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659C75891B1221330057CE8B /* music2.wav */; };
-		659C758E1B1221E50057CE8B /* music3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659C758D1B1221E50057CE8B /* music3.wav */; };
-		659C75901B1222C40057CE8B /* music4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659C758F1B1222C40057CE8B /* music4.wav */; };
-		659C75941B1223780057CE8B /* music6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659C75931B1223780057CE8B /* music6.wav */; };
-		659C75961B1224130057CE8B /* music5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 659C75951B1224130057CE8B /* music5.wav */; };
-		65F0552E1B15C90D00BB12B0 /* Misty-Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65F0552D1B15C90D00BB12B0 /* Misty-Forest.mp3 */; };
-		65F055321B15C96900BB12B0 /* Exotic-Island.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65F0552F1B15C96900BB12B0 /* Exotic-Island.mp3 */; };
-		65F055331B15C96900BB12B0 /* Winding-Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65F055301B15C96900BB12B0 /* Winding-Down.mp3 */; };
-		65F055341B15C96900BB12B0 /* Misty-Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65F055311B15C96900BB12B0 /* Misty-Forest.mp3 */; };
-		65F055381B15CB0900BB12B0 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F055371B15CB0900BB12B0 /* OptionsViewController.swift */; };
-		65F095881B123D4600A9C505 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65F095821B123D4600A9C505 /* minifase1.tmx */; };
-		65F095891B123D4600A9C505 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65F095831B123D4600A9C505 /* minifase2.tmx */; };
-		65F0958A1B123D4600A9C505 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65F095841B123D4600A9C505 /* minifase3.tmx */; };
-		65F0958B1B123D4600A9C505 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65F095851B123D4600A9C505 /* minifase4.tmx */; };
-		65F095941B123FBD00A9C505 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65F095921B123FBD00A9C505 /* minifase5.tmx */; };
-		65F095951B123FBD00A9C505 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65F095931B123FBD00A9C505 /* minifase6.tmx */; };
-		65F095971B14861E00A9C505 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F095961B14861E00A9C505 /* GameKit.framework */; };
+		C504F79D1B1378EB0021C878 /* POL-rise-up-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */; };
+		C504F79F1B137A460021C878 /* rise-up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C504F79E1B137A460021C878 /* rise-up.mp3 */; };
+		C504F7A11B137AE90021C878 /* Self-Destruct-Sequence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */; };
 		C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */; };
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
@@ -63,19 +47,33 @@
 		C51CBE931B0E512100913FAA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE921B0E512100913FAA /* CoreTelephony.framework */; };
 		C51CBE951B0E512F00913FAA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE941B0E512F00913FAA /* SystemConfiguration.framework */; };
 		C51CBE971B0E513900913FAA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE961B0E513900913FAA /* CoreGraphics.framework */; };
-		C51CBE991B0E514000913FAA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE981B0E514000913FAA /* StoreKit.framework */; };
 		C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE9A1B0E515000913FAA /* AdSupport.framework */; };
 		C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51CBE9C1B0E516700913FAA /* QuartzCore.framework */; };
 		C51CBEA31B0E5C0600913FAA /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CBEA21B0E5C0600913FAA /* GameCenter.swift */; };
 		C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C547473A1AD44D2800C4E23F /* libz.dylib */; };
 		C569C5EA1B1375AE00C999A9 /* Exotic-Island.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */; };
 		C569C5EC1B1375BA00C999A9 /* Misty-Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5EB1B1375BA00C999A9 /* Misty-Forest.mp3 */; };
+		C569C5EE1B1375C600C999A9 /* Mad-Scientist.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C569C5ED1B1375C600C999A9 /* Mad-Scientist.mp3 */; };
+		C569C5F51B13771A00C999A9 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5EF1B13771A00C999A9 /* minifase1.tmx */; };
+		C569C5F61B13771A00C999A9 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F01B13771A00C999A9 /* minifase2.tmx */; };
+		C569C5F71B13771A00C999A9 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F11B13771A00C999A9 /* minifase3.tmx */; };
+		C569C5F81B13771A00C999A9 /* minifase4.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F21B13771A00C999A9 /* minifase4.tmx */; };
+		C569C5F91B13771A00C999A9 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F31B13771A00C999A9 /* minifase5.tmx */; };
+		C569C5FA1B13771A00C999A9 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C569C5F41B13771A00C999A9 /* minifase6.tmx */; };
 		C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F739E1AF95E8400D6E6DB /* JSTileMap.m */; };
 		C58F73A21AF95E8400D6E6DB /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A01AF95E8400D6E6DB /* LFCGzipUtility.m */; };
 		C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F73A31B04BF2E00D6E6DB /* wall_gray.png */; };
 		C58F73A81B05860F00D6E6DB /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A71B05860F00D6E6DB /* Scenario.swift */; };
 		C58F73AA1B05896F00D6E6DB /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58F73A91B05896F00D6E6DB /* SceneManager.swift */; };
 		C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */ = {isa = PBXBuildFile; fileRef = C58F73B71B06232E00D6E6DB /* plataforma3G.png */; };
+		C59F3D4A1B17839900A608AA /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F3D491B17839900A608AA /* OptionsViewController.swift */; };
+		C59F3D4E1B17856200A608AA /* main-theme.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D4D1B17856200A608AA /* main-theme.wav */; };
+		C59F3D551B1790BC00A608AA /* music1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D4F1B1790BC00A608AA /* music1.wav */; };
+		C59F3D561B1790BC00A608AA /* music2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D501B1790BC00A608AA /* music2.wav */; };
+		C59F3D571B1790BC00A608AA /* music3.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D511B1790BC00A608AA /* music3.wav */; };
+		C59F3D581B1790BC00A608AA /* music4.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D521B1790BC00A608AA /* music4.wav */; };
+		C59F3D591B1790BC00A608AA /* music5.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D531B1790BC00A608AA /* music5.wav */; };
+		C59F3D5A1B1790BC00A608AA /* music6.wav in Resources */ = {isa = PBXBuildFile; fileRef = C59F3D541B1790BC00A608AA /* music6.wav */; };
 		C5A53E981AD4747300A97B1D /* teste.tmx in Resources */ = {isa = PBXBuildFile; fileRef = C5A53E971AD4747300A97B1D /* teste.tmx */; };
 		C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */; };
 		C5CB3F401ACD6AA8001A37B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB3F3F1ACD6AA8001A37B7 /* AppDelegate.swift */; };
@@ -121,25 +119,9 @@
 		656343D91B092C1A002E2031 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		656343DF1B092E33002E2031 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343E51B093065002E2031 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
-		659C75791B121B8F0057CE8B /* main-theme.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "main-theme.wav"; sourceTree = "<group>"; };
-		659C75871B121F850057CE8B /* music1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music1.wav; sourceTree = "<group>"; };
-		659C75891B1221330057CE8B /* music2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music2.wav; sourceTree = "<group>"; };
-		659C758D1B1221E50057CE8B /* music3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music3.wav; sourceTree = "<group>"; };
-		659C758F1B1222C40057CE8B /* music4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music4.wav; sourceTree = "<group>"; };
-		659C75931B1223780057CE8B /* music6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music6.wav; sourceTree = "<group>"; };
-		659C75951B1224130057CE8B /* music5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music5.wav; sourceTree = "<group>"; };
-		65F0552D1B15C90D00BB12B0 /* Misty-Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Misty-Forest.mp3"; sourceTree = "<group>"; };
-		65F0552F1B15C96900BB12B0 /* Exotic-Island.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exotic-Island.mp3"; sourceTree = "<group>"; };
-		65F055301B15C96900BB12B0 /* Winding-Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Winding-Down.mp3"; sourceTree = "<group>"; };
-		65F055311B15C96900BB12B0 /* Misty-Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Misty-Forest.mp3"; sourceTree = "<group>"; };
-		65F055371B15CB0900BB12B0 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsViewController.swift; path = ../OptionsViewController.swift; sourceTree = "<group>"; };
-		65F095821B123D4600A9C505 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
-		65F095831B123D4600A9C505 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
-		65F095841B123D4600A9C505 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
-		65F095851B123D4600A9C505 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
-		65F095921B123FBD00A9C505 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
-		65F095931B123FBD00A9C505 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
-		65F095961B14861E00A9C505 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-rise-up-short.wav"; sourceTree = "<group>"; };
+		C504F79E1B137A460021C878 /* rise-up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "rise-up.mp3"; sourceTree = "<group>"; };
+		C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Self-Destruct-Sequence.mp3"; sourceTree = "<group>"; };
 		C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +147,6 @@
 		C51CBE921B0E512100913FAA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		C51CBE941B0E512F00913FAA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C51CBE961B0E513900913FAA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C51CBE981B0E514000913FAA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C51CBE9A1B0E515000913FAA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C51CBE9C1B0E516700913FAA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C51CBEA21B0E5C0600913FAA /* GameCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
@@ -173,6 +154,13 @@
 		C54747471AD4503500C4E23F /* TileMapHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapHeader.h; sourceTree = "<group>"; };
 		C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Exotic-Island.mp3"; sourceTree = "<group>"; };
 		C569C5EB1B1375BA00C999A9 /* Misty-Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Misty-Forest.mp3"; sourceTree = "<group>"; };
+		C569C5ED1B1375C600C999A9 /* Mad-Scientist.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mad-Scientist.mp3"; sourceTree = "<group>"; };
+		C569C5EF1B13771A00C999A9 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
+		C569C5F01B13771A00C999A9 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
+		C569C5F11B13771A00C999A9 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
+		C569C5F21B13771A00C999A9 /* minifase4.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase4.tmx; sourceTree = "<group>"; };
+		C569C5F31B13771A00C999A9 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
+		C569C5F41B13771A00C999A9 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		C58F739D1AF95E7B00D6E6DB /* JSTileMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
 		C58F739E1AF95E8400D6E6DB /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
 		C58F739F1AF95E8400D6E6DB /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
@@ -181,6 +169,14 @@
 		C58F73A71B05860F00D6E6DB /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		C58F73A91B05896F00D6E6DB /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		C58F73B71B06232E00D6E6DB /* plataforma3G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3G.png; sourceTree = "<group>"; };
+		C59F3D491B17839900A608AA /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		C59F3D4D1B17856200A608AA /* main-theme.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "main-theme.wav"; sourceTree = "<group>"; };
+		C59F3D4F1B1790BC00A608AA /* music1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music1.wav; sourceTree = "<group>"; };
+		C59F3D501B1790BC00A608AA /* music2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music2.wav; sourceTree = "<group>"; };
+		C59F3D511B1790BC00A608AA /* music3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music3.wav; sourceTree = "<group>"; };
+		C59F3D521B1790BC00A608AA /* music4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music4.wav; sourceTree = "<group>"; };
+		C59F3D531B1790BC00A608AA /* music5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music5.wav; sourceTree = "<group>"; };
+		C59F3D541B1790BC00A608AA /* music6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music6.wav; sourceTree = "<group>"; };
 		C5A53E971AD4747300A97B1D /* teste.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = teste.tmx; sourceTree = "<group>"; };
 		C5A53EB91AD5C5FF00A97B1D /* plataforma3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plataforma3.png; sourceTree = "<group>"; };
 		C5CB3F3A1ACD6AA8001A37B7 /* Ninja Goo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ninja Goo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,11 +209,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65F095971B14861E00A9C505 /* GameKit.framework in Frameworks */,
 				C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */,
 				C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */,
 				C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */,
-				C51CBE991B0E514000913FAA /* StoreKit.framework in Frameworks */,
 				C51CBE971B0E513900913FAA /* CoreGraphics.framework in Frameworks */,
 				C51CBE951B0E512F00913FAA /* SystemConfiguration.framework in Frameworks */,
 				C51CBE931B0E512100913FAA /* CoreTelephony.framework in Frameworks */,
@@ -238,18 +232,20 @@
 		C5112E591B0FDE4E007E805C /* Musics */ = {
 			isa = PBXGroup;
 			children = (
-				659C75791B121B8F0057CE8B /* main-theme.wav */,
+				C59F3D4F1B1790BC00A608AA /* music1.wav */,
+				C59F3D501B1790BC00A608AA /* music2.wav */,
+				C59F3D511B1790BC00A608AA /* music3.wav */,
+				C59F3D521B1790BC00A608AA /* music4.wav */,
+				C59F3D531B1790BC00A608AA /* music5.wav */,
+				C59F3D541B1790BC00A608AA /* music6.wav */,
+				C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */,
+				C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */,
+				C569C5ED1B1375C600C999A9 /* Mad-Scientist.mp3 */,
+				C59F3D4D1B17856200A608AA /* main-theme.wav */,
+				C504F79E1B137A460021C878 /* rise-up.mp3 */,
+				C569C5EB1B1375BA00C999A9 /* Misty-Forest.mp3 */,
+				C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */,
 				C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */,
-				65F0552D1B15C90D00BB12B0 /* Misty-Forest.mp3 */,
-				65F0552F1B15C96900BB12B0 /* Exotic-Island.mp3 */,
-				65F055301B15C96900BB12B0 /* Winding-Down.mp3 */,
-				65F055311B15C96900BB12B0 /* Misty-Forest.mp3 */,
-				659C75871B121F850057CE8B /* music1.wav */,
-				659C75891B1221330057CE8B /* music2.wav */,
-				659C758D1B1221E50057CE8B /* music3.wav */,
-				659C758F1B1222C40057CE8B /* music4.wav */,
-				659C75951B1224130057CE8B /* music5.wav */,
-				659C75931B1223780057CE8B /* music6.wav */,
 			);
 			name = Musics;
 			sourceTree = "<group>";
@@ -276,12 +272,12 @@
 		C54747441AD44F0800C4E23F /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				65F095821B123D4600A9C505 /* minifase1.tmx */,
-				65F095831B123D4600A9C505 /* minifase2.tmx */,
-				65F095841B123D4600A9C505 /* minifase3.tmx */,
-				65F095851B123D4600A9C505 /* minifase4.tmx */,
-				65F095921B123FBD00A9C505 /* minifase5.tmx */,
-				65F095931B123FBD00A9C505 /* minifase6.tmx */,
+				C569C5EF1B13771A00C999A9 /* minifase1.tmx */,
+				C569C5F01B13771A00C999A9 /* minifase2.tmx */,
+				C569C5F11B13771A00C999A9 /* minifase3.tmx */,
+				C569C5F21B13771A00C999A9 /* minifase4.tmx */,
+				C569C5F31B13771A00C999A9 /* minifase5.tmx */,
+				C569C5F41B13771A00C999A9 /* minifase6.tmx */,
 				C5A53E971AD4747300A97B1D /* teste.tmx */,
 			);
 			name = Maps;
@@ -301,10 +297,8 @@
 		C5CB3F311ACD6AA8001A37B7 = {
 			isa = PBXGroup;
 			children = (
-				65F095961B14861E00A9C505 /* GameKit.framework */,
 				C51CBE9C1B0E516700913FAA /* QuartzCore.framework */,
 				C51CBE9A1B0E515000913FAA /* AdSupport.framework */,
-				C51CBE981B0E514000913FAA /* StoreKit.framework */,
 				C51CBE961B0E513900913FAA /* CoreGraphics.framework */,
 				C51CBE941B0E512F00913FAA /* SystemConfiguration.framework */,
 				C51CBE921B0E512100913FAA /* CoreTelephony.framework */,
@@ -339,9 +333,9 @@
 				C5CB3F451ACD6AA8001A37B7 /* GameViewController.swift */,
 				C50BB38E1ADAFD97007827B7 /* LevelsController.swift */,
 				C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */,
-				65F055371B15CB0900BB12B0 /* OptionsViewController.swift */,
 				C50BB38C1ADAFC9B007827B7 /* MenuViewController.swift */,
 				C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */,
+				C59F3D491B17839900A608AA /* OptionsViewController.swift */,
 				C5CB3F471ACD6AA8001A37B7 /* Main.storyboard */,
 				C5CB3F791ACD7954001A37B7 /* LaunchScreen.xib */,
 				C5CB3F3D1ACD6AA8001A37B7 /* Supporting Files */,
@@ -509,10 +503,13 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CT54P8A873;
+						DevelopmentTeam = CC953577YZ;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 1;
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
 							};
 						};
 					};
@@ -548,67 +545,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
+				C569C5F51B13771A00C999A9 /* minifase1.tmx in Resources */,
 				C5112E5B1B0FDEC6007E805C /* Winding-Down.mp3 in Resources */,
-				659C75941B1223780057CE8B /* music6.wav in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
-				659C75881B121F850057CE8B /* music1.wav in Resources */,
+				C569C5EE1B1375C600C999A9 /* Mad-Scientist.mp3 in Resources */,
 				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
 				C5112E771B10BC00007E805C /* click1.wav in Resources */,
 				C5112E5F1B10B095007E805C /* wizard_jump.wav in Resources */,
+				C504F79F1B137A460021C878 /* rise-up.mp3 in Resources */,
 				C5112E791B10BC00007E805C /* lockpick_success.wav in Resources */,
 				C569C5EC1B1375BA00C999A9 /* Misty-Forest.mp3 in Resources */,
 				655915E71B0E55FF00D366E6 /* victory.wav in Resources */,
+				C569C5FA1B13771A00C999A9 /* minifase6.tmx in Resources */,
 				C5CB3F6D1ACD6D14001A37B7 /* Ninja.xcassets in Resources */,
+				C59F3D551B1790BC00A608AA /* music1.wav in Resources */,
+				C59F3D571B1790BC00A608AA /* music3.wav in Resources */,
 				656343E61B093065002E2031 /* minifase3.tmx in Resources */,
-				65F0552E1B15C90D00BB12B0 /* Misty-Forest.mp3 in Resources */,
 				C51CBE901B0E506C00913FAA /* StartApp.bundle in Resources */,
 				C5A53E981AD4747300A97B1D /* teste.tmx in Resources */,
 				C58F73A41B04BF2E00D6E6DB /* wall_gray.png in Resources */,
+				C569C5F71B13771A00C999A9 /* minifase3.tmx in Resources */,
 				C58F73B81B06232E00D6E6DB /* plataforma3G.png in Resources */,
 				C5112E6B1B10B8D8007E805C /* click_end.wav in Resources */,
+				C59F3D581B1790BC00A608AA /* music4.wav in Resources */,
 				650D89B41B0645A600631D86 /* (null) in Resources */,
-				65F095941B123FBD00A9C505 /* minifase5.tmx in Resources */,
+				C569C5F91B13771A00C999A9 /* minifase5.tmx in Resources */,
 				C5CB3F6F1ACD6E0C001A37B7 /* Hud.xcassets in Resources */,
 				656343E01B092E33002E2031 /* minifase1.tmx in Resources */,
+				C504F79D1B1378EB0021C878 /* POL-rise-up-short.wav in Resources */,
+				C504F7A11B137AE90021C878 /* Self-Destruct-Sequence.mp3 in Resources */,
 				C5112E6E1B10B8DF007E805C /* menu_down.wav in Resources */,
-				659C758A1B1221330057CE8B /* music2.wav in Resources */,
 				C5112E6C1B10B8D8007E805C /* click_start.wav in Resources */,
 				655915E21B0E55FF00D366E6 /* click.wav in Resources */,
 				C51A43911B0A012200566E44 /* LevelView.xib in Resources */,
 				C5CB3F691ACD6C55001A37B7 /* W1_Scenario.xcassets in Resources */,
 				C5A53EBA1AD5C5FF00A97B1D /* plataforma3.png in Resources */,
 				C5112E681B10B8CF007E805C /* impact2.wav in Resources */,
-				659C758E1B1221E50057CE8B /* music3.wav in Resources */,
-				65F095951B123FBD00A9C505 /* minifase6.tmx in Resources */,
-				659C75961B1224130057CE8B /* music5.wav in Resources */,
+				C59F3D561B1790BC00A608AA /* music2.wav in Resources */,
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
-				65F055321B15C96900BB12B0 /* Exotic-Island.mp3 in Resources */,
-				65F055341B15C96900BB12B0 /* Misty-Forest.mp3 in Resources */,
 				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
 				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
 				C5ED62681B0FAC6B006B6DC6 /* espinho_tile.png in Resources */,
 				C5112E781B10BC00007E805C /* jailbreak.wav in Resources */,
+				C59F3D4E1B17856200A608AA /* main-theme.wav in Resources */,
 				C5112E7C1B10BC00007E805C /* unlock.wav in Resources */,
 				C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */,
 				C5CB3F7A1ACD7954001A37B7 /* LaunchScreen.xib in Resources */,
-				659C75901B1222C40057CE8B /* music4.wav in Resources */,
 				C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */,
 				C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */,
 				C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */,
-				659C757A1B121B8F0057CE8B /* main-theme.wav in Resources */,
-				65F095881B123D4600A9C505 /* minifase1.tmx in Resources */,
+				C59F3D591B1790BC00A608AA /* music5.wav in Resources */,
 				C5112E7B1B10BC00007E805C /* text_appear.wav in Resources */,
 				C5112E7A1B10BC00007E805C /* miss_text.wav in Resources */,
-				65F0958B1B123D4600A9C505 /* minifase4.tmx in Resources */,
-				65F095891B123D4600A9C505 /* minifase2.tmx in Resources */,
-				65F055331B15C96900BB12B0 /* Winding-Down.mp3 in Resources */,
-				65F0958A1B123D4600A9C505 /* minifase3.tmx in Resources */,
 				655915E31B0E55FF00D366E6 /* impact.wav in Resources */,
 				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
 				656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */,
+				C569C5F81B13771A00C999A9 /* minifase4.tmx in Resources */,
 				C5112E761B10BC00007E805C /* character_land.wav in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
+				C59F3D5A1B1790BC00A608AA /* music6.wav in Resources */,
 				C569C5EA1B1375AE00C999A9 /* Exotic-Island.mp3 in Resources */,
+				C569C5F61B13771A00C999A9 /* minifase2.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +626,7 @@
 				C5CB3F441ACD6AA8001A37B7 /* W1_Level_1.swift in Sources */,
 				C50BB38D1ADAFC9B007827B7 /* MenuViewController.swift in Sources */,
 				C5CB3F801ACD9F1D001A37B7 /* ConvertUtilities.swift in Sources */,
-				65F055381B15CB0900BB12B0 /* OptionsViewController.swift in Sources */,
+				C59F3D4A1B17839900A608AA /* OptionsViewController.swift in Sources */,
 				C58F73A11AF95E8400D6E6DB /* JSTileMap.m in Sources */,
 				C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */,
 				C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */,

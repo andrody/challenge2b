@@ -32,6 +32,17 @@ enum Sounds: String {
 
 }
 
+enum Keys: String {
+    
+    case levelOne = "keylevelone"
+    case levelTwo = "keyleveltwo"
+    case levelThree = "keylevelthree"
+    case levelFour = "keylevelfour"
+    case levelFive = "keylevelfive"
+    case levelSix = "keylevelsix"
+    
+}
+
 
 private let _SceneManagerSharedInstance = SceneManager()
 
@@ -60,6 +71,21 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             SceneManager.sharedInstance.save("soundMuted", value: newValue)
         }
     }
+    
+    var shouldShowAd : Bool {
+        get {
+            var returnValue: Bool? = NSUserDefaults.standardUserDefaults().objectForKey("shouldShowAd") as? Bool
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = true //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save("shouldShowAd", value: newValue)
+        }
+    }
+
 
 
     var keyId : String = "keylevelfive"
@@ -91,7 +117,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelone,
-            backgroundMusicName: "music1"
+            backgroundMusicName: "music1",
+            key: Keys.levelOne
         )
                 
         var faseTwo = Scenario(nome: "minifase2",
@@ -107,7 +134,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
             rank: Ranks.leveltwo,
-            backgroundMusicName: "music2"
+            backgroundMusicName: "music2",
+            key: Keys.levelTwo
         )
         
         
@@ -125,7 +153,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelthree,
-            backgroundMusicName: "music3"
+            backgroundMusicName: "Misty-Forest",
+            key : Keys.levelThree
 
         )
         
@@ -142,7 +171,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "morro_branco",
             backgroundBackName : "morro_B_branco",
             rank: Ranks.levelfour,
-            backgroundMusicName: "music4"
+            backgroundMusicName: "Winding-Down",
+            key: Keys.levelFour
 
         )
         
@@ -159,7 +189,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_neve_branco",
             backgroundBackName : "montanha_neve_branco",
             rank: Ranks.levelfive,
-            backgroundMusicName: "music5"
+            backgroundMusicName: "Exotic-Island",
+            key : Keys.levelFive
 
         )
         
@@ -176,7 +207,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_branco",
             backgroundBackName : "montanha_branco",
             rank: Ranks.levelsix,
-            backgroundMusicName: "music6"
+            backgroundMusicName: "music6",
+            key : Keys.levelSix
 
         )
         
@@ -209,7 +241,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     func loadAudio(){
         
         // Load
-        let soundURL = NSBundle.mainBundle().URLForResource("click", withExtension: "wav")
+        let soundURL = NSBundle.mainBundle().URLForResource(Sounds.click.rawValue, withExtension: "wav")
         // Load Music
         let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "wav")
         
@@ -221,7 +253,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         self.clickAudio = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
         
         self.backGroundMusic = AVAudioPlayer(contentsOfURL: mainThemeUrl, error: &error)
-        self.backGroundMusic.volume = 0.2
+        self.backGroundMusic.volume = 0.1
         self.backGroundMusic.numberOfLoops = -1
 
     }
@@ -232,7 +264,17 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         var error:NSError?
         
         let audio = AVAudioPlayer(contentsOfURL: music, error: &error)
-        audio.volume = 0.1
+        
+        audio.volume = 0.2
+
+//        if(self.faseEscolhida.levelNumber == 6) {
+//            audio.volume = 0.4
+//        }
+//        
+//        if(self.faseEscolhida.levelNumber == 2) {
+//            audio.volume = 0.03
+//        }
+
         audio.numberOfLoops = -1
         return audio   
         
@@ -300,12 +342,22 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         
     }
     
+    func getKeyUnlockable() -> String {
+        for level in self.fases {
+            if level.unlockable {
+                self.keyId = level.key.rawValue
+                return self.keyId
+            }
+        }
+        return ""
+    }
+    
     func buyKey(){
         println("About to fetch the products");
         // We check that we are allow to make the purchase.
         if (SKPaymentQueue.canMakePayments())
         {
-            var productID:NSSet = NSSet(object: self.keyId);
+            var productID:NSSet = NSSet(object: getKeyUnlockable());
             var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as Set<NSObject>);
             productsRequest.delegate = self;
             productsRequest.start();
@@ -314,6 +366,22 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             println("can't make purchases");
         }
     }
+    
+    func buyRemoveAds(){
+        println("About to fetch the products");
+        // We check that we are allow to make the purchase.
+        if (SKPaymentQueue.canMakePayments())
+        {
+            var productID:NSSet = NSSet(object: "removeadd");
+            var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as Set<NSObject>);
+            productsRequest.delegate = self;
+            productsRequest.start();
+            println("Fething Products");
+        }else{
+            println("can't make purchases");
+        }
+    }
+    
     
     // Helper Methods
     
@@ -339,7 +407,13 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
                 println(validProduct.price)
                 buyProduct(validProduct);
             } else {
-                println(validProduct.productIdentifier)
+                if validProduct.productIdentifier == "removeadd" {
+                    buyProduct(validProduct);
+
+                }
+                else {
+                    println(validProduct.productIdentifier)
+                }
             }
         } else {
             println("nothing")
@@ -357,24 +431,34 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         for transaction:AnyObject in transactions {
             if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
                 switch trans.transactionState {
-                case .Purchased:
-                    println("Product Purchased");
-                    SceneManager.sharedInstance.unlockNextLevel()
-                    NSNotificationCenter.defaultCenter().postNotificationName("unlockedLevel", object: nil)
+                case .Purchased, .Restored:
+                    println("Product Purchased or restored");
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("removeVidro", object: nil)
+                    
+                    if trans.payment.productIdentifier == "removeadd" {
+                        shouldShowAd = false
+                        NSNotificationCenter.defaultCenter().postNotificationName("removeadd", object: nil)
+                    }
+                    
+                    else {
+                        SceneManager.sharedInstance.unlockNextLevel()
+                        NSNotificationCenter.defaultCenter().postNotificationName("unlockedLevel", object: nil)
+                    }
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
+
                     break;
                 case .Failed:
+                    NSNotificationCenter.defaultCenter().postNotificationName("removeVidro", object: nil)
                     println("Purchased Failed");
                     NSNotificationCenter.defaultCenter().postNotificationName("hideLoad", object: nil)
 
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
                     break;
-               // case .Restored:
-                    //[self restoreTransaction:transaction];
-                    //SKPaymentQueue.defaultQueue().restoreCompletedTransactions() RESTAURAÇÅO DE COMPRAS
                 default:
                     break;
                 }
+
             }
         }
         

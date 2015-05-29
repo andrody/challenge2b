@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZA2-tp-xmd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZA2-tp-xmd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -95,9 +96,9 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause" translatesAutoresizingMaskIntoConstraints="NO" id="OzA-ts-MwE">
                                 <rect key="frame" x="16" y="27" width="66" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="OzA-ts-MwE" secondAttribute="height" multiplier="5:6" id="DS7-BV-aTA"/>
+                                    <constraint firstAttribute="width" secondItem="OzA-ts-MwE" secondAttribute="height" multiplier="152:201" id="DS7-BV-aTA"/>
                                     <constraint firstAttribute="height" constant="80" id="Doc-5d-tYs"/>
-                                    <constraint firstAttribute="height" constant="50" id="ceI-x9-J5U"/>
+                                    <constraint firstAttribute="height" constant="60" id="ceI-x9-J5U"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -116,9 +117,9 @@
                                 </variation>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HexagonoPropaganda" translatesAutoresizingMaskIntoConstraints="NO" id="AK7-R7-i0B">
-                                <rect key="frame" x="139" y="190" width="359" height="96"/>
+                                <rect key="frame" x="120" y="344" width="359" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="700" id="9fY-oK-qt3"/>
+                                    <constraint firstAttribute="width" constant="500" id="9fY-oK-qt3"/>
                                     <constraint firstAttribute="width" secondItem="AK7-R7-i0B" secondAttribute="height" multiplier="359:96" id="qm9-WB-DQf"/>
                                     <constraint firstAttribute="width" constant="300" id="rK7-Au-gHn"/>
                                 </constraints>
@@ -141,46 +142,46 @@
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" translatesAutoresizingMaskIntoConstraints="NO" id="5NT-dT-3HD">
                                 <rect key="frame" x="47" y="520" width="20" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="5tx-oq-xMA"/>
-                                    <constraint firstAttribute="width" secondItem="5NT-dT-3HD" secondAttribute="height" multiplier="13:38" id="XJy-Jd-cqu"/>
-                                    <constraint firstAttribute="height" constant="38" id="o7J-BK-ocx"/>
+                                    <constraint firstAttribute="width" secondItem="gvz-A7-QF7" secondAttribute="height" multiplier="359:104" id="E1n-gf-lJm"/>
+                                    <constraint firstAttribute="width" priority="999" constant="300" id="L6u-c3-Dyl"/>
+                                    <constraint firstAttribute="width" priority="998" constant="500" id="aoX-GJ-W8x"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="o7J-BK-ocx"/>
+                                        <exclude reference="L6u-c3-Dyl"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
-                                        <include reference="o7J-BK-ocx"/>
+                                        <include reference="L6u-c3-Dyl"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="o7J-BK-ocx"/>
+                                        <include reference="L6u-c3-Dyl"/>
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HexagonoBRR" translatesAutoresizingMaskIntoConstraints="NO" id="nhY-fR-GJa">
-                                <rect key="frame" x="277" y="493" width="83" height="87"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="6Gr-XX-YPN">
+                                <rect key="frame" x="153" y="77" width="128" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="CZk-Q7-aR0"/>
-                                    <constraint firstAttribute="width" secondItem="nhY-fR-GJa" secondAttribute="height" multiplier="83:87" id="LTs-8Z-2Fq"/>
-                                    <constraint firstAttribute="height" constant="80" id="vEI-PV-xdg"/>
+                                    <constraint firstAttribute="width" priority="999" constant="128" id="7JN-Sm-BbE"/>
+                                    <constraint firstAttribute="width" secondItem="6Gr-XX-YPN" secondAttribute="height" multiplier="1:1" id="cvn-JQ-hy0"/>
+                                    <constraint firstAttribute="width" constant="74" id="ekd-Io-mzN"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="vEI-PV-xdg"/>
+                                        <exclude reference="ekd-Io-mzN"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
-                                        <include reference="vEI-PV-xdg"/>
+                                        <include reference="ekd-Io-mzN"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="vEI-PV-xdg"/>
+                                        <include reference="ekd-Io-mzN"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -210,23 +211,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HexagonoMJ" translatesAutoresizingMaskIntoConstraints="NO" id="H46-gJ-Hho">
                                 <rect key="frame" x="410" y="493" width="83" height="87"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="H46-gJ-Hho" secondAttribute="height" multiplier="83:87" id="CSh-jP-upP"/>
-                                    <constraint firstAttribute="height" constant="80" id="Otb-dB-fNQ"/>
-                                    <constraint firstAttribute="height" priority="999" constant="200" id="dpG-VY-RS7"/>
+                                    <constraint firstAttribute="width" constant="74" id="JOx-Mo-gLw"/>
+                                    <constraint firstAttribute="width" secondItem="tHK-9q-Wrt" secondAttribute="height" multiplier="1:1" id="Wqy-EL-OAE"/>
+                                    <constraint firstAttribute="width" priority="999" constant="128" id="Xp5-dh-Ilo"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Otb-dB-fNQ"/>
+                                        <exclude reference="JOx-Mo-gLw"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Otb-dB-fNQ"/>
+                                        <include reference="JOx-Mo-gLw"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
                                     <mask key="constraints">
-                                        <include reference="Otb-dB-fNQ"/>
+                                        <include reference="JOx-Mo-gLw"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -277,7 +278,7 @@
                                 </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.29411764705882354" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.062231741441675086" green="0.74034711081765114" blue="0.82732193256090314" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nhY-fR-GJa" firstAttribute="leading" secondItem="C2J-M3-9ix" secondAttribute="trailing" constant="34" id="0gC-Df-xOl"/>
@@ -319,12 +320,14 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <include reference="fBF-zV-QSc"/>
                                 <include reference="MKL-EB-1Nd"/>
                                 <include reference="QWf-fQ-2UQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="fBF-zV-QSc"/>
                                 <include reference="MKL-EB-1Nd"/>
                                 <include reference="QWf-fQ-2UQ"/>
                             </mask>
@@ -332,8 +335,11 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="OzA-ts-MwE" id="h1S-fk-dRB"/>
+                        <outlet property="info" destination="tHK-9q-Wrt" id="tyj-Va-MDC"/>
+                        <outlet property="removeAdView" destination="AK7-R7-i0B" id="N7s-We-2nY"/>
                         <outlet property="restoreButton" destination="gvz-A7-QF7" id="J4E-z1-78F"/>
-                        <outlet property="soundButton" destination="1ND-tQ-p2J" id="XMU-ul-Hbc"/>
+                        <outlet property="soundButton" destination="6Gr-XX-YPN" id="rNM-P7-FJh"/>
+                        <outlet property="vidro" destination="Oeu-Kz-o7Z" id="FN2-n8-luO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFY-0L-CCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,7 +432,7 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="4sU-F1-66F">
                                 <rect key="frame" x="16" y="20" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="999" constant="80" id="7WY-S0-plm"/>
+                                    <constraint firstAttribute="width" priority="999" constant="60" id="7WY-S0-plm"/>
                                     <constraint firstAttribute="width" constant="40" id="TSu-SD-5jI"/>
                                     <constraint firstAttribute="width" secondItem="4sU-F1-66F" secondAttribute="height" multiplier="1:1" id="WaK-Qa-wuM"/>
                                 </constraints>
@@ -454,19 +460,29 @@
                             <constraint firstAttribute="trailing" secondItem="NP7-u1-8bL" secondAttribute="trailing" id="Gxy-Fe-MHe"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="width" secondItem="5rW-01-OQW" secondAttribute="height" multiplier="56:75" priority="750" id="NVb-11-3MB"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="top" secondItem="5rW-01-OQW" secondAttribute="top" id="Vne-cE-ldX"/>
-                            <constraint firstItem="4sU-F1-66F" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" constant="7" id="X1S-zh-xME"/>
+                            <constraint firstItem="4sU-F1-66F" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" constant="25" id="X1S-zh-xME"/>
                             <constraint firstAttribute="bottom" secondItem="dnV-Bp-m2g" secondAttribute="bottom" priority="750" constant="16" id="XyQ-aN-ggz"/>
                             <constraint firstItem="hkL-gm-Pwv" firstAttribute="top" secondItem="rAH-HC-f67" secondAttribute="bottom" constant="7" id="YEX-y9-gw9"/>
                             <constraint firstAttribute="bottomMargin" secondItem="NP7-u1-8bL" secondAttribute="bottom" constant="-2" id="aO1-Aw-0Td"/>
                             <constraint firstItem="dnV-Bp-m2g" firstAttribute="centerX" secondItem="5rW-01-OQW" secondAttribute="centerX" priority="750" id="fZG-Xl-mkI"/>
                             <constraint firstItem="rAH-HC-f67" firstAttribute="centerX" secondItem="4sU-F1-66F" secondAttribute="centerX" id="gJS-Kd-yDN"/>
-                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" priority="999" constant="75" id="hUf-ou-Udb"/>
+                            <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="top" secondItem="gCv-QI-ckn" secondAttribute="bottom" constant="75" id="hUf-ou-Udb"/>
                             <constraint firstItem="Fh1-Tb-ZAh" firstAttribute="centerY" secondItem="NP7-u1-8bL" secondAttribute="centerY" priority="750" constant="-47" id="l1C-DF-Dqq"/>
                             <constraint firstItem="NP7-u1-8bL" firstAttribute="leading" secondItem="5rW-01-OQW" secondAttribute="leadingMargin" constant="-18" id="yx1-6N-qee"/>
                         </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="hUf-ou-Udb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="hUf-ou-Udb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="constraintDeCima" destination="hUf-ou-Udb" id="hUG-4y-XgQ"/>
+                        <outlet property="constraintDeCima" destination="l1C-DF-Dqq" id="nC9-JB-2Xm"/>
                         <outlet property="contentImageView" destination="NP7-u1-8bL" id="2Cf-K2-fZ3"/>
                         <outlet property="gameCenterButton" destination="rAH-HC-f67" id="2Sb-km-dna"/>
                         <outlet property="logo" destination="Fh1-Tb-ZAh" id="DuD-Mh-hPI"/>
@@ -537,20 +553,34 @@
             </objects>
             <point key="canvasLocation" x="-140" y="-443"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2to-qz-6H3">
+            <objects>
+                <viewController id="Uen-Je-SnC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rgr-oq-juc"/>
+                        <viewControllerLayoutGuide type="bottom" id="tuN-QU-brk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uz5-rA-JNP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9O-rb-RMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="GC" width="152" height="201"/>
-        <image name="HexagonoAF" width="417" height="460"/>
-        <image name="HexagonoBRR" width="417" height="460"/>
-        <image name="HexagonoMJ" width="417" height="460"/>
         <image name="HexagonoPropaganda" width="2143" height="365"/>
         <image name="HexagonoRestore" width="2143" height="365"/>
         <image name="fundosettings" width="500" height="285"/>
         <image name="info" width="42" height="200"/>
         <image name="logo" width="1071" height="585"/>
+        <image name="music" width="152" height="173"/>
         <image name="pause" width="152" height="201"/>
         <image name="settings" width="200" height="200"/>
-        <image name="sound" width="400" height="400"/>
         <image name="taptoplay" width="694" height="71"/>
     </resources>
 </document>

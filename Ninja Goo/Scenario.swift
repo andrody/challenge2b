@@ -37,6 +37,7 @@ class Scenario {
     var rank : Ranks!
     var backgroundMusicName : String!
     var backGroundMusic : AVAudioPlayer!
+    var key : Keys!
 
 
     var distanceRecord : Int {
@@ -115,7 +116,7 @@ class Scenario {
 
 
     
-    init(nome : String, levelNumber : Int, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String, rank : Ranks, backgroundMusicName : String) {
+    init(nome : String, levelNumber : Int, corMontanha : [CGFloat], corMontanhaClara : [CGFloat], corNuvemBack : [CGFloat], corNuvemMeio : [CGFloat], corNuvemFront : [CGFloat], corPlataforma : [CGFloat], corFundo : [CGFloat], corWallEspecial : [CGFloat], backgroundFrontName : String,  backgroundBackName : String, rank : Ranks, backgroundMusicName : String, key : Keys) {
         
         self.nome = nome
         self.levelNumber = levelNumber
@@ -131,6 +132,7 @@ class Scenario {
         self.backgroundFrontName = backgroundFrontName
         self.rank = rank
         self.backgroundMusicName = backgroundMusicName
+        self.key = key
         
     }
 
