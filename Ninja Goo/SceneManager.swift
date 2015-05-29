@@ -123,18 +123,18 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
                 
         var faseTwo = Scenario(nome: "minifase2",
             levelNumber: 2,
-            corMontanha: [0,160,3],
-            corMontanhaClara: [119, 215, 0],
-            corNuvemBack: [0,90,86],
-            corNuvemMeio: [0,116,111],
-            corNuvemFront: [0,157,150],
+            corMontanha: [116,108,10],
+            corMontanhaClara: [136, 141, 25],
+            corNuvemBack: [59,139,14],
+            corNuvemMeio: [74,162,24],
+            corNuvemFront: [82,174,31],
             corPlataforma: [16,31,39],
-            corFundo: [191,231,231],
+            corFundo: [169,194,50],
             corWallEspecial: [0,116,111],
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
             rank: Ranks.leveltwo,
-            backgroundMusicName: "music2",
+            backgroundMusicName: "main-theme",
             key: Keys.levelTwo
         )
         
@@ -196,16 +196,16 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         
         var faseSix = Scenario(nome: "minifase6",
             levelNumber: 6,
-            corMontanha: [0,64,99],
-            corMontanhaClara: [0, 66, 102],
-            corNuvemBack: [0,33,64],
-            corNuvemMeio: [0,49,96],
-            corNuvemFront: [0,86,167],
+            corMontanha: [69,94,101],
+            corMontanhaClara: [83, 106, 112],
+            corNuvemBack: [192,232,234],
+            corNuvemMeio: [233,247,248],
+            corNuvemFront: [255,255,255],
             corPlataforma: [16,31,39],
-            corFundo: [0,120,185],
-            corWallEspecial: [0,49,96],
-            backgroundFrontName: "montanha_branco",
-            backgroundBackName : "montanha_branco",
+            corFundo: [88,113,117],
+            corWallEspecial: [237,199,54],
+            backgroundFrontName: "trapezio_branco",
+            backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelsix,
             backgroundMusicName: "music6",
             key : Keys.levelSix
@@ -243,7 +243,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         // Load
         let soundURL = NSBundle.mainBundle().URLForResource(Sounds.click.rawValue, withExtension: "wav")
         // Load Music
-        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "wav")
+        let mainThemeUrl = NSBundle.mainBundle().URLForResource("music4", withExtension: "wav")
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
@@ -253,7 +253,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         self.clickAudio = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
         
         self.backGroundMusic = AVAudioPlayer(contentsOfURL: mainThemeUrl, error: &error)
-        self.backGroundMusic.volume = 0.1
+        self.backGroundMusic.volume = 0.3
         self.backGroundMusic.numberOfLoops = -1
 
     }

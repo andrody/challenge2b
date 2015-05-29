@@ -411,7 +411,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="constraintDeCima" destination="l1C-DF-Dqq" id="nC9-JB-2Xm"/>
+                        <outlet property="constraintDeCima" destination="hUf-ou-Udb" id="9Nb-C4-i4y"/>
                         <outlet property="contentImageView" destination="NP7-u1-8bL" id="2Cf-K2-fZ3"/>
                         <outlet property="gameCenterButton" destination="rAH-HC-f67" id="2Sb-km-dna"/>
                         <outlet property="logo" destination="Fh1-Tb-ZAh" id="DuD-Mh-hPI"/>

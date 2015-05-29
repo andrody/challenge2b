@@ -94,6 +94,7 @@
 		C5D854911AF15CC3008CE610 /* espinho_tile_direito.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548D1AF15CC3008CE610 /* espinho_tile_direito.png */; };
 		C5D854921AF15CC3008CE610 /* espinho_tile_esquerdo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */; };
 		C5D854931AF15CC3008CE610 /* espinho_tile_invertido.png in Resources */ = {isa = PBXBuildFile; fileRef = C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */; };
+		C5DA21F21B18FB90000CFB9A /* Insane-Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5DA21F11B18FB8F000CFB9A /* Insane-Gameplay.mp3 */; };
 		C5ED62681B0FAC6B006B6DC6 /* espinho_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ED62671B0FAC6B006B6DC6 /* espinho_tile.png */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +202,7 @@
 		C5D8548D1AF15CC3008CE610 /* espinho_tile_direito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_direito.png; sourceTree = "<group>"; };
 		C5D8548E1AF15CC3008CE610 /* espinho_tile_esquerdo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_esquerdo.png; sourceTree = "<group>"; };
 		C5D8548F1AF15CC3008CE610 /* espinho_tile_invertido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile_invertido.png; sourceTree = "<group>"; };
+		C5DA21F11B18FB8F000CFB9A /* Insane-Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Insane-Gameplay.mp3"; sourceTree = "<group>"; };
 		C5ED62671B0FAC6B006B6DC6 /* espinho_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espinho_tile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +239,7 @@
 				C59F3D511B1790BC00A608AA /* music3.wav */,
 				C59F3D521B1790BC00A608AA /* music4.wav */,
 				C59F3D531B1790BC00A608AA /* music5.wav */,
+				C5DA21F11B18FB8F000CFB9A /* Insane-Gameplay.mp3 */,
 				C59F3D541B1790BC00A608AA /* music6.wav */,
 				C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */,
 				C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */,
@@ -596,6 +599,7 @@
 				C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */,
 				C59F3D591B1790BC00A608AA /* music5.wav in Resources */,
 				C5112E7B1B10BC00007E805C /* text_appear.wav in Resources */,
+				C5DA21F21B18FB90000CFB9A /* Insane-Gameplay.mp3 in Resources */,
 				C5112E7A1B10BC00007E805C /* miss_text.wav in Resources */,
 				655915E31B0E55FF00D366E6 /* impact.wav in Resources */,
 				C5CB3F491ACD6AA8001A37B7 /* Main.storyboard in Resources */,
