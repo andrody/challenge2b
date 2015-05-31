@@ -134,7 +134,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
             rank: Ranks.leveltwo,
-            backgroundMusicName: "main-theme",
+            backgroundMusicName: "music2",
             key: Keys.levelTwo
         )
         
@@ -243,7 +243,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         // Load
         let soundURL = NSBundle.mainBundle().URLForResource(Sounds.click.rawValue, withExtension: "wav")
         // Load Music
-        let mainThemeUrl = NSBundle.mainBundle().URLForResource("music4", withExtension: "wav")
+        let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "wav")
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
