@@ -1478,7 +1478,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     func endsLevel() {
         
         let leaderboard = SceneManager.sharedInstance.faseEscolhida.rank
-        SceneManager.sharedInstance.gameCenter.saveHighscore(self.jumps, leaderboard: leaderboard)
+        if SceneManager.sharedInstance.faseEscolhida.minJumps == -1 || SceneManager.sharedInstance.faseEscolhida.minJumps > self.jumps {
+            SceneManager.sharedInstance.gameCenter.saveHighscore(self.jumps, leaderboard: leaderboard)
+        }
         
         SceneManager.sharedInstance.faseEscolhida.ended = true
         for (index, fase) in enumerate(SceneManager.sharedInstance.fases) {
