@@ -17,6 +17,8 @@ enum Saves: String {
     case locked = "locked"
     case unlockable = "unlockable"
     case attempts = "attempts"
+    case minJumps = "minJumps"
+
 }
 
 
@@ -67,6 +69,20 @@ class Scenario {
             SceneManager.sharedInstance.save(self.nome + Saves.attempts.rawValue, value: newValue)
         }
     }
+    
+    var minJumps : Int {
+        get {
+            var returnValue: Int? = NSUserDefaults.standardUserDefaults().objectForKey(self.nome + Saves.minJumps.rawValue) as? Int
+            if returnValue == nil //Check for first run of app
+            {
+                returnValue = -1 //Default value
+            }
+            return returnValue!
+        }
+        set (newValue) {
+            SceneManager.sharedInstance.save(self.nome + Saves.minJumps.rawValue, value: newValue)
+        }
+    }
 
 
     var ended : Bool {
@@ -110,6 +126,7 @@ class Scenario {
             SceneManager.sharedInstance.save(self.nome + Saves.unlockable.rawValue, value: newValue)
         }
     }
+    
     
     
 
