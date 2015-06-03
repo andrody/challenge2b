@@ -240,6 +240,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     
     func loadAudio(){
         
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, error: nil)
+        
         // Load
         let soundURL = NSBundle.mainBundle().URLForResource(Sounds.click.rawValue, withExtension: "wav")
         // Load Music
