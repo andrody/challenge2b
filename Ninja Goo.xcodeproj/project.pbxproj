@@ -19,8 +19,6 @@
 		656343DA1B092C1A002E2031 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343D91B092C1A002E2031 /* minifase2.tmx */; };
 		656343E01B092E33002E2031 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343DF1B092E33002E2031 /* minifase1.tmx */; };
 		656343E61B093065002E2031 /* minifase3.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 656343E51B093065002E2031 /* minifase3.tmx */; };
-		65A5FF8A1B189D9800497BD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A5FF891B189D9800497BD2 /* StoreKit.framework */; };
-		65A5FF8C1B189D9B00497BD2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A5FF8B1B189D9B00497BD2 /* GameKit.framework */; };
 		65A5FF8E1B189DFA00497BD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF8D1B189DFA00497BD2 /* Main.storyboard */; };
 		65A5FF951B18B7CE00497BD2 /* minifase1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF8F1B18B7CE00497BD2 /* minifase1.tmx */; };
 		65A5FF961B18B7CE00497BD2 /* minifase2.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF901B18B7CE00497BD2 /* minifase2.tmx */; };
@@ -29,6 +27,8 @@
 		65A5FF991B18B7CE00497BD2 /* minifase5.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF931B18B7CE00497BD2 /* minifase5.tmx */; };
 		65A5FF9A1B18B7CE00497BD2 /* minifase6.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 65A5FF941B18B7CE00497BD2 /* minifase6.tmx */; };
 		65A5FF9C1B18F02F00497BD2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5FF9B1B18F02F00497BD2 /* InfoViewController.swift */; };
+		65A5FFA01B1E343E00497BD2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A5FF9F1B1E343E00497BD2 /* GameKit.framework */; };
+		65A5FFA21B1E344300497BD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A5FFA11B1E344300497BD2 /* StoreKit.framework */; };
 		C504F79D1B1378EB0021C878 /* POL-rise-up-short.wav in Resources */ = {isa = PBXBuildFile; fileRef = C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */; };
 		C504F79F1B137A460021C878 /* rise-up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C504F79E1B137A460021C878 /* rise-up.mp3 */; };
 		C504F7A11B137AE90021C878 /* Self-Destruct-Sequence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */; };
@@ -123,8 +123,6 @@
 		656343D91B092C1A002E2031 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
 		656343DF1B092E33002E2031 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		656343E51B093065002E2031 /* minifase3.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase3.tmx; sourceTree = "<group>"; };
-		65A5FF891B189D9800497BD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		65A5FF8B1B189D9B00497BD2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		65A5FF8D1B189DFA00497BD2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		65A5FF8F1B18B7CE00497BD2 /* minifase1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase1.tmx; sourceTree = "<group>"; };
 		65A5FF901B18B7CE00497BD2 /* minifase2.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase2.tmx; sourceTree = "<group>"; };
@@ -133,6 +131,8 @@
 		65A5FF931B18B7CE00497BD2 /* minifase5.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase5.tmx; sourceTree = "<group>"; };
 		65A5FF941B18B7CE00497BD2 /* minifase6.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = minifase6.tmx; sourceTree = "<group>"; };
 		65A5FF9B1B18F02F00497BD2 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		65A5FF9F1B1E343E00497BD2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		65A5FFA11B1E344300497BD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "POL-rise-up-short.wav"; sourceTree = "<group>"; };
 		C504F79E1B137A460021C878 /* rise-up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "rise-up.mp3"; sourceTree = "<group>"; };
 		C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Self-Destruct-Sequence.mp3"; sourceTree = "<group>"; };
@@ -217,15 +217,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65A5FF8C1B189D9B00497BD2 /* GameKit.framework in Frameworks */,
+				65A5FFA21B1E344300497BD2 /* StoreKit.framework in Frameworks */,
 				C547473B1AD44D2800C4E23F /* libz.dylib in Frameworks */,
 				C51CBE9D1B0E516700913FAA /* QuartzCore.framework in Frameworks */,
 				C51CBE9B1B0E515000913FAA /* AdSupport.framework in Frameworks */,
-				65A5FF8A1B189D9800497BD2 /* StoreKit.framework in Frameworks */,
 				C51CBE971B0E513900913FAA /* CoreGraphics.framework in Frameworks */,
 				C51CBE951B0E512F00913FAA /* SystemConfiguration.framework in Frameworks */,
 				C51CBE931B0E512100913FAA /* CoreTelephony.framework in Frameworks */,
 				C51CBE911B0E506C00913FAA /* StartApp.framework in Frameworks */,
+				65A5FFA01B1E343E00497BD2 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +308,8 @@
 		C5CB3F311ACD6AA8001A37B7 = {
 			isa = PBXGroup;
 			children = (
-				65A5FF8B1B189D9B00497BD2 /* GameKit.framework */,
-				65A5FF891B189D9800497BD2 /* StoreKit.framework */,
+				65A5FFA11B1E344300497BD2 /* StoreKit.framework */,
+				65A5FF9F1B1E343E00497BD2 /* GameKit.framework */,
 				C51CBE9C1B0E516700913FAA /* QuartzCore.framework */,
 				C51CBE9A1B0E515000913FAA /* AdSupport.framework */,
 				C51CBE961B0E513900913FAA /* CoreGraphics.framework */,
@@ -769,6 +769,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Ninja Goo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -787,6 +788,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Ninja Goo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

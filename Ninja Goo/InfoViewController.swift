@@ -17,8 +17,8 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
     @IBOutlet var dismissview: UIView!
     
     var URLs = [
-        "fb://profile/100000955460166", // App
-        "https://www.facebook.com/bruno.r.rolim" // Website if app fails
+        "fb://profile/930030573727200", // App
+        "https://www.facebook.com/ninjagoogame?ref=aymt_homepage_panel" // Website if app fails
     ]
 
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         // Email Content
         var messageBody: String = "Feature request or bug report?";
         // To address
-        var toRecipents = ["bruno_rocha2008@hotmail.com"]
+        var toRecipents = ["koruja.ninjagoo@gmail.com"]
         
         var mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self;
