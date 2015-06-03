@@ -1037,6 +1037,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         SceneManager.sharedInstance.faseEscolhida.backGroundMusic = SceneManager.sharedInstance.loadAudio(SceneManager.sharedInstance.faseEscolhida.backgroundMusicName)
         SceneManager.sharedInstance.backGroundMusic.stop()
         SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.faseEscolhida.backGroundMusic)
+        SceneManager.sharedInstance.faseEscolhida.backGroundMusic.volume = SceneManager.sharedInstance.faseEscolhida.backGroundVolume
         
     }
     
