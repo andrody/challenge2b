@@ -36,7 +36,7 @@
 		C50BB38F1ADAFD97007827B7 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB38E1ADAFD97007827B7 /* LevelsController.swift */; };
 		C50BB3911ADB0234007827B7 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */; };
 		C50BB3931ADB06B6007827B7 /* ItemViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */; };
-		C5112E5B1B0FDEC6007E805C /* Winding-Down.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */; };
+		C5112E5B1B0FDEC6007E805C /* Winding-Down - fas2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5A1B0FDEC6007E805C /* Winding-Down - fas2.wav */; };
 		C5112E5F1B10B095007E805C /* wizard_jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E5E1B10B095007E805C /* wizard_jump.wav */; };
 		C5112E641B10B7D0007E805C /* character_jump1.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E631B10B7D0007E805C /* character_jump1.wav */; };
 		C5112E681B10B8CF007E805C /* impact2.wav in Resources */ = {isa = PBXBuildFile; fileRef = C5112E671B10B8CF007E805C /* impact2.wav */; };
@@ -140,7 +140,7 @@
 		C50BB38E1ADAFD97007827B7 /* LevelsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		C50BB3901ADB0234007827B7 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		C50BB3921ADB06B6007827B7 /* ItemViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCtrl.swift; sourceTree = "<group>"; };
-		C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Winding-Down.mp3"; sourceTree = "<group>"; };
+		C5112E5A1B0FDEC6007E805C /* Winding-Down - fas2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Winding-Down - fas2.wav"; sourceTree = "<group>"; };
 		C5112E5E1B10B095007E805C /* wizard_jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wizard_jump.wav; sourceTree = "<group>"; };
 		C5112E631B10B7D0007E805C /* character_jump1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = character_jump1.wav; sourceTree = "<group>"; };
 		C5112E671B10B8CF007E805C /* impact2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact2.wav; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 				C504F79E1B137A460021C878 /* rise-up.mp3 */,
 				C569C5EB1B1375BA00C999A9 /* Misty-Forest.mp3 */,
 				C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */,
-				C5112E5A1B0FDEC6007E805C /* Winding-Down.mp3 */,
+				C5112E5A1B0FDEC6007E805C /* Winding-Down - fas2.wav */,
 			);
 			name = Musics;
 			sourceTree = "<group>";
@@ -559,7 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
-				C5112E5B1B0FDEC6007E805C /* Winding-Down.mp3 in Resources */,
+				C5112E5B1B0FDEC6007E805C /* Winding-Down - fas2.wav in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C569C5EE1B1375C600C999A9 /* Mad-Scientist.mp3 in Resources */,
 				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
