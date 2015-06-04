@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		650D89B41B0645A600631D86 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		652343A41B00DD85001CE608 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 652343A31B00DD85001CE608 /* wall.png */; };
+		654066991B20D7F100CCB7EA /* Winding-Down - fas2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 654066981B20D7F100CCB7EA /* Winding-Down - fas2.wav */; };
+		6540669D1B20D88800CCB7EA /* Exotic-Island - fase 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6540669A1B20D88800CCB7EA /* Exotic-Island - fase 3.wav */; };
+		6540669E1B20D88800CCB7EA /* Insane-Gameplay- fase6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6540669B1B20D88800CCB7EA /* Insane-Gameplay- fase6.wav */; };
+		6540669F1B20D88800CCB7EA /* Misty-Forest - fase5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6540669C1B20D88800CCB7EA /* Misty-Forest - fase5.wav */; };
 		655915E21B0E55FF00D366E6 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DB1B0E55FF00D366E6 /* click.wav */; };
 		655915E31B0E55FF00D366E6 /* impact.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DC1B0E55FF00D366E6 /* impact.wav */; };
 		655915E41B0E55FF00D366E6 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 655915DD1B0E55FF00D366E6 /* jump.wav */; };
@@ -113,6 +117,10 @@
 
 /* Begin PBXFileReference section */
 		652343A31B00DD85001CE608 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
+		654066981B20D7F100CCB7EA /* Winding-Down - fas2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Winding-Down - fas2.wav"; sourceTree = "<group>"; };
+		6540669A1B20D88800CCB7EA /* Exotic-Island - fase 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Exotic-Island - fase 3.wav"; sourceTree = "<group>"; };
+		6540669B1B20D88800CCB7EA /* Insane-Gameplay- fase6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Insane-Gameplay- fase6.wav"; sourceTree = "<group>"; };
+		6540669C1B20D88800CCB7EA /* Misty-Forest - fase5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Misty-Forest - fase5.wav"; sourceTree = "<group>"; };
 		655915DB1B0E55FF00D366E6 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		655915DC1B0E55FF00D366E6 /* impact.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = impact.wav; sourceTree = "<group>"; };
 		655915DD1B0E55FF00D366E6 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
@@ -251,11 +259,15 @@
 				C5DA21F11B18FB8F000CFB9A /* Insane-Gameplay.mp3 */,
 				C504F7A01B137AE90021C878 /* Self-Destruct-Sequence.mp3 */,
 				C504F79C1B1378EB0021C878 /* POL-rise-up-short.wav */,
+				6540669A1B20D88800CCB7EA /* Exotic-Island - fase 3.wav */,
+				6540669B1B20D88800CCB7EA /* Insane-Gameplay- fase6.wav */,
+				6540669C1B20D88800CCB7EA /* Misty-Forest - fase5.wav */,
 				C569C5ED1B1375C600C999A9 /* Mad-Scientist.mp3 */,
 				C59F3D4D1B17856200A608AA /* main-theme.wav */,
 				C504F79E1B137A460021C878 /* rise-up.mp3 */,
 				C569C5EB1B1375BA00C999A9 /* Misty-Forest.mp3 */,
 				C569C5E91B1375AE00C999A9 /* Exotic-Island.mp3 */,
+				654066981B20D7F100CCB7EA /* Winding-Down - fas2.wav */,
 				C5112E5A1B0FDEC6007E805C /* Winding-Down - fas2.wav */,
 			);
 			name = Musics;
@@ -559,9 +571,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				655915E41B0E55FF00D366E6 /* jump.wav in Resources */,
+				654066991B20D7F100CCB7EA /* Winding-Down - fas2.wav in Resources */,
 				C5112E5B1B0FDEC6007E805C /* Winding-Down - fas2.wav in Resources */,
 				C5CB3F6B1ACD6C9A001A37B7 /* Other.xcassets in Resources */,
 				C569C5EE1B1375C600C999A9 /* Mad-Scientist.mp3 in Resources */,
+				6540669D1B20D88800CCB7EA /* Exotic-Island - fase 3.wav in Resources */,
 				655915E81B0E55FF00D366E6 /* wall.wav in Resources */,
 				C5112E771B10BC00007E805C /* click1.wav in Resources */,
 				C5112E5F1B10B095007E805C /* wizard_jump.wav in Resources */,
@@ -599,6 +613,7 @@
 				C5CB3F421ACD6AA8001A37B7 /* teste.sks in Resources */,
 				655915E51B0E55FF00D366E6 /* shaking.wav in Resources */,
 				655915E61B0E55FF00D366E6 /* teleport.wav in Resources */,
+				6540669F1B20D88800CCB7EA /* Misty-Forest - fase5.wav in Resources */,
 				C5ED62681B0FAC6B006B6DC6 /* espinho_tile.png in Resources */,
 				65A5FF981B18B7CE00497BD2 /* minifase4.tmx in Resources */,
 				C5112E781B10BC00007E805C /* jailbreak.wav in Resources */,
@@ -619,6 +634,7 @@
 				C5112E761B10BC00007E805C /* character_land.wav in Resources */,
 				652343A41B00DD85001CE608 /* wall.png in Resources */,
 				C59F3D5A1B1790BC00A608AA /* music6.wav in Resources */,
+				6540669E1B20D88800CCB7EA /* Insane-Gameplay- fase6.wav in Resources */,
 				65A5FF961B18B7CE00497BD2 /* minifase2.tmx in Resources */,
 				C569C5EA1B1375AE00C999A9 /* Exotic-Island.mp3 in Resources */,
 			);

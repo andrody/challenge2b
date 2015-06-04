@@ -135,9 +135,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "arvore_branco",
             backgroundBackName : "arvore_b_branco",
             rank: Ranks.leveltwo,
-            backgroundMusicName: "music2",
+            backgroundMusicName: "Winding-Down - fas2",
             key: Keys.levelTwo,
-            backGroundVolume: 0.2
+            backGroundVolume: 0.4
 
         )
         
@@ -156,9 +156,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelthree,
-            backgroundMusicName: "music3",
+            backgroundMusicName: "Exotic-Island - fase 3",
             key : Keys.levelThree,
-            backGroundVolume: 0.2
+            backGroundVolume: 0.4
 
 
         )
@@ -178,7 +178,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             rank: Ranks.levelfour,
             backgroundMusicName: "music4",
             key: Keys.levelFour,
-            backGroundVolume: 0.2
+            backGroundVolume: 0.4
 
 
         )
@@ -196,9 +196,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "montanha_neve_branco",
             backgroundBackName : "montanha_neve_branco",
             rank: Ranks.levelfive,
-            backgroundMusicName: "music5",
+            backgroundMusicName: "Misty-Forest - fase5",
             key : Keys.levelFive,
-            backGroundVolume: 0.2
+            backGroundVolume: 0.4
 
 
         )
@@ -216,9 +216,9 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backgroundFrontName: "trapezio_branco",
             backgroundBackName : "trapezio_B_branco",
             rank: Ranks.levelsix,
-            backgroundMusicName: "music6",
+            backgroundMusicName: "Insane-Gameplay- fase6",
             key : Keys.levelSix,
-            backGroundVolume: 0.2
+            backGroundVolume: 0.6
 
 
         )
