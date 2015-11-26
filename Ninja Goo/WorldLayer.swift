@@ -68,7 +68,7 @@ class WorldLayer: SKNode {
                 let node_sprite = node as! SKSpriteNode
                 intoLayer.addChild(node_sprite)
                 
-                println(node_sprite.name)
+                print(node_sprite.name)
 
                 if(node_sprite.name!.hasPrefix("platform_")){
                     node_sprite.physicsBody = SKPhysicsBody(rectangleOfSize: node_sprite.size)

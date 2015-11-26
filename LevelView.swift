@@ -52,7 +52,7 @@ class LevelView: UIView {
         // Drawing code
     }
     */
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         //let className = NSStringFromClass(levelView.self)
         self.view = (NSBundle.mainBundle().loadNibNamed("LevelView", owner:self, options:nil).first) as! UIView
@@ -65,25 +65,25 @@ class LevelView: UIView {
 
         
 
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.translatesAutoresizingMaskIntoConstraints = false
 
-        var constX = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
+        let constX = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
         self.addConstraint(constX)
         
-        var constX2 = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+        let constX2 = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
         self.addConstraint(constX2)
         
-        var constTop = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        let constTop = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         self.addConstraint(constTop)
         
-        var constBottom = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        let constBottom = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self as UIView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         self.addConstraint(constBottom)
 
 
-        var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("key:"))
+        let tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("key:"))
         keyView.addGestureRecognizer(tapGesture1)
         
-        var buyObserver = UITapGestureRecognizer(target: self, action: Selector("buyKey"))
+        let buyObserver = UITapGestureRecognizer(target: self, action: Selector("buyKey"))
         buyButton.addGestureRecognizer(buyObserver)//Botao para comprar
 
         

@@ -43,7 +43,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
             startScreenCtrl = getStartSItemController()
             let startingViewControllers: NSArray = [startScreenCtrl]
             //startingViewControllers.arrayByAddingObjectsFromArray(levelControllers)
-            pageController.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+            pageController.setViewControllers(startingViewControllers as! [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         }
         
         pageViewController = pageController
@@ -53,7 +53,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     func preLoadLevelControllers() {
-        for (itemIndex, item) in enumerate(contentImages) {
+        for (itemIndex, item) in contentImages.enumerate() {
             if(itemIndex == 0) {
                 continue
             }
@@ -142,7 +142,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
         
         var indexLevels = 1
         
-        for (index, fase) in enumerate(SceneManager.sharedInstance.fases) {
+        for (index, fase) in SceneManager.sharedInstance.fases.enumerate() {
             if(fase.locked) {
                 let div : CGFloat = CGFloat(index-1)/3
                 indexLevels = Int(floor(div))
@@ -151,7 +151,7 @@ class MenuViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         let startingViewControllers: NSArray = [levelControllers[indexLevels]]
-        self.pageViewController!.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        self.pageViewController!.setViewControllers(startingViewControllers as! [UIViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         
     }
 

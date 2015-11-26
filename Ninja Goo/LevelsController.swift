@@ -74,13 +74,13 @@ class LevelsController: ItemViewCtrl {
         levelThreeView.levelNumber.text = String( levelThree.levelNumber )
 
         
-        var tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
+        let tapGesture1 = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
         levelOneView.addGestureRecognizer(tapGesture1)
         
-        var tapGesture2 = UITapGestureRecognizer(target: self, action: Selector("levelTap2:"))
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: Selector("levelTap2:"))
         levelTwoView.addGestureRecognizer(tapGesture2)
         
-        var tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
+        let tapGesture3 = UITapGestureRecognizer(target: self, action: Selector("levelTap3:"))
         levelThreeView.addGestureRecognizer(tapGesture3)
         
         var buy = UITapGestureRecognizer(target: self, action: Selector("levelTap1:"))
@@ -111,7 +111,7 @@ class LevelsController: ItemViewCtrl {
     override func viewWillAppear(animated: Bool) {
         checkAll()
         if(SceneManager.sharedInstance.endLevel) {
-            SceneManager.sharedInstance.playClickSound(name: Sounds.passesLevelUnlock.rawValue)
+            SceneManager.sharedInstance.playClickSound(Sounds.passesLevelUnlock.rawValue)
             SceneManager.sharedInstance.endLevel = false
         }
 
@@ -208,7 +208,7 @@ class LevelsController: ItemViewCtrl {
         
         SceneManager.sharedInstance.playClickSound()
 
-        var gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
+        let gVC = self.storyboard?.instantiateViewControllerWithIdentifier("GameViewController") as! GameViewController
         SceneManager.sharedInstance.gameViewCtrl = gVC
         
         W1_Level_1.loadSceneAssetsWithCompletionHandler(level) { loadedScene in

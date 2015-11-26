@@ -32,19 +32,19 @@ class OptionsViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "removeVidro", name: "removeVidro", object: nil)
 
-        var removeAd = UITapGestureRecognizer(target: self, action: Selector("removeAd"))
+        let removeAd = UITapGestureRecognizer(target: self, action: Selector("removeAd"))
         removeAdView.addGestureRecognizer(removeAd)
         
-        var backGesture = UITapGestureRecognizer(target: self, action: Selector("backbutton"))
+        let backGesture = UITapGestureRecognizer(target: self, action: Selector("backbutton"))
         backButton.addGestureRecognizer(backGesture)
         
-        var sound = UITapGestureRecognizer(target: self, action: Selector("muteSound"))
+        let sound = UITapGestureRecognizer(target: self, action: Selector("muteSound"))
         soundButton.addGestureRecognizer(sound)
         
-        var restore = UITapGestureRecognizer(target: self, action: Selector("checkRestore"))
+        let restore = UITapGestureRecognizer(target: self, action: Selector("checkRestore"))
         restoreButton.addGestureRecognizer(restore)
         
-        var infobutton = UITapGestureRecognizer(target: self, action: Selector("infoScreen"))
+        let infobutton = UITapGestureRecognizer(target: self, action: Selector("infoScreen"))
         info.addGestureRecognizer(infobutton)
         
                 if SceneManager.sharedInstance.soundMuted {
@@ -60,7 +60,7 @@ class OptionsViewController: UIViewController {
     
     func infoScreen(){
     
-        var info = self.storyboard?.instantiateViewControllerWithIdentifier("InfoViewController") as! InfoViewController
+        let info = self.storyboard?.instantiateViewControllerWithIdentifier("InfoViewController") as! InfoViewController
         self.presentViewController(info, animated: true, completion: nil)
     }
     
@@ -89,7 +89,7 @@ class OptionsViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
         self.vidro.hidden = true
 
-        println("BACK TO MEnu")
+        print("BACK TO MEnu")
     }
     
     func muteSound() {
@@ -120,7 +120,7 @@ class OptionsViewController: UIViewController {
     
         if(restorePurchases() == true) {
             
-            println("transação efetuada")
+            print("transação efetuada")
 
         }
     }

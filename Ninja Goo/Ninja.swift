@@ -176,7 +176,7 @@ class Ninja: SKNode {
     }
     
     
-    func jump(#amountToMoveX: CGFloat , amountToMoveY: CGFloat){
+    func jump(amountToMoveX amountToMoveX: CGFloat , amountToMoveY: CGFloat){
         
         spin()
         
@@ -196,7 +196,7 @@ class Ninja: SKNode {
 
         self.spinning.removeAllActions()
         
-        self.IdleAnimation(speed: 0.1)
+        self.IdleAnimation(0.1)
         
         self.body.hidden = true
         self.mask.hidden = true
@@ -224,7 +224,7 @@ class Ninja: SKNode {
         
         animationAngleDefault()
         
-        var changer :CGFloat = 1
+        let changer :CGFloat = 1
         
 //        if(self.nailState != NailState.Down) {
 //            changer = -1

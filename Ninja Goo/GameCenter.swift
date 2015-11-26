@@ -38,11 +38,11 @@ class GameCenter : NSObject, GKGameCenterControllerDelegate {
         localPlayer.authenticateHandler = {(viewController, error) -> Void in
             
             if (viewController != nil) {
-                viewCtrl.presentViewController(viewController, animated: true, completion: nil)
+                viewCtrl.presentViewController(viewController!, animated: true, completion: nil)
             }
                 
             else {
-                println((GKLocalPlayer.localPlayer().authenticated))
+                print((GKLocalPlayer.localPlayer().authenticated))
             }
         }
         
@@ -54,15 +54,15 @@ class GameCenter : NSObject, GKGameCenterControllerDelegate {
         //check if user is signed in
         if GKLocalPlayer.localPlayer().authenticated {
             
-            var scoreReporter = GKScore(leaderboardIdentifier: leaderboard.rawValue) //leaderboard id here
+            let scoreReporter = GKScore(leaderboardIdentifier: leaderboard.rawValue) //leaderboard id here
             
             scoreReporter.value = Int64(score) //score variable here (same as above)
             
-            var scoreArray: [GKScore] = [scoreReporter]
+            let scoreArray: [GKScore] = [scoreReporter]
             
-            GKScore.reportScores(scoreArray, withCompletionHandler: {(error : NSError!) -> Void in
+            GKScore.reportScores(scoreArray, withCompletionHandler: {(error : NSError?) -> Void in
                 if error != nil {
-                    println("error")
+                    print("error")
                 }
             })
             
@@ -73,14 +73,14 @@ class GameCenter : NSObject, GKGameCenterControllerDelegate {
     
     //shows leaderboard screen
     func showLeader(viewCtrl : UIViewController) {
-        var gc = GKGameCenterViewController()
+        let gc = GKGameCenterViewController()
         gc.gameCenterDelegate = self
         viewCtrl.presentViewController(gc, animated: true, completion: nil)
     }
 
 
     //hides leaderboard screen
-    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!)
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController)
     {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
         

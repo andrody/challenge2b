@@ -64,10 +64,10 @@ class StartScreenViewController: ItemViewCtrl {
         
         SceneManager.sharedInstance.gameCenter.authenticateLocalPlayer(self)
 
-        var gameCenterGesture = UITapGestureRecognizer(target: self, action: Selector("showGameCenter"))
+        let gameCenterGesture = UITapGestureRecognizer(target: self, action: Selector("showGameCenter"))
         gameCenterButton.addGestureRecognizer(gameCenterGesture)
         
-        var settings = UITapGestureRecognizer(target: self, action: Selector("settings"))
+        let settings = UITapGestureRecognizer(target: self, action: Selector("settings"))
         soundButton.addGestureRecognizer(settings)
 
 //        if SceneManager.sharedInstance.soundMuted {
@@ -116,7 +116,7 @@ class StartScreenViewController: ItemViewCtrl {
     
     func settings(){
     
-        var setting = self.storyboard?.instantiateViewControllerWithIdentifier("OptionsViewController") as! OptionsViewController
+        let setting = self.storyboard?.instantiateViewControllerWithIdentifier("OptionsViewController") as! OptionsViewController
         self.presentViewController(setting, animated: true, completion: nil)
     }
     
@@ -167,7 +167,7 @@ class StartScreenViewController: ItemViewCtrl {
         
         
         
-        UIView.animateWithDuration(0.8, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut | .Repeat | .Autoreverse, animations: {
+        UIView.animateWithDuration(0.8, delay: 0.0, options: [UIViewAnimationOptions.CurveEaseInOut, .Repeat, .Autoreverse], animations: {
             
             
 
@@ -192,7 +192,7 @@ class StartScreenViewController: ItemViewCtrl {
     func animateTaptoPlay() {
         
         
-        UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut | .Repeat | .Autoreverse, animations: {
+        UIView.animateWithDuration(0.4, delay: 0.0, options: [UIViewAnimationOptions.CurveEaseInOut, .Repeat, .Autoreverse], animations: {
             
             
             self.tapToPlay.alpha = 0

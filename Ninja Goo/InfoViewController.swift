@@ -25,7 +25,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         super.viewDidLoad()
     
         
-        var dismissV = UITapGestureRecognizer(target: self, action: Selector("dismiss"))
+        let dismissV = UITapGestureRecognizer(target: self, action: Selector("dismiss"))
         dismissview.addGestureRecognizer(dismissV)
         
     }
@@ -36,20 +36,20 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         self.dismissViewControllerAnimated(true, completion: nil)
         //self.vidro.hidden = true
         
-        println("BACK TO MEnu")
+        print("BACK TO MEnu")
         
     }
     
     @IBAction func contactLink(sender: UIButton) {
     
         // Email Subject
-        var emailTitle: String = "Feedback"
+        let emailTitle: String = "Feedback"
         // Email Content
         var messageBody: String = "Feature request or bug report?";
         // To address
-        var toRecipents = ["koruja.ninjagoo@gmail.com"]
+        let toRecipents = ["koruja.ninjagoo@gmail.com"]
         
-        var mc: MFMailComposeViewController = MFMailComposeViewController()
+        let mc: MFMailComposeViewController = MFMailComposeViewController()
         mc.mailComposeDelegate = self;
         mc.setSubject(emailTitle)
         mc.setMessageBody("Contact Koruja", isHTML: false)
@@ -64,16 +64,16 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
     }
     
-    func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError) {
-        switch result.value {
-        case MFMailComposeResultCancelled.value:
-            println("Mail cancelled")
-        case MFMailComposeResultSaved.value:
-            println("Mail saved")
-        case MFMailComposeResultSent.value:
-            println("Mail sent")
-        case MFMailComposeResultFailed.value:
-            println("Mail sent failure: %@", [error.localizedDescription])
+    func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResultSaved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResultSent.rawValue:
+            print("Mail sent")
+        case MFMailComposeResultFailed.rawValue:
+            print("Mail sent failure: %@", [error!.localizedDescription])
         default:
             break
         }

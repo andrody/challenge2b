@@ -66,7 +66,7 @@ class GameViewController: UIViewController {
         SceneManager.sharedInstance.playMusic(SceneManager.sharedInstance.backGroundMusic)
         //var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
         self.dismissViewControllerAnimated(true, completion: nil)
-        println("BACK TO MEnu")
+        print("BACK TO MEnu")
 
     }
     
@@ -100,8 +100,8 @@ class GameViewController: UIViewController {
         return true
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Landscape
     }
     
     

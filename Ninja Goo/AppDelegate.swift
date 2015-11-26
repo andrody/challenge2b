@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotate", name: UIDeviceOrientationDidChangeNotification, object: nil)
         
         // initialize the SDK with your appID and devID
-        var sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+        let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
         sdk.appID = "204046936"
         sdk.devID = "104719604"
     

@@ -19,9 +19,9 @@ class ConvertUtilities {
     }
     
     class func minMaxSpeed(sX : CGFloat, sY : CGFloat) -> (CGFloat,CGFloat) {
-        var minD :CGFloat = W1_Level_1.Constants.minForce
-        var maxForce :CGFloat = W1_Level_1.Constants.maxForce * SceneManager.sharedInstance.scene.worldScale
-        var maxD : CGFloat = W1_Level_1.Constants.maxDistanceSlide
+        let minD :CGFloat = W1_Level_1.Constants.minForce
+        let maxForce :CGFloat = W1_Level_1.Constants.maxForce * SceneManager.sharedInstance.scene.worldScale
+        let maxD : CGFloat = W1_Level_1.Constants.maxDistanceSlide
         var fSX : CGFloat = sX
         var fSY : CGFloat = sY
         

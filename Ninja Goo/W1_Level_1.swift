@@ -104,7 +104,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     //World 
     let worldLayer = SKNode()
-    let camera = SKNode()
+    let camera2 = SKNode()
     
     //Tap positions
     var initialTapPosition = CGPoint()
@@ -276,7 +276,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         self.worldLayer.name = "worldLayer"
 
         self.worldLayer.addChild(self.ninja)
-        self.worldLayer.addChild(self.camera)
+        self.worldLayer.addChild(self.camera2)
         self.addChild(self.worldLayer)
         
         Constants.defaultSpawnPoint = getStartPosition(map, groupName: "Ninja", name: "ninja")
@@ -338,8 +338,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             let x : NSNumber = bodysObject.objectForKey("x") as! NSNumber
             let y : NSNumber = bodysObject.objectForKey("y") as! NSNumber
             
-            let w : NSNumber = (bodysObject.objectForKey("width") as! String).toInt()!
-            let h : NSNumber = (bodysObject.objectForKey("height") as! String).toInt()!
+            let w : NSNumber = Int((bodysObject.objectForKey("width") as! String))!
+            let h : NSNumber = Int((bodysObject.objectForKey("height") as! String))!
             
             let body = SKSpriteNode()
             body.size = CGSizeMake( CGFloat(w) , CGFloat(h) )
@@ -421,13 +421,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     continue
                 }
                 
-                if let properties = map.propertiesForGid(tileGid) {
+                if let properties = map!.propertiesForGid(tileGid) {
                     
                     let tile = layer.tileAtCoord(coord)
                     
                     if properties["spike"] != nil {
                         
-                        let spikeProp = (properties["spike"] as! String!).toInt()
+                        let spikeProp = Int((properties["spike"] as! String!))
                         
 //                        if (self.spikeTexture == nil) {
 //                            self.spikeTexture = SKTexture(imageNamed: "espinho_tile_128"
@@ -470,7 +470,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     continue
                 }
                 
-                if let properties = map.propertiesForGid(tileGid) {
+                if let properties = map!.propertiesForGid(tileGid) {
                     
                     let tile = layer.tileAtCoord(coord)
 
@@ -489,9 +489,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     
                     if properties["isMoveable"] != nil {
                         
-                        let steps = (properties["isMoveable"] as! String!).toInt()
-                        let direction = (properties["direction"] as! String!).toInt()
-                        let speed = (properties["speed"] as! String!).toInt()
+                        let steps = Int((properties["isMoveable"] as! String!))
+                        let direction = Int((properties["direction"] as! String!))
+                        let speed = Int((properties["speed"] as! String!))
 
                         //let wall = (properties["wall"] as String!).toInt()
 
@@ -512,7 +512,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     }
                     
                     if properties["isRotate"] != nil {
-                        let rotation = (properties["isRotate"] as! String!).toInt()
+                        let rotation = Int((properties["isRotate"] as! String!))
                         //if(rotation != nil) {
                         let radians = ConvertUtilities.degreesToRadians(CGFloat(rotation!))
                         
@@ -541,7 +541,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     }
                     
                     if properties["isFaller"] != nil {
-                        let duration = (properties["isFaller"] as! String!).toInt()
+                        let duration = Int((properties["isFaller"] as! String!))
                         
                         tile.physicsBody = SKPhysicsBody(rectangleOfSize:tile.size)
                         tile.physicsBody!.dynamic = false
@@ -552,7 +552,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                         tile.userData?.setObject(duration!, forKey: "duration")
                         tile.userData?.setObject(false, forKey: "jaColidiu")
 
-                        println("CATEGORY = \(tile.physicsBody!.categoryBitMask)")
+                        print("CATEGORY = \(tile.physicsBody!.categoryBitMask)")
 
                         
                         if(properties["isRotate"] != nil) {
@@ -749,8 +749,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         
 //        self.pauseButton!.position = CGPointMake(-self.scene!.frame.width/2 + 120, self.scene!.frame.height/2 - 120)
-        println("SCRENN SIZZEEEEE = \(UIApplication.sharedApplication().statusBarOrientation)")
-        println("SCRENN HEIGHTTTTT = \(self.size.height)")
+        print("SCRENN SIZZEEEEE = \(UIApplication.sharedApplication().statusBarOrientation)")
+        print("SCRENN HEIGHTTTTT = \(self.size.height)")
         
         
         self.addChild(self.pauseButton)
@@ -944,11 +944,11 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     func loadLevels(){
         
-        println("tamnho tela = \(self.size)")
+        print("tamnho tela = \(self.size)")
         
         let scene = SKScene(fileNamed: "teste")
         
-        let templateWorld = scene.children.first!.copy() as! SKNode
+        let templateWorld = scene!.children.first!.copy() as! SKNode
         templateWorld.zPosition = 500
         //templateWorld.
         //templateWorld.setScale(0.5)
@@ -1099,7 +1099,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         
-        println("didmoveToView")
+        print("didmoveToView")
         //self.backgroundColor = SKColor.whiteColor()
 //        dispatch_async(Constants.backgroundQueue) {
 //        
@@ -1130,8 +1130,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         let distanceFromSpawn = self.portal.position.x - self.ninja.position.x
         let distancePortalFromSpawn = self.portal.position.x - Constants.defaultSpawnPoint.x
         
-        println("fromSpawn = \(distanceFromSpawn)")
-        println("distancePortalFromSpawn = \(distancePortalFromSpawn)")
+        print("fromSpawn = \(distanceFromSpawn)")
+        print("distancePortalFromSpawn = \(distancePortalFromSpawn)")
 
         
         var percentage = Int(100 * (1 - distanceFromSpawn / distancePortalFromSpawn))
@@ -1156,7 +1156,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         saveRecord()
         self.diedForAd += 1
         
-        println("restart")
+        print("restart")
         
         //self.saveHighscore(self.score)
         self.score = 0
@@ -1297,7 +1297,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
         
         
-        var cameraPositionInScene = self.worldLayer.scene?.convertPoint(point, fromNode: worldLayer)
+        let cameraPositionInScene = self.worldLayer.scene?.convertPoint(point, fromNode: worldLayer)
         
         var y :CGFloat = cameraPositionInScene!.y
         
@@ -1387,8 +1387,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
 
         node.runAction(action)
         
-        var wait = SKAction.waitForDuration(NSTimeInterval(duration/1000))
-        var run = SKAction.runBlock {
+        let wait = SKAction.waitForDuration(NSTimeInterval(duration/1000))
+        let run = SKAction.runBlock {
             node.removeActionForKey("shakingSound")
 
             node.removeAllActions()
@@ -1412,7 +1412,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             showTutorial()
         }
         
-        println("diedForAd = \(self.diedForAd)")
+        print("diedForAd = \(self.diedForAd)")
 
         
         if(self.diedForAd >= 4 && SceneManager.sharedInstance.shouldShowAd) {
@@ -1421,17 +1421,17 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
         
         if(contact.bodyA.node?.name == "mWall") {
-            self.ninja.mWall = contact.bodyA!
+            self.ninja.mWall = contact.bodyA
         }
         else if(contact.bodyB.node?.name == "mWall") {
-            self.ninja.mWall = contact.bodyB!
+            self.ninja.mWall = contact.bodyB
         }
         
         if(self.ninja.isDead == false) {
             self.physicsWorld.speed = 0
             
             
-            println("colidiu com plataforma")
+            print("colidiu com plataforma")
             self.ninja.isMoving = false
             let dirColision = contact.contactNormal
             
@@ -1486,14 +1486,14 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
         
         SceneManager.sharedInstance.faseEscolhida.ended = true
-        for (index, fase) in enumerate(SceneManager.sharedInstance.fases) {
+        for (index, fase) in SceneManager.sharedInstance.fases.enumerate() {
             if fase.nome == SceneManager.sharedInstance.faseEscolhida.nome {
                 if(SceneManager.sharedInstance.fases.endIndex - 1 != index) {
                     SceneManager.sharedInstance.fases[index + 1].locked = false
                 }
                 if(SceneManager.sharedInstance.fases.endIndex - 1 > index + 1) {
-                    println("index + 1 = \(index + 1)")
-                    println("endindex = \(SceneManager.sharedInstance.fases.endIndex)")
+                    print("index + 1 = \(index + 1)")
+                    print("endindex = \(SceneManager.sharedInstance.fases.endIndex)")
 
                     SceneManager.sharedInstance.fases[index + 2].unlockable = true
                 }
@@ -1636,8 +1636,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         
             let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
-            println("contatcMAks = \(contactMask)")
-            println("quero = \(ColliderType.FallerWall.rawValue | ColliderType.Ninja.rawValue)")
+            print("contatcMAks = \(contactMask)")
+            print("quero = \(ColliderType.FallerWall.rawValue | ColliderType.Ninja.rawValue)")
         
         
             switch(contactMask){
@@ -1652,7 +1652,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     colideComWall(contact)
                 
                 case ColliderType.Spike.rawValue | ColliderType.Ninja.rawValue:
-                    println("colidiu com spike")
+                    print("colidiu com spike")
                     self.runAction(SKAction.playSoundFileNamed(Sounds.spike.rawValue, waitForCompletion: false))
 
                     
@@ -1680,10 +1680,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 //self.colideComWall(contact)
                 if(contact.bodyA.node?.name == "mWall") {
-                    self.ninja.mWall = contact.bodyA!
+                    self.ninja.mWall = contact.bodyA
                 }
                 else if(contact.bodyB.node?.name == "mWall") {
-                    self.ninja.mWall = contact.bodyB!
+                    self.ninja.mWall = contact.bodyB
                 }
 
                 if(self.ninja.mWall.node?.userData?.objectForKey("jaColidiu") as! Bool == false) {
@@ -1700,10 +1700,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 self.ninja.IdleAnimation()
 
                 if(contact.bodyA.node?.name == "mWall") {
-                    self.ninja.mWall = contact.bodyA!
+                    self.ninja.mWall = contact.bodyA
                 }
                 else if(contact.bodyB.node?.name == "mWall") {
-                    self.ninja.mWall = contact.bodyB!
+                    self.ninja.mWall = contact.bodyB
                 }
 
                 
@@ -1722,7 +1722,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 }
         
                 default:
-                    println("colidiu com default")
+                    print("colidiu com default")
                 }
         
     }
@@ -1738,7 +1738,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     // MARK: Touch
 
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
         if(!self.didShowTutorial && SceneManager.sharedInstance.faseEscolhida.levelNumber == 1) {
             self.didShowTutorial = true
@@ -1753,7 +1753,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 let location = touch.locationInNode(self)
                 let node = self.nodeAtPoint(location)
                 
-                println("comecou toque")
+                print("comecou toque")
                 
                 if(endLevel) {
                     if(self.setaButton.containsPoint(location)){
@@ -1768,7 +1768,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 else {
 
                     if(self.pauseButton.containsPoint(location)){
-                        println("pausou")
+                        print("pausou")
                         
                         self.runAction(SKAction.playSoundFileNamed(Sounds.back.rawValue, waitForCompletion: true))
                         SceneManager.sharedInstance.gameViewCtrl.backToMenu()
@@ -1794,7 +1794,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     
                     else {
                         if(self.gameStarted && !self.ninja.isDead && !self.ninja.isMoving){
-                            println("comecou toque4")
+                            print("comecou toque4")
                             
                             self.initialTapPosition = location
                             self.isDraging = true
@@ -1823,12 +1823,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
 
         if(self.isDraging == true && self.gameStarted == true && !self.ninja.isDead){
             
-            let touch: AnyObject = (touches.first as? UITouch)!
+            let touch: AnyObject = touches.first!
             self.actualTouchLocation = touch.locationInNode(self)
             self.finalTapPosition = touch.locationInNode(self)
             
@@ -1850,7 +1850,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             }
             
             
-            self.ninja.stretch(scale: abs(distance) * 0.16 / Constants.maxDistanceSlide, time: 0)
+            self.ninja.stretch(abs(distance) * 0.16 / Constants.maxDistanceSlide, time: 0)
             
             var direction = ConvertUtilities.radiansToDegree(-1 * atan(speedX / speedY))
             
@@ -1863,9 +1863,9 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
     
-        println("terminou")
+        print("terminou")
 
         
         if(self.isDraging == true && self.gameStarted == true && self.ninja.isMoving == false && !self.ninja.isDead){
@@ -1900,12 +1900,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             self.isDraging = false
             self.ninja.isMoving = true
             
-            let touch: AnyObject = (touches.first as? UITouch)!
+            let touch: AnyObject = touches.first!
             
             self.finalTapPosition = touch.locationInNode(self)
             
-            var speedX = self.initialTapPosition.x - self.finalTapPosition.x
-            var speedY = self.initialTapPosition.y - self.finalTapPosition.y
+            let speedX = self.initialTapPosition.x - self.finalTapPosition.x
+            let speedY = self.initialTapPosition.y - self.finalTapPosition.y
             
             let speed = ConvertUtilities.minMaxSpeed(speedX, sY: speedY)
             
@@ -1914,8 +1914,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
             self.jumps = self.jumps + 1
             
-            println("speedY1: \(speedY), speedY2: \(speed.1)")
-            println("speedX1: \(speedX), speedX2: \(speed.0)")
+            print("speedY1: \(speedY), speedY2: \(speed.1)")
+            print("speedX1: \(speedX), speedX2: \(speed.0)")
 
 
             

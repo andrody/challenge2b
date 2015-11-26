@@ -104,7 +104,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     
     func loadFases() {
     
-        var faseOne = Scenario(nome: "minifase1",
+        let faseOne = Scenario(nome: "minifase1",
             levelNumber: 1,
             corMontanha: [25,47,65],
             corMontanhaClara: [43, 80, 109],
@@ -122,7 +122,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             backGroundVolume: 0.2
         )
                 
-        var faseTwo = Scenario(nome: "minifase2",
+        let faseTwo = Scenario(nome: "minifase2",
             levelNumber: 2,
             corMontanha: [116,108,10],
             corMontanhaClara: [136, 141, 25],
@@ -143,7 +143,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         
         
         
-        var faseThree = Scenario(nome: "minifase3",
+        let faseThree = Scenario(nome: "minifase3",
             levelNumber: 3,
             corMontanha: [178,0,103],
             corMontanhaClara: [214, 119, 174],
@@ -163,7 +163,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
         )
         
-        var faseFour = Scenario(nome: "minifase4",
+        let faseFour = Scenario(nome: "minifase4",
             levelNumber: 4,
             corMontanha: [220,159,0],
             corMontanhaClara: [255, 185, 0],
@@ -183,7 +183,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
         )
         
-        var faseFive = Scenario(nome: "minifase5",
+        let faseFive = Scenario(nome: "minifase5",
             levelNumber: 5,
             corMontanha: [0,139,134],
             corMontanhaClara: [144, 199, 196],
@@ -203,7 +203,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
         )
         
-        var faseSix = Scenario(nome: "minifase6",
+        let faseSix = Scenario(nome: "minifase6",
             levelNumber: 6,
             corMontanha: [69,94,101],
             corMontanhaClara: [83, 106, 112],
@@ -244,28 +244,52 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             let soundURL = NSBundle.mainBundle().URLForResource(name, withExtension: "wav")
             
             var error:NSError?
-            audioPlayer = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOfURL: soundURL!)
+            } catch var error1 as NSError {
+                error = error1
+//                audioPlayer = nil
+            }
             audioPlayer.play()
         }
     }
     
     func loadAudio(){
         
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, error: nil)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        } catch _ {
+        }
         
         // Load
         let soundURL = NSBundle.mainBundle().URLForResource(Sounds.click.rawValue, withExtension: "wav")
         // Load Music
         let mainThemeUrl = NSBundle.mainBundle().URLForResource("main-theme", withExtension: "wav")
         
-        // Removed deprecated use of AVAudioSessionDelegate protocol
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
-        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        do {
+            // Removed deprecated use of AVAudioSessionDelegate protocol
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        } catch _ {
+        }
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch _ {
+        }
         
         var error:NSError?
-        self.clickAudio = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
+        do {
+            self.clickAudio = try AVAudioPlayer(contentsOfURL: soundURL!)
+        } catch let error1 as NSError {
+            error = error1
+            self.clickAudio = nil
+        }
         
-        self.backGroundMusic = AVAudioPlayer(contentsOfURL: mainThemeUrl, error: &error)
+        do {
+            self.backGroundMusic = try AVAudioPlayer(contentsOfURL: mainThemeUrl!)
+        } catch let error1 as NSError {
+            error = error1
+            self.backGroundMusic = nil
+        }
         self.backGroundMusic.volume = 0.3
         self.backGroundMusic.numberOfLoops = -1
 
@@ -276,7 +300,13 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
         let music = NSBundle.mainBundle().URLForResource(name, withExtension: "wav")
         var error:NSError?
         
-        let audio = AVAudioPlayer(contentsOfURL: music, error: &error)
+        let audio: AVAudioPlayer!
+        do {
+            audio = try AVAudioPlayer(contentsOfURL: music!)
+        } catch let error1 as NSError {
+            error = error1
+            audio = nil
+        }
         
         audio.volume = 0.2
 
@@ -300,7 +330,13 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
      
         
         var error:NSError?
-        let jump  = AVAudioPlayer(contentsOfURL: soundURL, error: &error)
+        let jump: AVAudioPlayer!
+        do {
+            jump = try AVAudioPlayer(contentsOfURL: soundURL!)
+        } catch let error1 as NSError {
+            error = error1
+            jump = nil
+        }
         
         jump.play()
     }
@@ -333,12 +369,12 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     
     func unlockNextLevel() {
         var flag = false
-        playClickSound(name: "unlock")
+        playClickSound("unlock")
 
         
         for fase in fases {
             if(flag) {
-                println("desbloqueaVEL fase \(fase.nome)")
+                print("desbloqueaVEL fase \(fase.nome)")
 
                 fase.unlockable = true
                 flag = false
@@ -346,7 +382,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
             }
 
             if fase.unlockable && fase.locked {
-                println("desbloqueado fase \(fase.nome)")
+                print("desbloqueado fase \(fase.nome)")
                 fase.locked = false
                 fase.unlockable = false
                 flag = true
@@ -366,32 +402,32 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     }
     
     func buyKey(){
-        println("About to fetch the products");
+        print("About to fetch the products");
         // We check that we are allow to make the purchase.
         if (SKPaymentQueue.canMakePayments())
         {
-            var productID:NSSet = NSSet(object: getKeyUnlockable());
-            var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as Set<NSObject>);
+            let productID:NSSet = NSSet(object: getKeyUnlockable());
+            let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
             productsRequest.delegate = self;
             productsRequest.start();
-            println("Fething Products");
+            print("Fething Products");
         }else{
-            println("can't make purchases");
+            print("can't make purchases");
         }
     }
     
     func buyRemoveAds(){
-        println("About to fetch the products");
+        print("About to fetch the products");
         // We check that we are allow to make the purchase.
         if (SKPaymentQueue.canMakePayments())
         {
-            var productID:NSSet = NSSet(object: "removeadd");
-            var productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as Set<NSObject>);
+            let productID:NSSet = NSSet(object: "removeadd");
+            let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
             productsRequest.delegate = self;
             productsRequest.start();
-            println("Fething Products");
+            print("Fething Products");
         }else{
-            println("can't make purchases");
+            print("can't make purchases");
         }
     }
     
@@ -399,8 +435,8 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     // Helper Methods
     
     func buyProduct(product: SKProduct){
-        println("Sending the Payment Request to Apple");
-        var payment = SKPayment(product: product)
+        print("Sending the Payment Request to Apple");
+        let payment = SKPayment(product: product)
         SKPaymentQueue.defaultQueue().addPayment(payment);
         
     }
@@ -409,15 +445,15 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
     // Delegate Methods for IAP
     
     func productsRequest (request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        println("got the request from Apple")
-        var count : Int = response.products.count
+        print("got the request from Apple")
+        let count : Int = response.products.count
         if (count>0) {
             var validProducts = response.products
-            var validProduct: SKProduct = response.products[0] as! SKProduct
+            let validProduct: SKProduct = response.products[0] 
             if (validProduct.productIdentifier == self.keyId) {
-                println(validProduct.localizedTitle)
-                println(validProduct.localizedDescription)
-                println(validProduct.price)
+                print(validProduct.localizedTitle)
+                print(validProduct.localizedDescription)
+                print(validProduct.price)
                 buyProduct(validProduct);
             } else {
                 if validProduct.productIdentifier == "removeadd" {
@@ -425,27 +461,27 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 
                 }
                 else {
-                    println(validProduct.productIdentifier)
+                    print(validProduct.productIdentifier)
                 }
             }
         } else {
-            println("nothing")
+            print("nothing")
         }
     }
     
     
-    func request(request: SKRequest!, didFailWithError error: NSError!) {
-        println("La vaina fallo");
+    func request(request: SKRequest, didFailWithError error: NSError) {
+        print("La vaina fallo");
     }
     
-    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!)    {
-        println("Received Payment Transaction Response from Apple");
+    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction])    {
+        print("Received Payment Transaction Response from Apple");
         
         for transaction:AnyObject in transactions {
             if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
                 switch trans.transactionState {
                 case .Purchased, .Restored:
-                    println("Product Purchased or restored");
+                    print("Product Purchased or restored");
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("removeVidro", object: nil)
                     
@@ -463,7 +499,7 @@ class SceneManager : NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
                     break;
                 case .Failed:
                     NSNotificationCenter.defaultCenter().postNotificationName("removeVidro", object: nil)
-                    println("Purchased Failed");
+                    print("Purchased Failed");
                     NSNotificationCenter.defaultCenter().postNotificationName("hideLoad", object: nil)
 
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
