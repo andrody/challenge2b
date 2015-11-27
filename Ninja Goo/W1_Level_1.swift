@@ -1264,18 +1264,18 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             }
 
         
-            if(self.ninja.isInMoveable && self.ninja.mWall != nil) {
-                
-                if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos - iphoneEqualizer){
-                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
-                }
-                else {
-                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos - iphoneEqualizer)
-                    
-                }
-            
-            }
-            else {
+//            if(self.ninja.isInMoveable && self.ninja.mWall != nil) {
+//                
+//                if(self.ninja.mWall.node!.position.y + self.ninja.position.y > Constants.minCamPos - iphoneEqualizer){
+//                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, self.ninja.mWall.node!.position.y + self.ninja.position.y)
+//                }
+//                else {
+//                        point = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, Constants.minCamPos - iphoneEqualizer)
+//                    
+//                }
+//            
+//            }
+//            else {
                 if(self.ninja.position.y > Constants.minCamPos - iphoneEqualizer){
                     point = self.ninja.position
                 }
@@ -1284,7 +1284,7 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 }
 
-            }
+//            }
 //        }
 
 
@@ -1339,6 +1339,10 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
     }
     
     // MARK: Update
+    var firstTimeInMoveable : Bool = true
+    var initNinjaPos : CGPoint = CGPointZero
+    var initWallPos : CGPoint = CGPointZero
+    var preparedToLeaveMoveable : Bool = false
     
     override func update(currentTime: CFTimeInterval) {
         
@@ -1365,12 +1369,31 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        if(self.ninja.isInMoveable && self.ninja.physicsBody!.pinned == false) {
+        if(self.ninja.isInMoveable && self.preparedToLeaveMoveable) {
             if(self.ninja.position.x != self.ninjaPosTemp.x || self.ninja.position.y != self.ninjaPosTemp.y) {
                 self.mWallTempo.categoryBitMask = ColliderType.Wall.rawValue
                 self.ninja.isInMoveable = false
+                firstTimeInMoveable = true
+                self.preparedToLeaveMoveable = false
+
             }
         }
+        
+        if(self.ninja.isInMoveable && !self.preparedToLeaveMoveable) {
+            if firstTimeInMoveable {
+                firstTimeInMoveable = false
+                initNinjaPos = self.ninja.position
+                initWallPos = (self.ninja.mWall.node?.position)!
+            }
+            
+            let difWallPosX = (self.ninja.mWall.node?.position.x)! - initWallPos.x
+            let difWallPosY = (self.ninja.mWall.node?.position.y)! - initWallPos.y
+
+            self.ninja.position = CGPointMake(initNinjaPos.x + difWallPosX, initNinjaPos.y + difWallPosY)
+            print("TA CHAMANDO AKIIII")
+            
+        }
+
         
     }
     
@@ -1439,11 +1462,12 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                 
                 if(self.ninja.mWall != nil && self.ninja.mWall.node != nil) {
                     
-                    self.ninja.removeFromParent()
+                    //self.ninja.removeFromParent()
                     
                     self.ninja.mWall.categoryBitMask = 99
-                    self.ninja.mWall.node?.addChild(self.ninja)
-                    self.ninja.physicsBody!.pinned = true
+                    //self.ninja.mWall.node?.addChild(self.ninja)
+                    //self.ninja.mWall.node?.position = CGPointMake((self.ninja.mWall.node?.position.x)!, (self.ninja.mWall.node?.position.y)! - CGFloat(300))
+                    //self.ninja.physicsBody!.pinned = true
                     self.ninja.isInMoveable = true
                     //self.ninja.mWallInitialPosition = self.ninja.mWall.p
                 }
@@ -1876,7 +1900,8 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
             self.physicsWorld.speed = 1
             
             if(self.ninja.isInMoveable) {
-                self.ninja.physicsBody!.pinned = false
+//                self.ninja.physicsBody!.pinned = false
+                self.preparedToLeaveMoveable = true
                 
                 var mWallTemp : SKPhysicsBody!
                 if(self.ninja.mWall != nil) {
@@ -1886,13 +1911,13 @@ class W1_Level_1: SKScene, SKPhysicsContactDelegate {
                     mWallTemp = self.mWallTempo2
                 }
                 
-                self.ninjaPosTemp = CGPointMake(self.ninja.mWall.node!.position.x + self.ninja.position.x, mWallTemp.node!.position.y + self.ninja.position.y)
+                self.ninjaPosTemp = CGPointMake(self.ninja.position.x, self.ninja.position.y)
                 self.mWallTempo = mWallTemp
                 self.ninja.mWall = nil
-
-                self.ninja.removeFromParent()
-                self.worldLayer.addChild(ninja)
-                self.ninja.position = self.ninjaPosTemp
+//
+//                self.ninja.removeFromParent()
+//                self.worldLayer.addChild(ninja)
+//                self.ninja.position = self.ninjaPosTemp
 
             }
 

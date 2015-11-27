@@ -495,7 +495,7 @@
 				TargetAttributes = {
 					C5CB3F391ACD6AA8001A37B7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = CC953577YZ;
+						DevelopmentTeam = CT54P8A873;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 1;
@@ -734,6 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -754,6 +755,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
